@@ -7,7 +7,7 @@ import cookieParser from 'cookie-parser';
 // import mongoose from 'mongoose';
 
 const httpPortNumber = 8080;
-const httpsPortNumber = 9090;
+
 const app = express();
 app.use(cookieParser());
 app.use(cors({
