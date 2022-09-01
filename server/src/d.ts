@@ -1,7 +1,7 @@
 /* <DB Collection Info> */
-type Blood_type = "A" | "B" | "AB" | "O";
+export type Blood_type = "A" | "B" | "AB" | "O";
 
-interface Mbti {
+export interface Mbti {
   "date": Date
   "IE": number
   "NS": number
@@ -9,14 +9,14 @@ interface Mbti {
   "JP": number
 }
 
-interface Hashtag {
+export interface Hashtag {
   "hashtag_id": string
   "name": string
   "type"?: "blood_type" | "country" | "city" | "district" | "gender" | "birth" | "mbti" | "free"
   "mbti_cnt"?: number[]
 }
 
-interface User {
+export interface User {
   "user_id": string
   "nickname": string
   "kakao_key":{
@@ -49,12 +49,12 @@ interface User {
   "balance": number
 }
 
-interface Option {
+export interface Option {
   "index": number
   "name": string  
 }
 
-interface Survey {
+export interface Survey {
   "survey_id": string
   "question_id": string
   "hashtags": Hashtag[]
@@ -62,7 +62,7 @@ interface Survey {
   "result": number[][]
 }
 
-interface Newsletter {
+export interface Newsletter {
   "news_letter_id": string
   "thumbnail": string // image url
   "title": string
@@ -71,14 +71,14 @@ interface Newsletter {
   "writer": string
 }
 
-interface Question {
+export interface Question {
   "question_id": string
   "survey_id"?: string
   "image": string // image url
   "title": string
   "type": "mbti" | "survey"
   "date": Date
-  "contents": {ㅎ
+  "contents": {
     "main": string
     "options": Option[]
   }
