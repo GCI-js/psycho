@@ -4,7 +4,7 @@ import cors from 'cors';
 import https from 'https';
 import MainRouter from './router/MainRouter';
 import cookieParser from 'cookie-parser';
-// import mongoose from 'mongoose';
+import mongoose from 'mongoose';
 
 const httpPortNumber = 8080;
 
