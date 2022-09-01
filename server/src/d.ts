@@ -4,6 +4,7 @@ interface Mbti {
   "IE": number
   "NS": number
   "TF": number
+  "JP": number
 }
 
 interface Hashtag {
@@ -38,7 +39,8 @@ interface User {
   "district": string
   "gender": "male" | "female"
   "birth": Date
-  "mbti": Mbti[]
+  "mbtis": Mbti[]
+  "hashtags": Hashtag[]
   "recent_response": boolean[]
   "balance": number
 }
