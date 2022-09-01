@@ -1,5 +1,4 @@
 import { Request, Response } from 'express';
-import { IntegerType } from 'mongodb';
 
 let adjective: string[] = ['무기력한 ','모범적인 ','슬기로운 ','만족하는 ','전설의 '];
 let noun: string[]=['김치','페이지','만두','대게','물'];
