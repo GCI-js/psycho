@@ -1,4 +1,6 @@
 /* <DB Collection Info> */
+type Blood_type = "A" | "B" | "AB" | "O";
+
 interface Mbti {
   "date": Date
   "IE": number
@@ -8,8 +10,10 @@ interface Mbti {
 }
 
 interface Hashtag {
-  "id": string
+  "hashtag_id": string
   "name": string
+  "type"?: "blood_type" | "country" | "city" | "district" | "gender" | "birth" | "mbti" | "free"
+  "mbti_cnt"?: number[]
 }
 
 interface User {
@@ -33,7 +37,7 @@ interface User {
     "refresh_token": string
     "expiration": Date
   }
-  "blood_type": "A" | "B" | "AB" | "O"
+  "blood_type": Blood_type
   "country": string
   "city": string
   "district": string
@@ -43,4 +47,43 @@ interface User {
   "hashtags": Hashtag[]
   "recent_response": boolean[]
   "balance": number
+}
+
+interface Option {
+  "index": number
+  "name": string  
+}
+
+interface Survey {
+  "survey_id": string
+  "question_id": string
+  "hashtags": Hashtag[]
+  "options": Option[]
+  "result": number[][]
+}
+
+interface Newsletter {
+  "news_letter_id": string
+  "thumbnail": string // image url
+  "title": string
+  "hashtags": Hashtag[]
+  "url": string // original post url
+  "writer": string
+}
+
+interface Question {
+  "question_id": string
+  "survey_id"?: string
+  "image": string // image url
+  "title": string
+  "type": "mbti" | "survey"
+  "date": Date
+  "contents": {ㅎ
+    "main": string
+    "options": Option[]
+  }
+  "mbti_change"?: {
+    "factor": "IE" | "NS" | "TF" | "JP"
+    "value": number
+  }[]
 }
