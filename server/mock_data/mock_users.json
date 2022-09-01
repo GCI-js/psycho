@@ -1,1 +1,82 @@
-{}
+[
+    {
+        "user_id": "0",
+        "nickname": "아크릴 오므라이스",
+        "kakao_key": "",
+        "google_key": "",
+        "naver_key": "",
+        "blood_Type": "A",
+        "country": "대한민국",
+        "city": "서울특별시",
+        "district": "송파구",
+        "gender": "female",
+        "birth": "2021.06.15",
+        "mbti": {
+            "date": "2022.09.01",
+            "IE": 50,
+            "NS": 50,
+            "TF": 50,
+            "JP": 50
+        },
+        "hashtags": [
+            {
+                "hashtag_id": "0",
+                "name": "GCI"
+            },
+            {
+                "hashtag_id": "1",
+                "name": "MBTI"
+            }
+        ],
+        "recent_response": [
+            true,
+            true,
+            true,
+            true,
+            true,
+            true,
+            true
+        ],
+        "balance": 1000000000
+    },
+    {
+        "user_id": "1",
+        "nickname": "공부하는 기린",
+        "kakao_key": "",
+        "google_key": "",
+        "naver_key": "",
+        "blood_Type": "ㅒ",
+        "country": "대한민국",
+        "city": "서울특별시",
+        "district": "강남구",
+        "gender": "male",
+        "birth": "1994.11.19",
+        "mbti": {
+            "date": "2022.09.01",
+            "IE": 25,
+            "NS": 25,
+            "TF": 25,
+            "JP": 75
+        },
+        "hashtags": [
+            {
+                "hashtag_id": "0",
+                "name": "GCI"
+            },
+            {
+                "hashtag_id": "1",
+                "name": "MBTI"
+            }
+        ],
+        "recent_response": [
+            true,
+            true,
+            true,
+            false,
+            true,
+            true,
+            true
+        ],
+        "balance": 7777777
+    }
+]
