@@ -1,6 +1,11 @@
 import React from "react";
-import "./hashtag.css";
-const hashtag = (content: string, color: string) => {
+import "./Hashtag.css";
+
+export interface HashtagItem {
+	content: string;
+	color: string;
+}
+const Hashtag = ({ content, color }: HashtagItem) => {
 	let contentClassName = "content";
 	if (color) {
 		contentClassName = "content " + color;
@@ -8,4 +13,4 @@ const hashtag = (content: string, color: string) => {
 	return <div className={contentClassName}>#{content}</div>;
 };
 
-export default hashtag;
+export default Hashtag;

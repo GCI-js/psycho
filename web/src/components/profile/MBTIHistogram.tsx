@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import ECharts, { EChartsReactProps } from "echarts-for-react";
 import * as echarts from "echarts";
-import "./mbtiHistogram.css";
+import "./MBTIHistogram.css";
 
-const MBTIHistogram = () => {
+export const MBTIHistogram: React.FC = () => {
 	const [options, setOptions] = useState({
 		color: ["#8deb40", "#006699", "#4cabce", "#e5323e"],
 		dataset: {
@@ -47,7 +47,7 @@ const MBTIHistogram = () => {
 	});
 
 	return (
-		<div className="container">
+		<div className="histogramContainer">
 			<text>MBTI 변화 추이</text>
 			<text>weekly</text>
 			<ECharts

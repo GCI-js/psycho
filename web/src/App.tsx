@@ -2,11 +2,12 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 // import MBTIHistogram from "./components/profile/MBTIHistorgram";
-import MBTIHistogram from "./components/profile/mbtiHistorgram";
+import Profile from "./components/profile/Profile";
+
 function App() {
 	return (
 		<div className="App">
-			<MBTIHistogram />
+			<Profile />
 			{/* <header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>
