@@ -1,10 +1,10 @@
 import React, { PureComponent } from "react";
-import "./BettingResult.css";
+import "./BettingResultPast.css";
 
 const BUTTON_WIDTH = 132;
 const BUTTON_HEIGHT = 40;
 
-interface BettingResultDataItem {
+interface BettingResultPastDataItem {
   date: number;
   content: string;
   mbtiType: string;
@@ -23,11 +23,11 @@ interface BettingResultDataItem {
   remainTime: string;
 }
 
-interface BettingResultProps {
-  data: BettingResultDataItem;
+interface BettingResultPastProps {
+  data: BettingResultPastDataItem;
 }
 
-export default class Example extends PureComponent<BettingResultProps> {
+export default class Example extends PureComponent<BettingResultPastProps> {
   render() {
     var data = this.props.data;
     return (
@@ -50,7 +50,6 @@ export default class Example extends PureComponent<BettingResultProps> {
             </div>
           </div>
         </div>
-        <div className="button">투표시간이 {data.remainTime} 남았어요</div>
       </div>
     );
   }
