@@ -1,5 +1,6 @@
 import * as React from "react";
-
+import NewsletterLink from "./NewsletterLink";
+import { BrowserRouter as Router, Link, Route } from "react-router-dom";
 type MyCompProps = {
   title: string;
   text: string;
@@ -19,6 +20,7 @@ const Newsletter = (props: MyCompProps) => {
               <img
                 src={props.image}
                 alt="아마존 디자이너는 어떻게 포트폴리오를 만들까?의 콘텐츠 이미지"
+                width="80%"
               ></img>
             </div>
           </a>
@@ -40,3 +42,5 @@ const Newsletter = (props: MyCompProps) => {
 };
 
 export default Newsletter;
+
+<style scoped></style>;
