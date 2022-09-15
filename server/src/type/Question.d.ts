@@ -12,7 +12,7 @@ declare interface Question extends Document{
     "options": Option[]
   }
   "mbti_change"?: {
-    "factor": "IE" | "NS" | "TF" | "JP"
+    "factor": "EI" | "NS" | "FT" | "JP"
     "value": number
   }[]
 }

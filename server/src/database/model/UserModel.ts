@@ -45,7 +45,14 @@ const userSchema = new Schema({
     name: { type: String, required: false },
   }],
   recent_response: [{ type: Boolean, required: false }],
-  balance: { type: Number, required: false }
+  balance: { type: Number, required: false },
+  gamble_log: [
+    {
+      gamble_id: { type: String, required: false},
+      index: { type: Number, required: false },
+      balance: { type: Number, required: false }
+    }
+  ]
 });
 
 export const UserModel = model<User>(DOCUMENT_NAME, userSchema, COLLECTION_NAME);

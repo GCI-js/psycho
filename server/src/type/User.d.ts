@@ -31,4 +31,9 @@ declare interface User extends Document{
   "hashtags": Hashtag[]
   "recent_response": boolean[]
   "balance": number
+  "gamble_log": {
+    "gamble_id": string
+    "index": number //선택지 index
+    "balance": number //배팅금액
+  }[]
 }
