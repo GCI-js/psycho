@@ -6,7 +6,6 @@ const ConnectionTest = {
     console.log("Method: " + req.method.toString());
     console.log(req.body);
     console.log(req.cookies);
-    res.cookie("test_cookie", "666666666");
     res.status(200).json({"req.body: ": req.body, "msg": "Hello, world!"});
   }
 }

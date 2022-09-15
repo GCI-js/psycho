@@ -1,11 +1,16 @@
 import express from 'express';
-import ConnectionTest from '../controller/ConnectionTest';
-import NickNameGenerator from '../controller/NickNameGenerator';
-import Logger from '../middleware/Logger';
+import ConnectionTest from '../component/ConnectionTest';
+import NickNameGenerator from '../component/NickNameGenerator';
+import Logger from '../component/Logger';
+import { CheckApiKey } from '../component/CheckApiKey';
+import { UserRouter } from './UserRouter';
 
 const MainRouter = express.Router();
 
-MainRouter.all('/conn_test', Logger.writeRequest, ConnectionTest.conn_test);
-MainRouter.all('/nickname_test',Logger.writeRequest,NickNameGenerator.nicnkname_test);
+MainRouter.use('/', Logger.writeRequest, CheckApiKey);
+
+MainRouter.use('/conn_test', ConnectionTest.conn_test);
+MainRouter.use('/nickname_test', NickNameGenerator.nicnkname_test);
+MainRouter.use('/user', UserRouter)
 
 export default MainRouter;
