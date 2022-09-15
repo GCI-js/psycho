@@ -90,9 +90,9 @@ export default class Example extends PureComponent<BettingProps> {
         <div>{data.content}</div>
         <div style={styles.root}>
           <button style={{ width: btn1Length, ...styles.button1 }}>
-            <text>짜장면</text>
+            <span>짜장면</span>
             <br />
-            <text>{btn1LengthPortion}%</text>
+            <span>{btn1LengthPortion}%</span>
           </button>
           <button
             style={{
@@ -100,9 +100,9 @@ export default class Example extends PureComponent<BettingProps> {
               ...styles.button2,
             }}
           >
-            <text>짬뽕</text>
+            <span>짬뽕</span>
             <br />
-            <text>{btn2LengthPortion}%</text>
+            <span>{btn2LengthPortion}%</span>
           </button>
         </div>
       </div>
