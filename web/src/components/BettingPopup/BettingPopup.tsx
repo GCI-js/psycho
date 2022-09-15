@@ -76,20 +76,20 @@ export default class Example extends PureComponent<BettingPopupProps> {
     var data = this.props.data;
     return (
       <div style={styles.root}>
-        <div>{data.date}의 결과</div>
+        <div>현재 배당률</div>
         <div>{data.content}</div>
         <div>
           <div style={styles.Row}>
             <div style={styles.Column}>
               <div style={styles.Row}>{data.betting1.name}</div>
               <div style={styles.Row}>{data.betting1.voteRatio}%</div>
-              <div style={styles.Row}>승률 1:{data.betting1.winRatio}</div>
+              <div style={styles.Row}>배당률 x{data.betting1.winRatio}</div>
               <div style={styles.Row}>참여자 : {data.betting1.count}</div>
             </div>
             <div style={styles.Column}>
               <div style={styles.Row}>{data.betting2.name}</div>
               <div style={styles.Row}>{data.betting2.voteRatio}%</div>
-              <div style={styles.Row}>승률 1:{data.betting2.winRatio}</div>
+              <div style={styles.Row}>배당률 x{data.betting2.winRatio}</div>
               <div style={styles.Row}>참여자 : {data.betting2.count}</div>
             </div>
           </div>
@@ -102,7 +102,7 @@ export default class Example extends PureComponent<BettingPopupProps> {
             style={{ width: "275px" }}
           ></input>
         </div>
-        <div style={{ width: "100%" }}>
+        <div style={{ width: "100%", height: "50px" }}>
           <button style={{ float: "left", ...styles.button1 }}>
             {data.betting1.name}
           </button>
