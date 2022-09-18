@@ -6,9 +6,12 @@ import { getNewsletterList, Newsletter_example } from "./NewsletterList";
 import { Trend } from "./Trend";
 import ChnageMBTI from "./ChangeMBTI";
 import HashTag from "./HashTag";
+import { getRandomList } from "./RandomList";
 
 export function Main() {
   let Newsletter_example: any[] = [];
+  let RandomList: any[] = [];
+  RandomList = getRandomList();
   const [result, setResult] = useState<any[]>([]);
   const [item, setItem] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState<boolean>(true);
