@@ -1,6 +1,6 @@
 import { Document } from "mongoose"
 
-declare interface Newsletter extends Document{
+declare interface Newsletter{
   "newsletter_id": string
   "thumbnail": string // image url
   "title": string

@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-declare interface Survey extends Document{
+declare interface Survey{
   "survey_id": string
   "question_id": string
   "hashtags": Hashtag[]
