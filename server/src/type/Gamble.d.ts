@@ -3,13 +3,13 @@ import { Document } from "mongoose";
 declare interface Gamble extends Document{
   "gamble_id": string
   "survey_id": string
-  "due": Date
+  "due": number
   "title": string
   "contents": {
     "main": string
     "options": Option[]
   }
-  "bet_state": [
+  "state": [
     {
       "index": number
       "name": string

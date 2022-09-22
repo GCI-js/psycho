@@ -11,29 +11,29 @@ const userSchema = new Schema({
     token_type: { type: String, required: false },
     access_token: { type: String, required: false },
     refresh_token: { type: String, required: false },
-    expiration: { type: Date, required: false }
+    expiration: { type: Number, required: false }
   },
   google_key: {
     token_type:  { type: String, required: false },
     access_token:  { type: String, required: false },
     refresh_token:  { type: String, required: false },
-    expiration: { type: Date, required: false }
+    expiration: { type: Number, required: false }
   },
   naver_key: {
     token_type:  { type: String, required: false },
     access_token:  { type: String, required: false },
     refresh_token:  { type: String, required: false },
-    expiration: { type: Date, required: false }
+    expiration: { type: Number, required: false }
   },
   blood_type:  { type: String, required: false },
   country:  { type: String, required: false },
   city:  { type: String, required: false },
   district:  { type: String, required: false },
   gender:  { type: String, required: false },
-  birth: { type: Date, required: false },
+  birth: { type: Number, required: false },
   mbtis: [
     {
-      date: { type: Date, required: false },
+      date: { type: Number, required: false },
       IE:  { type: String, required: false },
       NS:  { type: String, required: false },
       TF:  { type: String, required: false },

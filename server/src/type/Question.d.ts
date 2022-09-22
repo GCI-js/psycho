@@ -6,7 +6,7 @@ declare interface Question extends Document{
   "image": string // image url
   "title": string
   "type": "mbti" | "survey"
-  "date": Date
+  "date": number
   "contents": {
     "main": string
     "options": Option[]

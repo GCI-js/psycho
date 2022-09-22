@@ -10,7 +10,7 @@ const questionSchema = new Schema({
   image: { type: String, required: false },
   title: { type: String, required: false },
   type: { type: String, required: false },
-  date: { type: Date, required: false },
+  date: { type: Number, required: false },
   contents: {
     main: { type: String, required: false },
     options: [
