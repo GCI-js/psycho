@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const HashTag = () => {
+const HashtagSearchResult = () => {
   return (
     <div>
       <div>해쉬태그 검색결과</div>
@@ -8,6 +8,6 @@ const HashTag = () => {
   );
 };
 
-export default HashTag;
+export default HashtagSearchResult;
 
 <style scoped></style>;
