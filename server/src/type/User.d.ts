@@ -7,26 +7,26 @@ declare interface User extends Document{
     "token_type": string
     "access_token": string
     "refresh_token": string
-    "expiration": Date
+    "expiration": number
   }
   "google_key":{
     "token_type": string
     "access_token": string
     "refresh_token": string
-    "expiration": Date
+    "expiration": number
   }
   "naver_key":{
     "token_type": string
     "access_token": string
     "refresh_token": string
-    "expiration": Date
+    "expiration": number
   }
   "blood_type": BloodType
   "country": string
   "city": string
   "district": string
   "gender": "male" | "female"
-  "birth": Date
+  "birth": number
   "mbtis": Mbti[]
   "hashtags": Hashtag[]
   "recent_response": boolean[]

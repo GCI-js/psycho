@@ -1,7 +1,7 @@
 declare type BloodType = "A" | "B" | "AB" | "O";
 
 declare interface Mbti {
-  "date": Date
+  "date": number
   "EI": number
   "NS": number
   "FP": number
