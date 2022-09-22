@@ -39,13 +39,13 @@ export default class Example extends PureComponent<BettingResultPastProps> {
             <div className="Column">
               <div className="Row">{data.betting1.name}</div>
               <div className="Row">{data.betting1.voteRatio}%</div>
-              <div className="Row">승률 1:{data.betting1.winRatio}</div>
+              <div className="Row">배당률 x{data.betting1.winRatio}</div>
               <div className="Row">참여자 : {data.betting1.count}</div>
             </div>
             <div className="Column">
               <div className="Row">{data.betting2.name}</div>
               <div className="Row">{data.betting2.voteRatio}%</div>
-              <div className="Row">승률 1:{data.betting2.winRatio}</div>
+              <div className="Row">배당률 x{data.betting2.winRatio}</div>
               <div className="Row">참여자 : {data.betting2.count}</div>
             </div>
           </div>
