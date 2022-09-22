@@ -1,12 +1,12 @@
 import React from "react";
 // import logo from "./logo.svg";
 import "./App.css";
-import { MainPage } from "./components/MainPage/MainPage";
+import { Main } from "./components/Main/Main";
 // import { InfiniteScroll } from "./components/Main/Infinite_scroll";
 
 function App() {
   return (
-    <MainPage></MainPage>
+    <Main></Main>
     // <div className="App">
     //   <header className="App-header">
     //     <img src={logo} className="App-logo" alt="logo" />
