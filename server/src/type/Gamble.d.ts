@@ -1,6 +1,6 @@
 import { Document } from "mongoose";
 
-declare interface Gamble extends Document{
+declare interface Gamble{
   "gamble_id": string
   "survey_id": string
   "due": number

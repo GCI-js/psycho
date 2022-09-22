@@ -22,6 +22,21 @@ HashtagRouter.get('/list', async (req: Request, res: Response) => {
   res.status(200).json(hashtagList);
 });
 
+HashtagRouter.put('/update', async (req: Request, res: Response) => {
+  let hashtag: Hashtag = await HashtagController.findOne(req.body.name);
+  hashtag.mbti_cnt[+req.body.mbti_idx] += req.body.increase ? 1 : -1;
+  await HashtagController.findByIdAndUpdate(hashtag);
+  res.status(200).json(hashtag);
+});
+
+HashtagRouter.get('/mbticnt/:name', async (req: Request, res: Response) => {
+  let mbti_cnt = await HashtagController.getMbtiCnt(req.params.name);
+  res.status(200).json(mbti_cnt);
+});
+
+HashtagRouter.get('/assoc', async (req: Request, res: Response) => {
+  
+})
 
 /*
 .Hashtag API
@@ -34,6 +49,7 @@ res = Hashtag
 - 해시태그 통계 갱신 (PUT)
 req = {
   “name”: string,
+  "mbti_idx": number,
   “increase”: boolean
 }
 res = Hashtag

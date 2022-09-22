@@ -1,6 +1,6 @@
 import { Document } from "mongoose"
 
-declare interface User extends Document{
+declare interface User{
   "user_id": string
   "nickname": string
   "kakao_key":{

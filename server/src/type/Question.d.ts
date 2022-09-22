@@ -1,6 +1,6 @@
 import { Document } from "mongoose"
 
-declare interface Question extends Document{
+declare interface Question{
   "question_id": string
   "survey_id"?: string
   "image": string // image url
