@@ -1,5 +1,6 @@
 import express, { Request, Response } from 'express';
 import { HashtagController } from '../database/controller/HashtagController';
+import { UserController } from '../database/controller/UserController';
 import { Hashtag } from '../type/Hashtag';
 
 export const HashtagRouter = express.Router();
@@ -34,9 +35,27 @@ HashtagRouter.get('/mbticnt/:name', async (req: Request, res: Response) => {
   res.status(200).json(mbti_cnt);
 });
 
-HashtagRouter.get('/assoc', async (req: Request, res: Response) => {
-  
-})
+HashtagRouter.get('/assoc/:name', async (req: Request, res: Response) => {
+  let hashtag_name = req.params.name;
+  let users = await UserController.find100UsersByHashtag(hashtag_name);
+  let hashtagCnt: { hashtag_id: string, name: string, cnt: number }[] = [];  
+  for(let i = 0; i < users.length; i++){
+    for(let j = 0; j < users[i].hashtags.length; j++){
+      if(users[i].hashtags[j].name == hashtag_name) continue;
+      let hashtagIdx = hashtagCnt.findIndex(hashtag => hashtag.name == users[i].hashtags[j].name);
+      if(hashtagIdx == -1){
+        hashtagCnt.push({hashtag_id: users[i].hashtags[j].hashtag_id, 
+                         name: users[i].hashtags[j].name, 
+                         cnt: 1});
+      }
+      else{
+        hashtagCnt[hashtagIdx].cnt += 1;
+      }
+    }
+  }
+  hashtagCnt.sort((a: any, b: any) => {return a.cnt < b.cnt ? 1 : -1});
+  res.status(200).json(hashtagCnt.slice(0, 10).map((hashtag) => hashtag.name));
+});
 
 /*
 .Hashtag API

@@ -7,6 +7,7 @@ export const COLLECTION_NAME = 'gambles';
 const gambleSchema = new Schema({
   gamble_id: { type: String, required: true },
   survey_id: { type: String, required: false },
+  date: { type: Number, required: false},
   due: { type: Number, required: false },
   title: { type: String, required: false },
   contents: {

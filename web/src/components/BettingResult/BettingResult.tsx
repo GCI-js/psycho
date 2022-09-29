@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "./BettingResult.css";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../type/Gamble";
+import GambleType from "../../../../server/src/type/Gamble"
 
 const BUTTON_WIDTH = 132;
 const BUTTON_HEIGHT = 40;
@@ -65,7 +65,6 @@ export default class Example extends PureComponent<BettingResultProps> {
       data.state[1].user_cnt
     );
     var dividend = calcDividend(data.state[0].balance, data.state[1].balance);
-
     // console.log(data.endTime);
     return (
       <div className="root">
