@@ -1,3 +1,7 @@
+.root {
+  height: 100vh;
+}
+
 .Row {
   display: table;
   width: 100% /*Optional*/;
