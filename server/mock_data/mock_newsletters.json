@@ -1,35 +1,35 @@
 [
-{"newsletter_id":"0",
+{"newsletterId":"0",
     "thumbnail":"https://youtu.be/rZ-x5uNhb4w",
     "title":"MBTI, 오해와 진실",
     "hashtags":[{
-        "hashtag_id":"0",
+        "hashtagId":"0",
         "name":"GCI"
     },{
-        "hashtag_id":"1",
+        "hashtagId":"1",
         "name":"MBTI"
     },{
-        "hashtag_id":"2",
+        "hashtagId":"2",
         "name":"1030"
     },{
-        "hashtag_id":"3",
+        "hashtagId":"3",
         "name":"성격테스트"
     },{
-        "hashtag_id":"4",
+        "hashtagId":"4",
         "name":"오해와진실"
     }
 ],
     "url":"https://youtu.be/rZ-x5uNhb4w",
     "writter":""
 },
-{"newsletter_id":"1",
+{"newsletterId":"1",
     "thumbnail":"https://cdn.imweb.me/thumbnail/20220225/a4540e01316cd.jpg",
     "title":"식사가 끝날 때까지 자신의 MBTI를 속이고있는 게스트가 누구인지 찾는 소셜다이닝",
     "hashtags":[{
-        "hashtag_id":"1",
+        "hashtagId":"1",
         "name":"MBTI"
     },{
-        "hashtag_id":"5",
+        "hashtagId":"5",
         "name":"소셜다이닝"
     }
     ],

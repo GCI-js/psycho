@@ -5,12 +5,12 @@ export const DOCUMENT_NAME = 'Newsletter';
 export const COLLECTION_NAME = 'newsletters';
 
 const newsletterSchema = new Schema({
-  newsletter_id: { type: String, required: true },
+  newsletterId: { type: String, required: true },
   thumbnail: { type: String, required: false },
   title: { type: String, required: false },
   hashtags: [
     {
-      hashtag_id: { type: String, required: false },
+      hashtagId: { type: String, required: false },
       name: { type: String, required: false }
     }
   ],

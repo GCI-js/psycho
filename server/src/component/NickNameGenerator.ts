@@ -27,9 +27,9 @@ nicknameCheck[adjectiveIndex][nounIndex]=true;
 }   
 
 const NickNameGenerator = {
-  nicnkname_test: (req: Request, res: Response, ) => {
+  nicnknameTest: (req: Request, res: Response, ) => {
     refreshIndex();
-    console.log("/nickname_test called");
+    console.log("/nicknameTest called");
     console.log(nickname);
     console.log(nicknameCheck);
     console.log("Method: " + req.method.toString());

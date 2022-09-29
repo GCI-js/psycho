@@ -1,6 +1,6 @@
 [
   {
-    "question_id": "1",
+    "questionId": "1",
     "image": "http://m.blog.naver.com/superbin0713/220075350926",
     "title": "금요일의 질문",
     "type": "mbti",
@@ -12,14 +12,14 @@
         {"index": 1, "name": "비동의"}
       ]
     },
-    "mbti_change": [{
+    "mbtiChange": [{
       "factor": "JP",
       "value": -5
     }]
   },
   {
-  "question_id": "2",
-  "survey_id": "1",
+  "questionId": "2",
+  "surveyId": "1",
   "image": "https://i.ytimg.com/vi/xhc5Ds-3ahM/maxresdefault.jpg", 
   "title": "돌발 질문! 짜장vs짬뽕",
   "type": "survey",

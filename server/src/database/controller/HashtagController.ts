@@ -23,6 +23,6 @@ export const HashtagController = {
   },
   getMbtiCnt: async (name: string) => {
     const hashtag = await HashtagModel.findOne({"name": name}).lean<Hashtag>();
-    return hashtag.mbti_cnt;
+    return hashtag.mbtiCnt;
   }
 }
