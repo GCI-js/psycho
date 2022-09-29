@@ -1,13 +1,16 @@
 import { model, Schema } from "mongoose";
 import { Hashtag } from "../../type/Hashtag";
 
+export const DOCUMENT_NAME = 'Hashtag';
+export const COLLECTION_NAME = 'hashtags';
+
 const hashtagSchema = new Schema({
-  hashtag_id: { type: String, required: true },
+  hashtagId: { type: String, required: true },
   name: { type: String, required: true },
   type: { type: String, required: false},
-  mbti_cnt: [
+  mbtiCnt: [
     {type: Number, required: false}
   ] 
 });
 
-export const HashtagModel = model<Hashtag>('Hashtag', hashtagSchema);
+export const HashtagModel = model<Hashtag>(DOCUMENT_NAME, hashtagSchema, COLLECTION_NAME);

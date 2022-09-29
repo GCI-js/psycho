@@ -1,8 +1,8 @@
 import { Request, Response } from 'express';
 
 const ConnectionTest = {
-  conn_test: (req: Request, res: Response, ) => {
-    console.log("/conn_test called");
+  connTest: (req: Request, res: Response, ) => {
+    console.log("/connTest called");
     console.log("Method: " + req.method.toString());
     console.log(req.body);
     console.log(req.cookies);

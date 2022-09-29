@@ -1,8 +1,9 @@
 import { Document } from "mongoose"
 
 declare interface Question{
-  "question_id": string
-  "survey_id"?: string
+  "_id"?: string,
+  "questionId": string
+  "surveyId"?: string
   "image": string // image url
   "title": string
   "type": "mbti" | "survey"
@@ -11,7 +12,7 @@ declare interface Question{
     "main": string
     "options": Option[]
   }
-  "mbti_change"?: {
+  "mbtiChange"?: {
     "factor": "EI" | "NS" | "FT" | "JP"
     "value": number
   }[]

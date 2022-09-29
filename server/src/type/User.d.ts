@@ -1,27 +1,28 @@
 import { Document } from "mongoose"
 
 declare interface User{
-  "user_id": string
+  "_id"?: string,
+  "userId": string
   "nickname": string
-  "kakao_key":{
-    "token_type": string
-    "access_token": string
-    "refresh_token": string
+  "kakaoKey":{
+    "tokenType": string
+    "accessToken": string
+    "refreshToken": string
     "expiration": number
   }
-  "google_key":{
-    "token_type": string
-    "access_token": string
-    "refresh_token": string
+  "googleKey":{
+    "tokenType": string
+    "accessToken": string
+    "refreshToken": string
     "expiration": number
   }
-  "naver_key":{
-    "token_type": string
-    "access_token": string
-    "refresh_token": string
+  "naverKey":{
+    "tokenType": string
+    "accessToken": string
+    "refreshToken": string
     "expiration": number
   }
-  "blood_type": BloodType
+  "bloodType": BloodType
   "country": string
   "city": string
   "district": string
@@ -29,10 +30,10 @@ declare interface User{
   "birth": number
   "mbtis": Mbti[]
   "hashtags": Hashtag[]
-  "recent_response": boolean[]
+  "recentResponse": boolean[]
   "balance": number
   "gamble_log": {
-    "gamble_id": string
+    "gambleId": string
     "index": number //선택지 index
     "balance": number //배팅금액
   }[]

@@ -1,7 +1,8 @@
 import { Document } from "mongoose"
 
 declare interface Newsletter{
-  "newsletter_id": string
+  "_id"?: string,
+  "newsletterId": string
   "thumbnail": string // image url
   "title": string
   "hashtags": Hashtag[]
