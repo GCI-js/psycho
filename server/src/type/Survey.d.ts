@@ -7,5 +7,5 @@ declare interface Survey{
   "hashtags": Hashtag[]
   "options": Option[]
   "result": number[][]
-  "open": Boolean
+  "isOpen": Boolean
 }

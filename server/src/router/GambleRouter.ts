@@ -1,38 +1,95 @@
 import express, { Request, Response } from 'express';
+import { GambleModel } from '../database/model/GambleModel';
 
 export const GambleRouter = express.Router();
+
+GambleRouter.post('/', (req: Request, res: Response) => {
+  let gamble
+  GambleModel
+});
+
+GambleRouter.put('/items/:id', (req: Request, res: Response) => {
+
+});
+
+GambleRouter.delete('/items/:id', (req: Request, res: Response) => {
+
+});
+
+GambleRouter.get('/items', (req: Request, res: Response) => {
+
+});
+
+GambleRouter.get('/items/:id', (req: Request, res: Response) => {
+
+});
+
+GambleRouter.put('/bet', (req: Request, res: Response) => {
+
+});
+
+GambleRouter.get('/results/:gambleId/:userId', (req: Request, res: Response) => {
+
+});
+
+
+
 
 
 /*
 .Gamble API
 - 갬블 생성 (POST) /gamble
 req = {
-
+  "surveyId": string,
+  "openTime": number,
+  "closeTime": number, 
+  "title": string,
+  "contents": {
+    "main": string,
+    "options": {
+      "index": number,
+      "name": string
+    }[],
+  },
+  "result": number
 }
-
-- 해시태그 생성 (POST) /hashtag
-req = { 
-  "name": string, 
-  "type": "blood_type" | "country" | "city" | "district" | "gender" | "birth" | "mbti" | "free" 
-}
-res = Hashtag
-- 해시태그 통계 갱신 (PUT)
+res = Gamble
+- 겜블 업데이트 (PUT) /gamble/items/:id
 req = {
-  “name”: string,
-  "mbtiIdx": number,
-  “increase”: boolean
+  "surveyId": string,
+  "openTime": number,
+  "closeTime": number, 
+  "title": string,
+  "contents": {
+    "main": string,
+    "options": {
+      "index": number,
+      "name": string
+    }[],
+  },
+  "result": number
 }
-res = Hashtag
-- 해시태그 통계 조회 (GET)
-req = [{
-  “name”:string
-}]
+res = Gamble
+- 겜블 삭제 (DELETE) /gamble/items/:id
+req = {}
+res = Gamble[]
+- 갬블 목록 조회 (GET) /gamble/items
+req = {}
+res = Gamble[]
+- id로 단일 갬블 조회 (GET) /gamble/items/:id
+req = {}
+res = Gamble
+- 베팅하기 (PUT) /gamble/bet
+req = {
+  "gambleId": string,
+  "optionIndex": number,
+  "balance": number
+}
+res = Gamble
+- 결과 확인 (GET) /gamble/results/:gambleId/:userId
+req = {}
 res = {
-  “mbti_cnt”: number[16]
+  "isWin": Boolean,
+  "balance": number
 }
-- 연관 해시태그 조회 (GET)
-req = {
-  “name”: string
-}
-res = Hashtag[]
 */

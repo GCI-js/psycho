@@ -18,25 +18,25 @@ HashtagRouter.post('/', async (req: Request, res: Response) => {
   res.status(200).json(newHashtag);
 });
 
-HashtagRouter.get('/list', async (req: Request, res: Response) => {
+HashtagRouter.get('/items', async (req: Request, res: Response) => {
   const hashtagList = await HashtagController.findAllHashtags();
   res.status(200).json(hashtagList);
 });
 
-HashtagRouter.put('/update', async (req: Request, res: Response) => {
-  let hashtag: Hashtag = await HashtagController.findOne(req.body.name);
+HashtagRouter.put('/statistics/:hashtagName', async (req: Request, res: Response) => {
+  let hashtag: Hashtag = await HashtagController.findOne(req.params.hashtagName);
   hashtag.mbtiCnt[+req.body.mbtiIdx] += req.body.increase ? 1 : -1;
   await HashtagController.findByIdAndUpdate(hashtag);
   res.status(200).json(hashtag);
 });
 
-HashtagRouter.get('/mbticnt/:name', async (req: Request, res: Response) => {
-  let mbtiCnt = await HashtagController.getMbtiCnt(req.params.name);
+HashtagRouter.get('/statistics/:hashtagName', async (req: Request, res: Response) => {
+  let mbtiCnt = await HashtagController.getMbtiCnt(req.params.hashtagName);
   res.status(200).json(mbtiCnt);
 });
 
-HashtagRouter.get('/assoc/:name', async (req: Request, res: Response) => {
-  let hashtagName = req.params.name;
+HashtagRouter.get('/assoc/:hashtagName', async (req: Request, res: Response) => {
+  let hashtagName = req.params.hashtagName;
   let users = await UserController.find100UsersByHashtag(hashtagName);
   let hashtagCnt: { hashtagId: string, name: string, cnt: number }[] = [];  
   for(let i = 0; i < users.length; i++){
@@ -65,23 +65,28 @@ req = {
   "type": "blood_type" | "country" | "city" | "district" | "gender" | "birth" | "mbti" | "free" 
 }
 res = Hashtag
-- 해시태그 통계 갱신 (PUT)
+- 해시태그 목록 조회 (GET) /hashtag/items
+req = {}
+res = Hashtag[]
+- 해시태그 통계 갱신 (PUT) /hashtag/statistics/:hashtagName
 req = {
-  “name”: string,
   "mbtiIdx": number,
   “increase”: boolean
 }
 res = Hashtag
-- 해시태그 통계 조회 (GET)
+- 해시태그 통계 조회 (GET) /hashtag/statistics?name=a,b
 req = [{
   “name”:string
 }]
 res = {
   “mbtiCnt”: number[16]
 }
-- 연관 해시태그 조회 (GET)
+- 연관 해시태그 조회 (GET) /hashtag/assoc/:hashtagName
 req = {
   “name”: string
 }
+res = Hashtag[]
+- 해시태그 삭제 (DELETE) /hashtag/items/:id
+req = {}
 res = Hashtag[]
 */
