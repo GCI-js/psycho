@@ -1,7 +1,8 @@
 import React, { PureComponent } from "react";
 import "./BettingResult.css";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../../../../server/src/type/Gamble"
+import GambleType from "../../../../server/src/type/Gamble";
+import { BettingUtils } from "../Betting/utils";
 
 const BUTTON_WIDTH = 132;
 const BUTTON_HEIGHT = 40;
@@ -14,42 +15,13 @@ interface BettingResultProps {
   };
 }
 
-function convertUTCtoDate(date: number) {
-  var year = new Date(date).getUTCFullYear();
-  var month = new Date(date).getUTCMonth() + 1;
-  var date = new Date(date).getUTCDate();
-  var currentDate = month.toString() + "월" + date.toString() + "일";
-
-  return currentDate;
-}
-
-function calcVoteRatio(userCnt0: number, userCnt1: number) {
-  var voteRatio0 = (userCnt0 / (userCnt0 + userCnt1)) * 100.0;
-  var voteRatio1 = 100 - voteRatio0;
-
-  return { voteRatio0, voteRatio1 };
-}
-
-function calcDividend(balance0: number, balance1: number) {
-  var sum = balance0 + balance1;
-  var v0 = sum / balance0;
-  var v1 = sum / balance1;
-  var value0 = fixDecimalPrecision(v0, 2);
-  var value1 = fixDecimalPrecision(v1, 2);
-  return { value0, value1 };
-}
-
-function fixDecimalPrecision(decimal: number, precision: number) {
-  return decimal.toFixed(precision);
-}
-
 export default class Example extends PureComponent<BettingResultProps> {
   render() {
     var data = this.props.data;
     var userData = this.props.userData;
     var currentTime = Date.now();
     var remainTime = data.due - currentTime;
-    var currentDate = convertUTCtoDate(data.date);
+    var currentDate = BettingUtils.convertUTCtoDate(data.date);
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
@@ -60,11 +32,15 @@ export default class Example extends PureComponent<BettingResultProps> {
         (data.state[0].user_cnt + data.state[1].user_cnt)) *
       100.0;
     var voteRatio1 = 100 - voteRatio0;
-    var voteRatio = calcVoteRatio(
+    var voteRatio = BettingUtils.calcVoteRatio(
       data.state[0].user_cnt,
       data.state[1].user_cnt
     );
-    var dividend = calcDividend(data.state[0].balance, data.state[1].balance);
+    var dividend = BettingUtils.calcDividend(
+      data.state[0].balance,
+      data.state[1].balance
+    );
+
     // console.log(data.endTime);
     return (
       <div className="root">
