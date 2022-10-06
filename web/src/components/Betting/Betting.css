@@ -1,5 +1,9 @@
 .root {
-  height: 100vh;
+  height: 75vh;
+  margin: auto;
+  background-color: aqua;
+  border: #000000;
+  border-style: dotted;
 }
 
 .Row {
