@@ -2,6 +2,8 @@ import React, { PureComponent, useState, useEffect } from "react";
 import "./Betting.css";
 import imgGameDie3D from "./img/game_die_3d_1.svg";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
+import GambleType from "../type/Gamble";
+import { BettingUtils } from "./utils";
 
 const BUTTON_WIDTH = 300;
 const BUTTON_HEIGHT = 57;
@@ -40,27 +42,33 @@ interface BettingDataItem {
 }
 
 interface BettingProps {
-  data: BettingDataItem;
+  data: GambleType.Gamble;
+  // data: BettingDataItem;
 }
 
 export default class Example extends PureComponent<BettingProps> {
   render() {
     var data = this.props.data;
     var currentTime = Date.now();
-    var remainTime = data.endTime - currentTime;
+    var remainTime = data.due - currentTime;
+    var currentDate = BettingUtils.convertUTCtoDate(data.date);
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
     var seconds = remainDateTime.getUTCSeconds();
-    var totalCount = data.betting1Count + data.betting2Count;
+
+    var totalCount = data.state[0].user_cnt + data.state[1].user_cnt;
     var btn1LengthPortion = Math.floor(
-      Math.min(80.0, Math.max(20.0, (data.betting1Count / totalCount) * 100.0))
+      Math.min(
+        80.0,
+        Math.max(20.0, (data.state[0].user_cnt / totalCount) * 100.0)
+      )
     );
     var btn2LengthPortion = 100.0 - btn1LengthPortion;
     var btn1Length = (BUTTON_WIDTH * btn1LengthPortion) / 100;
     var btn2Length = (BUTTON_WIDTH * btn2LengthPortion) / 100;
     return (
-      <div style={{ textAlign: "center" }}>
+      <div className="root" style={{ textAlign: "center" }}>
         <div className="Row">
           <div className="Column ColumnText">兩 者 擇 一</div>
           <div className="Column ColumnText2">
@@ -86,8 +94,8 @@ export default class Example extends PureComponent<BettingProps> {
         <div>
           <img src={imgGameDie3D} alt="dice" />
         </div>
-        <div>{data.date}의 베팅!</div>
-        <div>{data.content}</div>
+        <div>{currentDate}의 베팅!</div>
+        <div>{data.title}</div>
         <div style={styles.root}>
           <button style={{ width: btn1Length, ...styles.button1 }}>
             <span>짜장면</span>

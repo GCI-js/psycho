@@ -1,121 +1,97 @@
 import React, { PureComponent } from "react";
 import "./BettingResult.css";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
+import GambleType from "../type/Gamble";
+import { BettingUtils } from "../Betting/utils";
+import BettingContent from "../BettingContent/BettingContent";
 
 const BUTTON_WIDTH = 132;
 const BUTTON_HEIGHT = 40;
 
-interface BettingResultDataBettingItem {
-  name: string;
-  voteRatio: number;
-  winRatio: number;
-  totalAmount: number;
-  count: number;
-}
-
-interface BettingResultDataItem {
-  date: number;
-  content: string;
-  mbtiType: string;
-  betting1: BettingResultDataBettingItem;
-  betting2: BettingResultDataBettingItem;
-  remainTime: string;
-  endTime: number;
-  bettingCoin: number;
-  choose: number; // 0, 1
-}
-
 interface BettingResultProps {
-  data: BettingResultDataItem;
-}
-
-interface BettingCoinProps {
-  isBet: number;
-  bettingCoin: number;
-}
-
-// function betting1Coint(isBet: number, bettingCoin: number) {
-function betting1Coint(props: BettingCoinProps) {
-  if (props.isBet === 1) {
-    return <div className="Column2">{props.bettingCoin}</div>;
-  }
-  return <div></div>;
-}
-// function betting2Coint(isBet: number, bettingCoin: number) {
-function betting2Coint(props: BettingCoinProps) {
-  if (props.isBet === 2) {
-    return <div className="Column2">{props.bettingCoin}</div>;
-  }
-  return <div></div>;
+  data: GambleType.Gamble;
+  userData: {
+    bettingCoin: number;
+    choose: number;
+  };
 }
 
 export default class Example extends PureComponent<BettingResultProps> {
   render() {
     var data = this.props.data;
+    var userData = this.props.userData;
     var currentTime = Date.now();
-    var remainTime = data.endTime - currentTime;
+    var remainTime = data.due - currentTime;
+    var currentDate = BettingUtils.convertUTCtoDate(data.date);
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
     var seconds = remainDateTime.getUTCSeconds();
-    console.log(data.endTime);
-    return (
-      <div className="root">
-        <div>{data.date}의 배당률</div>
-        <div>{data.content}</div>
-        <div>
-          <div className="Row">
-            <div className="Column">
-              <div className="Row">
-                <div className="Column2">{data.betting1.name}</div>
-                <div>
-                  {(() => {
-                    if (data.choose === 1) {
-                      return <div className="Column2">{data.bettingCoin}</div>;
-                    } else {
-                      return <div></div>;
-                    }
-                  })()}
-                </div>
-                {/* <betting1Coint isBet={0} bettingCoin={2500} /> */}
-              </div>
-              <div className="Row">{data.betting1.voteRatio}%</div>
-              <div className="Row">배당률 x{data.betting1.winRatio}</div>
-              <div className="Row">참여자 : {data.betting1.count}</div>
-            </div>
-            <div className="Column">
-              <div className="Row">
-                <div>
-                  {(() => {
-                    if (data.choose === 2) {
-                      return <div className="Column2">{data.bettingCoin}</div>;
-                    } else {
-                      return <div></div>;
-                    }
-                  })()}
-                </div>
-                <div className="Column2">{data.betting2.name}</div>
-                {/* <betting2Coint isBet={2} bettingCoin={2500} /> */}
-              </div>
-              <div className="Row">{data.betting2.voteRatio}%</div>
-              <div className="Row">배당률 x{data.betting2.winRatio}</div>
-              <div className="Row">참여자 : {data.betting2.count}</div>
-            </div>
+
+    var voteRatio0 =
+      (data.state[0].user_cnt /
+        (data.state[0].user_cnt + data.state[1].user_cnt)) *
+      100.0;
+    var voteRatio1 = 100 - voteRatio0;
+    var voteRatio = BettingUtils.calcVoteRatio(
+      data.state[0].user_cnt,
+      data.state[1].user_cnt
+    );
+    var dividend = BettingUtils.calcDividend(
+      data.state[0].balance,
+      data.state[1].balance
+    );
+
+    function bcomp() {
+      return (
+        <div className="BettingPopupComponent">
+          <div className="button">
+            <span>
+              투표 시간이{" "}
+              <span className="ColumnTextTime">
+                <CountDownTimer
+                  hours={hours}
+                  minutes={minutes}
+                  seconds={seconds}
+                />
+              </span>
+              {"  "}
+              남았어요
+            </span>
           </div>
         </div>
-        <div className="button">
-          <span>
-            투표 시간이{" "}
-            <span className="ColumnTextTime">
-              <CountDownTimer
-                hours={hours}
-                minutes={minutes}
-                seconds={seconds}
-              />
-            </span>
-            {"  "}
-            남았어요
-          </span>
+      );
+    }
+
+    function bcomp2() {
+      return (
+        <div className="BettingPopupComponent">
+          <div className="button">
+            <span>끝</span>
+          </div>
+        </div>
+      );
+    }
+
+    var comp = bcomp();
+    var comp2 = bcomp2();
+
+    // console.log(data.endTime);
+    return (
+      <div className="root">
+        <div>
+          <BettingContent
+            data={data}
+            bettingTitle="9월 5일 배당률"
+            addtionalComponent={comp}
+          />
+        </div>
+        <div>
+          <BettingContent
+            data={data}
+            bettingTitle="9월 4일 배당률"
+            addtionalComponent={comp2}
+          />
         </div>
       </div>
     );
