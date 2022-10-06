@@ -1,7 +1,8 @@
 {
-  "gamble_id": "1",
-  "survey_id": "1",
-  "due": 1663372800000,
+  "gambleId": "1",
+  "surveyId": "1",
+  "openTime": 1663300000000,
+  "closeTime": 1663372800000,
   "title": "INTP들은 짜장과 짬뽕 중 무엇을 더 좋아했을까요?",
   "contents": {
     "main": "Hello world!",
@@ -18,18 +19,18 @@
   },
   "state": [
     {
-      "index": "0",
+      "index": 0,
       "name": "짜장",
-      "user_cnt": "1193",
-      "balance": "84393200",
-      "dividend": "0"
+      "user_cnt": 1193,
+      "balance": 84393200,
+      "dividend": 0
     },
     {
-      "index": "1",
+      "index": 1,
       "name": "짬뽕",
-      "user_cnt": "758",
-      "balance": "95493048",
-      "dividend": "0"
+      "user_cnt": 758,
+      "balance": 95493048,
+      "dividend": 0
     }
   ],
   "result": "0"

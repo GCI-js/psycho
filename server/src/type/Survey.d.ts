@@ -1,9 +1,11 @@
 import { Document } from "mongoose";
 
 declare interface Survey{
-  "survey_id": string
-  "question_id": string
+  "_id"?: string,
+  "surveyId": string
+  "questionId": string
   "hashtags": Hashtag[]
   "options": Option[]
   "result": number[][]
+  "isOpen": Boolean
 }

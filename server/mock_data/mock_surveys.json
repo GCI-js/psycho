@@ -1,7 +1,7 @@
 [
   {
-  "survey_id": "1",
-  "question_id": "2",
+  "surveyId": "1",
+  "questionId": "2",
   "hashtags": ["중국집", "메뉴", "짜장", "짬뽕"],
   "options": [
     {"index": 0, "name": "짜장"},

@@ -5,11 +5,11 @@ export const DOCUMENT_NAME = 'Survey';
 export const COLLECTION_NAME = 'surveys';
 
 const surveySchema = new Schema({
-  survey_id: { type: String, required: true },
-  question_id: { type: String, required: false },
+  surveyId: { type: String, required: true },
+  questionId: { type: String, required: false },
   hashtags: [
     {
-      hashtag_id: { type: String, required: false },
+      hashtagId: { type: String, required: false },
       name: { type: String, required: false }
     }
   ],

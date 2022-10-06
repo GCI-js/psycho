@@ -30,7 +30,6 @@ export const BettingUtils = {
   numberWithCommas: (x: number) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
   },
-
   about: () => {
     return "Betting/utils";
   },

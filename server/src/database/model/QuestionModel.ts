@@ -5,8 +5,8 @@ export const DOCUMENT_NAME = 'Question';
 export const COLLECTION_NAME = 'questions';
 
 const questionSchema = new Schema({
-  question_id: { type: String, required: true },
-  survey_id: { type: String, required: false },
+  questionId: { type: String, required: true },
+  surveyId: { type: String, required: false },
   image: { type: String, required: false },
   title: { type: String, required: false },
   type: { type: String, required: false },
@@ -20,7 +20,7 @@ const questionSchema = new Schema({
       }
     ],
   },
-  mbti_change: [
+  mbtiChange: [
     {
       factor: { type: String, required: false },
       value: { type: Number, required: false }

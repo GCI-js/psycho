@@ -10,8 +10,8 @@ const MainRouter = express.Router();
 
 MainRouter.use('/', Logger.writeRequest, CheckApiKey);
 
-MainRouter.use('/conn_test', ConnectionTest.conn_test);
-MainRouter.use('/nickname_test', NickNameGenerator.nicnkname_test);
+MainRouter.use('/connTest', ConnectionTest.connTest);
+MainRouter.use('/nicknameTest', NickNameGenerator.nicnknameTest);
 MainRouter.use('/user', UserRouter);
 MainRouter.use('/hashtag', HashtagRouter);
 
