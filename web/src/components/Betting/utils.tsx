@@ -27,6 +27,9 @@ export const BettingUtils = {
     return { value0, value1 };
   },
 
+  numberWithCommas: (x: number) => {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+  },
   about: () => {
     return "Betting/utils";
   },

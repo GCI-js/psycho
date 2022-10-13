@@ -1,8 +1,9 @@
 import React, { PureComponent } from "react";
 import "./BettingResult.css";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../../../../server/src/type/Gamble";
+import GambleType from "../type/Gamble";
 import { BettingUtils } from "../Betting/utils";
+import BettingContent from "../BettingContent/BettingContent";
 
 const BUTTON_WIDTH = 132;
 const BUTTON_HEIGHT = 40;
@@ -41,68 +42,56 @@ export default class Example extends PureComponent<BettingResultProps> {
       data.state[1].balance
     );
 
+    function bcomp() {
+      return (
+        <div className="BettingPopupComponent">
+          <div className="button">
+            <span>
+              투표 시간이{" "}
+              <span className="ColumnTextTime">
+                <CountDownTimer
+                  hours={hours}
+                  minutes={minutes}
+                  seconds={seconds}
+                />
+              </span>
+              {"  "}
+              남았어요
+            </span>
+          </div>
+        </div>
+      );
+    }
+
+    function bcomp2() {
+      return (
+        <div className="BettingPopupComponent">
+          <div className="button">
+            <span>끝</span>
+          </div>
+        </div>
+      );
+    }
+
+    var comp = bcomp();
+    var comp2 = bcomp2();
+
     // console.log(data.endTime);
     return (
       <div className="root">
-        <div>{currentDate}의 배당률</div>
-        <div>{data.title}</div>
         <div>
-          <div className="Row">
-            <div className="Column">
-              <div className="Row">
-                <div className="Column2">{data.contents.options[0].name}</div>
-                <div>
-                  {(() => {
-                    if (userData.choose === 1) {
-                      return (
-                        <div className="Column2">{userData.bettingCoin}</div>
-                      );
-                    } else {
-                      return <div></div>;
-                    }
-                  })()}
-                </div>
-              </div>
-              <div className="Row">{voteRatio.voteRatio0.toFixed(0)}%</div>
-              <div className="Row">배당률 x{dividend.value0}</div>
-              <div className="Row">배팅금액 : {data.state[0].balance}</div>
-              <div className="Row">참여자 : {data.state[0].user_cnt}</div>
-            </div>
-            <div className="Column">
-              <div className="Row">
-                <div>
-                  {(() => {
-                    if (userData.choose === 2) {
-                      return (
-                        <div className="Column2">{userData.bettingCoin}</div>
-                      );
-                    } else {
-                      return <div></div>;
-                    }
-                  })()}
-                </div>
-                <div className="Column2">{data.contents.options[1].name}</div>
-              </div>
-              <div className="Row">{voteRatio.voteRatio1.toFixed(0)}%</div>
-              <div className="Row">배당률 x{dividend.value1}</div>
-              <div className="Row">배팅금액 : {data.state[1].balance}</div>
-              <div className="Row">참여자 : {data.state[1].user_cnt}</div>
-            </div>
-          </div>
+          <BettingContent
+            data={data}
+            bettingTitle="9월 5일 배당률"
+            addtionalComponent={comp}
+          />
         </div>
-        <div className="button">
-          <span>
-            투표 시간이{" "}
-            <span className="ColumnTextTime">
-              <CountDownTimer
-                hours={hours}
-                minutes={minutes}
-                seconds={seconds}
-              />
-            </span>
-            {"  "}
-            남았어요
-          </span>
+        <div>
+          <BettingContent
+            data={data}
+            bettingTitle="9월 4일 배당률"
+            addtionalComponent={comp2}
+          />
         </div>
       </div>
     );
