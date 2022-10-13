@@ -19,7 +19,8 @@ const surveySchema = new Schema({
       name: { type: String, required: false }
     }
   ],
-  result: [[ { type: Number, required: false } ]]
+  result: [[ { type: Number, required: false } ]],
+  isOpen: { type: Boolean, required: false }
 });
 
 export const SurveyModel = model<Survey>(DOCUMENT_NAME, surveySchema, COLLECTION_NAME);
