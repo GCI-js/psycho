@@ -1,0 +1,32 @@
+.root {
+  justify-content: center;
+  /* width: 75%; */
+  height: 100vh;
+  margin: auto;
+  background-color: aqua;
+  border: #000000;
+  border-style: dotted;
+}
+
+.button {
+  display: flex;
+  background-color: #d1d1d1;
+  border-radius: 100px;
+  border: none;
+  color: #ffffff;
+  width: 275;
+  height: 57;
+}
+
+.Row {
+  display: table;
+  width: 100% /*Optional*/;
+}
+.Column {
+  display: table-cell;
+  background-color: #ffffff /*Optional*/;
+}
+.Column2 {
+  display: table-cell;
+  background-color: #ffffff /*Optional*/;
+}

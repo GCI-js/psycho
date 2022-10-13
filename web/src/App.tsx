@@ -5,10 +5,11 @@ import "./App.css";
 import Profile from "./components/profile/Profile";
 
 function App() {
-  return (
-    <div className="App">
-      <Profile />
-      {/* <header className="App-header">
+
+	return (
+		<div className="App">
+			<Profile />
+			{/* <header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>
 					Edit <code>src/App.tsx</code> and save to reload.
@@ -22,8 +23,9 @@ function App() {
 					Learn React
 				</a>
 			</header> */}
-    </div>
-  );
+
+		</div>
+	);
 }
 
 export default App;

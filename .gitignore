@@ -1,2 +1,8 @@
 node_modules/
-web/src/App.tsx
+
+db/
+credentials/
+log/
+
+.env
+

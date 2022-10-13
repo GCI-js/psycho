@@ -1,0 +1,34 @@
+[
+  {
+    "questionId": "1",
+    "image": "http://m.blog.naver.com/superbin0713/220075350926",
+    "title": "금요일의 질문",
+    "type": "mbti",
+    "date": 1661990400000,
+    "contents": {
+      "main": "이메일에 가능한 빨리 회신하려고 하고 지저분한 편지함을 참을 수 없습니다.",
+      "options": [
+        {"index": 0, "name": "동의"},
+        {"index": 1, "name": "비동의"}
+      ]
+    },
+    "mbtiChange": [{
+      "factor": "JP",
+      "value": -5
+    }]
+  },
+  {
+  "questionId": "2",
+  "surveyId": "1",
+  "image": "https://i.ytimg.com/vi/xhc5Ds-3ahM/maxresdefault.jpg", 
+  "title": "돌발 질문! 짜장vs짬뽕",
+  "type": "survey",
+  "date": 1661990400000,
+  "contents": {
+    "main": "운명의 승부, 짜장 vs 짬뽕! 당신의 선택은?",
+    "options": [
+      {"index": 0, "name": "짜장"},
+      {"index": 1, "name": "짬뽕"}
+    ]
+  }
+}]
