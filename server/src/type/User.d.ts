@@ -32,9 +32,13 @@ declare interface User{
   "hashtags": Hashtag[]
   "recentResponse": boolean[]
   "balance": number
-  "gambleLog": {
+  "gambleHist": {
     "gambleId": string
     "index": number //선택지 index
     "balance": number //배팅금액
+    "result": number // -1: not yet determined, 0: lose, 1: win
   }[]
+  "connHist": number[]
+  "lastConn": number
+  "contConn": number
 }
