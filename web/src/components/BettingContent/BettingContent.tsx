@@ -1,6 +1,6 @@
 import React, { ComponentElement, PureComponent } from "react";
 import "./BettingContent.css";
-import GambleType from "../type/Gamble";
+import GambleType from "../../../../server/src/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
 
@@ -16,25 +16,25 @@ export default class Example extends PureComponent<BettingContentProps> {
     var bettingTitle = this.props.bettingTitle;
     // var userData = this.props.userData;
     var currentTime = Date.now();
-    var remainTime = data.due - currentTime;
-    var currentDate = BettingUtils.convertUTCtoDate(data.date);
+    var remainTime = data.closeTime - currentTime;
+    var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
     var seconds = remainDateTime.getUTCSeconds();
 
     var voteRatio0 =
-      (data.state[0].user_cnt /
-        (data.state[0].user_cnt + data.state[1].user_cnt)) *
+      (data.betState[0].userCnt /
+        (data.betState[0].userCnt + data.betState[1].userCnt)) *
       100.0;
     var voteRatio1 = 100 - voteRatio0;
     var voteRatio = BettingUtils.calcVoteRatio(
-      data.state[0].user_cnt,
-      data.state[1].user_cnt
+      data.betState[0].userCnt,
+      data.betState[1].userCnt
     );
     var dividend = BettingUtils.calcDividend(
-      data.state[0].balance,
-      data.state[1].balance
+      data.betState[0].balance,
+      data.betState[1].balance
     );
 
     return (
@@ -53,11 +53,11 @@ export default class Example extends PureComponent<BettingContentProps> {
               <div className="">배당률 x{dividend.value0}</div>
               <div className="">
                 배팅금액 :{" "}
-                {BettingUtils.numberWithCommas(data.state[0].balance)}
+                {BettingUtils.numberWithCommas(data.betState[0].balance)}
               </div>
               <div className="">
-                참여자 : {BettingUtils.numberWithCommas(data.state[0].user_cnt)}{" "}
-                명
+                참여자 :{" "}
+                {BettingUtils.numberWithCommas(data.betState[0].userCnt)} 명
               </div>
             </div>
           </div>
@@ -72,11 +72,11 @@ export default class Example extends PureComponent<BettingContentProps> {
               <div className="">배당률 x{dividend.value1}</div>
               <div className="">
                 배팅금액 :{" "}
-                {BettingUtils.numberWithCommas(data.state[1].balance)}
+                {BettingUtils.numberWithCommas(data.betState[1].balance)}
               </div>
               <div className="">
-                참여자 : {BettingUtils.numberWithCommas(data.state[1].user_cnt)}{" "}
-                명
+                참여자 :{" "}
+                {BettingUtils.numberWithCommas(data.betState[1].userCnt)} 명
               </div>
             </div>
           </div>
