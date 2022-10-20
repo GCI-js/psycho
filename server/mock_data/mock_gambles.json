@@ -17,21 +17,31 @@
       }
     ]
   },
-  "state": [
+  "betState": [
     {
       "index": 0,
       "name": "짜장",
-      "user_cnt": 1193,
+      "userCnt": 1193,
       "balance": 84393200,
       "dividend": 0
     },
     {
       "index": 1,
       "name": "짬뽕",
-      "user_cnt": 758,
+      "userCnt": 758,
       "balance": 95493048,
       "dividend": 0
     }
   ],
-  "result": "0"
+  "result": [
+    {
+      "index": 0,
+      "rate": 0.58
+    },
+    {
+      "index": 1,
+      "rate": 0.42
+    }
+  ],
+  "answerIndex": 0
 }
