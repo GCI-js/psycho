@@ -5,6 +5,7 @@ import Logger from "../component/Logger";
 import { CheckApiKey } from "../component/CheckApiKey";
 import { UserRouter } from "./UserRouter";
 import { HashtagRouter } from "./HashtagRouter";
+import { GambleRouter } from "./GambleRouter";
 
 const MainRouter = express.Router();
 
@@ -14,5 +15,6 @@ MainRouter.use("/connTest", ConnectionTest.connTest);
 MainRouter.use("/nicknameTest", NickNameGenerator.nicnknameTest);
 MainRouter.use("/user", UserRouter);
 MainRouter.use("/hashtag", HashtagRouter);
+MainRouter.use("/gamble", GambleRouter);
 
 export default MainRouter;

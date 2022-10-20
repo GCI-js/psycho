@@ -37,6 +37,7 @@ HashtagRouter.put(
 HashtagRouter.get(
   "/statistics/:hashtagName",
   async (req: Request, res: Response) => {
+    //여기서 만약 없는 해시태그를 검색할 경우에 대한 에러 처리를 해주어야 할 듯
     let mbtiCnt = await HashtagController.getMbtiCnt(req.params.hashtagName);
     res.status(200).json(mbtiCnt);
   }
