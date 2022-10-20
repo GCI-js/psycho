@@ -2,7 +2,9 @@ import React, { PureComponent, useState, useEffect } from "react";
 import "./Betting.css";
 import imgGameDie3D from "./img/game_die_3d_1.svg";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../type/Gamble";
+
+import GambleType from "../../../../server/src/type/Gamble";
+
 import { BettingUtils } from "./utils";
 
 const BUTTON_WIDTH = 300;
@@ -32,15 +34,6 @@ const styles = {
   },
 };
 
-interface BettingDataItem {
-  date: number;
-  content: string;
-  mbtiType: string;
-  betting1Count: number;
-  betting2Count: number;
-  endTime: number;
-}
-
 interface BettingProps {
   data: GambleType.Gamble;
   // data: BettingDataItem;
@@ -50,18 +43,18 @@ export default class Example extends PureComponent<BettingProps> {
   render() {
     var data = this.props.data;
     var currentTime = Date.now();
-    var remainTime = data.due - currentTime;
-    var currentDate = BettingUtils.convertUTCtoDate(data.date);
+    var remainTime = data.closeTime - currentTime;
+    var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
     var seconds = remainDateTime.getUTCSeconds();
 
-    var totalCount = data.state[0].user_cnt + data.state[1].user_cnt;
+    var totalCount = data.betState[0].userCnt + data.betState[1].userCnt;
     var btn1LengthPortion = Math.floor(
       Math.min(
         80.0,
-        Math.max(20.0, (data.state[0].user_cnt / totalCount) * 100.0)
+        Math.max(20.0, (data.betState[0].userCnt / totalCount) * 100.0)
       )
     );
     var btn2LengthPortion = 100.0 - btn1LengthPortion;
