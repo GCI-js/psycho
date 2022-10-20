@@ -2,22 +2,23 @@ import React, { ComponentElement, PureComponent } from "react";
 import "./BettingContent.css";
 import GambleType from "../../../../server/src/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
-import BettingContent from "../BettingContent/BettingContent";
+import CountDownTimer from "../CountDownTimer/CountDownTimer";
 
 interface BettingContentProps {
   data: GambleType.Gamble;
-  bettingTitle: string;
-  addtionalComponent: JSX.Element;
+  bettingTitle?: string;
+  addtionalComponent?: JSX.Element;
 }
 
 export default class Example extends PureComponent<BettingContentProps> {
   render() {
     var data = this.props.data;
-    var bettingTitle = this.props.bettingTitle;
+    // var bettingTitle = this.props.bettingTitle;
     // var userData = this.props.userData;
     var currentTime = Date.now();
     var remainTime = data.closeTime - currentTime;
     var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
+    var bettingTitle = currentDate + " 배당률";
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
@@ -36,6 +37,63 @@ export default class Example extends PureComponent<BettingContentProps> {
       data.betState[0].balance,
       data.betState[1].balance
     );
+
+    function bcomp() {
+      return (
+        <div className="BettingResultPastComponent">
+          <button className="BettingResultPastRemainButton">
+            투표 시간이{" "}
+            <span className="ColumnTextTime">
+              <CountDownTimer
+                hours={hours}
+                minutes={minutes}
+                seconds={seconds}
+              />
+            </span>
+            {"  "}
+            남았어요
+          </button>
+        </div>
+      );
+    }
+
+    function bcomp2() {
+      return (
+        <div className="BettingResultPastComponent2">
+          <button className="BettingResultPastButton0">결과 확인</button>
+        </div>
+      );
+    }
+    function bcomp3() {
+      var btn1LengthPortion = 58;
+      var btn2LengthPortion = 42;
+      return (
+        <div className="BettingResultPastComponent">
+          <button className="BettingResultPastButton1">
+            <span>짜장면</span>
+            <br />
+            <span>{btn1LengthPortion}%</span>
+          </button>
+          <button className="BettingResultPastButton2">
+            <span>짬뽕</span>
+            <br />
+            <span>{btn2LengthPortion}%</span>
+          </button>
+        </div>
+      );
+    }
+
+    var comp = bcomp();
+    var comp2 = bcomp2();
+    var comp3 = bcomp3();
+
+    var buttonComponent = this.props.addtionalComponent
+      ? this.props.addtionalComponent
+      : remainTime > 0
+      ? comp
+      : data.result === -1
+      ? comp2
+      : comp3;
 
     return (
       <div className="BettingContentComponent">
@@ -81,20 +139,8 @@ export default class Example extends PureComponent<BettingContentProps> {
             </div>
           </div>
         </div>
-        {this.props.addtionalComponent}
-
-        {/* <div className="">
-            <input
-              className="BettingContentInputCoinButton"
-              type="number"
-              id=""
-              placeholder="베팅할 포인트를 적어주세요."
-            ></input>
-          </div>
-          <div className="buttonRow">
-            <button className="button1">{data.contents.options[0].name}</button>
-            <button className="button2">{data.contents.options[1].name}</button>
-          </div> */}
+        {/* {this.props.addtionalComponent} */}
+        {buttonComponent}
       </div>
     );
   }
