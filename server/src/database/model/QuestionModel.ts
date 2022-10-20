@@ -1,8 +1,8 @@
-import { model, Schema } from 'mongoose';
-import { Question } from '../../type/Question';
+import { model, Schema } from "mongoose";
+import { Question } from "../../type/Question";
 
-export const DOCUMENT_NAME = 'Question';
-export const COLLECTION_NAME = 'questions';
+export const DOCUMENT_NAME = "Question";
+export const COLLECTION_NAME = "questions";
 
 const questionSchema = new Schema({
   questionId: { type: String, required: true },
@@ -16,16 +16,20 @@ const questionSchema = new Schema({
     options: [
       {
         index: { type: Number, required: false },
-        name: { type: String, required: false }
-      }
+        name: { type: String, required: false },
+      },
     ],
   },
   mbtiChange: [
     {
       factor: { type: String, required: false },
-      value: { type: Number, required: false }
-    }
-  ]
+      value: { type: Number, required: false },
+    },
+  ],
 });
 
-export const QuestionModel = model<Question>(DOCUMENT_NAME, questionSchema, COLLECTION_NAME);
+export const QuestionModel = model<Question>(
+  DOCUMENT_NAME,
+  questionSchema,
+  COLLECTION_NAME
+);

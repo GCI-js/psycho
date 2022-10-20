@@ -1,23 +1,27 @@
-import express from 'express';
-import cors from 'cors';
-import MainRouter from './router/MainRouter';
-import cookieParser from 'cookie-parser';
-import dotenv from 'dotenv';
+import express from "express";
+import cors from "cors";
+import MainRouter from "./router/MainRouter";
+import cookieParser from "cookie-parser";
+import dotenv from "dotenv";
 import "./database";
 
 dotenv.config();
 
 const app = express();
 app.use(cookieParser());
-app.use(cors({
-  origin: true,
-  credentials: true
-}))
-app.use(express.json()) // for parsing application/json
-app.use(express.urlencoded({ extended: true })) // for parsing application/x-www-form-urlencoded
+app.use(
+  cors({
+    origin: true,
+    credentials: true,
+  })
+);
+app.use(express.json()); // for parsing application/json
+app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 
-app.listen(process.env.HTTP_PORT, function(){
-  console.log('My server is listening on ' + process.env.HTTP_PORT + ' for http protocol');
+app.listen(process.env.HTTP_PORT, function () {
+  console.log(
+    "My server is listening on " + process.env.HTTP_PORT + " for http protocol"
+  );
 });
 
 app.use(MainRouter);
