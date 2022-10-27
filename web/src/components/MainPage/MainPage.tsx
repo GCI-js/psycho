@@ -8,6 +8,7 @@ import ChnageMBTI from "./ChangeMBTI";
 import HashTag from "./HashtagSearchResult";
 import { getRandomList, RandomListInit } from "./RandomList";
 import HashtagSearchResult from "./HashtagSearchResult";
+import MyBattingRecord from "./MyBattingRecord";
 
 export function MainPage() {
   let Newsletter_example: any[] = [];
@@ -85,6 +86,8 @@ export function MainPage() {
             );
           } else if (i.type === "changembti") {
             return <ChnageMBTI></ChnageMBTI>;
+          } else if (i.type === "mybattingrecord") {
+            return <MyBattingRecord></MyBattingRecord>;
           } else if (i.type === "hashtagsearchresult") {
             return <HashtagSearchResult></HashtagSearchResult>;
           } else {

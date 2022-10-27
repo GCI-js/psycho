@@ -1,4 +1,4 @@
-.card_item {
+.card_mybat {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -10,13 +10,8 @@
 	word-wrap: break-word; */
   font-size: 12px;
   background-color: #eaeaea;
-  /* width: 343px;
-  height: 315px;
-  background-color: #eaeaea;
-  overflow: auto;
-  margin-top: 17px; */
 }
-.card_header {
+.card_my_bat_header {
   margin-top: 16px;
   margin-left: 16px;
   margin-bottom: 12px;
@@ -29,18 +24,4 @@
   vertical-align: Center;
   text-align: left;
   letter-spacing: 0.44px;
-}
-.card_img {
-  margin-left: 20px;
-  margin-right: 20px;
-}
-/* justify-content: center; */
-.card_title {
-  margin-top: 19px;
-  margin-left: 16px;
-  margin-bottom: 4px;
-}
-
-.card_tag {
-  margin-left: 20px;
 }

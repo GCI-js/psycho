@@ -23,8 +23,10 @@ const Newsletter = (props: NewsletterType) => {
             <img
               src={props.thumbnail}
               alt="아마존 디자이너는 어떻게 포트폴리오를 만들까?의 콘텐츠 이미지"
-              width="303px"
+              width="97%"
               height="184px"
+              // width="auto"
+              // height="auto"
             ></img>
           </a>
         </div>
