@@ -1,6 +1,5 @@
 import React, { PureComponent } from "react";
 import "./BettingPopup.css";
-
 import GambleType from "../../../../server/src/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
