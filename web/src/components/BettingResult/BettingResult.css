@@ -1,7 +1,11 @@
 .root {
   justify-content: center;
-  width: 75%;
+  /* width: 75%; */
+  height: 100vh;
   margin: auto;
+  background-color: aqua;
+  border: #000000;
+  border-style: dotted;
 }
 
 .button {
@@ -19,6 +23,10 @@
   width: 100% /*Optional*/;
 }
 .Column {
+  display: table-cell;
+  background-color: #ffffff /*Optional*/;
+}
+.Column2 {
   display: table-cell;
   background-color: #ffffff /*Optional*/;
 }

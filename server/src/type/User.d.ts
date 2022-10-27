@@ -1,39 +1,44 @@
-import { Document } from "mongoose"
+import { Document } from "mongoose";
 
-declare interface User extends Document{
-  "user_id": string
-  "nickname": string
-  "kakao_key":{
-    "token_type": string
-    "access_token": string
-    "refresh_token": string
-    "expiration": Date
-  }
-  "google_key":{
-    "token_type": string
-    "access_token": string
-    "refresh_token": string
-    "expiration": Date
-  }
-  "naver_key":{
-    "token_type": string
-    "access_token": string
-    "refresh_token": string
-    "expiration": Date
-  }
-  "blood_type": BloodType
-  "country": string
-  "city": string
-  "district": string
-  "gender": "male" | "female"
-  "birth": Date
-  "mbtis": Mbti[]
-  "hashtags": Hashtag[]
-  "recent_response": boolean[]
-  "balance": number
-  "gamble_log": {
-    "gamble_id": string
-    "index": number //선택지 index
-    "balance": number //배팅금액
-  }[]
+declare interface User {
+  _id?: string;
+  userId: string;
+  nickname: string;
+  kakaoKey: {
+    tokenType: string;
+    accessToken: string;
+    refreshToken: string;
+    expiration: number;
+  };
+  googleKey: {
+    tokenType: string;
+    accessToken: string;
+    refreshToken: string;
+    expiration: number;
+  };
+  naverKey: {
+    tokenType: string;
+    accessToken: string;
+    refreshToken: string;
+    expiration: number;
+  };
+  bloodType: BloodType;
+  country: string;
+  city: string;
+  district: string;
+  gender: "male" | "female";
+  birth: number;
+  mbtis: Mbti[];
+  hashtags: Hashtag[];
+  recentResponse: boolean[];
+  balance: number;
+  gambleHist: {
+    gambleId: string;
+    index: number; //선택지 index
+    balance: number; //배팅금액
+    result: number; // -1: not yet determined, 0: lose, 1: win
+  }[];
+  connHist: number[];
+  lastConn: number;
+  contConn: number;
 }

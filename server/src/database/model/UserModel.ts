@@ -1,58 +1,68 @@
-import { model, Schema } from 'mongoose';
-import { User } from '../../type/User';
+import { model, Schema } from "mongoose";
+import { User } from "../../type/User";
 
-export const DOCUMENT_NAME = 'User';
-export const COLLECTION_NAME = 'users';
+export const DOCUMENT_NAME = "User";
+export const COLLECTION_NAME = "users";
 
 const userSchema = new Schema({
-  user_id: { type: String, required: true },
+  userId: { type: String, required: true },
   nickname: { type: String, required: false },
-  kakao_key: {
-    token_type: { type: String, required: false },
-    access_token: { type: String, required: false },
-    refresh_token: { type: String, required: false },
-    expiration: { type: Date, required: false }
+  kakaoKey: {
+    tokenType: { type: String, required: false },
+    accessToken: { type: String, required: false },
+    refreshToken: { type: String, required: false },
+    expiration: { type: Number, required: false },
   },
-  google_key: {
-    token_type:  { type: String, required: false },
-    access_token:  { type: String, required: false },
-    refresh_token:  { type: String, required: false },
-    expiration: { type: Date, required: false }
+  googleKey: {
+    tokenType: { type: String, required: false },
+    accessToken: { type: String, required: false },
+    refreshToken: { type: String, required: false },
+    expiration: { type: Number, required: false },
   },
-  naver_key: {
-    token_type:  { type: String, required: false },
-    access_token:  { type: String, required: false },
-    refresh_token:  { type: String, required: false },
-    expiration: { type: Date, required: false }
+  naverKey: {
+    tokenType: { type: String, required: false },
+    accessToken: { type: String, required: false },
+    refreshToken: { type: String, required: false },
+    expiration: { type: Number, required: false },
   },
-  blood_type:  { type: String, required: false },
-  country:  { type: String, required: false },
-  city:  { type: String, required: false },
-  district:  { type: String, required: false },
-  gender:  { type: String, required: false },
-  birth: { type: Date, required: false },
+  bloodType: { type: String, required: false },
+  country: { type: String, required: false },
+  city: { type: String, required: false },
+  district: { type: String, required: false },
+  gender: { type: String, required: false },
+  birth: { type: Number, required: false },
   mbtis: [
     {
-      date: { type: Date, required: false },
-      IE:  { type: String, required: false },
-      NS:  { type: String, required: false },
-      TF:  { type: String, required: false },
-      JP:  { type: String, required: false },
-    }
+      date: { type: Number, required: false },
+      IE: { type: String, required: false },
+      NS: { type: String, required: false },
+      TF: { type: String, required: false },
+      JP: { type: String, required: false },
+    },
   ],
-  hashtags: [{
-    hashtag_id: { type: String, required: false },
-    name: { type: String, required: false },
-  }],
-  recent_response: [{ type: Boolean, required: false }],
-  balance: { type: Number, required: false },
-  gamble_log: [
+  hashtags: [
     {
-      gamble_id: { type: String, required: false},
+      hashtagId: { type: String, required: false },
+      name: { type: String, required: false },
+    },
+  ],
+  recentResponse: [{ type: Boolean, required: false }],
+  balance: { type: Number, required: false },
+  gambleHist: [
+    {
+      gambleId: { type: String, required: false },
       index: { type: Number, required: false },
-      balance: { type: Number, required: false }
-    }
-  ]
+      balance: { type: Number, required: false },
+      result: { type: Number, required: false },
+    },
+  ],
+  connHist: [{ type: Number, required: false }],
+  lastConn: { type: Number, required: false },
+  contConn: { type: Number, required: false },
 });
 
-export const UserModel = model<User>(DOCUMENT_NAME, userSchema, COLLECTION_NAME);
+export const UserModel = model<User>(
+  DOCUMENT_NAME,
+  userSchema,
+  COLLECTION_NAME
+);

@@ -1,114 +1,111 @@
 import React, { PureComponent } from "react";
-
-const BUTTON_WIDTH = 132;
-const BUTTON_HEIGHT = 40;
-const styles = {
-  root: {
-    // display: "flex",
-    justifyContent: "center",
-    // height: BUTTON_HEIGHT,
-    width: "75%",
-    margin: "auto",
-  },
-
-  center: {
-    display: "inline-block",
-    margin: "0 auto",
-  },
-
-  button1: {
-    // display: "flex",
-    backgroundColor: "#FF9574",
-    borderRadius: "100px",
-    border: "none",
-    color: "#FFFFFF",
-    width: BUTTON_WIDTH,
-    height: BUTTON_HEIGHT,
-    // float: "left",
-  },
-  button2: {
-    // display: "flex",
-    backgroundColor: "#FF7070",
-    borderRadius: "100px",
-    border: "none",
-    color: "#FFFFFF",
-    width: BUTTON_WIDTH,
-    height: BUTTON_HEIGHT,
-    // float: "right",
-  },
-
-  Row: {
-    display: "table",
-    width: "100%" /*Optional*/,
-    // tableLayout: "fixed" /*Optional*/,
-    // borderSpacing: "10px" /*Optional*/,
-  },
-  Column: {
-    display: "table-cell",
-    backgroundColor: "#FFFFFF" /*Optional*/,
-  },
-};
-
-interface BettingPopupDataItem {
-  date: number;
-  content: string;
-  mbtiType: string;
-  betting1: {
-    name: string;
-    voteRatio: number;
-    winRatio: number;
-    count: number;
-  };
-  betting2: {
-    name: string;
-    voteRatio: number;
-    winRatio: number;
-    count: number;
-  };
-}
+import "./BettingPopup.css";
+import GambleType from "../../../../server/src/type/Gamble";
+import { BettingUtils } from "../Betting/utils";
+import BettingContent from "../BettingContent/BettingContent";
 
 interface BettingPopupProps {
-  data: BettingPopupDataItem;
+  data: GambleType.Gamble;
 }
 
 export default class Example extends PureComponent<BettingPopupProps> {
   render() {
     var data = this.props.data;
-    return (
-      <div style={styles.root}>
-        <div>{data.date}의 결과</div>
-        <div>{data.content}</div>
+    // var userData = this.props.userData;
+    var currentTime = Date.now();
+    var remainTime = data.closeTime - currentTime;
+    var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
+    var remainDateTime = new Date(remainTime);
+    var hours = remainDateTime.getUTCHours();
+    var minutes = remainDateTime.getUTCMinutes();
+    var seconds = remainDateTime.getUTCSeconds();
+
+    var voteRatio0 =
+      (data.betState[0].userCnt /
+        (data.betState[0].userCnt + data.betState[1].userCnt)) *
+      100.0;
+    var voteRatio1 = 100 - voteRatio0;
+    var voteRatio = BettingUtils.calcVoteRatio(
+      data.betState[0].userCnt,
+      data.betState[1].userCnt
+    );
+    var dividend = BettingUtils.calcDividend(
+      data.betState[0].balance,
+      data.betState[1].balance
+    );
+
+    function bcomp() {
+      return (
         <div>
-          <div style={styles.Row}>
-            <div style={styles.Column}>
-              <div style={styles.Row}>{data.betting1.name}</div>
-              <div style={styles.Row}>{data.betting1.voteRatio}%</div>
-              <div style={styles.Row}>승률 1:{data.betting1.winRatio}</div>
-              <div style={styles.Row}>참여자 : {data.betting1.count}</div>
-            </div>
-            <div style={styles.Column}>
-              <div style={styles.Row}>{data.betting2.name}</div>
-              <div style={styles.Row}>{data.betting2.voteRatio}%</div>
-              <div style={styles.Row}>승률 1:{data.betting2.winRatio}</div>
-              <div style={styles.Row}>참여자 : {data.betting2.count}</div>
-            </div>
+          <div className="">
+            <input
+              className="BettingPopupInputCoinButton"
+              type="number"
+              id=""
+              placeholder="베팅할 포인트를 적어주세요."
+            ></input>
+          </div>
+          <div className="buttonRow">
+            <button className="button1">{data.contents.options[0].name}</button>
+            <button className="button2">{data.contents.options[1].name}</button>
           </div>
         </div>
-        <div>
-          <input
-            type="number"
-            id=""
-            placeholder="베팅할 포인트를 적어주세요."
-            style={{ width: "275px" }}
-          ></input>
-        </div>
-        <div style={{ width: "100%" }}>
-          <button style={{ float: "left", ...styles.button1 }}>
-            {data.betting1.name}
-          </button>
-          <button style={{ float: "right", ...styles.button2 }}>
-            {data.betting2.name}
-          </button>
+      );
+    }
+
+    var comp = bcomp();
+
+    return (
+      <div className="rootBettingPopup">
+        <div className="BettingPopupComponent">
+          <BettingContent
+            data={data}
+            bettingTitle="현재 배당률"
+            addtionalComponent={comp}
+          />
+          {/* <div className="BettingPopupTop">현재 배당률</div>
+          <div className="BettingPopupTitle">{data.title}</div>
+          <div className="BettingPopupBody">
+            <div className="BettingPopupBodyLeft">
+              <div className="BettingPopupSmallTitleLeft">
+                {data.contents.options[0].name}
+              </div>
+              <div className="BettingPopupPercentLeft">
+                {voteRatio.voteRatio0.toFixed(0)}%
+              </div>
+              <div className="BettingPopupSmallSubTitleLeft">
+                <div className="">배당률 x{dividend.value0}</div>
+                <div className="">배팅금액 : {data.betState[0].balance}</div>
+                <div className="">참여자 : {data.betState[0].userCnt}</div>
+              </div>
+            </div>
+            <div className="BettingPopupBodyRight">
+              <div className="BettingPopupSmallTitleRight">
+                {data.contents.options[1].name}
+              </div>
+              <div className="BettingPopupPercentRight">
+                {voteRatio.voteRatio1.toFixed(0)}%
+              </div>
+              <div className="BettingPopupSmallSubTitleRight">
+                <div className="">배당률 x{dividend.value1}</div>
+                <div className="">배팅금액 : {data.betState[1].balance}</div>
+                <div className="">참여자 : {data.betState[1].userCnt}</div>
+              </div>
+            </div>
+          </div> */}
+
+          {/* <div className="">
+            <input
+              className="BettingPopupInputCoinButton"
+              type="number"
+              id=""
+              placeholder="베팅할 포인트를 적어주세요."
+            ></input>
+          </div>
+          <div className="buttonRow">
+            <button className="button1">{data.contents.options[0].name}</button>
+            <button className="button2">{data.contents.options[1].name}</button>
+          </div> */}
         </div>
       </div>
     );

@@ -3,6 +3,10 @@ import "./Betting.css";
 import imgGameDie3D from "./img/game_die_3d_1.svg";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
 
+import GambleType from "../../../../server/src/type/Gamble";
+
+import { BettingUtils } from "./utils";
+
 const BUTTON_WIDTH = 300;
 const BUTTON_HEIGHT = 57;
 const styles = {
@@ -30,37 +34,34 @@ const styles = {
   },
 };
 
-interface BettingDataItem {
-  date: number;
-  content: string;
-  mbtiType: string;
-  betting1Count: number;
-  betting2Count: number;
-  endTime: number;
-}
-
 interface BettingProps {
-  data: BettingDataItem;
+  data: GambleType.Gamble;
+  // data: BettingDataItem;
 }
 
 export default class Example extends PureComponent<BettingProps> {
   render() {
     var data = this.props.data;
     var currentTime = Date.now();
-    var remainTime = data.endTime - currentTime;
+    var remainTime = data.closeTime - currentTime;
+    var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
     var seconds = remainDateTime.getUTCSeconds();
-    var totalCount = data.betting1Count + data.betting2Count;
+
+    var totalCount = data.betState[0].userCnt + data.betState[1].userCnt;
     var btn1LengthPortion = Math.floor(
-      Math.min(80.0, Math.max(20.0, (data.betting1Count / totalCount) * 100.0))
+      Math.min(
+        80.0,
+        Math.max(20.0, (data.betState[0].userCnt / totalCount) * 100.0)
+      )
     );
     var btn2LengthPortion = 100.0 - btn1LengthPortion;
     var btn1Length = (BUTTON_WIDTH * btn1LengthPortion) / 100;
     var btn2Length = (BUTTON_WIDTH * btn2LengthPortion) / 100;
     return (
-      <div style={{ textAlign: "center" }}>
+      <div className="root" style={{ textAlign: "center" }}>
         <div className="Row">
           <div className="Column ColumnText">兩 者 擇 一</div>
           <div className="Column ColumnText2">
@@ -86,13 +87,13 @@ export default class Example extends PureComponent<BettingProps> {
         <div>
           <img src={imgGameDie3D} alt="dice" />
         </div>
-        <div>{data.date}의 베팅!</div>
-        <div>{data.content}</div>
+        <div>{currentDate}의 베팅!</div>
+        <div>{data.title}</div>
         <div style={styles.root}>
           <button style={{ width: btn1Length, ...styles.button1 }}>
-            <text>짜장면</text>
+            <span>짜장면</span>
             <br />
-            <text>{btn1LengthPortion}%</text>
+            <span>{btn1LengthPortion}%</span>
           </button>
           <button
             style={{
@@ -100,9 +101,9 @@ export default class Example extends PureComponent<BettingProps> {
               ...styles.button2,
             }}
           >
-            <text>짬뽕</text>
+            <span>짬뽕</span>
             <br />
-            <text>{btn2LengthPortion}%</text>
+            <span>{btn2LengthPortion}%</span>
           </button>
         </div>
       </div>
