@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import LoginGoogle from "./LoginGoogle";
+// import LoginGoogle from "./LoginGoogle";
 import LoginKakao from "./LoginKakao";
 import LoginNaver from "./LoginNaver";
 import LargeTitle from "../Common/LargeTitle";
@@ -21,7 +21,7 @@ function SignInPage() {
       <MediumTitle text={mediumTitleText} />
       <br />
       <br />
-      <LoginGoogle />
+      {/* <LoginGoogle /> */}
       <LoginKakao />
       <LoginNaver />
       {/* <LoginNaver

@@ -1,14 +1,20 @@
 import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import MBTIHistogram from "./components/profile/MBTIHistorgram";
 import Profile from "./components/profile/Profile";
-
+import SignInPage from "./components/SignIn/SignInPage";
 
 function App() {
   return (
     <div className="App">
-      <Profile />
+      {/* <Profile /> */}
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<SignInPage />}></Route>
+        </Routes>
+      </BrowserRouter>
       {/* <header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>
