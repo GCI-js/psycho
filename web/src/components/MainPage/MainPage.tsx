@@ -1,13 +1,15 @@
 import { platform } from "os";
 import React, { useCallback, useEffect, useState } from "react";
 import "./MainPage.css";
-import Newsletter from "./Newsletter";
-import { getNewsletterList } from "./NewsletterList";
+import Newsletter from "./Newsletter/Newsletter";
+import { getNewsletterList } from "./Newsletter/NewsletterList";
 import { Trend } from "./Trend";
 import ChnageMBTI from "./ChangeMBTI";
 import HashTag from "./HashtagSearchResult";
 import { getRandomList, RandomListInit } from "./RandomList";
 import HashtagSearchResult from "./HashtagSearchResult";
+import MyBattingRecord from "./MyBattingRecord/MyBattingRecord";
+import AttendanceCheck from "./AttendanceCheck/AttendanceCheck";
 
 export function MainPage() {
   let Newsletter_example: any[] = [];
@@ -71,22 +73,14 @@ export function MainPage() {
       <div className="contents">
         {result.map(function (i): JSX.Element {
           console.log("result map i .............", i);
-          if (i.type === "newsletter") {
-            return (
-              <Newsletter
-                // key={i.data.newsletter_id}
-                title={i.data.title}
-                thumbnail={i.data.thumbnail}
-                url={i.data.url}
-                hashtag={i.data.hashtag}
-                writer={i.data.writer}
-                newsletter_id={i.data.newsletter_id}
-              ></Newsletter>
-            );
+          if (i.type === "attendancecheck") {
+            return <AttendanceCheck />;
           } else if (i.type === "changembti") {
-            return <ChnageMBTI></ChnageMBTI>;
+            return <ChnageMBTI />;
+          } else if (i.type === "mybattingrecord") {
+            return <MyBattingRecord />;
           } else if (i.type === "hashtagsearchresult") {
-            return <HashtagSearchResult></HashtagSearchResult>;
+            return <HashtagSearchResult />;
           } else {
             return (
               <Newsletter
