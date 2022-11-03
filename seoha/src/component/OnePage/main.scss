@@ -1,0 +1,11 @@
+.one-page {
+    display: flex;
+    align-items: center;
+    padding-top: 30px;
+    flex-direction: column;
+    > .router {
+        width: 80%;
+        min-width: 500px;
+        max-width: 1000px;
+    }
+}
