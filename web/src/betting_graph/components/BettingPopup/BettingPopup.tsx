@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import "./BettingPopup.css";
-import GambleType from "../type/Gamble";
+import GambleType from "../../../../../common/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
 

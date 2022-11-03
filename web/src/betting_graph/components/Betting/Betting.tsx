@@ -2,7 +2,7 @@ import React, { PureComponent, useState, useEffect } from "react";
 import "./Betting.css";
 import imgGameDie3D from "./img/game_die_3d_1.svg";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../type/Gamble";
+import GambleType from "../../../../../common/type/Gamble";
 
 import { BettingUtils } from "./utils";
 

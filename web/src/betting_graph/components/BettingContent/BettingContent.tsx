@@ -1,6 +1,6 @@
 import React, { ComponentElement, PureComponent } from "react";
 import "./BettingContent.css";
-import GambleType from "../type/Gamble";
+import GambleType from "../../../../../common/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
 
