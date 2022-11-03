@@ -22,15 +22,9 @@ function App() {
 				>
 					Learn React
 				</a>
-<<<<<<< HEAD
 			</header>
 		</div>
 	)
-=======
-			</header> */}
-    </div>
-  );
->>>>>>> origin
 }
 
 export default App
