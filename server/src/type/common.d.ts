@@ -1,4 +1,5 @@
 export type BloodType = "A" | "B" | "AB" | "O";
+export type Gender = "male" | "female";
 
 export type HashtagType =
   | "bloodtype"
