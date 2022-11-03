@@ -32,7 +32,7 @@ export default function LoginModal() {
         cls.remove("failure");
         cls.add("success");
         msg.innerText = "success";
-        shepherd.whip("main");
+        shepherd.setLocation("main");
     }
     
     function runFlow1() {
