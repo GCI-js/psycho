@@ -11,7 +11,7 @@ export type HashtagType =
   | "mbti"
   | "free";
 
-declare interface Mbti {
+export interface Mbti {
   date: number;
   EI: number;
   NS: number;
@@ -19,7 +19,7 @@ declare interface Mbti {
   JP: number;
 }
 
-declare interface Option {
+export interface Option {
   index: number;
   name: string;
 }
