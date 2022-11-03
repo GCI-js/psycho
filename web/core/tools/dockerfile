@@ -1,0 +1,105 @@
+ARG TENSORFLOW_VERSION=2.10.0
+FROM tensorflow/tensorflow:$TENSORFLOW_VERSION-gpu
+ENV COMPILE_DATE=20221027
+
+ENV NODE_VERSION=18.12.0
+ENV PASSWORD=<PASSWORD/>
+
+ENV TIME_ZONE=/Asia/Seoul
+ENV LC_ALL=C.UTF-8
+
+
+USER root
+RUN apt update --yes
+
+RUN echo $PASSWORD$'\n'$PASSWORD | passwd
+RUN echo $PASSWORD$'\n'$PASSWORD | adduser ddd
+
+RUN apt install --yes --no-install-recommends wget
+
+RUN DEBIAN_FRONTEND=noninteractive\
+ apt --yes --no-install-recommends install tzdata
+RUN ln --no-dereference --symbolic --force\
+ /usr/share/zoneinfo/$TIME_ZONE /etc/localtime
+RUN echo $TIME_ZONE > /etc/timezone
+
+RUN apt install --yes --no-install-recommends sudo
+RUN echo "ddd ALL=(ALL:ALL) ALL" >> /etc/sudoers
+
+RUN apt install --yes --no-install-recommends ssh
+ENV ssh_config_file=/etc/ssh/ssh_config
+RUN cat $ssh_config_file |\
+    grep -v ServerAliveInterval |\
+    tee ${ssh_config_file}_ > /dev/null
+RUN mv ${ssh_config_file}_ $ssh_config_file
+RUN echo ServerAliveInterval 60 | tee -a $ssh_config_file > /dev/null
+
+
+RUN mkdir /home/ddd/.ssh
+RUN chown ddd:ddd /home/ddd/.ssh
+COPY id_rsa /home/ddd/.ssh/id_rsa
+RUN chown ddd:ddd /home/ddd/.ssh/id_rsa
+RUN chmod 600 /home/ddd/.ssh/id_rsa
+COPY id_rsa.pub /home/ddd/.ssh/id_rsa.pub
+RUN chown ddd:ddd /home/ddd/.ssh/id_rsa.pub
+RUN chmod 644 /home/ddd/.ssh/id_rsa.pub
+COPY id_rsa.pub /home/ddd/.ssh/authorized_keys
+RUN chown ddd:ddd /home/ddd/.ssh/authorized_keys
+RUN chmod 644 /home/ddd/.ssh/authorized_keys
+
+USER ddd
+WORKDIR /home/ddd
+RUN mkdir /home/ddd/.local
+RUN mkdir /home/ddd/.local/lib
+RUN mkdir /home/ddd/.local/bin
+ENV PATH=/home/ddd/.local/bin:$PATH
+RUN echo "export LC_ALL=$LC_ALL" >> /home/ddd/.bashrc
+RUN echo 'export PATH=/usr/local/cuda/bin${PATH:+":$PATH"}' >> /home/ddd/.bashrc
+RUN echo 'export PATH=$HOME/.local/bin${PATH:+":$PATH"}' >> /home/ddd/.bashrc
+RUN echo\
+ 'export PYTHONPATH=$HOME/DDD/ddd/src/python${PYTHONPATH:+":PYTHONPATH"}'\
+ >> /home/ddd/.bashrc
+RUN echo '. /home/ddd/DDD/ddd/cmd.sh profile' >> /home/ddd/.bashrc
+
+
+USER root
+RUN apt install --yes --no-install-recommends cmake
+RUN apt install --yes --no-install-recommends gdb
+RUN apt install --yes --no-install-recommends valgrind
+
+
+USER root
+ENV node_path=node-v$NODE_VERSION-linux-x64
+RUN wget --no-check-certificate\
+ https://nodejs.org/dist/v$NODE_VERSION/$node_path.tar.xz
+RUN tar -xvf $node_path.tar.xz
+RUN rm $node_path.tar.xz
+RUN mv $node_path /home/ddd/.local/lib
+RUN ln --symbolic\
+ /home/ddd/.local/lib/$node_path/bin/node /home/ddd/.local/bin/node
+RUN ln --symbolic\
+ /home/ddd/.local/lib/$node_path/bin/npm /home/ddd/.local/bin/npm
+RUN ln --symbolic\
+ /home/ddd/.local/lib/$node_path/bin/npx /home/ddd/.local/bin/npx
+
+
+USER ddd
+RUN python -m pip install --upgrade pip
+RUN python -m pip install pyinstaller
+RUN python -m pip install pandas
+RUN python -m pip install sklearn
+RUN python -m pip install matplotlib
+RUN python -m pip install jupyter
+
+
+USER root
+RUN apt install --yes --no-install-recommends git
+# RUN apt install --yes --no-install-recommends doxygen
+# RUN apt install --yes --no-install-recommends graphviz
+# RUN DEBIAN_FRONTEND=noninteractive\
+#      apt install --yes --no-install-recommends dnsutils
+# RUN apt install --yes --no-install-recommends gnome-keyring
+# RUN apt install --yes --no-install-recommends chromium-browser
+# RUN apt install --yes --no-install-recommends vim
+RUN apt autoremove --yes
+USER ddd
