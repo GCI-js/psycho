@@ -1,9 +1,9 @@
-import { Document } from "mongoose"
+import { Document } from "mongoose";
 
-declare interface Hashtag{
-  "_id"?: string,
-  "hashtagId": string
-  "name": string
-  "type"?: "bloodtype" | "country" | "city" | "district" | "gender" | "birth" | "mbti" | "free"
-  "mbtiCnt": number[]
+declare interface Hashtag {
+  _id?: string;
+  hashtagId: string;
+  name: string;
+  type: HashtagType;
+  mbtiCnt: number[];
 }

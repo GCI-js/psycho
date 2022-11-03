@@ -18,5 +18,9 @@ declare interface Gamble {
     balance: number;
     dividend: number; //배당률
   }[];
-  result: number; // one of index. answer. should not be transferred until closeTime.
+  result: {
+    index: number;
+    rate: number;
+  }[];
+  answerIndex: number; // one of index. answer. should not be transferred until due.
 }

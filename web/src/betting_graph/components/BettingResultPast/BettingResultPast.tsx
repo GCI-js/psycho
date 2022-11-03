@@ -51,7 +51,7 @@ export default class Example extends PureComponent<BettingResultPastProps> {
     var remainTime = data.closeTime - currentTime;
     var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
     // var buttonComponent = remainTime > 0 ? comp2 : comp3;
-    var buttonComponent = data.result === -1 ? comp2 : comp3;
+    // var buttonComponent = data.result.index === -1 ? comp2 : comp3;
 
     return (
       <div className="root">

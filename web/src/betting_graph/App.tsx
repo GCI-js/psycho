@@ -5,8 +5,10 @@ import BettingResultPast from "./components/BettingResultPast/BettingResultPast"
 import Betting from "./components/Betting/Betting";
 import BettingPopup from "./components/BettingPopup/BettingPopup";
 import MockBettingResult from "./mock_data/mock_gambles.json";
+import MockUser from "./mock_data/mock_users.json";
 import RemainedBalance from "./components/RemainedBalance/RemainedBalance";
-// import BloodType from "./components/type/common";
+import { BloodType, Gender } from "./components/type/common";
+import { User } from "./components/type/User";
 
 const DUMMY_DATA_BETTING_RESULT = {
   ...MockBettingResult,
@@ -15,19 +17,16 @@ const DUMMY_DATA_BETTING_RESULT_NOT_END = {
   ...MockBettingResult,
   openTime: Date.now(),
   closeTime: Date.now() + 100000000,
-  result: -1,
 };
 const DUMMY_DATA_BETTING_RESULT_NOT_CHECK = {
   ...MockBettingResult,
   // openTime: Date.now(),
   // closeTime: Date.now() + 1000000,
-  result: -1,
 };
 const DUMMY_DATA_BETTING_RESULT_CHECK = {
   ...MockBettingResult,
   // openTime: Date.now(),
   // closeTime: Date.now() + 1000000,
-  result: 0,
 };
 
 const DUMMY_DATA_USER_BETTING_RESULT = {
@@ -35,9 +34,18 @@ const DUMMY_DATA_USER_BETTING_RESULT = {
   bettingCoin: 2500,
 };
 
+const DUMMY_DATA_USER = {
+  ...MockUser[0],
+  bloodType: "A" as BloodType,
+  gender: "male" as Gender,
+};
+
 const BettingGraph = () => {
   return (
     <div>
+      <div>
+        <RemainedBalance data={DUMMY_DATA_USER} />
+      </div>
       <div>
         <Betting data={DUMMY_DATA_BETTING_RESULT} />
       </div>

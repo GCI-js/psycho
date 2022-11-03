@@ -63,7 +63,7 @@
     "balance": 1000000000,
     "gambleHist": [
       {
-        "gambleId": 1,
+        "gambleId": "1",
         "index": 0,
         "balance": 1200,
         "result": -1
@@ -137,7 +137,7 @@
     "balance": 7878787878,
     "gambleHist": [
       {
-        "gambleId": 1,
+        "gambleId": "1",
         "index": 1,
         "balance": 2000,
         "result": -1

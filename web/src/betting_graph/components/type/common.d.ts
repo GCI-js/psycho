@@ -1,5 +1,15 @@
-declare type BloodType = "A" | "B" | "AB" | "O";
-declare type Gender = "male" | "female";
+export type BloodType = "A" | "B" | "AB" | "O";
+export type Gender = "male" | "female";
+
+export type HashtagType =
+  | "bloodtype"
+  | "country"
+  | "city"
+  | "district"
+  | "gender"
+  | "birth"
+  | "mbti"
+  | "free";
 
 declare interface Mbti {
   date: number;
