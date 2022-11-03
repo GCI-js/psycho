@@ -9,13 +9,18 @@ module.exports = {
         use: 'ts-loader'
       },
       {
-        test: /\.s[ac]ss$/i,
+        test: /\.(s[ac]|c)ss$/i,
         exclude: /node_modules/,
         use: [
           "style-loader",
           "css-loader",
           "sass-loader",
         ]
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: 'file-loader'
       }
     ],
   },

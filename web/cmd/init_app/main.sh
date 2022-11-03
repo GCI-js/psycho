@@ -33,3 +33,6 @@ txt="\
 $( sudo cat "$f" | grep -v "$line" )
 $line"
 echo "$txt" | sudo tee "$f" > /dev/null && sudo sysctl --load
+
+# // file-loader -d
+# // recharts
