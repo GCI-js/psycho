@@ -1,5 +1,5 @@
-import { HashtagType } from "../../type/common";
-import { Hashtag } from "../../type/Hashtag";
+import { HashtagType } from "../../../../common/type/common";
+import { Hashtag } from "../../../../common/type/Hashtag";
 import { HashtagModel } from "../model/HashtagModel";
 
 export const HashtagController = {

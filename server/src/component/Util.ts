@@ -1,4 +1,4 @@
-import { Gamble } from "../type/Gamble";
+import { Gamble } from "../../../common/type/Gamble";
 
 export const CalcDividend = (gamble: Gamble, index: number) => {
   let bal = gamble["betState"][index]["balance"];

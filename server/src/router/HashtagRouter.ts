@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import { HashtagController } from "../database/controller/HashtagController";
 import { UserController } from "../database/controller/UserController";
-import { Hashtag } from "../type/Hashtag";
+import { Hashtag } from "../../../common/type/Hashtag";
 
 export const HashtagRouter = express.Router();
 

@@ -1,6 +1,6 @@
-import { Gamble } from "../../type/Gamble";
+import { Gamble } from "../../../../common/type/Gamble";
 import { UserModel } from "../model/UserModel";
-import { User } from "../../type/User";
+import { User } from "../../../../common/type/User";
 
 export const UserController = {
   findAllUsers: async () => {
