@@ -1,4 +1,5 @@
 declare type BloodType = "A" | "B" | "AB" | "O";
+declare type Gender = "male" | "female";
 
 declare interface Mbti {
   date: number;

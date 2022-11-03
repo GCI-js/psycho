@@ -2,9 +2,24 @@
   {
     "userId": "0",
     "nickname": "아크릴 오므라이스",
-    "kakaoKey": {},
-    "googleKey": {},
-    "naverKey": {},
+    "kakaoKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "googleKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "naverKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
     "bloodType": "A",
     "country": "대한민국",
     "city": "서울특별시",
@@ -61,9 +76,24 @@
   {
     "userId": "1",
     "nickname": "공부하는 기린",
-    "kakaoKey": "",
-    "googleKey": "",
-    "naverKey": "",
+    "kakaoKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "googleKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "naverKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
     "bloodType": "O",
     "country": "대한민국",
     "city": "서울특별시",
