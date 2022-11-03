@@ -33,5 +33,15 @@
       "dividend": 0
     }
   ],
-  "result": 0
+  "result": [
+    {
+      "index": 0,
+      "rate": 0.58
+    },
+    {
+      "index": 1,
+      "rate": 0.42
+    }
+  ],
+  "answerIndex": 0
 }

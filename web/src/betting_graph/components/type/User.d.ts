@@ -1,4 +1,5 @@
 import { Document } from "mongoose";
+import { BloodType } from "./common";
 
 declare interface User {
   _id?: string;
@@ -26,7 +27,7 @@ declare interface User {
   country: string;
   city: string;
   district: string;
-  gender: Gender;
+  gender: "male" | "female";
   birth: number;
   mbtis: Mbti[];
   hashtags: Hashtag[];
