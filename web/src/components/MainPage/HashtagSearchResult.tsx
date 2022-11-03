@@ -1,5 +1,12 @@
 import * as React from "react";
 
+export type hashtagType = {
+  hashtagId: string;
+  name: string;
+  type: string;
+  mbtiCnt: number[];
+};
+
 const HashtagSearchResult = () => {
   return (
     <div>

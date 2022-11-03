@@ -1,9 +1,20 @@
 .card_item {
-  width: 343px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 10px;
+  /* width: 500px;
+	height: 150px; */
+  padding: 5px;
+  /* overflow: hidden;
+	word-wrap: break-word; */
+  font-size: 12px;
+  background-color: #eaeaea;
+  /* width: 343px;
   height: 315px;
   background-color: #eaeaea;
   overflow: auto;
-  margin-top: 17px;
+  margin-top: 17px; */
 }
 .card_header {
   margin-top: 16px;
