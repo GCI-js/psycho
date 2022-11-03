@@ -6,15 +6,8 @@ import { Hashtag } from "../type/Hashtag";
 export const HashtagRouter = express.Router();
 
 HashtagRouter.post("/", async (req: Request, res: Response) => {
-  let hashtagNum: number = await HashtagController.getHashtagNum();
-  let newHashtag: Hashtag = {
-    hashtagId: hashtagNum.toString(),
-    name: req.body.name,
-    type: req.body.type,
-    mbtiCnt: Array(16).fill(0),
-  };
-  await HashtagController.createHashtag(newHashtag);
-  res.status(200).json(newHashtag);
+  await HashtagController.createHashtag(req.body.name, req.body.type);
+  res.status(200).json(await HashtagController.findOne(req.body.name));
 });
 
 HashtagRouter.get("/items", async (req: Request, res: Response) => {
@@ -37,8 +30,12 @@ HashtagRouter.put(
 HashtagRouter.get(
   "/statistics/:hashtagName",
   async (req: Request, res: Response) => {
-    let mbtiCnt = await HashtagController.getMbtiCnt(req.params.hashtagName);
-    res.status(200).json(mbtiCnt);
+    let hashtag = await HashtagController.findOne(req.params.hashtagName);
+    if (!hashtag) {
+      HashtagController.createHashtag(req.params.hashtagName);
+      hashtag = await HashtagController.findOne(req.params.hashtagName);
+    }
+    res.status(200).json(hashtag.mbtiCnt);
   }
 );
 
