@@ -6,15 +6,8 @@ import { Hashtag } from "../type/Hashtag";
 export const HashtagRouter = express.Router();
 
 HashtagRouter.post("/", async (req: Request, res: Response) => {
-  let hashtagNum: number = await HashtagController.getHashtagNum();
-  let newHashtag: Hashtag = {
-    hashtagId: hashtagNum.toString(),
-    name: req.body.name,
-    type: req.body.type,
-    mbtiCnt: Array(16).fill(0),
-  };
-  await HashtagController.createHashtag(newHashtag);
-  res.status(200).json(newHashtag);
+  await HashtagController.createHashtag(req.body.name, req.body.type);
+  res.status(200).json(await HashtagController.findOne(req.body.name));
 });
 
 HashtagRouter.get("/items", async (req: Request, res: Response) => {
@@ -37,9 +30,12 @@ HashtagRouter.put(
 HashtagRouter.get(
   "/statistics/:hashtagName",
   async (req: Request, res: Response) => {
-    //여기서 만약 없는 해시태그를 검색할 경우에 대한 에러 처리를 해주어야 할 듯
-    let mbtiCnt = await HashtagController.getMbtiCnt(req.params.hashtagName);
-    res.status(200).json(mbtiCnt);
+    let hashtag = await HashtagController.findOne(req.params.hashtagName);
+    if (!hashtag) {
+      HashtagController.createHashtag(req.params.hashtagName);
+      hashtag = await HashtagController.findOne(req.params.hashtagName);
+    }
+    res.status(200).json(hashtag.mbtiCnt);
   }
 );
 

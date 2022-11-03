@@ -8,7 +8,7 @@ export const UserController = {
   },
   find100UsersByHashtag: async (hashtagName: string) => {
     return await UserModel.find({
-      hashtags: { $elemMatch: { title: { $eq: hashtagName } } },
+      hashtags: { $elemMatch: { name: hashtagName } },
     }).limit(100);
   },
   findOne: async (userId: string) => {
