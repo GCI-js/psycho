@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { Survey } from "../../type/Survey";
+import { Survey } from "../../../../common/type/Survey";
 
 export const DOCUMENT_NAME = "Survey";
 export const COLLECTION_NAME = "surveys";

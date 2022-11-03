@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { User } from "../../type/User";
+import { User } from "../../../../common/type/User";
 
 export const DOCUMENT_NAME = "User";
 export const COLLECTION_NAME = "users";

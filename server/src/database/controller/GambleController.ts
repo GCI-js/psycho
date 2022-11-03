@@ -1,4 +1,4 @@
-import { Gamble } from "../../type/Gamble";
+import { Gamble } from "../../../../common/type/Gamble";
 import { GambleModel } from "../model/GambleModel";
 
 export const GambleController = {

@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { Newsletter } from "../../type/Newsletter";
+import { Newsletter } from "../../../../common/type/Newsletter";
 
 export const DOCUMENT_NAME = "Newsletter";
 export const COLLECTION_NAME = "newsletters";

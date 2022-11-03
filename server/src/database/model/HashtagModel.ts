@@ -1,5 +1,5 @@
 import { model, Schema } from "mongoose";
-import { Hashtag } from "../../type/Hashtag";
+import { Hashtag } from "../../../../common/type/Hashtag";
 
 export const DOCUMENT_NAME = "Hashtag";
 export const COLLECTION_NAME = "hashtags";
