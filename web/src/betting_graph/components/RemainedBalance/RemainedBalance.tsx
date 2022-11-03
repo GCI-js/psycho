@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "./RemainedBalance.css";
 import imgMoneyBag3d from "./img/money_bag_3d_1.svg";
-import UserType from "../type/User";
+import UserType from "../../../../../common/type/User";
 
 const BUTTON_WIDTH = 132;
 const BUTTON_HEIGHT = 40;

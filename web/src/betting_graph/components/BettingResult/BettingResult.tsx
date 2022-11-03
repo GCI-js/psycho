@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "./BettingResult.css";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../type/Gamble";
+import GambleType from "../../../../../common/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
 
