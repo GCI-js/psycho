@@ -1,0 +1,32 @@
+.root {
+  height: 75vh;
+  margin: auto;
+  background-color: aqua;
+  border: #000000;
+  border-style: dotted;
+}
+
+.Row {
+  display: table;
+  width: 100% /*Optional*/;
+}
+.Column {
+  display: table-cell;
+  text-align: center;
+  background-color: #ffffff /*Optional*/;
+  height: 47px;
+}
+
+.ColumnText {
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.ColumnTextTime {
+  color: #ff0000;
+}
+
+.ColumnText2 {
+  font-size: 12px;
+  color: #bdbdbd;
+}
