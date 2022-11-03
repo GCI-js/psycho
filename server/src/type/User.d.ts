@@ -1,4 +1,5 @@
 import { Document } from "mongoose";
+import { BloodType } from "./common";
 
 declare interface User {
   _id?: string;
