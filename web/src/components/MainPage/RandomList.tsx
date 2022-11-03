@@ -1,4 +1,4 @@
-import { getNewsletterList } from "./NewsletterList";
+import { getNewsletterList } from "./Newsletter/NewsletterList";
 
 export type RandomType = {
   type: string;
@@ -18,6 +18,7 @@ export function RandomListInit() {
   RandomList.push({ type: "changembti", data: [] });
   RandomList.push({ type: "hashtagsearchresult", data: [] });
   RandomList.push({ type: "mybattingrecord", data: [] });
+  RandomList.push({ type: "attendancecheck", data: [] });
   for (let i = 0; i < NewsletterList.length; i++) {
     console.log("NewsletterList..........", NewsletterList[i]);
     RandomList.push({ type: "newsletter", data: NewsletterList[i] });
