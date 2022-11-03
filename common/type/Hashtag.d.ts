@@ -1,6 +1,4 @@
-import { Document } from "mongoose";
-
-declare interface Hashtag {
+export interface Hashtag {
   _id?: string;
   hashtagId: string;
   name: string;

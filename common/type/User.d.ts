@@ -1,7 +1,7 @@
-import { Document } from "mongoose";
-import { BloodType } from "./common";
+import { BloodType, Mbti } from "./common";
+import { Hashtag } from "./Hashtag";
 
-declare interface User {
+export interface User {
   _id?: string;
   userId: string;
   nickname: string;

@@ -1,6 +1,4 @@
-import { Document } from "mongoose";
-
-declare interface Question {
+export interface Question {
   _id?: string;
   questionId: string;
   surveyId?: string;
