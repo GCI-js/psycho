@@ -8,8 +8,17 @@ export const UserController = {
   },
   find100UsersByHashtag: async (hashtagName: string) => {
     return await UserModel.find({
-      hashtags: { $elemMatch: { title: { $eq: hashtagName } } },
+      hashtags: { $elemMatch: { name: hashtagName } },
     }).limit(100);
+  },
+  findOne: async (userId: string) => {
+    let filter = { userId: userId };
+    return await UserModel.findOne(filter).lean<User>();
+  },
+  findOneAndUpdate: async (userId: string, update: any) => {
+    let filter = { userId: userId };
+    await UserModel.findOneAndUpdate(filter, update);
+    return;
   },
   findOneAndAddGambleHist: async (
     userId: string,
@@ -31,6 +40,6 @@ export const UserController = {
   },
   findOneAndGetGambleHist: async (userId: string) => {
     let filter = { userId: userId };
-    return await UserModel.find(filter).select("gambleHist");
+    return await UserModel.findOne(filter).select("gambleHist");
   },
 };

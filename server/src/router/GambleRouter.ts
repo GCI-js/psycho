@@ -4,6 +4,7 @@ import { GambleController } from "../database/controller/GambleController";
 import { UserController } from "../database/controller/UserController";
 import { GambleModel } from "../database/model/GambleModel";
 import { Gamble } from "../type/Gamble";
+import { User } from "../type/User";
 
 export const GambleRouter = express.Router();
 
@@ -38,6 +39,7 @@ GambleRouter.post("/", async (req: Request, res: Response) => {
       },
     ],
     result: req.body.result,
+    answerIndex: req.body.answerIndex,
   };
   await GambleController.createGamble(newGamble);
   res.status(200).json(await GambleController.findOne(gambleId));
@@ -86,18 +88,36 @@ GambleRouter.put("/bet", async (req: Request, res: Response) => {
   });
 });
 
-GambleRouter.get(
+GambleRouter.put(
   "/results/:gambleId/:userId",
-  (req: Request, res: Response) => {}
+  async (req: Request, res: Response) => {
+    let gamble: Gamble = await GambleController.findOne(req.params.gambleId);
+    let user: User = await UserController.findOne(req.body.userId);
+    let hist = user["gambleHist"].filter((hist) => {
+      return hist["gambleId"] == req.params.gambleId;
+    })[0];
+    let result = 0;
+    let gainedBalance = 0;
+    if (gamble["answerIndex"] === hist["index"]) {
+      gainedBalance =
+        hist["balance"] *
+        gamble["betState"].filter((state) => {
+          return state["index"] == hist["index"];
+        })[0]["dividend"];
+      result = 1;
+    }
+    user["gambleHist"] = user["gambleHist"].map((h) => {
+      if (h["index"] == gamble["answerIndex"]) h["result"] = result;
+      return h;
+    });
+    user["balance"] += gainedBalance;
+    await UserController.findOneAndUpdate(req.params.userId, user);
+    res.status(200).json({
+      result: gamble["result"],
+      answerIndex: gamble["answerIndex"],
+    });
+  }
 );
-/*
-- 결과 확인 (GET) /gamble/results/:gambleId/:userId
-req = {}
-res = {
-  "isWin": Boolean,
-  "balance": number
-}
-*/
 
 /*
 .Gamble API
@@ -150,10 +170,16 @@ req = {
   "balance": number
 }
 res = Gamble
-- 결과 확인 (GET) /gamble/results/:gambleId/:userId
-req = {}
+- 결과 확인 (PUT) /gamble/result
+req = {
+  "userId": string,
+  "gambleId": string
+}
 res = {
-  "isWin": Boolean,
-  "balance": number
+  "result": {
+    "index": number,
+    "rate": number
+  }[],
+  "answerIndex": number
 }
 */
