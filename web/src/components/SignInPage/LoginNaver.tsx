@@ -4,7 +4,8 @@ import "./SignInPage.css";
 
 function LoginNaver() {
   const CLIENT_ID = "VtB1ejikeGzMfPNrh0E6";
-  const REDIRECT_URI = "http://127.0.0.1:3000/";
+  // const REDIRECT_URI = "http://127.0.0.1:3000/";
+  const REDIRECT_URI = "http://127.0.0.1:3000/naverLogin/";
   const CLIENT_SECRET = "h1N8QEPClM";
   const STATE = "randomString";
 

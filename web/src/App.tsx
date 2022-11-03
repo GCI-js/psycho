@@ -4,7 +4,9 @@ import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 // import MBTIHistogram from "./components/profile/MBTIHistorgram";
 import Profile from "./components/profile/Profile";
-import SignInPage from "./components/SignIn/SignInPage";
+import SignInPage from "./components/SignInPage/SignInPage";
+import KakaoRedirect from "./components/SignInPage/KaKaoRedirect";
+import NaverRedirect from "./components/SignInPage/NaverRedirect";
 
 function App() {
   return (
@@ -13,6 +15,8 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<SignInPage />}></Route>
+          <Route path="/kakaoLogin" element={<KakaoRedirect />}></Route>
+          <Route path="/naverLogin" element={<NaverRedirect />}></Route>
         </Routes>
       </BrowserRouter>
       {/* <header className="App-header">
