@@ -1,6 +1,6 @@
-declare type BloodType = "A" | "B" | "AB" | "O";
+export type BloodType = "A" | "B" | "AB" | "O";
 
-declare type HashtagType =
+export type HashtagType =
   | "bloodtype"
   | "country"
   | "city"
