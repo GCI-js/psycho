@@ -2,7 +2,6 @@ import express, { Request, Response } from "express";
 import { CalcDividend } from "../component/Util";
 import { GambleController } from "../database/controller/GambleController";
 import { UserController } from "../database/controller/UserController";
-import { GambleModel } from "../database/model/GambleModel";
 import { Gamble } from "../type/Gamble";
 import { User } from "../type/User";
 

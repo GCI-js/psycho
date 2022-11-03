@@ -1,15 +1,6 @@
+import { HashtagType } from "../../type/common";
 import { Hashtag } from "../../type/Hashtag";
 import { HashtagModel } from "../model/HashtagModel";
-
-declare type HashtagType =
-  | "bloodtype"
-  | "country"
-  | "city"
-  | "district"
-  | "gender"
-  | "birth"
-  | "mbti"
-  | "free";
 
 export const HashtagController = {
   getHashtagNum: async () => {
