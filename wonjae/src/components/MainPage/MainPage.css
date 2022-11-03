@@ -1,0 +1,15 @@
+.header {
+  font-family: "SF Pro";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+  /* identical to box height, or 121% */
+
+  letter-spacing: 0.374px;
+  color: #000000;
+}
+.contents {
+  margin-left: 22px;
+  margin-right: 22px;
+}
