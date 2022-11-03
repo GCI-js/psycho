@@ -1,10 +1,10 @@
-import React from "react"
-import logo from "./logo.svg"
-import "./App.css"
+import React from "react";
+import logo from "./logo.svg";
+import "./App.css";
 // import MBTIHistogram from "./components/profile/MBTIHistorgram";
-import Profile from "./components/Profile/Profile"
-import EditProfile from "./components/Profile/EditProfile"
-import { MainPage } from "./components/MainPage/MainPage"
+import Profile from "./components/Profile/Profile";
+import EditProfile from "./components/Profile/EditProfile";
+import { MainPage } from "./components/MainPage/MainPage";
 
 function App() {
 	return (
@@ -24,7 +24,7 @@ function App() {
 				</a>
 			</header>
 		</div>
-	)
+	);
 }
 
-export default App
+export default App;

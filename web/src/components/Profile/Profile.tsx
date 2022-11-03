@@ -1,13 +1,13 @@
-import React, { useState } from "react"
-import MBTIHistogram from "./MbtiHistogram"
-import HashtagList from "./HashtagList"
-import Gamble from "./Gamble"
-import settingIcon from "../../img/setting.png"
-import "./Profile.css"
+import React, { useState } from "react";
+import MBTIHistogram from "./MbtiHistogram";
+import HashtagList from "./HashtagList";
+import Gamble from "./Gamble";
+import settingIcon from "../../img/setting.png";
+import "./Profile.css";
 // import pencilImg from "../img/pencil.png";
 const Profile = () => {
-	const [isEdit, setIsEdit] = useState(false)
-	const dummyUserName = "아크릴오므라이스"
+	const [isEdit, setIsEdit] = useState(false);
+	const dummyUserName = "아크릴오므라이스";
 	return (
 		<div className="container">
 			<div
@@ -41,7 +41,7 @@ const Profile = () => {
 				</div>
 			)}
 		</div>
-	)
-}
+	);
+};
 
-export default Profile
+export default Profile;

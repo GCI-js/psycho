@@ -1,17 +1,17 @@
-import React, { useState } from "react"
-import "./ButtonBox.css"
+import React, { useState } from "react";
+import "./ButtonBox.css";
 
 interface ButtonBoxItem {
-	state: boolean
-	content: string
-	setState: any
+	state: boolean;
+	content: string;
+	setState: any;
 }
 const ButtonBox = ({ state, content, setState }: ButtonBoxItem) => {
-	let selected = ""
+	let selected = "";
 	if (state) {
-		selected = " selected"
+		selected = " selected";
 	} else {
-		selected = " notSelected"
+		selected = " notSelected";
 	}
 	// console.log(state);
 	// console.log(buttonBox);
@@ -20,12 +20,12 @@ const ButtonBox = ({ state, content, setState }: ButtonBoxItem) => {
 			className={`buttonBox${selected}`}
 			// onClick={setState}
 			onClick={() => {
-				setState(content)
+				setState(content);
 			}}
 		>
 			{content}
 		</button>
-	)
-}
+	);
+};
 
-export default ButtonBox
+export default ButtonBox;

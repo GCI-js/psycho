@@ -1,5 +1,5 @@
-import React from "react"
-import "./EditUserInfo.css"
+import React from "react";
+import "./EditUserInfo.css";
 // import DropDown from "./Dropdown";
 const EditUserInfo = () => {
 	return (
@@ -10,7 +10,7 @@ const EditUserInfo = () => {
 			<text className="choiceText">{`성별을 선택해주세요\n`}</text>
 			<text className="choiceText">{`생년월일을 선택해주세요\n`}</text>
 		</div>
-	)
-}
+	);
+};
 
-export default EditUserInfo
+export default EditUserInfo;
