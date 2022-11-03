@@ -91,7 +91,7 @@ export default class Example extends PureComponent<BettingContentProps> {
       ? this.props.addtionalComponent
       : remainTime > 0
       ? comp
-      : data.result === -1
+      : data.result.length === 0
       ? comp2
       : comp3;
 

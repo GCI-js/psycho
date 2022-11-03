@@ -2,9 +2,24 @@
   {
     "userId": "0",
     "nickname": "아크릴 오므라이스",
-    "kakaoKey": {},
-    "googleKey": {},
-    "naverKey": {},
+    "kakaoKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "googleKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "naverKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
     "bloodType": "A",
     "country": "대한민국",
     "city": "서울특별시",
@@ -48,7 +63,7 @@
     "balance": 1000000000,
     "gambleHist": [
       {
-        "gambleId": 1,
+        "gambleId": "1",
         "index": 0,
         "balance": 1200,
         "result": -1
@@ -61,9 +76,24 @@
   {
     "userId": "1",
     "nickname": "공부하는 기린",
-    "kakaoKey": "",
-    "googleKey": "",
-    "naverKey": "",
+    "kakaoKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "googleKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "naverKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
     "bloodType": "O",
     "country": "대한민국",
     "city": "서울특별시",
@@ -107,7 +137,7 @@
     "balance": 7878787878,
     "gambleHist": [
       {
-        "gambleId": 1,
+        "gambleId": "1",
         "index": 1,
         "balance": 2000,
         "result": -1
