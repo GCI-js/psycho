@@ -1,15 +1,15 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
+import React from "react"
+import logo from "./logo.svg"
+import "./App.css"
 // import MBTIHistogram from "./components/profile/MBTIHistorgram";
-import Profile from "./components/profile/Profile";
+import Profile from "./components/Profile/Profile"
+import EditProfile from "./components/Profile/EditProfile"
+import { MainPage } from "./components/MainPage/MainPage"
 
 function App() {
-
 	return (
 		<div className="App">
-			<Profile />
-			{/* <header className="App-header">
+			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>
 					Edit <code>src/App.tsx</code> and save to reload.
@@ -22,10 +22,9 @@ function App() {
 				>
 					Learn React
 				</a>
-			</header> */}
-
+			</header>
 		</div>
-	);
+	)
 }
 
-export default App;
+export default App
