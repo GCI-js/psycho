@@ -19,9 +19,9 @@ export default function MainPage() {
         <Box className="card"></Box>
         <Box className="card"></Box>
         <Box className="card" onClick={() => shepherd.setLocation("login")}>add device</Box>
-        <PageSelector>
+        {/* <PageSelector>
             <div data-page-name="one">1</div>
             <div data-page-name="two">2</div>
-        </PageSelector>
+        </PageSelector> */}
     </div>
 }
