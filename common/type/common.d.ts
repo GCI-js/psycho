@@ -15,7 +15,7 @@ export interface Mbti {
   date: number;
   IE: number;
   NS: number;
-  TF: number;
+  FT: number;
   JP: number;
 }
 
