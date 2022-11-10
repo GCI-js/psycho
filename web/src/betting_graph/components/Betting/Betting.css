@@ -31,18 +31,29 @@
   color: #bdbdbd;
 }
 
-.button1 {
+.LeftButton1 {
   background-color: #ff9574;
-  border-radius: "100px 0px 0px 100px";
-  border: "none";
-  color: "#FFFFFF";
-  height: "57px";
+  border-radius: 100px 0px 0px 100px;
+  border: none;
+  color: #ffffff;
+  height: 57px;
 }
 
-.button2 {
+.RightButton2 {
   background-color: #ff7070;
-  border-radius: "0px 100px 100px 0px";
-  border: "none";
+  border-radius: 0px 100px 100px 0px;
+  border: none;
   color: #ffffff;
-  height: "57px";
+  height: 57px;
+}
+
+.ShowPastButton {
+  color: #bdbdbd;
+  font-weight: bold;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
 }
