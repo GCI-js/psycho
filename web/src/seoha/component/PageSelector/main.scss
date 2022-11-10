@@ -1,13 +1,16 @@
 .std-pages {
-    background: greenyellow;
     position: relative;
     > div {
         width: 100%;
-        height: 100%;
         position: absolute;
+        contain: content;
+        box-sizing: border-box;
+        padding: 5px;
         opacity: 0;
+        z-index: 0;
         &.on {
             opacity: 1;
+            z-index: 1;
         }
     }
 }

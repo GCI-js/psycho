@@ -6,8 +6,8 @@ import "./main.scss";
 
 
 export default function PageSelector(properties: any) {
-    console.log("<PageSelector/>")
     const cl_names = ["std-pages", properties.className].join(" ");
+    console.log("<PageSelector/>" + cl_names);
     const ref = React.useRef(null);
     const pages = properties.children;
     const ct = pages.length;
@@ -25,8 +25,11 @@ export default function PageSelector(properties: any) {
 
     React.useEffect(() => {
         let loc = names.indexOf(shepherd.readLocation());
-        loc = loc < 0 ? 0 : loc;
-        shepherd.setLocation(names[loc]);
+        console.log(names, shepherd.readLocation(), tracker[0]);
+        if (loc < 0) {
+            loc = 0;
+            shepherd.setLocation(names[loc]);
+        }
         tracker[1](loc);
         pagings[loc](pages[loc]);
         ref.current.children[tracker[0]].classList.remove("on");
