@@ -40,6 +40,12 @@ interface BettingProps {
 
 export default class Example extends PureComponent<BettingProps> {
   render() {
+    function clickLeft() {
+      console.log("click left");
+    }
+    function clickRight() {
+      console.log("click right");
+    }
     var data = this.props.data;
     var currentTime = Date.now();
     var remainTime = data.closeTime - currentTime;
@@ -89,18 +95,23 @@ export default class Example extends PureComponent<BettingProps> {
         <div>{currentDate}의 베팅!</div>
         <div>{data.title}</div>
         <div style={styles.root}>
-          <button style={{ width: btn1Length, ...styles.button1 }}>
-            <span>짜장면</span>
+          <button
+            className="button1"
+            style={{ width: btn1Length }}
+            onClick={clickLeft}
+          >
+            <span>{data.contents.options[0].name}</span>
             <br />
             <span>{btn1LengthPortion}%</span>
           </button>
           <button
+            className="button2"
             style={{
               width: btn2Length,
-              ...styles.button2,
             }}
+            onClick={clickRight}
           >
-            <span>짬뽕</span>
+            <span>{data.contents.options[1].name}</span>
             <br />
             <span>{btn2LengthPortion}%</span>
           </button>
