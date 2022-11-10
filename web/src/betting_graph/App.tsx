@@ -7,7 +7,7 @@ import BettingPopup from "./components/BettingPopup/BettingPopup";
 import MockBettingResult from "../../../common/mock_data/mock_gambles.json";
 import MockUser from "../../../common/mock_data/mock_users.json";
 import RemainedBalance from "./components/RemainedBalance/RemainedBalance";
-import { BloodType, Gender } from "../../../common/type/common";
+import { BloodType, Gender, Mbti } from "../../../common/type/common";
 import { User } from "../../../common/type/User";
 
 const DUMMY_DATA_BETTING_RESULT = {

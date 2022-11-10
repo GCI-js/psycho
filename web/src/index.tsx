@@ -1,5 +1,5 @@
 import * as React from "react";
-import { createRoot } from 'react-dom/client';
+import { createRoot } from "react-dom/client";
 
 // import OnePage from "./component/OnePage/main";
 // import BettingGraph from "./betting_graph/App";
@@ -7,9 +7,9 @@ import { createRoot } from 'react-dom/client';
 // import Sangjin from "./sangjin/App";
 import Wonjae from "./wonjae/App";
 
-import "./index.scss"
+import "./index.scss";
 
 // createRoot(document.getElementById('app')).render(<OnePage/>);
 // createRoot(document.getElementById('app')).render(<BettingGraph/>);
 // createRoot(document.getElementById('app')).render(<ProfileStats/>);
-createRoot(document.getElementById('app')).render(<Wonjae/>);
+createRoot(document.getElementById("app")).render(<Wonjae />);
