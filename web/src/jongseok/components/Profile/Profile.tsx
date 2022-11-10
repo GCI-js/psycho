@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import MBTIHistogram from "./MbtiHistogram";
 import HashtagList from "./HashtagList";
 import Gamble from "./Gamble";
-import settingIcon from "../../img/setting.png";
+import settingIcon from "../img/setting.png";
 import "./Profile.css";
 // import pencilImg from "../img/pencil.png";
 const Profile = () => {
@@ -21,6 +21,7 @@ const Profile = () => {
 				<div className="username">{`${dummyUserName}`}</div>
 				<img
 					src={settingIcon}
+					// src={require("../img/setting.png")}
 					alt="edit"
 					className="settingButton"
 					onClick={() => {}}
