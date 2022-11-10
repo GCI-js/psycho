@@ -13,7 +13,7 @@ export type HashtagType =
 
 export interface Mbti {
   date: number;
-  IE: number;
+  EI: number;
   NS: number;
   FT: number;
   JP: number;
