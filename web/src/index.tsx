@@ -7,6 +7,7 @@ import { createRoot } from "react-dom/client";
 // import Wonjae from "./wonjae/App";
 import Seoha from "./seoha/App";
 import Jongseok from "./jongseok/App";
+import Wonjae from "./wonjae/App";
 
 import "./index.scss";
 
