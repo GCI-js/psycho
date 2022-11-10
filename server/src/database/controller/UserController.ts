@@ -3,6 +3,13 @@ import { UserModel } from "../model/UserModel";
 import { User } from "../../../../common/type/User";
 
 export const UserController = {
+  getUserNum:async () => {
+    let cnt=await UserModel.count({});
+    return cnt;
+  },
+  createUser:async (newUser:User) => {
+    await UserModel.create(newUser);
+  },
   findAllUsers: async () => {
     return await UserModel.find({});
   },
