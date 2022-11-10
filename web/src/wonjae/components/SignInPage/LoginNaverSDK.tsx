@@ -41,9 +41,9 @@ const initNaverLogin = () => {
 };
 
 function LoginNaverSDK() {
-  useEffect(CDM, []);
+  useEffect(init, []);
 
-  function CDM() {
+  function init() {
     loadScript();
     initNaverLogin();
   }

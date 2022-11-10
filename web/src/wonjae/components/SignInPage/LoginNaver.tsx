@@ -1,3 +1,4 @@
+// Naver Login REST API 사용하여 로그인
 import React, { useEffect } from "react";
 
 function LoginNaver() {
