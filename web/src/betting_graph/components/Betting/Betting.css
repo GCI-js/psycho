@@ -1,7 +1,7 @@
 .root {
   height: 75vh;
   margin: auto;
-  background-color: aqua;
+  background-color: aqua; /* for visualization */
   border: #000000;
   border-style: dotted;
 }
@@ -20,6 +20,7 @@
 .ColumnText {
   font-size: 34px;
   font-weight: bold;
+  vertical-align: middle;
 }
 
 .ColumnTextTime {
@@ -29,6 +30,7 @@
 .ColumnText2 {
   font-size: 12px;
   color: #bdbdbd;
+  vertical-align: middle;
 }
 
 .LeftButton1 {

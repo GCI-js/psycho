@@ -49,9 +49,9 @@ const BettingGraph = () => {
       <div>
         <Betting data={DUMMY_DATA_BETTING_RESULT} />
       </div>
-      <div>
+      {/* <div>
         <BettingPopup data={DUMMY_DATA_BETTING_RESULT} />
-      </div>
+      </div> */}
       <div>
         <BettingResult
           data={[DUMMY_DATA_BETTING_RESULT_NOT_END, DUMMY_DATA_BETTING_RESULT]}

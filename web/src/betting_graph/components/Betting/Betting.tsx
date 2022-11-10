@@ -1,6 +1,7 @@
-import React, { PureComponent, useState, useEffect } from "react";
+import React, { Component, PureComponent, useState, useEffect } from "react";
 import "./Betting.css";
 import imgGameDie3D from "./img/game_die_3d_1.svg";
+import BettingPopup from "../BettingPopup/BettingPopup";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
 import GambleType from "../../../../../common/type/Gamble";
 
@@ -14,16 +15,36 @@ interface BettingProps {
   // data: BettingDataItem;
 }
 
-export default class Example extends PureComponent<BettingProps> {
+export default class Example extends Component<
+  BettingProps,
+  { showModal: boolean }
+> {
+  constructor(props: BettingProps) {
+    super(props);
+
+    this.state = {
+      showModal: false,
+    };
+    // this.toggleTicketModal = this.toggleTicketModal.bind( this );
+  }
+
+  handleOpenClose = () => {
+    console.log("click handleOpenClose");
+    this.setState((prev) => ({ showModal: !prev.showModal }));
+    console.log(this.state.showModal);
+  };
+
   render() {
-    function showCurrentBettingPopup() {
-      console.log("click showCurrentBettingPopup");
-      // popup BettingPopup
-    }
+    // window.onclick = function (event) {
+    //   console.log(event);
+    // };
+    // const [show, setShow] = useState(true);
+    // const handleShow = () => setShow(true);
     function showPastResult() {
       console.log("click showPastResult");
       // redirect BettingResult
     }
+
     var data = this.props.data;
     var currentTime = Date.now();
     var remainTime = data.closeTime - currentTime;
@@ -78,7 +99,7 @@ export default class Example extends PureComponent<BettingProps> {
           <button
             className="LeftButton1"
             style={{ width: btn1Length }}
-            onClick={showCurrentBettingPopup}
+            onClick={this.handleOpenClose}
           >
             <span>{data.contents.options[0].name}</span>
             <br />
@@ -89,13 +110,15 @@ export default class Example extends PureComponent<BettingProps> {
             style={{
               width: btn2Length,
             }}
-            onClick={showCurrentBettingPopup}
+            onClick={this.handleOpenClose}
           >
             <span>{data.contents.options[1].name}</span>
             <br />
             <span>{btn2LengthPortion}%</span>
           </button>
         </div>
+        <BettingPopup data={data} show={this.state.showModal} />
+        {/* <BettingPopup data={data} state={}/> */}
       </div>
     );
   }
