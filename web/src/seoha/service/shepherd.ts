@@ -10,8 +10,9 @@ namespace shepherd {
         if (rslt) return rslt;
         return "";
     }
-    export function whip(name: string) {
-        setLocation(name);
+    export function whip() {
+        const name = readLocation();
+        console.log("location:", name);
         const [v, setValue] = name2trigger[name];
         setValue(v + 1);
     }
