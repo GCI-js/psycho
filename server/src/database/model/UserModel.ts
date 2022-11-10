@@ -34,9 +34,9 @@ const userSchema = new Schema({
   mbtis: [
     {
       date: { type: Number, required: false },
-      IE: { type: String, required: false },
+      EI: { type: String, required: false },
       NS: { type: String, required: false },
-      TF: { type: String, required: false },
+      FT: { type: String, required: false },
       JP: { type: String, required: false },
     },
   ],

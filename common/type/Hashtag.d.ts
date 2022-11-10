@@ -5,5 +5,5 @@ export interface Hashtag {
   hashtagId: string;
   name: string;
   type?: HashtagType;
-  mbtiCnt?: number[];
+  mbtiCnt: number[];
 }
