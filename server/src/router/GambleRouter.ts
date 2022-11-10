@@ -9,7 +9,7 @@ export const GambleRouter = express.Router();
 
 GambleRouter.post("/", async (req: Request, res: Response) => {
   let gambleId: string = (
-    (await await GambleController.getGambleNum()) + 1
+    (await GambleController.getGambleNum()) + 1
   ).toString();
   console.log(gambleId);
   let newGamble: Gamble = {
