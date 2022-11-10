@@ -21,7 +21,7 @@ HashtagRouter.put(
     let hashtag: Hashtag = await HashtagController.findOne(
       req.params.hashtagName
     );
-    hashtag.mbtiCnt[+req.body.mbtiIdx] += req.body.increase ? 1 : -1;
+    hashtag.mbtiCnt[req.body.mbtiIdx] += req.body.increase ? 1 : -1;
     await HashtagController.findByIdAndUpdate(hashtag);
     res.status(200).json(hashtag);
   }

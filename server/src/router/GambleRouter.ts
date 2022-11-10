@@ -8,9 +8,10 @@ import { User } from "../../../common/type/User";
 export const GambleRouter = express.Router();
 
 GambleRouter.post("/", async (req: Request, res: Response) => {
-  let gambleId: string = await (
-    await GambleController.getGambleNum()
+  let gambleId: string = (
+    (await GambleController.getGambleNum()) + 1
   ).toString();
+  console.log(gambleId);
   let newGamble: Gamble = {
     gambleId: gambleId,
     surveyId: req.body.surveyId,
@@ -63,6 +64,15 @@ GambleRouter.get("/items/:id", async (req: Request, res: Response) => {
 });
 
 GambleRouter.put("/bet", async (req: Request, res: Response) => {
+  let user: User = await UserController.findOne(req.body.userId);
+  if (
+    user.gambleHist.find((element) => {
+      return element.gambleId == req.body.gambleId;
+    }) != undefined
+  ) {
+    res.status(400).json({});
+    return;
+  }
   let gamble: Gamble = await GambleController.findOne(req.body.gambleId);
   gamble["betState"][req.body.optionIndex]["userCnt"]++;
   gamble["betState"][req.body.optionIndex]["balance"] += req.body.balance;
@@ -86,15 +96,29 @@ GambleRouter.put("/bet", async (req: Request, res: Response) => {
     gambleHist: await UserController.findOneAndGetGambleHist(req.body.userId),
   });
 });
-
+// 일단 이 호출은 현재시간이 closeTime 보다 이후인 경우에만 발생한다. 하지만 더블 쳌 필요.
+// 또한 이미 확인한 것인지도 체크할 필요 있음
 GambleRouter.put(
   "/results/:gambleId/:userId",
   async (req: Request, res: Response) => {
     let gamble: Gamble = await GambleController.findOne(req.params.gambleId);
-    let user: User = await UserController.findOne(req.body.userId);
+    if (gamble.closeTime >= new Date().getTime()) {
+      res.status(400).json({});
+      return;
+    }
+    let user: User = await UserController.findOne(req.params.userId);
+    if (
+      user.gambleHist.find((element) => {
+        return element.gambleId == req.params.gambleId;
+      })?.result != -1
+    ) {
+      res.status(400).json({});
+      return;
+    }
     let hist = user["gambleHist"].filter((hist) => {
       return hist["gambleId"] == req.params.gambleId;
     })[0];
+    console.log(hist);
     let result = 0;
     let gainedBalance = 0;
     if (gamble["answerIndex"] === hist["index"]) {
@@ -106,16 +130,17 @@ GambleRouter.put(
       result = 1;
     }
     user["gambleHist"] = user["gambleHist"].map((h) => {
-      if (h["index"] == gamble["answerIndex"]) h["result"] = result;
+      if (h["gambleId"] == req.params.gambleId) h["result"] = result;
       return h;
     });
     user["balance"] += gainedBalance;
+    console.log(user);
     await UserController.findOneAndUpdate(req.params.userId, user);
     res.status(200).json({
       result: gamble["result"],
       answerIndex: gamble["answerIndex"],
     });
-  }
+  } //
 );
 
 /*
@@ -168,11 +193,13 @@ req = {
   "optionIndex": number,
   "balance": number
 }
-res = Gamble
-- 결과 확인 (PUT) /gamble/result
+res = {
+  "gamble"?: Gamble,
+  "gambleHist": User.gambleHist
+  "result": boolean (true: successfully betted, false: already betted before)
+}
+- 결과 확인 (PUT) /gamble/result/:gambleId/:userId
 req = {
-  "userId": string,
-  "gambleId": string
 }
 res = {
   "result": {
