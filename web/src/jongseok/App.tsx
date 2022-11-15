@@ -7,10 +7,11 @@ import EditProfile from "./components/Profile/Pages/EditProfile";
 import EditUserInfo from "./components/Profile/Pages/EditUserInfo";
 import EditHashtag from "./components/Profile/Pages/EditHashtag";
 import Setting from "./components/Profile/Pages/Setting";
+import DeleteUser from "./components/Profile/Pages/DeleteUser";
 function ProfileStats() {
   return (
     <div className="jongseok">
-      <Setting />
+      <DeleteUser />
     </div>
     // <div className="App">
     // 	<header className="App-header">
