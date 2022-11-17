@@ -52,8 +52,8 @@ export function MainPage() {
     console.log("getFetchData........");
     Newsletter_example = getNewsletterList();
 
-    setResult([...RandomList.slice(0, 5)]);
-    setItem([...RandomList.slice(5)]);
+    setResult([...RandomList.slice(0, 7)]);
+    setItem([...RandomList.slice(7)]);
     setIsLoading(false);
   };
 
@@ -63,6 +63,10 @@ export function MainPage() {
     window.addEventListener("scroll", _infiniteScroll, true);
     return () => window.removeEventListener("scroll", _infiniteScroll, true);
   }, [_infiniteScroll]);
+  useEffect(() => {
+    getFetchData();
+    RandomListInit();
+  }, []);
 
   return (
     <div>
