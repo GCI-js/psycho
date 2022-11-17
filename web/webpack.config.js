@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
 	mode: "development",
 	entry: "./src/index.tsx",
@@ -23,6 +25,12 @@ module.exports = {
 	resolve: {
 		extensions: [".tsx", ".ts", ".js"],
 	},
+	plugins: [
+		new webpack.ProvidePlugin({
+		  Buffer: ['buffer', 'Buffer'],
+		  process: 'process/browser'
+		})
+	],
 	devServer: {
 		static: "./dist",
 	},

@@ -1,23 +1,29 @@
 namespace shepherd {
 
-    const name2trigger: any = {}
+    const lamb2trigger: any = {}
 
-    export function setLocation(name: string) {
-        location.href = "#" + name;
+    export function chase(lamb: string, pose: string) {
+        const lamb2pose = readPoses();
+        lamb2pose[lamb] = pose;
+        location.href = "#" + 
+            Object.entries(lamb2pose).map(v => v.join(":")).join(",") +
+            "#" + lamb;
     }
-    export function readLocation() {
-        const rslt = location.href.split("#")[1];
-        if (rslt) return rslt;
-        return "";
+    export function readPoses() {
+        const code = location.href.split("#")[1];
+        if (!code) return {};
+        return JSON.parse(
+            '{"' + code.replace(/,/g, '","').replace(/:/g, '":"') + '"}');
+    }
+    export function readLamb() {
+        return location.href.split("#")[2];
     }
     export function whip() {
-        const name = readLocation();
-        console.log("location:", name);
-        const [v, setValue] = name2trigger[name];
+        const [v, setValue] = lamb2trigger[readLamb()];
         setValue(v + 1);
     }
-    export function adopt(trigger: any, names: string[]) {
-        names.forEach(v => name2trigger[v] = trigger);
+    export function adopt(lamb: string, trigger: any) {
+        lamb2trigger[lamb] = trigger;
     }
 }
 

@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import './main.scss';
+import './index.scss';
 
 
 export default function Button(properties: any) {
