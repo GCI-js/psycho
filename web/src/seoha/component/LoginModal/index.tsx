@@ -3,10 +3,10 @@ import * as React from "react";
 import bodyguard from "../../service/bodygoard";
 import shepherd from "../../service/shepherd";
 
-import Button from "../Button/main";
-import Box from "../Box/main";
+import Button from "../Button";
+import Box from "../Box";
 
-import './main.scss';
+import './index.scss';
 
 
 export default function LoginModal() {
@@ -32,7 +32,7 @@ export default function LoginModal() {
         cls.remove("failure");
         cls.add("success");
         msg.innerText = "success";
-        shepherd.setLocation("main");
+        shepherd.chase("lamb", "main");
     }
     
     function runFlow1() {

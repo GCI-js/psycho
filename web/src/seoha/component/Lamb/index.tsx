@@ -2,12 +2,13 @@ import * as React from "react";
 
 import shepherd from "../../service/shepherd";
 
-import "./main.scss";
+import "./index.scss";
 
 
-export default function PageSelector(properties: any) {
-    const cl_names = ["std-pages", properties.className].join(" ");
-    console.log("<PageSelector/>" + cl_names);
+export default function Lamb(properties: any) {
+    console.log(`<Lamb>${properties["data-lamb"]}</Lamb>`, );
+    const lamb = properties["data-lamb"];
+    const cl_names = ["std-page", properties.className].join(" ");
     const ref = React.useRef(null);
     const pages = properties.children;
     const ct = pages.length;
@@ -16,19 +17,18 @@ export default function PageSelector(properties: any) {
     const names = Array(ct);
     const tracker = React.useState(0);
     for (let i = 0; i < ct; i++) {
-        names[i] = pages[i].props["data-page-name"];
+        names[i] = pages[i].props["data-pose"];
         const [v, setValue] = React.useState(null);
-        std_pages[i] = <div className="std-page" key={i}>{v}</div>;
+        std_pages[i] = <div key={i}>{v}</div>;
         pagings[i] = setValue;
     }
-    shepherd.adopt(React.useState(0), names);
+    shepherd.adopt(lamb, React.useState(0));
 
     React.useEffect(() => {
-        let loc = names.indexOf(shepherd.readLocation());
-        console.log(names, shepherd.readLocation(), tracker[0]);
+        let loc = names.indexOf(shepherd.readPoses()[lamb]);
         if (loc < 0) {
             loc = 0;
-            shepherd.setLocation(names[loc]);
+            shepherd.chase(lamb, names[loc]);
         }
         tracker[1](loc);
         pagings[loc](pages[loc]);
