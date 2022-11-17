@@ -15,13 +15,14 @@ export const HashtagController = {
       type: type ? type : "free",
       mbtiCnt: Array(16).fill(0),
     };
-    HashtagModel.create(newHashtag);
+    await HashtagModel.create(newHashtag);
   },
   findAllHashtags: async () => {
     return HashtagModel.find({});
   },
   findOne: async (name: string) => {
-    return HashtagModel.findOne({ name: name }).lean<Hashtag>();
+    let filter = { name: name };
+    return await HashtagModel.findOne(filter).lean<Hashtag>();
   },
   findByIdAndUpdate: async (hashtag: Hashtag) => {
     HashtagModel.findByIdAndUpdate(
