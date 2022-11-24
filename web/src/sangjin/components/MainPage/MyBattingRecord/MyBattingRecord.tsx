@@ -45,11 +45,13 @@ const MyBattingRecord = () => {
   return (
     <div>
       <div className="card_mybat">
-        <div className="card_my_bat_header">나의 베팅 기록</div>
-        <div>
-          지난 {day}일 동안 {win}번 이기셨고, {loose}번 패배하셨어요! 총 승률은
-          {Math.round((win * 100) / day)}% 에요! 지금까지 {money} MBTI 포인트를
-          사용하셨어요!
+        <div className="card_mybat_header">나의 베팅 기록</div>
+        <div className="card_mybat_contents">
+          <div>
+            지난 {day}일 동안 {win}번 이기셨고, {loose}번 패배하셨어요!
+          </div>
+          총 승률은 {Math.round((win * 100) / day)}% 에요! 지금까지 {money} MBTI
+          포인트를 사용하셨어요!
         </div>
       </div>
     </div>
