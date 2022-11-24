@@ -6,6 +6,10 @@ import { Hashtag } from "../../../common/type/Hashtag";
 export const HashtagRouter = express.Router();
 
 HashtagRouter.post("/", async (req: Request, res: Response) => {
+  let hashtag: Hashtag = await HashtagController.findOne(req.body.name);
+  if (hashtag !== null) {
+    res.status(400).json({});
+  }
   await HashtagController.createHashtag(req.body.name, req.body.type);
   res.status(200).json(await HashtagController.findOne(req.body.name));
 });
