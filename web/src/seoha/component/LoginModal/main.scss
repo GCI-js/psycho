@@ -1,0 +1,119 @@
+.login-modal {
+    box-sizing: border-box;
+    border-radius: 4px;
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+
+    animation-duration: 1s;
+    color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    font-size: 16px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+    &.appear {
+        animation-name: appear;
+        animation-duration: 1s;
+        opacity: 1;
+    }
+    > span {
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+    > .ip-group {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 30px;
+        &.unfold {
+            animation-name: unfold;
+            height: 150px;
+            animation-duration: 0.4s;
+        }
+        > div {
+            padding: 0px 8px;
+            width: 100%;
+            opacity: 0;
+            display: none;
+            &.appear-detail {
+                opacity: 1;
+                animation-name: appear-detail;
+                animation-duration: 0.6s;
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+            input {
+                height: 30px;
+                width: 150px;
+                color: rgba(0, 0, 0, 0.6);
+                border-radius: 4px;
+                border: none;
+                margin: 4px;
+                box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
+                text-align: center;
+                &:focus {
+                    outline: none;
+                }
+                &::placeholder {
+                    color: rgba(0, 0, 0, 0.25)
+                }
+            }
+            .button {
+                background: gray;
+                margin-top: 8px;
+                margin-bottom: 4px;
+                width: 150px;
+                color: white;
+            }
+        }
+    }
+    .msg-box {
+        &.failure {
+            display: flex;
+            color: red;
+        }
+        &.success {
+            display: flex;
+            color: blue;
+        }
+        display: none;
+        font-size: 14px;
+        margin-top: 0px;
+        margin-bottom: 30px;
+    }
+}
+
+@keyframes appear {
+    from {
+        box-shadow: none;
+        opacity: 0;
+    }
+    to {
+        box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.4);
+        opacity: 1;
+    }
+}
+
+@keyframes unfold {
+    from {
+        height: 30px;
+    }
+    to {
+        height: 150px;
+    }
+}
+
+@keyframes appear-detail {
+    from {
+        opacity: 0;
+        display: none;
+    }
+    to {
+        opacity: 1;
+        display: block;
+    }
+}

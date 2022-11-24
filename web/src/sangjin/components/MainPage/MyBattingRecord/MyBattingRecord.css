@@ -1,0 +1,32 @@
+.card_mybat {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 10px;
+  /* width: 500px;
+	height: 150px; */
+  padding: 5px;
+  /* overflow: hidden;
+	word-wrap: break-word; */
+  font-size: 12px;
+  background-color: #eaeaea;
+}
+.card_mybat_header {
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-bottom: 12px;
+  /* font-family:  */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 16px;
+  font-style: Bold;
+  line-height: 24px;
+  line-height: 123.94%;
+  vertical-align: Center;
+  text-align: left;
+  letter-spacing: 0.44px;
+}
+.card_mybat_contents {
+  margin-left: 20px;
+  margin-right: 20px;
+  text-align: left;
+}

@@ -1,1 +1,9 @@
 node_modules/
+
+db/
+credentials/
+log/
+
+.env
+*.lock
+package-lock.json

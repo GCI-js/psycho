@@ -1,0 +1,58 @@
+.card_attchk {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: 10px;
+  /* width: 500px;
+      height: 150px; */
+  padding: 5px;
+  /* overflow: hidden;
+      word-wrap: break-word; */
+  font-size: 12px;
+  background-color: #eaeaea;
+}
+.card_attchk_header {
+  margin-top: 16px;
+  margin-left: 16px;
+  margin-bottom: 12px;
+  /* font-family:  */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 16px;
+  font-style: Bold;
+  line-height: 24px;
+  line-height: 123.94%;
+  vertical-align: Center;
+  text-align: left;
+  letter-spacing: 0.44px;
+}
+
+.card_attendance {
+  margin-left: 1%;
+  margin-right: 1%;
+  height: 40px;
+  background-color: #7676803d;
+}
+.card_attchk_table {
+  border-radius: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  height: 40px;
+  vertical-align: middle;
+  background-color: #7676803d;
+  color: white;
+  border-spacing: 0px;
+}
+.card_attchk_table td {
+  /* border-left: 1px black solid; */
+  border-right: 1px rgba(84, 84, 88, 0.65) solid;
+}
+/* .card_attchk_table td:first-child {
+  border-left: 0;
+} */
+.card_attchk_table td:last-child {
+  border-right: 0;
+}
+.attchek_yes {
+  background-color: #636366;
+  border-right: 0px;
+}
