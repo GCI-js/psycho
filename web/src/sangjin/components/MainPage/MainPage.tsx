@@ -10,7 +10,7 @@ import { getRandomList, RandomListInit } from "./RandomList";
 import HashtagSearchResult from "./HashtagSearchResult";
 import MyBattingRecord from "./MyBattingRecord/MyBattingRecord";
 import AttendanceCheck from "./AttendanceCheck/AttendanceCheck";
-
+import TopHashtag from "./TopHashTag/TopHashtag";
 export function MainPage() {
   let Newsletter_example: any[] = [];
   let RandomList: any[] = [];
@@ -71,9 +71,6 @@ export function MainPage() {
   return (
     <div>
       <div className="header">뉴스피드</div>
-
-      {/* <Trend></Trend>
-      <ChnageMBTI></ChnageMBTI> */}
       <div className="contents">
         {result.map(function (i): JSX.Element {
           console.log("result map i .............", i);
@@ -85,6 +82,8 @@ export function MainPage() {
             return <MyBattingRecord />;
           } else if (i.type === "hashtagsearchresult") {
             return <HashtagSearchResult />;
+          } else if (i.type === "tophashtag") {
+            return <TopHashtag />;
           } else {
             return (
               <Newsletter

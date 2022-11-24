@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./AttendanceCheck.css";
 
-export const connHist: number[] = [0, 1, 1, 1, 0, 1, 0];
+export const connHist: number[] = [0, 1, 0, 0, 0, 1, 0];
 
 const AttendanceCheck = () => {
   return (

@@ -40,10 +40,11 @@
   vertical-align: middle;
   background-color: #7676803d;
   color: white;
+  border-spacing: 0px;
 }
 .card_attchk_table td {
   /* border-left: 1px black solid; */
-  border-right: 1px black solid;
+  border-right: 1px rgba(84, 84, 88, 0.65) solid;
 }
 /* .card_attchk_table td:first-child {
   border-left: 0;
@@ -53,4 +54,5 @@
 }
 .attchek_yes {
   background-color: #636366;
+  border-right: 0px;
 }
