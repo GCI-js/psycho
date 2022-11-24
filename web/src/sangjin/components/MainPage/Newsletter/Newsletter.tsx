@@ -1,7 +1,7 @@
 import * as React from "react";
 import NewsletterLink from "./NewsletterLink";
 import "./Newsletter.css";
-
+import icon from "./icon_newsletter.png";
 export type NewsletterType = {
   newsletter_id: string;
   title: string;
@@ -30,18 +30,25 @@ const Newsletter = (props: NewsletterType) => {
           </a>
         </div>
         <div className="card_desc">
-          <div className="card_title">
-            <a href={props.url}>{props.title}</a>
+          <div>
+            <div className="card_title">
+              <span>{props.title}</span>
+            </div>
+            {/* <div className="card_text">
+              <a href={props.url}>{props.writer}</a>
+            </div> */}
+            <div className="card_tag">
+              {props.hashtag.map(function (i): JSX.Element {
+                // console.log("I.........", i);
+                return <span>#{i.name} </span>;
+              })}
+              {/* <a href={props.url}>#{props.hashtag}</a> */}
+            </div>
           </div>
-          <div className="card_text">
-            <a href={props.url}>{props.writer}</a>
-          </div>
-          <div className="card_tag">
-            {props.hashtag.map(function (i): JSX.Element {
-              // console.log("I.........", i);
-              return <span>#{i.name} </span>;
-            })}
-            {/* <a href={props.url}>#{props.hashtag}</a> */}
+          <div>
+            <button type="button" className="card_button">
+              <img src={icon} width="40px" height="40px"></img>
+            </button>
           </div>
         </div>
       </div>

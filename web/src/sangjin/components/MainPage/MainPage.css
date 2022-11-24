@@ -4,6 +4,9 @@
   font-weight: 700;
   font-size: 34px;
   line-height: 41px;
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
   /* identical to box height, or 121% */
 
   letter-spacing: 0.374px;
