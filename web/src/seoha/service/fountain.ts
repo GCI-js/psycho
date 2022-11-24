@@ -1,13 +1,15 @@
 import * as mqtt from "mqtt";
 
 
+interface GroupInfo {"name": string, "ids": string[]};
+interface Group2Ids {[key: string]: string[]};
+
 namespace fountain {
-    let _device_ids: any = [];
-
+    let _groups: string[] = [];
+    let _group2ids: Group2Ids = {};
+    let _device_id: string = "";
+    const _id2device: {[key: string]: any} = {};
     const _key2trigger: any = {};
-    const _id2device: any = {};
-    let _device_id: string = null;
-
     const host_address = "mqtt://10.113.68.90:1884"
     const _client = mqtt.connect(host_address, {
         clean: true,
@@ -21,20 +23,28 @@ namespace fountain {
     });
     _client.on('message', (topic, message) => {
         if (topic == "context/device-ids") {
-            const ids: any[] = JSON.parse(message.toString());
+            const meta_info: GroupInfo[] = JSON.parse(message.toString());
+            const ids: string[] = [];
+            _groups = [];
+            _group2ids = {};
+            meta_info.forEach(v => {
+                const name = v["name"];
+                _groups.push(name)
+                _group2ids[name] = v["ids"];
+                v["ids"].forEach(v_ => ids.push(v_))
+            });
             const code = ids.sort().join("");
             const ids_ = Object.keys(_id2device).sort();
             const code_ = ids_.join("");
             if (code == code_) return;
             ids_.forEach(v => {
-                _client.unsubscribe(`context/device/${v}`);
+                _client.unsubscribe(`context/device/${v}`)
                 delete _id2device[v];
-            });    
+            });
             ids.forEach(v => {
                 _client.subscribe(`context/device/${v}`);
                 _id2device[v] = {};
             });
-            _device_ids = Object.keys(_id2device);
             const [v, setValue] = _key2trigger["main"];
             setValue(v + 1);
             return;
@@ -54,22 +64,32 @@ namespace fountain {
         const [v, setValue] = _key2trigger[key];
         setValue(v + 1);
     }
-    export function pushDeviceIds(user_id: string) {
+    export function pushMetaInfo(user_id: string) {
         _client.publish("context/device-ids-push", "");
     }
-    export function changeOrder(device_ids: any[]) {
-        _device_ids = device_ids;
-        const [v, setValue] = _key2trigger["main"];
-        setValue(v + 1);
+    export function getMetaInfo(user_id: string): [string[], Group2Ids] {
+        return [_groups, _group2ids];
     }
     export function pushDevice(device_id: string) {
         _client.publish(`context/device-push/${device_id}`, "");
     }
-    export function getDeviceIds(user_id: string) {
-        return _device_ids;
-    }
     export function getDevice(device_id="") {
         return _id2device[device_id == "" ? _device_id : device_id];
+    }
+    export function changeOrder(name: string, ids: string[]) {
+        _group2ids[name] = ids;
+        const [v, setValue] = _key2trigger["main"];
+        setValue(v + 1);
+    }
+    export function changeGroupOrder(name: string, direction: -1 | 1) {
+        const loc = _groups.indexOf(name);
+        const tgt_loc = loc + direction;
+        if (tgt_loc < 0 || tgt_loc >= _groups.length) return;
+        const tmp = _groups[loc];
+        _groups[loc] = _groups[loc + direction];
+        _groups[loc + direction] = tmp;
+        const [v, setValue] = _key2trigger["main"];
+        setValue(v + 1);
     }
 }
 

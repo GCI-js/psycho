@@ -5,10 +5,15 @@ import LoginModal from "./component/LoginModal";
 import MainPage from "./component/MainPage";
 
 import './App.scss';
+import shepherd from "./service/shepherd";
 
 
-function App() {
+export default function App() {
     console.log("<App/>");
+
+    React.useEffect(() =>
+        window.addEventListener("popstate", shepherd.whip), []);
+
     return <div className="app-j238dndx8w4hweh">
         <Lamb className="router" data-lamb="lamb">
             <LoginModal data-pose="login"/>
@@ -16,5 +21,3 @@ function App() {
         </Lamb>
     </div>
 }
-
-export default App;
