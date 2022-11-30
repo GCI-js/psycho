@@ -11,7 +11,6 @@ import { BettingUtils } from "../Betting/utils";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
 import closeButtonImage from "./img/close.svg";
 import lockedWithKeyImage from "./img/locked_with_key_3d.svg";
-import LoginModal from "../../../seoha/component/LoginModal/main";
 
 interface BettingContentProps {
   data: GambleType.Gamble;
