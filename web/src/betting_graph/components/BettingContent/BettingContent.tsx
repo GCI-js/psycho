@@ -3,6 +3,8 @@ import "./BettingContent.css";
 import GambleType from "../../../../../common/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
+import closeButtonImage from "./img/close.svg";
+import LoginModal from "../../../seoha/component/LoginModal/main";
 
 interface BettingContentProps {
   data: GambleType.Gamble;
@@ -13,12 +15,14 @@ interface BettingContentProps {
 export default class Example extends PureComponent<BettingContentProps> {
   render() {
     var data = this.props.data;
-    // var bettingTitle = this.props.bettingTitle;
+
     // var userData = this.props.userData;
     var currentTime = Date.now();
     var remainTime = data.closeTime - currentTime;
     var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
-    var bettingTitle = currentDate + " 배당률";
+    var bettingTitle = this.props.bettingTitle
+      ? this.props.bettingTitle
+      : currentDate + " 배당률";
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
@@ -83,6 +87,11 @@ export default class Example extends PureComponent<BettingContentProps> {
       );
     }
 
+    function closeComponent1() {
+      return <span className="close">&times;</span>;
+      // return <img src={closeButtonImage}></img>;
+    }
+
     var comp = bcomp();
     var comp2 = bcomp2();
     var comp3 = bcomp3();
@@ -95,9 +104,13 @@ export default class Example extends PureComponent<BettingContentProps> {
       ? comp2
       : comp3;
 
+    var closeComponent = this.props.addtionalComponent ? closeComponent1() : "";
+
     return (
       <div className="BettingContentComponent">
-        <div className="BettingContentTop">{bettingTitle}</div>
+        <div className="BettingContentTop">
+          {bettingTitle} {closeComponent}
+        </div>
         <div className="BettingContentTitle">{data.title}</div>
         <div className="BettingContentBody">
           <div className="BettingContentBodyLeft">

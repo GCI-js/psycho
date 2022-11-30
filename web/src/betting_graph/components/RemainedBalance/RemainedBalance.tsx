@@ -14,11 +14,15 @@ export default class Example extends PureComponent<RemainedBalanceProps> {
   render() {
     var data = this.props.data;
     return (
-      <div className="root">
-        <div>
-          <img src={imgMoneyBag3d} alt="dice" />
+      <div className="Balance">
+        <div className="RowBalance">
+          <div className="ColumnBalance">
+            <img src={imgMoneyBag3d} alt="dice" />
+          </div>
+          <div className="ColumnBalance">
+            <p>지갑에 {data.balance} MBTI 코인이 남아 있어요!</p>
+          </div>
         </div>
-        <div>지갑에 {data.balance} MBTI 코인이 남아 있어요!</div>
       </div>
     );
   }
