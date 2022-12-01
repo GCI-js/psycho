@@ -1,8 +1,8 @@
 import { url } from "inspector";
 import React, { useState } from "react";
 import "./EditProfile.css";
-import MBTISelectFrame from "./img/MBTISelectFrame.png";
-import bloodTypeSelectFrame from "./img/bloodTypeSelectFrame.png";
+import MBTISelectFrame from "../img/MBTISelectFrame.png";
+import bloodTypeSelectFrame from "../img/bloodTypeSelectFrame.png";
 import ButtonBox from "../../Common/ButtonBox";
 import BasicButton from "../../Common/BasicButton";
 import EditUserInfo from "./EditUserInfo";

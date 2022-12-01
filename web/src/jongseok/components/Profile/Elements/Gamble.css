@@ -11,10 +11,19 @@
   font-size: 12px;
   background-color: #eaeaea;
 }
-.title {
+.gambleTitle {
   font-weight: bold;
-  font-size: 12px;
+  font-size: 16px;
   margin-bottom: 10px;
+  padding-top: 16px;
+  padding-left: 16px;
 }
 .gambleContent {
+  padding: 12px 23px 14px 23px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+  color: #434343;
 }

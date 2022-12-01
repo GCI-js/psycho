@@ -100,7 +100,7 @@ const EditUserInfo = () => {
       <div className="username">{`@${dummyUserName}`}</div>
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
       <select
-        className="selectBox"
+        className="selectBox nation"
         value={selectedNation}
         onChange={handleChangeNation}
       >

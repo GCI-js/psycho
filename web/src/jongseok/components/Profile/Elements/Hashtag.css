@@ -1,13 +1,21 @@
 .content {
   border-radius: 10px;
-  width: 100px;
-  height: 20px;
-  padding: 5px;
+  width: 79px;
+  height: 25px;
+  /* padding: 5px; */
   overflow: hidden;
   word-wrap: break-word;
   font-size: 12px;
   font-weight: bold;
-  margin: 5px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  line-height: 25px;
+  margin-left: 7px;
+  margin-bottom: 11px;
 }
 .orange {
   background-color: #ffb45c;
