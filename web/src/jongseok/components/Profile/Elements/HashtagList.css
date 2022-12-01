@@ -1,0 +1,16 @@
+.hashtagContainer {
+  border-radius: 10px;
+  margin: 10px;
+  /* width: 500px;
+	height: 150px; */
+  padding: 5px;
+  overflow: hidden;
+  word-wrap: break-word;
+  font-size: 12px;
+  background-color: #eaeaea;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 12px;
+}

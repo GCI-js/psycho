@@ -1,0 +1,10 @@
+.std-page {
+    > div {
+        display: none;
+        // contain: content;
+        box-sizing: border-box;
+        &.on {
+            display: block;
+        }
+    }
+}

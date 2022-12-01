@@ -1,27 +1,23 @@
 import * as React from "react";
 
-import shepherd from "./service/shepherd";
-
-import PageSelector from "./component/PageSelector/main";
-import LoginModal from "./component/LoginModal/main";
-import MainPage from "./component/MainPage/main";
+import Lamb from "./component/Lamb";
+import LoginModal from "./component/LoginModal";
+import MainPage from "./component/MainPage";
 
 import './App.scss';
+import shepherd from "./service/shepherd";
 
 
+export default function App() {
+    console.log("<App/>");
 
-function Seoha() {
-    console.log("<Seoha/>");
+    React.useEffect(() =>
+        window.addEventListener("popstate", shepherd.whip), []);
 
-    React.useEffect(
-        () => window.addEventListener("popstate", shepherd.whip), []);
-
-    return <div className="seoha">
-        <PageSelector className="router">
-            <LoginModal data-page-name="login"/>
-            <MainPage data-page-name="main"/>
-        </PageSelector>
+    return <div className="app-j238dndx8w4hweh">
+        <Lamb className="router" data-lamb="lamb">
+            <LoginModal data-pose="login"/>
+            <MainPage data-pose="main"/>
+        </Lamb>
     </div>
 }
-
-export default Seoha;

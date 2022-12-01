@@ -1,0 +1,21 @@
+.selected {
+  background-color: #636366;
+}
+.notSelected {
+  background-color: transparent;
+}
+.buttonBox {
+  /* -webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none; */
+  border: 0;
+  outline: 0;
+  width: 70px;
+  height: 50px;
+  border-radius: 7px;
+  margin: 10px 7px 5px 5px;
+  /* box-shadow: 1px 1px 1px black; */
+  /* transition-duration: 0.3s; */
+  font-size: 33px;
+  color: #ffffff;
+}
