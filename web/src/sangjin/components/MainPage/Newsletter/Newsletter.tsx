@@ -1,7 +1,7 @@
 import * as React from "react";
 import NewsletterLink from "./NewsletterLink";
 import "./Newsletter.css";
-import icon from "./icon_newsletter.png";
+// import icon from "./icon_newsletter.png";
 export type NewsletterType = {
   newsletter_id: string;
   title: string;
@@ -47,7 +47,7 @@ const Newsletter = (props: NewsletterType) => {
           </div>
           <div>
             <button type="button" className="card_button">
-              <img src={icon} width="40px" height="40px"></img>
+              {/* <img src={icon} width="40px" height="40px"></img> */}
             </button>
           </div>
         </div>

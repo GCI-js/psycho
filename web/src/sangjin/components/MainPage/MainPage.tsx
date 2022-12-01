@@ -16,19 +16,24 @@ export function MainPage() {
   let RandomList: any[] = [];
   RandomList = getRandomList();
 
-  const [result, setResult] = useState<any[]>([]);
-  const [item, setItem] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  let [result, setResult] = useState<any[]>([]);
+  let [item, setItem] = useState<any[]>([]);
+  let [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchMoreData = async () => {
     console.log("fetchMoreData............");
     setIsLoading(true);
-    // console.log("result........", result);
-    let tmp = [...result.concat(item.slice(0, 3))];
-    // console.log("tmp........", tmp);
+    // let tmp;
+    // if (item.length >= 3) {
+    console.log("item,,,,", item);
+    let tmp = item.slice(0, 5);
 
-    setResult(tmp);
-    setItem(item.slice(3));
+    console.log("tmp........", tmp);
+    setResult([...result, ...tmp]);
+    console.log("result........", result);
+
+    // setItem([...item, ...item.slice(5)]);
+    setItem((items) => items.filter((item, i) => i >= 5));
     setIsLoading(false);
   };
 
@@ -50,22 +55,21 @@ export function MainPage() {
   }, [isLoading]);
   const getFetchData = async () => {
     console.log("getFetchData........");
-    Newsletter_example = getNewsletterList();
-
+    console.log("RandomList.....", RandomList);
     setResult([...RandomList.slice(0, 7)]);
     setItem([...RandomList.slice(7)]);
     setIsLoading(false);
   };
 
   useEffect(() => {
-    getFetchData();
-    RandomListInit();
+    // getFetchData();
+    // RandomListInit();
     window.addEventListener("scroll", _infiniteScroll, true);
     return () => window.removeEventListener("scroll", _infiniteScroll, true);
   }, [_infiniteScroll]);
   useEffect(() => {
-    getFetchData();
     RandomListInit();
+    getFetchData();
   }, []);
 
   return (

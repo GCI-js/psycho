@@ -21,7 +21,7 @@ export function RandomListInit() {
   RandomList.push({ type: "mybattingrecord", data: [] });
   RandomList.push({ type: "attendancecheck", data: [] });
   for (let i = 0; i < NewsletterList.length; i++) {
-    console.log("NewsletterList..........", NewsletterList[i]);
+    // console.log("NewsletterList..........", NewsletterList[i]);
     RandomList.push({ type: "newsletter", data: NewsletterList[i] });
   }
 }
