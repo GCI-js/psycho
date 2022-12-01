@@ -52,11 +52,13 @@
     "hashtags": [
       {
         "hashtagId": "0",
-        "name": "GCI"
+        "name": "GCI",
+        "mbtiCnt": [0, 0]
       },
       {
         "hashtagId": "1",
-        "name": "MBTI"
+        "name": "MBTI",
+        "mbtiCnt": [0, 0]
       }
     ],
     "recentResponse": [true, true, true, true, true, true, true],
@@ -126,11 +128,13 @@
     "hashtags": [
       {
         "hashtagId": "0",
-        "name": "HELLO"
+        "name": "HELLO",
+        "mbtiCnt": [0, 0]
       },
       {
         "hashtagId": "1",
-        "name": "WORLD"
+        "name": "WORLD",
+        "mbtiCnt": [0, 0]
       }
     ],
     "recentResponse": [true, true, true, true, true, true, true],

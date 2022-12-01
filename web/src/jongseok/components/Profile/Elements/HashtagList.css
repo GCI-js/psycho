@@ -8,9 +8,22 @@
   word-wrap: break-word;
   font-size: 12px;
   background-color: #eaeaea;
+  display: flex;
+  flex-direction: column;
 }
 
-.title {
-  font-weight: bold;
+.hashtagTitle {
   font-size: 12px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  margin-top: 16px;
+  margin-left: 16px;
+}
+
+.hashtagLists {
+  display: flex;
+  flex-direction: row;
+  margin-top: 11px;
 }

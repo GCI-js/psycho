@@ -80,6 +80,9 @@ export default class Example extends PureComponent<BettingResultProps> {
     return (
       <div className="root">
         <div>
+          <BettingContent data={data[0]} isLocked={true} />
+        </div>
+        <div>
           <BettingContent
             data={data[0]}
             // bettingTitle={currentDate + " 배당률"}
