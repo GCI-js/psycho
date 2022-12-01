@@ -1,6 +1,7 @@
-import React, { PureComponent, useState, useEffect } from "react";
+import React, { Component, PureComponent, useState, useEffect } from "react";
 import "./Betting.css";
 import imgGameDie3D from "./img/game_die_3d_1.svg";
+import BettingPopup from "../BettingPopup/BettingPopup";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
 import GambleType from "../../../../../common/type/Gamble";
 
@@ -8,38 +9,42 @@ import { BettingUtils } from "./utils";
 
 const BUTTON_WIDTH = 300;
 const BUTTON_HEIGHT = 57;
-const styles = {
-  root: {
-    display: "flex",
-    justifyContent: "center",
-    height: BUTTON_HEIGHT,
-  },
-
-  button1: {
-    // display: "flex",
-    backgroundColor: "#FF9574",
-    borderRadius: "100px 0px 0px 100px",
-    border: "none",
-    color: "#FFFFFF",
-    height: "57px",
-  },
-  button2: {
-    // display: "flex",
-    backgroundColor: "#FF7070",
-    borderRadius: "0px 100px 100px 0px",
-    border: "none",
-    color: "#FFFFFF",
-    height: "57px",
-  },
-};
 
 interface BettingProps {
   data: GambleType.Gamble;
   // data: BettingDataItem;
 }
 
-export default class Example extends PureComponent<BettingProps> {
+export default class Example extends Component<
+  BettingProps,
+  { showModal: boolean }
+> {
+  constructor(props: BettingProps) {
+    super(props);
+
+    this.state = {
+      showModal: false,
+    };
+    // this.toggleTicketModal = this.toggleTicketModal.bind( this );
+  }
+
+  handleOpenClose = () => {
+    console.log("click handleOpenClose");
+    this.setState((prev) => ({ showModal: !prev.showModal }));
+    console.log(this.state.showModal);
+  };
+
   render() {
+    // window.onclick = function (event) {
+    //   console.log(event);
+    // };
+    // const [show, setShow] = useState(true);
+    // const handleShow = () => setShow(true);
+    function showPastResult() {
+      console.log("click showPastResult");
+      // redirect BettingResult
+    }
+
     var data = this.props.data;
     var currentTime = Date.now();
     var remainTime = data.closeTime - currentTime;
@@ -79,7 +84,9 @@ export default class Example extends PureComponent<BettingProps> {
               </span>
             </div>
             <div className="Row">
-              <a style={{ fontWeight: "bold" }}>지난 결과 보기</a>
+              <button className="ShowPastButton" onClick={showPastResult}>
+                <span>지난 결과 보기</span>
+              </button>
             </div>
           </div>
         </div>
@@ -88,23 +95,30 @@ export default class Example extends PureComponent<BettingProps> {
         </div>
         <div>{currentDate}의 베팅!</div>
         <div>{data.title}</div>
-        <div style={styles.root}>
-          <button style={{ width: btn1Length, ...styles.button1 }}>
-            <span>짜장면</span>
+        <div className="">
+          <button
+            className="LeftButton1"
+            style={{ width: btn1Length }}
+            onClick={this.handleOpenClose}
+          >
+            <span>{data.contents.options[0].name}</span>
             <br />
             <span>{btn1LengthPortion}%</span>
           </button>
           <button
+            className="RightButton2"
             style={{
               width: btn2Length,
-              ...styles.button2,
             }}
+            onClick={this.handleOpenClose}
           >
-            <span>짬뽕</span>
+            <span>{data.contents.options[1].name}</span>
             <br />
             <span>{btn2LengthPortion}%</span>
           </button>
         </div>
+        <BettingPopup data={data} show={this.state.showModal} />
+        {/* <BettingPopup data={data} state={}/> */}
       </div>
     );
   }
