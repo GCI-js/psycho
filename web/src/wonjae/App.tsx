@@ -6,6 +6,8 @@ import KakaoRedirect from "./components/SignInPage/KaKaoRedirect";
 import NaverRedirect from "./components/SignInPage/NaverRedirect";
 import WelcomePage from "./components/SignInPage/WelcomePage";
 import SignUpPage1 from "./components/SingUp/SignUpPage1";
+import SignUpPage2 from "./components/SingUp/SignUpPage2";
+import SignUpPage3 from "./components/SingUp/SignUpPage3";
 
 function Wonjae() {
   return (
@@ -17,6 +19,8 @@ function Wonjae() {
           <Route path="/kakaoLogin" element={<KakaoRedirect />}></Route>
           <Route path="/naverLogin" element={<NaverRedirect />}></Route>
           <Route path="/signUp1" element={<SignUpPage1 />}></Route>
+          <Route path="/signUp2" element={<SignUpPage2 />}></Route>
+          <Route path="/signUp3" element={<SignUpPage3 />}></Route>
         </Routes>
       </BrowserRouter>
     </div>
