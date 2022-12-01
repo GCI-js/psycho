@@ -1,7 +1,7 @@
 import * as React from "react";
 import NewsletterLink from "./NewsletterLink";
 import "./Newsletter.css";
-// import icon from "./icon_newsletter.png";
+import icon from "./icon_newsletter.png";
 export type NewsletterType = {
   newsletter_id: string;
   title: string;
@@ -37,17 +37,24 @@ const Newsletter = (props: NewsletterType) => {
             {/* <div className="card_text">
               <a href={props.url}>{props.writer}</a>
             </div> */}
-            <div className="card_tag">
+            <div className="news_card_tag">
               {props.hashtag.map(function (i): JSX.Element {
                 // console.log("I.........", i);
-                return <span>#{i.name} </span>;
+                return <span className="news_card_tag_name">#{i.name} </span>;
               })}
               {/* <a href={props.url}>#{props.hashtag}</a> */}
             </div>
           </div>
           <div>
-            <button type="button" className="card_button">
-              {/* <img src={icon} width="40px" height="40px"></img> */}
+            <button
+              type="button"
+              className="card_button"
+              onClick={(e) => {
+                e.preventDefault();
+                window.location.href = props.url;
+              }}
+            >
+              <img src={icon} width="40px" height="40px"></img>
             </button>
           </div>
         </div>

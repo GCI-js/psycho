@@ -29,11 +29,25 @@ export function MainPage() {
     let tmp = item.slice(0, 5);
 
     console.log("tmp........", tmp);
-    setResult([...result, ...tmp]);
+    // setResult([...result, ...tmp]);
+    result.push(tmp[0]);
+    result.push(tmp[1]);
+    result.push(tmp[2]);
+    result.push(tmp[3]);
+    result.push(tmp[4]);
+    setResult([...result]);
     console.log("result........", result);
 
     // setItem([...item, ...item.slice(5)]);
-    setItem((items) => items.filter((item, i) => i >= 5));
+    let tmp2 = item.slice(5);
+    let newItems = [
+      (item: any) =>
+        item.filter((item: any, i: any) => {
+          i >= 5;
+        }),
+    ];
+    // setItem([...tmp2]);
+    item = item.slice(5);
     setIsLoading(false);
   };
 
