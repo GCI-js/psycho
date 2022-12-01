@@ -22,13 +22,13 @@ export default function Lamb(properties: any) {
         std_pages[i] = <div key={i}>{v}</div>;
         pagings[i] = setValue;
     }
-    shepherd.adopt(lamb, React.useState(0));
+    shepherd.adopt(React.useState(0), "lamb-" + lamb);
 
     React.useEffect(() => {
         let loc = names.indexOf(shepherd.readPoses()[lamb]);
         if (loc < 0) {
             loc = 0;
-            shepherd.chase(lamb, names[loc]);
+            shepherd.whip(lamb, names[loc]);
         }
         tracker[1](loc);
         pagings[loc](pages[loc]);
