@@ -1,8 +1,14 @@
+import * as React from "react";
+
+
+type Trigger = [number, React.Dispatch<React.SetStateAction<number>>];
+interface Key2Trigger {[key: string]: Trigger}
+
 namespace shepherd {
 
-    const lamb2trigger: any = {}
+    const _key2trigger: Key2Trigger = {};
 
-    export function chase(lamb: string, pose: string) {
+    export function whip(lamb: string, pose: string) {
         const lamb2pose = readPoses();
         lamb2pose[lamb] = pose;
         location.href = "#" + 
@@ -18,12 +24,16 @@ namespace shepherd {
     export function readLamb() {
         return location.href.split("#")[2];
     }
-    export function whip() {
-        const [v, setValue] = lamb2trigger[readLamb()];
-        setValue(v + 1);
+    export function bleat() {
+        chase("lamb-" + readLamb());
     }
-    export function adopt(lamb: string, trigger: any) {
-        lamb2trigger[lamb] = trigger;
+    export function adopt(trigger: Trigger, key: string) {
+        _key2trigger[key] = trigger;
+    }
+    export function chase(key: string) {
+        if (!_key2trigger[key]) return;
+        const [v, setValue] = _key2trigger[key];
+        setValue(v + 1);
     }
 }
 
