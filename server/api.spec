@@ -156,6 +156,67 @@ PUT /gamble/result/:gambleId/:userId - 겜블 결과 확인
 }
 
 
+<<<<<<<<<<<About newsletter>>>>>>>>>>>
+
+
+POST /newsletter - 뉴스레터 생성
+- Request.body
+{
+  thumbnail: string; // image url
+  title: string;
+  hashtags: string[];
+  url: string; // original post url
+  writer: string;
+}
+- Response
+{
+  Newsletter
+}
+
+GET /newsletter/items - 전체 뉴스레터 목록 조회
+- Request.body
+{
+}
+- Response
+{
+  Newsletter[] (전체 목록)
+}
+
+GET /newsletter/items/:id - 단일 뉴스레터 조회
+- Request.body
+{
+}
+- Response
+{
+}
+
+PUT /newsletter/items/:id - 뉴스레터 갱신
+- Request.body
+{
+  Newsletter (바꾸려는 부분)
+}
+- Response
+{
+  Newsletter
+}
+
+DELETE /newsletter/items/:id - 뉴스레터 삭제
+- Request.body
+{
+}
+- Response
+{
+  Newsletter[] (전체 목록)
+}
+
+
+
+
+
+
+
+
+
 - Request.body
 {
 }
