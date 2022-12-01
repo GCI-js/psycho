@@ -12,7 +12,7 @@ function ProfileStats() {
   return (
     <div className="jongseok">
       {/* <DeleteUser /> */}
-      <Setting />
+      <Profile />
     </div>
     // <div className="App">
     // 	<header className="App-header">

@@ -1,0 +1,39 @@
+.wonjae_title {
+  position: absolute;
+  width: 80%;
+  left: 26px;
+  top: 112px;
+}
+
+.wonjae_frame {
+  /* position: absolute; */
+  height: 400px;
+
+  background: rgba(40, 40, 41, 0.1);
+  border-radius: 0px;
+}
+
+.wonjae_medium_title {
+  /* Medium Title */
+
+  /* width: 144px; */
+  /* height: 22px; */
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 22px;
+  /* identical to box height, or 92% */
+
+  text-align: center;
+  letter-spacing: -0.408px;
+
+  color: #ffffff;
+
+  /* Inside auto layout */
+
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+}
