@@ -1,0 +1,12 @@
+.button_wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
+
+.back_button {
+  width: 27px;
+  height: 25px;
+  left: 19px;
+  top: 55px;
+}

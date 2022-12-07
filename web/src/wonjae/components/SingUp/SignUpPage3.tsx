@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
+import BackButton from "../Common/BackButton";
 import LargeTitle from "../Common/LargeTitle";
 import MainButton from "../Common/MainButton";
 import MediumTitle from "../Common/MediumTitle";
@@ -12,6 +13,7 @@ function SignUpPage3() {
 
   return (
     <div>
+      <BackButton />
       <LargeTitle text="회원가입" />
       <MediumTitle text={mediumText} />
       <MainButton text="게속" onClick={moveToNext} />

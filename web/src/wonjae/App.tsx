@@ -14,7 +14,8 @@ function Wonjae() {
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<WelcomePage />}></Route>
+          <Route path="/" element={<SignUpPage1 />}></Route>
+          {/* <Route path="/" element={<WelcomePage />}></Route> */}
           <Route path="/signIn" element={<SignInPage />}></Route>
           <Route path="/kakaoLogin" element={<KakaoRedirect />}></Route>
           <Route path="/naverLogin" element={<NaverRedirect />}></Route>
