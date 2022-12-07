@@ -4,6 +4,7 @@ import BackButton from "../Common/BackButton";
 import LargeTitle from "../Common/LargeTitle";
 import MainButton from "../Common/MainButton";
 import MediumTitle from "../Common/MediumTitle";
+import "./SignUpPage1.css";
 
 function SignUpPage1() {
   const navigate = useNavigate();
@@ -12,13 +13,12 @@ function SignUpPage1() {
   채워주세요`;
 
   const moveToNext = () => {
-    // TODO move to SignUpPage2
     const path = `/signUp2`;
     navigate(path);
   };
 
   return (
-    <div>
+    <div className="container">
       <BackButton />
       <LargeTitle text="회원가입" />
       <MediumTitle text={mediumText} />

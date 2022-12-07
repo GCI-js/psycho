@@ -1,4 +1,14 @@
 .medium_title {
   margin-top: 50px;
-  text-align: center;
+  text-align: left;
+  white-space: pre-line;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  font-size: 6vw;
+  line-height: 29px;
+
+  color: #000000;
 }
