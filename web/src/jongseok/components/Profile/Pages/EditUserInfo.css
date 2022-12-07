@@ -1,3 +1,46 @@
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.selectNation {
+  display: inline-block;
+  width: 120px;
+  border: 1px solid #999;
+}
+
+.selectNation .selectedNation {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 5px;
+}
+
+.selectNation .selectedNation .selected-value {
+  max-width: 90px;
+}
+
+.selectNation .selectedNation .arrow {
+  width: 24px;
+  /* background: url("https://uxwing.com/wp-content/themes/uxwing/download/02-arrow-direction/arrow-bottom.png")
+    no-repeat 70% 50%; */
+  background: url("../img/downwardArrow.png") no-repeat 70% 50%;
+  background-size: 50% 50%;
+}
+
+.selectNation ul {
+  width: 120px;
+  border: 1px solid #999;
+  position: absolute;
+  background: #fff;
+  border-top: none;
+  margin: 1px 0 0 -1px;
+  cursor: pointer;
+}
+
+.selectNation ul li {
+  padding: 8px 5px;
+}
+
 .choiceText {
   font-family: "Inter";
   font-style: normal;
@@ -35,9 +78,9 @@
   border-radius: 4px;
   /* color: inherit; */
   background-color: #ededed;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
   /* background-image: url("../img/cryFaceIcon.png"); */
 }
 
@@ -58,4 +101,50 @@
   /* overflow: hidden;
 	word-wrap: break-word; */
   font-size: 12px;
+}
+
+@keyframes slide-fade-in-dropdown-animation {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-fade-in-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-in-dropdown > ul {
+  animation: slide-fade-in-dropdown-animation 0.4s ease;
+}
+
+@keyframes slide-fade-out-dropdown-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.slide-fade-out-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-out-dropdown > ul {
+  animation: slide-fade-out-dropdown-animation 0.4s ease;
+  animation-fill-mode: forwards;
+}
+
+.components-dropdown > ul {
+  position: relative;
+  top: 5px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-left: 0;
+  list-style: none;
 }
