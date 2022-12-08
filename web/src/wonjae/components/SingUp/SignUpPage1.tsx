@@ -1,4 +1,5 @@
 import React from "react";
+import EditProfile from "../../../jongseok/components/Profile/Pages/EditProfile";
 import shepherd from "../../../seoha/service/shepherd";
 import BackButton from "../Common/BackButton";
 import LargeTitle from "../Common/LargeTitle";
@@ -20,16 +21,23 @@ function SignUpPage1() {
       <BackButton />
       <LargeTitle text="회원가입" />
       <MediumTitle text={mediumText} />
-      <div>
+
+      {/* Component From Wonjae */}
+      {/* <div>
         <div className="small_title">닉네임</div>
-        <input type="text" placeholder="@아크릴 오므라이스"></input>
-        <button className="nickname_create_btn">랜덤 생성</button>
+        <div className="nickname_container">
+          <input type="text" placeholder="@아크릴 오므라이스"></input>
+          <button className="nickname_create_btn">랜덤 생성</button>
+        </div>
+        <div className="underline"></div>
       </div>
       <div>MBTI를 선택해 주세요</div>
-      <div></div>
       <div>혈액형을 선택해 주세요</div>
       <div></div>
-      <MainButton text="게속" onClick={moveToNext} />
+      <MainButton text="게속" onClick={moveToNext} /> */}
+
+      {/* Component from Jongseok */}
+      <EditProfile />
     </div>
   );
 }
