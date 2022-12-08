@@ -8,6 +8,7 @@ import { HashtagRouter } from "./HashtagRouter";
 import { BettingRouter } from "./BettingRouter";
 import { QuestionRouter } from "./QuestionRouter";
 import { NewsletterRouter } from "./NewsletterRouter";
+import { QuestionRouter } from "./QuestionRouter";
 
 const MainRouter = express.Router();
 
@@ -22,5 +23,6 @@ MainRouter.use("/hashtag", HashtagRouter);
 MainRouter.use("/betting", BettingRouter);
 MainRouter.use("/question", QuestionRouter);
 MainRouter.use("/newsletter", NewsletterRouter);
+MainRouter.use("/question", QuestionRouter);
 
 export default MainRouter;
