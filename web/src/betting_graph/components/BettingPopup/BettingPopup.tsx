@@ -86,7 +86,8 @@ export default class Example extends PureComponent<
     return (
       <div
         className="modal"
-        style={{ display: this.state.showModal2 ? "block" : "block" }}
+        // style={{ display: this.state.showModal2 ? "block" : "block" }}
+        style={{ display: disp }}
         onClick={this.handleOpenClose}
       >
         {/* <div className="rootBettingPopup" style={{ display: disp }}> */}

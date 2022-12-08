@@ -115,67 +115,67 @@ export default class Example extends PureComponent<BettingContentProps> {
     var closeComponent = this.props.addtionalComponent
       ? closeComponent1()
       : null;
-    const lockedRef = useRef() as MutableRefObject<HTMLDivElement>;
+    // const lockedRef = useRef() as MutableRefObject<HTMLDivElement>;
 
-    function lockedComponent1() {
-      lockedRef!.current.blur();
-      return (
-        <div>
-          <img src={lockedWithKeyImage} alt="locked_with_key"></img>
-        </div>
-      );
-    }
-    var lockedComponent = isLocked ? lockedComponent1() : "";
+    // function lockedComponent1() {
+    //   lockedRef!.current.blur();
+    //   return (
+    //     <div>
+    //       <img src={lockedWithKeyImage} alt="locked_with_key"></img>
+    //     </div>
+    //   );
+    // }
+    // var lockedComponent = isLocked ? lockedComponent1() : "";
 
     return (
       <div className="BettingContentComponent">
-        <div ref={lockedRef}>
-          <div className="BettingContentTop">
-            {bettingTitle} {closeComponent}
-          </div>
-          <div className="BettingContentTitle">{data.title}</div>
-          <div className="BettingContentBody">
-            <div className="BettingContentBodyLeft">
-              <div className="BettingContentSmallTitleLeft">
-                {data.contents.options[0].name}
+        {/* <div ref={lockedRef}> */}
+        <div className="BettingContentTop">
+          {bettingTitle} {closeComponent}
+        </div>
+        <div className="BettingContentTitle">{data.title}</div>
+        <div className="BettingContentBody">
+          <div className="BettingContentBodyLeft">
+            <div className="BettingContentSmallTitleLeft">
+              {data.contents.options[0].name}
+            </div>
+            <div className="BettingContentPercentLeft">
+              {voteRatio.voteRatio0.toFixed(0)}%
+            </div>
+            <div className="BettingContentSmallSubTitleLeft">
+              <div className="">배당률 x{dividend.value0}</div>
+              <div className="">
+                배팅금액 :{" "}
+                {BettingUtils.numberWithCommas(data.betState[0].balance)}
               </div>
-              <div className="BettingContentPercentLeft">
-                {voteRatio.voteRatio0.toFixed(0)}%
-              </div>
-              <div className="BettingContentSmallSubTitleLeft">
-                <div className="">배당률 x{dividend.value0}</div>
-                <div className="">
-                  배팅금액 :{" "}
-                  {BettingUtils.numberWithCommas(data.betState[0].balance)}
-                </div>
-                <div className="">
-                  참여자 :{" "}
-                  {BettingUtils.numberWithCommas(data.betState[0].userCnt)} 명
-                </div>
+              <div className="">
+                참여자 :{" "}
+                {BettingUtils.numberWithCommas(data.betState[0].userCnt)} 명
               </div>
             </div>
-            <div className="BettingContentBodyRight">
-              <div className="BettingContentSmallTitleRight">
-                {data.contents.options[1].name}
+          </div>
+          <div className="BettingContentBodyRight">
+            <div className="BettingContentSmallTitleRight">
+              {data.contents.options[1].name}
+            </div>
+            <div className="BettingContentPercentRight">
+              {voteRatio.voteRatio1.toFixed(0)}%
+            </div>
+            <div className="BettingContentSmallSubTitleRight">
+              <div className="">배당률 x{dividend.value1}</div>
+              <div className="">
+                배팅금액 :{" "}
+                {BettingUtils.numberWithCommas(data.betState[1].balance)}
               </div>
-              <div className="BettingContentPercentRight">
-                {voteRatio.voteRatio1.toFixed(0)}%
-              </div>
-              <div className="BettingContentSmallSubTitleRight">
-                <div className="">배당률 x{dividend.value1}</div>
-                <div className="">
-                  배팅금액 :{" "}
-                  {BettingUtils.numberWithCommas(data.betState[1].balance)}
-                </div>
-                <div className="">
-                  참여자 :{" "}
-                  {BettingUtils.numberWithCommas(data.betState[1].userCnt)} 명
-                </div>
+              <div className="">
+                참여자 :{" "}
+                {BettingUtils.numberWithCommas(data.betState[1].userCnt)} 명
               </div>
             </div>
           </div>
         </div>
-        <div>{lockedComponent}</div>
+        {/* </div> */}
+        {/* <div>{lockedComponent}</div> */}
         {/* {this.props.addtionalComponent} */}
         {buttonComponent}
       </div>
