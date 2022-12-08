@@ -1,24 +1,36 @@
-import React, { ComponentElement, PureComponent } from "react";
+import React, {
+  ComponentElement,
+  MutableRefObject,
+  PureComponent,
+  Ref,
+  useRef,
+} from "react";
 import "./BettingContent.css";
 import GambleType from "../../../../../common/type/Gamble";
 import { BettingUtils } from "../Betting/utils";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
+import closeButtonImage from "./img/close.svg";
+import lockedWithKeyImage from "./img/locked_with_key_3d.svg";
 
 interface BettingContentProps {
   data: GambleType.Gamble;
   bettingTitle?: string;
   addtionalComponent?: JSX.Element;
+  isLocked?: boolean;
 }
 
 export default class Example extends PureComponent<BettingContentProps> {
   render() {
     var data = this.props.data;
-    // var bettingTitle = this.props.bettingTitle;
+    var isLocked = this.props.isLocked;
+
     // var userData = this.props.userData;
     var currentTime = Date.now();
     var remainTime = data.closeTime - currentTime;
     var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
-    var bettingTitle = currentDate + " 배당률";
+    var bettingTitle = this.props.bettingTitle
+      ? this.props.bettingTitle
+      : currentDate + " 배당률";
     var remainDateTime = new Date(remainTime);
     var hours = remainDateTime.getUTCHours();
     var minutes = remainDateTime.getUTCMinutes();
@@ -83,6 +95,11 @@ export default class Example extends PureComponent<BettingContentProps> {
       );
     }
 
+    function closeComponent1() {
+      return <span className="close">&times;</span>;
+      // return <img src={closeButtonImage}></img>;
+    }
+
     var comp = bcomp();
     var comp2 = bcomp2();
     var comp3 = bcomp3();
@@ -95,50 +112,70 @@ export default class Example extends PureComponent<BettingContentProps> {
       ? comp2
       : comp3;
 
+    var closeComponent = this.props.addtionalComponent
+      ? closeComponent1()
+      : null;
+    const lockedRef = useRef() as MutableRefObject<HTMLDivElement>;
+
+    function lockedComponent1() {
+      lockedRef!.current.blur();
+      return (
+        <div>
+          <img src={lockedWithKeyImage} alt="locked_with_key"></img>
+        </div>
+      );
+    }
+    var lockedComponent = isLocked ? lockedComponent1() : "";
+
     return (
       <div className="BettingContentComponent">
-        <div className="BettingContentTop">{bettingTitle}</div>
-        <div className="BettingContentTitle">{data.title}</div>
-        <div className="BettingContentBody">
-          <div className="BettingContentBodyLeft">
-            <div className="BettingContentSmallTitleLeft">
-              {data.contents.options[0].name}
-            </div>
-            <div className="BettingContentPercentLeft">
-              {voteRatio.voteRatio0.toFixed(0)}%
-            </div>
-            <div className="BettingContentSmallSubTitleLeft">
-              <div className="">배당률 x{dividend.value0}</div>
-              <div className="">
-                배팅금액 :{" "}
-                {BettingUtils.numberWithCommas(data.betState[0].balance)}
-              </div>
-              <div className="">
-                참여자 :{" "}
-                {BettingUtils.numberWithCommas(data.betState[0].userCnt)} 명
-              </div>
-            </div>
+        <div ref={lockedRef}>
+          <div className="BettingContentTop">
+            {bettingTitle} {closeComponent}
           </div>
-          <div className="BettingContentBodyRight">
-            <div className="BettingContentSmallTitleRight">
-              {data.contents.options[1].name}
-            </div>
-            <div className="BettingContentPercentRight">
-              {voteRatio.voteRatio1.toFixed(0)}%
-            </div>
-            <div className="BettingContentSmallSubTitleRight">
-              <div className="">배당률 x{dividend.value1}</div>
-              <div className="">
-                배팅금액 :{" "}
-                {BettingUtils.numberWithCommas(data.betState[1].balance)}
+          <div className="BettingContentTitle">{data.title}</div>
+          <div className="BettingContentBody">
+            <div className="BettingContentBodyLeft">
+              <div className="BettingContentSmallTitleLeft">
+                {data.contents.options[0].name}
               </div>
-              <div className="">
-                참여자 :{" "}
-                {BettingUtils.numberWithCommas(data.betState[1].userCnt)} 명
+              <div className="BettingContentPercentLeft">
+                {voteRatio.voteRatio0.toFixed(0)}%
+              </div>
+              <div className="BettingContentSmallSubTitleLeft">
+                <div className="">배당률 x{dividend.value0}</div>
+                <div className="">
+                  배팅금액 :{" "}
+                  {BettingUtils.numberWithCommas(data.betState[0].balance)}
+                </div>
+                <div className="">
+                  참여자 :{" "}
+                  {BettingUtils.numberWithCommas(data.betState[0].userCnt)} 명
+                </div>
+              </div>
+            </div>
+            <div className="BettingContentBodyRight">
+              <div className="BettingContentSmallTitleRight">
+                {data.contents.options[1].name}
+              </div>
+              <div className="BettingContentPercentRight">
+                {voteRatio.voteRatio1.toFixed(0)}%
+              </div>
+              <div className="BettingContentSmallSubTitleRight">
+                <div className="">배당률 x{dividend.value1}</div>
+                <div className="">
+                  배팅금액 :{" "}
+                  {BettingUtils.numberWithCommas(data.betState[1].balance)}
+                </div>
+                <div className="">
+                  참여자 :{" "}
+                  {BettingUtils.numberWithCommas(data.betState[1].userCnt)} 명
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div>{lockedComponent}</div>
         {/* {this.props.addtionalComponent} */}
         {buttonComponent}
       </div>

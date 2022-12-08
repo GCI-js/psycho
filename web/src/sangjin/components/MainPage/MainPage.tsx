@@ -10,7 +10,7 @@ import { getRandomList, RandomListInit } from "./RandomList";
 import HashtagSearchResult from "./HashtagSearchResult";
 import MyBattingRecord from "./MyBattingRecord/MyBattingRecord";
 import AttendanceCheck from "./AttendanceCheck/AttendanceCheck";
-
+import TopHashtag from "./TopHashTag/TopHashtag";
 export function MainPage() {
   let Newsletter_example: any[] = [];
   let RandomList: any[] = [];
@@ -52,8 +52,8 @@ export function MainPage() {
     console.log("getFetchData........");
     Newsletter_example = getNewsletterList();
 
-    setResult([...RandomList.slice(0, 5)]);
-    setItem([...RandomList.slice(5)]);
+    setResult([...RandomList.slice(0, 7)]);
+    setItem([...RandomList.slice(7)]);
     setIsLoading(false);
   };
 
@@ -63,13 +63,14 @@ export function MainPage() {
     window.addEventListener("scroll", _infiniteScroll, true);
     return () => window.removeEventListener("scroll", _infiniteScroll, true);
   }, [_infiniteScroll]);
+  useEffect(() => {
+    getFetchData();
+    RandomListInit();
+  }, []);
 
   return (
     <div>
       <div className="header">뉴스피드</div>
-
-      {/* <Trend></Trend>
-      <ChnageMBTI></ChnageMBTI> */}
       <div className="contents">
         {result.map(function (i): JSX.Element {
           console.log("result map i .............", i);
@@ -81,6 +82,8 @@ export function MainPage() {
             return <MyBattingRecord />;
           } else if (i.type === "hashtagsearchresult") {
             return <HashtagSearchResult />;
+          } else if (i.type === "tophashtag") {
+            return <TopHashtag />;
           } else {
             return (
               <Newsletter

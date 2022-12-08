@@ -6,10 +6,35 @@ import BettingContent from "../BettingContent/BettingContent";
 
 interface BettingPopupProps {
   data: GambleType.Gamble;
+  show: boolean;
 }
 
-export default class Example extends PureComponent<BettingPopupProps> {
+export default class Example extends PureComponent<
+  BettingPopupProps,
+  { showModal2: boolean }
+> {
+  constructor(props: BettingPopupProps) {
+    super(props);
+
+    this.state = {
+      showModal2: props.show,
+    };
+    // this.toggleTicketModal = this.toggleTicketModal.bind( this );
+  }
+
+  handleOpenClose = () => {
+    console.log("click handleOpenClose on BettingPopup");
+    this.setState((prev) => ({ showModal2: !prev.showModal2 }));
+    console.log(this.state.showModal2);
+  };
+
   render() {
+    var show = this.props.show;
+    var disp = show ? "block" : "none";
+    // var disp = this.state.showModal ? "block" : "none";
+    console.log(
+      "bettingPopup show : " + this.state.showModal2 + " disp : " + disp
+    );
     var data = this.props.data;
     // var userData = this.props.userData;
     var currentTime = Date.now();
@@ -55,9 +80,17 @@ export default class Example extends PureComponent<BettingPopupProps> {
 
     var comp = bcomp();
 
+    // window.onclick = function (event) {
+    //   console.log(event);
+    // };
     return (
-      <div className="rootBettingPopup">
-        <div className="BettingPopupComponent">
+      <div
+        className="modal"
+        style={{ display: this.state.showModal2 ? "block" : "block" }}
+        onClick={this.handleOpenClose}
+      >
+        {/* <div className="rootBettingPopup" style={{ display: disp }}> */}
+        <div className="modal-content BettingPopupComponent">
           <BettingContent
             data={data}
             bettingTitle="현재 배당률"

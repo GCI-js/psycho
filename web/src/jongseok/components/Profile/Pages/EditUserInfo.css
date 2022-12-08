@@ -25,13 +25,26 @@
   min-width: 0;
   display: block;
   width: 100%;
-  padding: 8px 8px;
-  font-size: inherit;
-  line-height: inherit;
-  border: 1px solid;
+  padding: 8px 16px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  border: 0px solid;
   border-radius: 4px;
-  color: inherit;
-  background-color: transparent;
+  /* color: inherit; */
+  background-color: #ededed;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  /* background-image: url("../img/cryFaceIcon.png"); */
+}
+
+.nation {
+  width: 340px;
+  height: 40px;
+  background-image: url("../img/selectNation.png");
 }
 .editUserInfoContainer {
   display: flex;

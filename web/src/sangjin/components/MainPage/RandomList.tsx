@@ -15,6 +15,7 @@ export function RandomListInit() {
   console.log("RandomListInit.........");
   let NewsletterList: any[] = [];
   NewsletterList = getNewsletterList();
+  RandomList.push({ type: "tophashtag", data: [] });
   RandomList.push({ type: "changembti", data: [] });
   RandomList.push({ type: "hashtagsearchresult", data: [] });
   RandomList.push({ type: "mybattingrecord", data: [] });

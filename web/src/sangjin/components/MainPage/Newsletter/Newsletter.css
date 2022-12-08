@@ -39,8 +39,37 @@
   margin-top: 19px;
   margin-left: 16px;
   margin-bottom: 4px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  letter-spacing: 0.44px;
+
+  color: #000000;
 }
 
 .card_tag {
   margin-left: 20px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 22px;
+
+  letter-spacing: -0.408px;
+  text-align: left;
+  color: #434343;
+}
+
+.card_desc {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.card_button {
+  margin-top: 20px;
+  background-color: transparent;
+  border-width: 0px;
 }

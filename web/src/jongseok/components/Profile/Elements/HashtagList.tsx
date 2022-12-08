@@ -4,17 +4,28 @@ import "./HashtagList.css";
 interface HashtagItems extends Array<HashtagItem> {}
 
 const HashtagList = () => {
-  let dummyHashtags: HashtagItems = [
+  let dummyNationHashtags: HashtagItems = [
     { content: "대한민국", color: "orange" },
+    { content: "수지구", color: "orange" },
+  ];
+  let dummyHighschoolHashtags: HashtagItems = [
     { content: "경기고", color: "lime" },
+    { content: "수지고", color: "lime" },
   ];
 
   return (
     <div className="hashtagContainer">
-      <text className="title">#내가 선택한 해시태그</text>
-      {dummyHashtags.map((el) => {
-        return <Hashtag content={el.content} color={el.color} />;
-      })}
+      <div className="hashtagTitle">내가 선택한 #해시태그</div>
+      <div className="hashtagLists">
+        {dummyNationHashtags.map((el) => {
+          return <Hashtag content={el.content} color={el.color} />;
+        })}
+      </div>
+      <div className="hashtagLists">
+        {dummyHighschoolHashtags.map((el) => {
+          return <Hashtag content={el.content} color={el.color} />;
+        })}
+      </div>
     </div>
   );
 };

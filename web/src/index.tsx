@@ -8,12 +8,13 @@ import { createRoot } from "react-dom/client";
 import Seoha from "./seoha/App";
 import Jongseok from "./jongseok/App";
 import Wonjae from "./wonjae/App";
-
 import "./index.scss";
 
 // createRoot(document.getElementById('app')).render(<OnePage/>);
 // createRoot(document.getElementById('app')).render(<BettingGraph/>);
 // createRoot(document.getElementById('app')).render(<ProfileStats/>);
 // createRoot(document.getElementById('app')).render(<Wonjae/>);
+// createRoot(document.getElementById("app")).render(<Jongseok />);
+// createRoot(document.getElementById("app")).render(<Seoha />);
 // createRoot(document.getElementById("app")).render(<Jongseok />);
 createRoot(document.getElementById("app")).render(<Seoha />);

@@ -21,18 +21,10 @@ const Profile = () => {
         <div className="username">{`${dummyUserName}`}</div>
         <img
           src={settingIcon}
-          // src={require("../img/setting.png")}
           alt="edit"
           className="settingButton"
           onClick={() => {}}
         />
-        {/* <button
-					onClick={() => {
-						// setIsEdit(!isEdit);
-					}}
-				>
-					edit
-				</button> */}
       </div>
       {isEdit ? null : (
         <div>
