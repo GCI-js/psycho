@@ -1,16 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
 import "./WelcomePage.css";
 import "../Common/MainButton";
 import MainButton from "../Common/MainButton";
+import shepherd from "../../../seoha/service/shepherd";
 
 function WelcomePage() {
-  const navigate = useNavigate();
-
   const gotoLoginPage = () => {
-    console.log("button Clicked");
-    const path = `/signIn`;
-    navigate(path);
+    // shepherd.whip("wonjae", "signIn");
+
+    // debug
+    shepherd.whip("wonjae", "signUp1");
   };
 
   return (

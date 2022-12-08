@@ -1,16 +1,18 @@
 import React from "react";
 import backButtonIcon from "../../Assets/MenuTitle.svg";
-import { useNavigate } from "react-router-dom";
 import "./BackButton.css";
 
 function BackButton() {
-  const navigate = useNavigate();
+  const moveBack = () => {
+    console.log("moveback");
+  };
+
   return (
     <div className="button_wrapper">
       <img
         className="back_button"
         src={backButtonIcon}
-        onClick={() => navigate(-1)}
+        onClick={() => moveBack}
       ></img>
     </div>
   );
