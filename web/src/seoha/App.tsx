@@ -1,23 +1,43 @@
 import * as React from "react";
 
+import shepherd from "./service/shepherd";
+
+import BettingGraph from "../betting_graph/App";
+import Jongseok from "../jongseok/App";
+import Sangjin from "../sangjin/App";
+import Wonjae from "../wonjae/App";
+
 import Lamb from "./component/Lamb";
-import LoginModal from "./component/LoginModal";
-import MainPage from "./component/MainPage";
 
 import './App.scss';
-import shepherd from "./service/shepherd";
 
 
 export default function App() {
     console.log("<App/>");
 
-    React.useEffect(() =>
-        window.addEventListener("popstate", shepherd.whip), []);
+    React.useEffect(
+        () => window.addEventListener("popstate", shepherd.bleat), []);
 
     return <div className="app-j238dndx8w4hweh">
-        <Lamb className="router" data-lamb="lamb">
-            <LoginModal data-pose="login"/>
-            <MainPage data-pose="main"/>
+        <div>
+            <div onClick={() => shepherd.whip("test", "jongseok")}>
+                jongseok
+            </div>
+            <div onClick={() => shepherd.whip("test", "younghoon")}>
+                younghoon
+            </div>
+            <div onClick={() => shepherd.whip("test", "sangjin")}>
+                sangjin
+            </div>
+            <div onClick={() => shepherd.whip("test", "wonjae")}>
+                wonjae
+            </div>
+        </div>
+        <Lamb data-lamb="test">
+            <Jongseok data-pose="jongseok"/>
+            <BettingGraph data-pose="younghoon"/>
+            <Sangjin data-pose="sangjin"/>
+            <Wonjae data-pose="wonjae"/>
         </Lamb>
     </div>
 }

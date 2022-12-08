@@ -1,11 +1,5 @@
 .app-j238dndx8w4hweh {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    > .router {
-        width: 100%;
-        min-width: 800px;
-        padding: 30px;
-        box-sizing: border-box;
+    > div > div {
+        cursor: pointer;
     }
 }
