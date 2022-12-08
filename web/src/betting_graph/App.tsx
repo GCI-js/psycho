@@ -6,9 +6,16 @@ import Betting from "./components/Betting/Betting";
 import BettingPopup from "./components/BettingPopup/BettingPopup";
 import MockBettingResult from "../../../common/mock_data/mock_gambles.json";
 import MockUser from "../../../common/mock_data/mock_users.json";
+import MockHashTags from "../../../common/mock_data/mock_hashtags.json";
 import RemainedBalance from "./components/RemainedBalance/RemainedBalance";
-import { BloodType, Gender, Mbti } from "../../../common/type/common";
+import {
+  BloodType,
+  Gender,
+  HashtagType,
+  Mbti,
+} from "../../../common/type/common";
 import { User } from "../../../common/type/User";
+import PieChart from "./components/PieChart/PieChart";
 
 const DUMMY_DATA_BETTING_RESULT = {
   ...MockBettingResult,
@@ -40,9 +47,17 @@ const DUMMY_DATA_USER = {
   gender: "male" as Gender,
 };
 
+const DUMMY_DATA_PIE_CHART = {
+  ...MockHashTags[0],
+  type: "free" as HashtagType,
+};
+
 const BettingGraph = () => {
   return (
     <div>
+      <div style={{ width: 375, height: 375 }}>
+        <PieChart data={DUMMY_DATA_PIE_CHART} />
+      </div>
       <div>
         <RemainedBalance data={DUMMY_DATA_USER} />
       </div>

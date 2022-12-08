@@ -6,7 +6,7 @@ export interface User {
   userId: string;
   nickname: string;
   kakaoKey: {
-    tokenType: string;
+    tokenType?: string;
     accessToken: string;
     refreshToken: string;
     expiration: number;
@@ -39,7 +39,7 @@ export interface User {
     balance: number; //배팅금액
     result: number; // -1: not yet determined, 0: lose, 1: win
   }[];
-  connHist: number[];
-  lastConn: number;
-  contConn: number;
+  connHist: number[];//이번주 출석 현황 월~일
+  lastConn: number;//마지막 점속 날짜
+  contConn: number;//연속 출석일수
 }

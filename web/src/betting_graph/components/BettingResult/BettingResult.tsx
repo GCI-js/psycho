@@ -19,69 +19,11 @@ interface BettingResultProps {
 export default class Example extends PureComponent<BettingResultProps> {
   render() {
     var data = this.props.data;
-    // var userData = this.props.userData;
-    // var currentTime = Date.now();
-    // var remainTime = data.closeTime - currentTime;
-    // var currentDate = BettingUtils.convertUTCtoDate(data.openTime);
-    // var remainDateTime = new Date(remainTime);
-    // var hours = remainDateTime.getUTCHours();
-    // var minutes = remainDateTime.getUTCMinutes();
-    // var seconds = remainDateTime.getUTCSeconds();
-
-    // var voteRatio0 =
-    //   (data.betState[0].userCnt /
-    //     (data.betState[0].userCnt + data.betState[1].userCnt)) *
-    //   100.0;
-    // var voteRatio1 = 100 - voteRatio0;
-    // var voteRatio = BettingUtils.calcVoteRatio(
-    //   data.betState[0].userCnt,
-    //   data.betState[1].userCnt
-    // );
-    // var dividend = BettingUtils.calcDividend(
-    //   data.betState[0].balance,
-    //   data.betState[1].balance
-    // );
-
-    // function bcomp() {
-    //   return (
-    //     <div className="BettingPopupComponent">
-    //       <div className="button">
-    //         <span>
-    //           투표 시간이{" "}
-    //           <span className="ColumnTextTime">
-    //             <CountDownTimer
-    //               hours={hours}
-    //               minutes={minutes}
-    //               seconds={seconds}
-    //             />
-    //           </span>
-    //           {"  "}
-    //           남았어요
-    //         </span>
-    //       </div>
-    //     </div>
-    //   );
-    // }
-
-    // function bcomp2() {
-    //   return (
-    //     <div className="BettingPopupComponent">
-    //       <div className="button">
-    //         <span>결과 확인</span>
-    //       </div>
-    //     </div>
-    //   );
-    // }
-
-    // var comp = bcomp();
-    // var comp2 = bcomp2();
-
-    // console.log(data.endTime);
     return (
       <div className="root">
-        <div>
+        {/* <div>
           <BettingContent data={data[0]} isLocked={true} />
-        </div>
+        </div> */}
         <div>
           <BettingContent
             data={data[0]}
