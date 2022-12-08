@@ -8,9 +8,7 @@ import { User } from "../../../common/type/User";
 export const GambleRouter = express.Router();
 
 GambleRouter.post("/", async (req: Request, res: Response) => {
-  let gambleId: string = (
-    (await GambleController.getGambleNum()) + 1
-  ).toString();
+  let gambleId: string = ((await GambleController.getNewId()) + 1).toString();
   console.log(gambleId);
   let newGamble: Gamble = {
     gambleId: gambleId,
@@ -142,70 +140,3 @@ GambleRouter.put(
     });
   } //
 );
-
-/*
-.Gamble API
-- 갬블 생성 (POST) /gamble
-req = {
-  "surveyId": string,
-  "openTime": number,
-  "closeTime": number, 
-  "title": string,
-  "contents": {
-    "main": string,
-    "options": {
-      "index": number,
-      "name": string
-    }[],
-  },
-  "result": number,
-}
-res = Gamble
-- 겜블 업데이트 (PUT) /gamble/items/:id
-req = {
-  "surveyId": string,
-  "openTime": number,
-  "closeTime": number, 
-  "title": string,
-  "contents": {
-    "main": string,
-    "options": {
-      "index": number,
-      "name": string
-    }[],
-  },
-  "result": number
-}
-res = Gamble
-- 겜블 삭제 (DELETE) /gamble/items/:id
-req = {}
-res = Gamble[]
-- 갬블 목록 조회 (GET) /gamble/items
-req = {}
-res = Gamble[]
-- id로 단일 갬블 조회 (GET) /gamble/items/:id
-req = {}
-res = Gamble
-- 베팅하기 (PUT) /gamble/bet
-req = {
-  "userId": string,
-  "gambleId": string,
-  "optionIndex": number,
-  "balance": number
-}
-res = {
-  "gamble"?: Gamble,
-  "gambleHist": User.gambleHist
-  "result": boolean (true: successfully betted, false: already betted before)
-}
-- 결과 확인 (PUT) /gamble/result/:gambleId/:userId
-req = {
-}
-res = {
-  "result": {
-    "index": number,
-    "rate": number
-  }[],
-  "answerIndex": number
-}
-*/
