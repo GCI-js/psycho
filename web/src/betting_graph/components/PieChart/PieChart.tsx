@@ -49,20 +49,8 @@ const renderCustomizedLabel = (cl: customLabel) => {
     </g>
   );
 };
-const style = {
-  top: "100%",
-  right: 0,
-  transform: "translate(0, -50%)",
-  lineHeight: "24px",
-};
-
-interface PieChartDataItem {
-  name: string;
-  value: number;
-}
 
 interface PieChartProps {
-  // data: PieChartDataItem[];
   data: HashTagType.Hashtag;
 }
 

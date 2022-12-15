@@ -49,7 +49,7 @@
   color: #000000;
 }
 
-.card_tag {
+.news_card_tag {
   margin-left: 20px;
   font-family: "Inter";
   font-style: normal;
@@ -58,6 +58,7 @@
   line-height: 22px;
 
   letter-spacing: -0.408px;
+  /* justify-content: flex-start; */
   text-align: left;
   color: #434343;
 }
@@ -72,4 +73,8 @@
   margin-top: 20px;
   background-color: transparent;
   border-width: 0px;
+}
+
+.news_card_tag_name {
+  margin-left: 5px;
 }
