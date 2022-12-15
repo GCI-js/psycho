@@ -12,15 +12,12 @@ function WelcomePage() {
   변동을 추적해드려요 !`;
   var userNum = 30030;
   const gotoLoginPage = () => {
-    // shepherd.whip("wonjae", "signIn");
-
-    // debug
-    shepherd.whip("wonjae", "signUp1");
+    shepherd.whip("wonjae", "signIn");
   };
 
   return (
     <div>
-      <div className="wonjae_frame">
+      <div className="wj_img_container">
         <LargeTitle text="반가워요!" />
         <img src={welcomeImage} />
       </div>
