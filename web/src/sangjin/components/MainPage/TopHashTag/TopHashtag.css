@@ -36,13 +36,7 @@
   display: flex;
   justify-content: space-around;
   margin-left: 20px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
 
-  letter-spacing: -0.408px;
   text-align: left;
   color: #434343;
 }
@@ -55,14 +49,15 @@
   line-height: 22px;
   /* identical to box height, or 157% */
 
+  display: flex;
+  align-items: center;
   letter-spacing: -0.408px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  height: 25px;
+  background: #ffb45c;
+  border-radius: 20px;
 
   color: #000000;
-  border-radius: 15px;
-  padding-left: 20px;
-  padding-right: 20px;
-  padding-bottom: 5px;
-  padding-top: 5px;
-  background-color: burlywood;
-  margin-left: 10px;
 }
