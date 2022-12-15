@@ -6,7 +6,6 @@ import QuestionToday from "../QuestionToday/QuestionToday";
 const QuestionPage = () => {
   return (
     <div>
-      <div className="QuestionPageTitle">오늘의 질문</div>
       <QuestionToday />
       <QuestionEnd />
     </div>
