@@ -9,4 +9,4 @@ import Seoha from "./seoha/App";
 
 import "./index.scss";
 
-createRoot(document.getElementById("app")).render(<Seoha/>);
+createRoot(document.getElementById("app")).render(<Seoha />);

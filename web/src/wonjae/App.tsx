@@ -8,12 +8,30 @@ import WelcomePage from "./components/SignInPage/WelcomePage";
 import SignUpPage1 from "./components/SingUp/SignUpPage1";
 import SignUpPage2 from "./components/SingUp/SignUpPage2";
 import SignUpPage3 from "./components/SingUp/SignUpPage3";
+import Lamb from "../seoha/component/Lamb";
+import shepherd from "../seoha/service/shepherd";
 
 function Wonjae() {
+  React.useEffect(
+    () => window.addEventListener("popstate", shepherd.bleat),
+    []
+  );
+  shepherd.whip("wonjae", "welcome");
   return (
     <div className="App">
-      <BrowserRouter>
+      <Lamb data-lamb="wonjae">
+        <WelcomePage data-pose="welcome" />
+        <SignInPage data-pose="signIn" />
+        <KakaoRedirect data-pose="kakaoLogin" />
+        <NaverRedirect data-pose="naverLogin" />
+        <SignUpPage1 data-pose="signUp1" />
+        <SignUpPage2 data-pose="signUp2" />
+        <SignUpPage3 data-pose="signUp3" />
+      </Lamb>
+      {/* Using react-router-dom */}
+      {/* <BrowserRouter> 
         <Routes>
+          <Route path="/" element={<SignUpPage1 />}></Route>
           <Route path="/" element={<WelcomePage />}></Route>
           <Route path="/signIn" element={<SignInPage />}></Route>
           <Route path="/kakaoLogin" element={<KakaoRedirect />}></Route>
@@ -22,7 +40,7 @@ function Wonjae() {
           <Route path="/signUp2" element={<SignUpPage2 />}></Route>
           <Route path="/signUp3" element={<SignUpPage3 />}></Route>
         </Routes>
-      </BrowserRouter>
+      </BrowserRouter> */}
     </div>
   );
 }

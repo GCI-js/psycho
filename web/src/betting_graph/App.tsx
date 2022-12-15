@@ -56,6 +56,9 @@ const DUMMY_DATA_PIE_CHART = {
 const BettingGraph = () => {
   return (
     <div>
+      <div style={{ width: 375, height: 375 }}>
+        <PieChart data={DUMMY_DATA_PIE_CHART} />
+      </div>
       <div>
         <TrendLineChart />
       </div>
