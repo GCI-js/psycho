@@ -1,14 +1,15 @@
 .card_mybat {
+  margin-top: 17px;
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  margin: 10px;
+  border-radius: 8px;
+  /* margin: 10px; */
   /* width: 500px;
 	height: 150px; */
-  padding: 5px;
+  /* padding: 5px; */
   /* overflow: hidden;
 	word-wrap: break-word; */
-  font-size: 12px;
+  /* font-size: 12px; */
   background-color: #eaeaea;
 }
 .card_mybat_header {
@@ -30,8 +31,8 @@
   color: #000000;
 }
 .card_mybat_contents {
-  margin-left: 20px;
-  margin-right: 20px;
+  margin-left: 23px;
+  margin-right: 23px;
   text-align: left;
   font-family: "Inter";
   font-style: normal;
