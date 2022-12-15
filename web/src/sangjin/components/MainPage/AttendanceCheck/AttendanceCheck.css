@@ -3,12 +3,6 @@
   flex-direction: column;
   border-radius: 8px;
   margin-top: 17px;
-  /* margin: 10px; */
-  /* width: 500px;
-      height: 150px; */
-  /* padding: 5px; */
-  /* overflow: hidden;
-      word-wrap: break-word; */
   font-size: 12px;
   background-color: #eaeaea;
 }
@@ -46,7 +40,6 @@
   border-spacing: 0px;
 }
 .card_attchk_table td {
-  /* border-left: 1px black solid; */
   border-right: 1px rgba(84, 84, 88, 0.65) solid;
 }
 /* .card_attchk_table td:first-child {

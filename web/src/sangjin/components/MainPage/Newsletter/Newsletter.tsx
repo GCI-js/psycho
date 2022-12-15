@@ -16,7 +16,6 @@ const Newsletter = (props: NewsletterType) => {
     <div>
       <div className="newletter_card_item">
         <div className="newletter_card_header">MBTI 뉴스레터</div>
-
         <div className="newletter_card_img">
           <a href={props.url}>
             <img
@@ -24,8 +23,6 @@ const Newsletter = (props: NewsletterType) => {
               alt="아마존 디자이너는 어떻게 포트폴리오를 만들까?의 콘텐츠 이미지"
               width="97%"
               height="184px"
-              // width="auto"
-              // height="auto"
             ></img>
           </a>
         </div>

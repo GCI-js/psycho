@@ -3,31 +3,20 @@
   display: flex;
   flex-direction: column;
   border-radius: 8px;
-  /* margin: 10px; */
-  /* width: 500px;
-	height: 150px; */
-  /* padding: 5px; */
-  /* overflow: hidden;
-	word-wrap: break-word; */
-  /* font-size: 12px; */
   background-color: #eaeaea;
 }
 .card_mybat_header {
   margin-top: 16px;
   margin-left: 16px;
   margin-bottom: 12px;
-  /* font-family:  */
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 16px;
   line-height: 24px;
-  /* identical to box height, or 150% */
-
   display: flex;
   align-items: center;
   letter-spacing: 0.44px;
-
   color: #000000;
 }
 .card_mybat_contents {
@@ -39,9 +28,6 @@
   font-weight: 400;
   font-size: 14px;
   line-height: 22px;
-  /* or 157% */
-
   letter-spacing: -0.408px;
-
   color: #434343;
 }
