@@ -7,6 +7,14 @@ import { User } from "../../../common/type/User";
 
 export const GambleRouter = express.Router();
 
+GambleRouter.post("/", GambleController.createGamble);
+GambleRouter.put("/items/:id", GambleController.updateById);
+GambleRouter.delete("/items/:id", GambleController.removeById);
+GambleRouter.get("/items", GambleController.findAll);
+GambleRouter.get("/items/:id", GambleController.findById);
+GambleRouter.put("/bet", GambleController.bet)
+GambleRouter.put("/results/:gambleId/:userId", GambleController.reflectResult);
+
 GambleRouter.post("/", async (req: Request, res: Response) => {
   let gambleId: string = ((await GambleController.getNewId()) + 1).toString();
   console.log(gambleId);
