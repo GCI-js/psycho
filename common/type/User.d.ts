@@ -5,24 +5,25 @@ export interface User {
   _id?: string;
   userId: string;
   nickname: string;
-  kakaoKey: {
+  kakaoKey?: {
     tokenType?: string;
     accessToken: string;
     refreshToken: string;
     expiration: number;
   };
-  googleKey: {
+  googleKey?: {
     tokenType: string;
     accessToken: string;
     refreshToken: string;
     expiration: number;
   };
-  naverKey: {
+  naverKey?: {
     tokenType: string;
     accessToken: string;
     refreshToken: string;
     expiration: number;
   };
+  signUpStage: number;
   bloodType: BloodType;
   country: string;
   city: string;

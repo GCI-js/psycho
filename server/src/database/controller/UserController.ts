@@ -22,6 +22,11 @@ export const UserController = {
     let filter = { userId: userId };
     return await UserModel.findOne(filter).lean<User>();
   },
+  updateOne: async (newUserData: User) => {
+    let filter = { userId: newUserData.userId };
+    await UserModel.findOneAndUpdate(filter, newUserData);
+    return;
+  },
   findOneAndUpdate: async (userId: string, update: any) => {
     let filter = { userId: userId };
     await UserModel.findOneAndUpdate(filter, update);
