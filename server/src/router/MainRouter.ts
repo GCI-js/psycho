@@ -6,7 +6,7 @@ import { CheckApiKey } from "../middleware/CheckApiKey";
 import { UserRouter } from "./UserRouter";
 import { HashtagRouter } from "./HashtagRouter";
 import { GambleRouter } from "./GambleRouter";
-import { NewsletterRouter } from "./NewsletterRouter";
+import { QuestionRouter } from "./QuestionRouter";
 
 const MainRouter = express.Router();
 
@@ -19,6 +19,6 @@ MainRouter.use("/nicknameTest", NickNameGenerator.nicnknameTest);
 MainRouter.use("/user", UserRouter);
 MainRouter.use("/hashtag", HashtagRouter);
 MainRouter.use("/gamble", GambleRouter);
-MainRouter.use("/newsletter", NewsletterRouter);
+MainRouter.use("/question", QuestionRouter);
 
 export default MainRouter;
