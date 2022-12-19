@@ -49,9 +49,9 @@ const userSchema = new Schema(
     ],
     recentResponse: [{ type: Boolean, required: false }],
     balance: { type: Number, required: false },
-    gambleHist: [
+    bettingHist: [
       {
-        gambleId: { type: String, required: false },
+        bettingId: { type: String, required: false },
         index: { type: Number, required: false },
         balance: { type: Number, required: false },
         result: { type: Number, required: false },

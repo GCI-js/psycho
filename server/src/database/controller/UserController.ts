@@ -1,4 +1,4 @@
-import { Gamble } from "../../../../common/type/Gamble";
+import { Betting } from "../../../../common/type/Betting";
 import { UserModel } from "../model/UserModel";
 import { User } from "../../../../common/type/User";
 
@@ -27,26 +27,26 @@ export const UserController = {
     await UserModel.findOneAndUpdate(filter, update);
     return;
   },
-  findOneAndAddGambleHist: async (
+  findOneAndAddBettingHist: async (
     userId: string,
-    gambleId: string,
+    bettingId: string,
     optionIndex: number,
     balance: number
   ) => {
     let filter = { userId: userId };
     let user: User = await UserModel.findOne(filter).lean<User>();
-    let gambleHist = {
-      gambleId: gambleId,
+    let bettingHist = {
+      bettingId: bettingId,
       index: optionIndex,
       balance: balance,
       result: -1,
     };
-    user["gambleHist"].push(gambleHist);
+    user["bettingHist"].push(bettingHist);
     await UserModel.findOneAndUpdate(filter, user);
     return;
   },
-  findOneAndGetGambleHist: async (userId: string) => {
+  findOneAndGetBettingHist: async (userId: string) => {
     let filter = { userId: userId };
-    return await UserModel.findOne(filter).select("gambleHist");
+    return await UserModel.findOne(filter).select("bettingHist");
   },
 };

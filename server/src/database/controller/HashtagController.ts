@@ -6,10 +6,12 @@ import { UserController } from "./UserController";
 
 export const HashtagController = {
   createHashtag: async (req: Request, res: Response) => {
+    console.log("createHashtag");
     let filterA = { name: req.body.name };
     let hashtag: Hashtag = await HashtagModel.findOne(filterA).lean<Hashtag>();
     if (hashtag !== null) {
       res.status(400).json({});
+      return;
     }
     let newHashtagId: string = (
       await GetNewId(HashtagModel, "hashtagId")
@@ -25,23 +27,23 @@ export const HashtagController = {
     res.status(200).json(await HashtagModel.findOne(filterB).lean<Hashtag>());
   },
   readHashtags: async (req: Request, res: Response) => {
-    let filter: any = {};
-    if (req.query.name) filter.name = req.query.name;
-    if (req.query.hashtagId) filter.hashtagId = req.query.hashtagId;
-    if (req.query.type) filter.type = req.query.type;
-    res.status(200).json(await HashtagModel.find(filter).lean<Hashtag[]>());
+    console.log("readHashtags");
+    res.status(200).json(await HashtagModel.find(req.query).lean<Hashtag[]>());
   },
   updateHashtag: async (req: Request, res: Response) => {
+    console.log("updateHashtag");
     let filter = { hashtagId: req.params.hashtagId };
     await HashtagModel.findOneAndUpdate(filter, req.body);
     res.status(200).json(await HashtagModel.findOne(filter).lean<Hashtag>());
   },
   deleteHashtag: async (req: Request, res: Response) => {
+    console.log("deleteHashtag");
     let filter = { hashtagId: req.params.hashtagId };
     await HashtagModel.findOneAndDelete(filter);
     res.status(200).json({});
   },
   increaseMbtiCnt: async (req: Request, res: Response) => {
+    console.log("increaseMbtiCnt");
     let filter = { hashtagId: req.params.hashtagId };
     let hashtag: Hashtag = await HashtagModel.findOne(filter).lean<Hashtag>();
     hashtag.mbtiCnt[req.body.mbtiIdx] += req.body.increase ? 1 : -1;
@@ -49,6 +51,7 @@ export const HashtagController = {
     res.status(200).json(await HashtagModel.findOne(filter).lean<Hashtag>());
   },
   getAssocHashtags: async (req: Request, res: Response) => {
+    console.log("getAssocHashtags");
     let users = await UserController.find100UsersByHashtag(
       req.params.hashtagId
     );

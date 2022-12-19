@@ -43,7 +43,7 @@ UserRouter.post("/", async (req: Request, res: Response) => {
     hashtags: req.body.hashtags,
     recentResponse: [false, false, false, false, false, false, false],
     balance: req.body.balance,
-    gambleHist: [],
+    bettingHist: [],
     connHist: [0, 0, 0, 0, 0, 0, 0],
     lastConn: 0,
     contConn: 1,
