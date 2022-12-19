@@ -1,6 +1,8 @@
 import { Request, Response } from "express";
 import { Gamble } from "../../../../common/type/Gamble";
+import { User } from "../../../../common/type/User";
 import { GambleModel } from "../model/GambleModel";
+import { UserModel } from "../model/UserModel";
 
 export const GambleController = {
   getNewId: async () => {
@@ -49,9 +51,28 @@ export const GambleController = {
     let filter = { gambleId: gambleId };
     res.status(200).json(await GambleModel.findOne(filter).lean<Gamble>());
   },
-  findAll: async () => {
-    let gambles = await GambleModel.find({}).lean<Gamble>();
-    return gambles;
+  updateById: async (req: Request, res: Response) => {
+    console.log("updateById");
+    let filter = { gambleId: req.params.id };
+    await GambleModel.findOneAndUpdate(filter, req.body);
+    res.status(200).json(await GambleModel.findOne(filter).lean<Gamble>());
+  },
+  removeById: async (req: Request, res: Response) => {
+    console.log("removeById");
+    let filter = { gambleId: req.params.id };
+    await GambleModel.deleteOne(filter);
+    res.status(200).json({});
+  },
+  findAll: async (req: Request, res: Response) => {
+    res.status(200).json(await GambleModel.find({}).lean<Gamble[]>());
+  },
+  findById: async (req: Request, res: Response) => {
+    let filter = { gambleId: req.params.id };
+    res.status(200).json(await GambleModel.findOne(filter).lean<Gamble>());
+  },
+  bet: async (req: Request, res: Response) => {
+    let filter = { userId: req.body.userid };
+    let user: User = await UserModel.findOne(filter);
   },
   findOne: async (gambleId: string) => {
     let filter = { gambleId: gambleId };
