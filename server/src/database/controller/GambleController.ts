@@ -5,15 +5,6 @@ import { GambleModel } from "../model/GambleModel";
 import { UserModel } from "../model/UserModel";
 
 export const GambleController = {
-  getNewId: async () => {
-    let maxId = Math.max(
-      ...(await GambleModel.find().lean()).map((e) => {
-        return +e.gambleId;
-      })
-    );
-    console.log(maxId);
-    return maxId + 1;
-  },
   createGamble: async (req: Request, res: Response) => {
     console.log("createGamble");
     let gambleId: string = await (await GambleController.getNewId()).toString();
@@ -72,7 +63,7 @@ export const GambleController = {
   },
   bet: async (req: Request, res: Response) => {
     let filter = { userId: req.body.userid };
-    let user: User = await UserModel.findOne(filter);
+    // let user: User = await UserModel.findOne(filter);
   },
   findOne: async (gambleId: string) => {
     let filter = { gambleId: gambleId };
@@ -87,5 +78,14 @@ export const GambleController = {
     let filter = { gambleId: gambleId };
     await GambleModel.findOneAndDelete(filter);
     return;
+  },
+  getNewId: async () => {
+    let maxId = Math.max(
+      ...(await GambleModel.find().lean()).map((e) => {
+        return +e.gambleId;
+      })
+    );
+    console.log(maxId);
+    return maxId + 1;
   },
 };

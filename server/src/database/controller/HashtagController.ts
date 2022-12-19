@@ -1,60 +1,56 @@
 import { Request, Response } from "express";
 import { Hashtag } from "../../../../common/type/Hashtag";
+import { GetNewId } from "../../component/Util";
 import { HashtagModel } from "../model/HashtagModel";
 import { UserController } from "./UserController";
 
 export const HashtagController = {
-  getNewId: async () => {
-    let maxId = Math.max(
-      ...(await HashtagModel.find().lean()).map((e) => {
-        return +e.hashtagId;
-      })
-    );
-    console.log(maxId);
-    return maxId + 1;
-  },
   createHashtag: async (req: Request, res: Response) => {
-    let hashtag: Hashtag = await HashtagController.findOne(req.body.name);
+    let filterA = { name: req.body.name };
+    let hashtag: Hashtag = await HashtagModel.findOne(filterA).lean<Hashtag>();
     if (hashtag !== null) {
       res.status(400).json({});
     }
-    let hashtagId: string = (await HashtagController.getNewId()).toString();
+    let newHashtagId: string = (
+      await GetNewId(HashtagModel, "hashtagId")
+    ).toString();
     let newHashtag: Hashtag = {
-      hashtagId: hashtagId,
+      hashtagId: newHashtagId,
       name: req.body.name,
       type: req.body.type,
       mbtiCnt: Array(16).fill(0),
     };
     await HashtagModel.create(newHashtag);
-    res.status(200).json(await HashtagController.findOne(req.body.name));
+    let filterB = { hashtagId: newHashtagId };
+    res.status(200).json(await HashtagModel.findOne(filterB).lean<Hashtag>());
   },
-  findAllHashtags: async (req: Request, res: Response) => {
-    res.status(200).json(await HashtagModel.find({}));
+  readHashtags: async (req: Request, res: Response) => {
+    let filter: any = {};
+    if (req.query.name) filter.name = req.query.name;
+    if (req.query.hashtagId) filter.hashtagId = req.query.hashtagId;
+    if (req.query.type) filter.type = req.query.type;
+    res.status(200).json(await HashtagModel.find(filter).lean<Hashtag[]>());
   },
-  findHashtagById: async (req: Request, res: Response) => {
-    let filter = { id: req.params.hashtagId };
-    res.status(200).json(await HashtagModel.find(filter));
+  updateHashtag: async (req: Request, res: Response) => {
+    let filter = { hashtagId: req.params.hashtagId };
+    await HashtagModel.findOneAndUpdate(filter, req.body);
+    res.status(200).json(await HashtagModel.findOne(filter).lean<Hashtag>());
   },
-  findHashtagByName: async (req: Request, res: Response) => {
-    let filter = { name: req.params.hashtagName };
-    res.status(200).json(await HashtagModel.find(filter));
+  deleteHashtag: async (req: Request, res: Response) => {
+    let filter = { hashtagId: req.params.hashtagId };
+    await HashtagModel.findOneAndDelete(filter);
+    res.status(200).json({});
   },
-  updateHashtagMbtiCnt: async (req: Request, res: Response) => {
-    let filter = { name: req.params.hashtagName };
+  increaseMbtiCnt: async (req: Request, res: Response) => {
+    let filter = { hashtagId: req.params.hashtagId };
     let hashtag: Hashtag = await HashtagModel.findOne(filter).lean<Hashtag>();
     hashtag.mbtiCnt[req.body.mbtiIdx] += req.body.increase ? 1 : -1;
-    await HashtagModel.findByIdAndUpdate(
-      hashtag._id,
-      hashtag,
-      (err: any, res: any) => {
-        console.log(err);
-      }
-    );
-    res.status(200).json(hashtag);
+    await HashtagModel.findOneAndUpdate(filter, hashtag);
+    res.status(200).json(await HashtagModel.findOne(filter).lean<Hashtag>());
   },
-  getAssocHashtag: async (req: Request, res: Response) => {
+  getAssocHashtags: async (req: Request, res: Response) => {
     let users = await UserController.find100UsersByHashtag(
-      req.params.hashtagName
+      req.params.hashtagId
     );
     let hashtagCnt: { hashtagId: string; name: string; cnt: number }[] = [];
     for (let i = 0; i < users.length; i++) {
@@ -80,9 +76,5 @@ export const HashtagController = {
     res.status(200).json({
       hashtags: hashtagCnt.slice(0, 10).map((hashtag) => hashtag.name),
     });
-  },
-  findOne: async (name: string) => {
-    let filter = { name: name };
-    return await HashtagModel.findOne(filter).lean<Hashtag>();
   },
 };

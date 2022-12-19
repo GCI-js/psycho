@@ -3,19 +3,19 @@ import { UserModel } from "../model/UserModel";
 import { User } from "../../../../common/type/User";
 
 export const UserController = {
-  getUserNum:async () => {
-    let cnt=await UserModel.count({});
+  getUserNum: async () => {
+    let cnt = await UserModel.count({});
     return cnt;
   },
-  createUser:async (newUser:User) => {
+  createUser: async (newUser: User) => {
     await UserModel.create(newUser);
   },
   findAllUsers: async () => {
     return await UserModel.find({});
   },
-  find100UsersByHashtag: async (hashtagName: string) => {
+  find100UsersByHashtag: async (hashtagId: string) => {
     return await UserModel.find({
-      hashtags: { $elemMatch: { name: hashtagName } },
+      hashtags: { $elemMatch: { hashtagId: hashtagId } },
     }).limit(100);
   },
   findOne: async (userId: string) => {

@@ -12,8 +12,8 @@ GambleRouter.put("/items/:id", GambleController.updateById);
 GambleRouter.delete("/items/:id", GambleController.removeById);
 GambleRouter.get("/items", GambleController.findAll);
 GambleRouter.get("/items/:id", GambleController.findById);
-GambleRouter.put("/bet", GambleController.bet)
-GambleRouter.put("/results/:gambleId/:userId", GambleController.reflectResult);
+GambleRouter.put("/bet", GambleController.bet);
+// GambleRouter.put("/results/:gambleId/:userId", GambleController.reflectResult);
 
 GambleRouter.put("/bet", async (req: Request, res: Response) => {
   let user: User = await UserController.findOne(req.body.userId);
