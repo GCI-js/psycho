@@ -1,3 +1,4 @@
+import { Request, Response } from "express";
 import { Gamble } from "../../../../common/type/Gamble";
 import { GambleModel } from "../model/GambleModel";
 
@@ -43,9 +44,9 @@ export const GambleController = {
       ],
       result: req.body.result,
       answerIndex: req.body.answerIndex,
-    }
+    };
     await GambleModel.create(newGamble);
-    let filter = {gambleId: gambleId};
+    let filter = { gambleId: gambleId };
     res.status(200).json(await GambleModel.findOne(filter).lean<Gamble>());
   },
   findAll: async () => {
