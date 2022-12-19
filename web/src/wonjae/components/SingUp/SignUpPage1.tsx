@@ -38,6 +38,7 @@ function SignUpPage1() {
 
       {/* Component from Jongseok */}
       <EditProfile />
+      <MainButton text="게속" onClick={moveToNext} />
     </div>
   );
 }

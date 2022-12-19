@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+// import { BrowserRouter, Routes, Route } from "react-router-dom";
 import SignInPage from "./components/SignInPage/SignInPage";
 import KakaoRedirect from "./components/SignInPage/KaKaoRedirect";
 import NaverRedirect from "./components/SignInPage/NaverRedirect";
@@ -10,6 +10,7 @@ import SignUpPage2 from "./components/SingUp/SignUpPage2";
 import SignUpPage3 from "./components/SingUp/SignUpPage3";
 import Lamb from "../seoha/component/Lamb";
 import shepherd from "../seoha/service/shepherd";
+import SignUpPage4 from "./components/SingUp/SignUpPage4";
 
 function Wonjae() {
   React.useEffect(
@@ -27,6 +28,7 @@ function Wonjae() {
         <SignUpPage1 data-pose="signUp1" />
         <SignUpPage2 data-pose="signUp2" />
         <SignUpPage3 data-pose="signUp3" />
+        <SignUpPage4 data-pose="signUp4" />
       </Lamb>
       {/* Using react-router-dom */}
       {/* <BrowserRouter> 
