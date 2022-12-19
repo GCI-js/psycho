@@ -11,6 +11,9 @@ function SignUpPage1() {
   var mediumText = `Psycho에 등록된 계정이 없어요!
   회원가입을 하시려면 아래 내용을
   채워주세요`;
+  const moveBack = () => {
+    shepherd.whip("wonjae", "welcome");
+  };
 
   const moveToNext = () => {
     shepherd.whip("wonjae", "signUp2");
@@ -18,7 +21,7 @@ function SignUpPage1() {
 
   return (
     <div className="container">
-      <BackButton />
+      <BackButton onClick={moveBack} />
       <LargeTitle text="회원가입" />
       <MediumTitle text={mediumText} />
 

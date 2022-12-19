@@ -7,6 +7,9 @@ import MediumTitle from "../Common/MediumTitle";
 
 function SignUpPage3() {
   const mediumText = `마지막 페이지에요!`;
+  const moveBack = () => {
+    shepherd.whip("wonjae", "sginUp2");
+  };
 
   const moveToNext = () => {
     shepherd.whip("wonjae", "signUp4");
@@ -14,7 +17,7 @@ function SignUpPage3() {
 
   return (
     <div>
-      <BackButton />
+      <BackButton onClick={moveBack} />
       <LargeTitle text="회원가입" />
       <MediumTitle text={mediumText} />
       <MainButton text="게속" onClick={moveToNext} />

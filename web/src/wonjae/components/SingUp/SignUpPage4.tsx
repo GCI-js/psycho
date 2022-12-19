@@ -5,15 +5,16 @@ import LargeTitle from "../Common/LargeTitle";
 import MainButton from "../Common/MainButton";
 
 function SignUpPage4() {
-  const mediumText = `마지막 페이지에요!`;
-
+  const moveBack = () => {
+    shepherd.whip("wonjae", "sginUp3");
+  };
   const moveToNext = () => {
     shepherd.whip("test", "jongseok");
   };
 
   return (
     <div>
-      <BackButton />
+      <BackButton onClick={moveBack} />
       <LargeTitle text="이용약관" />
       <MainButton text="게속" onClick={moveToNext} />
     </div>
