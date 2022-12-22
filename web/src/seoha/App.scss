@@ -1,5 +1,26 @@
 .app-j238dndx8w4hweh {
-    > div > div {
-        cursor: pointer;
+    > .search-bar {
+        height: 54px;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        margin: 10px 23px;
+        border: 1px solid black;
+        border-radius: 27px;
+        padding-right: 5px;
+        padding-left: 27px;
+        box-sizing: border-box;
+        > .btn {
+            height: 44px;
+            width: 44px;
+            border-radius: 22px;
+            background: black;
+        }
+    }
+    > .display {
+        height: calc(100% - 110px);
+        position: absolute;
+        overflow: scroll;
+        width: 100%;
     }
 }

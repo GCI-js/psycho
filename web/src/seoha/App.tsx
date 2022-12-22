@@ -1,5 +1,7 @@
 import * as React from "react";
 
+import Lamb from "./component/Lamb";
+
 import shepherd from "./service/shepherd";
 
 import BettingGraph from "../betting_graph/App";
@@ -7,7 +9,9 @@ import Jongseok from "../jongseok/App";
 import Sangjin from "../sangjin/App";
 import Wonjae from "../wonjae/App";
 
-import Lamb from "./component/Lamb";
+import Navigation from "./component/Navigation";
+
+
 
 import './App.scss';
 
@@ -19,25 +23,16 @@ export default function App() {
         () => window.addEventListener("popstate", shepherd.bleat), []);
 
     return <div className="app-j238dndx8w4hweh">
-        <div>
-            <div onClick={() => shepherd.whip("test", "jongseok")}>
-                jongseok
-            </div>
-            <div onClick={() => shepherd.whip("test", "younghoon")}>
-                younghoon
-            </div>
-            <div onClick={() => shepherd.whip("test", "sangjin")}>
-                sangjin
-            </div>
-            <div onClick={() => shepherd.whip("test", "wonjae")}>
-                wonjae
-            </div>
+        <div className="search-bar">
+            search bar
+            <div className="btn"></div>
         </div>
-        <Lamb data-lamb="test">
+        <Lamb data-lamb="test" className="display">
             <Jongseok data-pose="jongseok"/>
             <BettingGraph data-pose="younghoon"/>
             <Sangjin data-pose="sangjin"/>
             <Wonjae data-pose="wonjae"/>
         </Lamb>
+        <Navigation/>
     </div>
 }
