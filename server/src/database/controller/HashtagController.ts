@@ -13,9 +13,7 @@ export const HashtagController = {
       res.status(400).json({});
       return;
     }
-    let newHashtagId: string = (
-      await GetNewId(HashtagModel, "hashtagId")
-    ).toString();
+    let newHashtagId: string = await GetNewId(HashtagModel, "hashtagId");
     let newHashtag: Hashtag = {
       hashtagId: newHashtagId,
       name: req.body.name,

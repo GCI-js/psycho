@@ -13,5 +13,5 @@ export const GetNewId = async (model: any, id: string) => {
     })
   );
   console.log(`New id = ${maxId}`);
-  return maxId + 1;
+  return (maxId + 1).toString();
 };

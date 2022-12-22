@@ -8,9 +8,7 @@ import { UserModel } from "../model/UserModel";
 export const BettingController = {
   createBetting: async (req: Request, res: Response) => {
     console.log("createBetting");
-    let newBettingId: string = (
-      await GetNewId(BettingModel, "bettingId")
-    ).toString();
+    let newBettingId: string = await GetNewId(BettingModel, "bettingId");
     let newBetting: Betting = {
       bettingId: newBettingId,
       surveyId: req.body.surveyId,
