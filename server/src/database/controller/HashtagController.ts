@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { Hashtag } from "../../../../common/type/Hashtag";
 import { GetNewId } from "../../component/Util";
 import { HashtagModel } from "../model/HashtagModel";
-import { UserController } from "./UserController";
+import { UserModel } from "../model/UserModel";
 
 export const HashtagController = {
   createHashtag: async (req: Request, res: Response) => {
@@ -49,9 +49,9 @@ export const HashtagController = {
   },
   getAssocHashtags: async (req: Request, res: Response) => {
     console.log("getAssocHashtags");
-    let users = await UserController.find100UsersByHashtag(
-      req.params.hashtagId
-    );
+    let users = await UserModel.find({
+      hashtags: { $elemMatch: { hashtagId: req.params.hashtagId } },
+    }).limit(100);
     let hashtagCnt: { hashtagId: string; name: string; cnt: number }[] = [];
     for (let i = 0; i < users.length; i++) {
       for (let j = 0; j < users[i].hashtags.length; j++) {

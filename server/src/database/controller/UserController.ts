@@ -41,9 +41,4 @@ export const UserController = {
     console.log("readUserCount");
     res.status(200).json(await UserModel.count({}));
   },
-  find100UsersByHashtag: async (hashtagId: string) => {
-    return await UserModel.find({
-      hashtags: { $elemMatch: { hashtagId: hashtagId } },
-    }).limit(100);
-  },
 };
