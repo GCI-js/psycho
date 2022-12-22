@@ -6,14 +6,14 @@ import React, {
   useRef,
 } from "react";
 import "./BettingContent.css";
-import GambleType from "../../../../../common/type/Gamble";
+import BettingType from "../../../../../common/type/Betting";
 import { BettingUtils } from "../Betting/utils";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
 import closeButtonImage from "./img/close.svg";
 import lockedWithKeyImage from "./img/locked_with_key_3d.svg";
 
 interface BettingContentProps {
-  data: GambleType.Gamble;
+  data: BettingType.Betting;
   bettingTitle?: string;
   addtionalComponent?: JSX.Element;
   isLocked?: boolean;

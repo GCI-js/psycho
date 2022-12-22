@@ -18,7 +18,7 @@ export function RandomListInit() {
   RandomList.push({ type: "tophashtag", data: [] });
   RandomList.push({ type: "changembti", data: [] });
   RandomList.push({ type: "hashtagsearchresult", data: [] });
-  RandomList.push({ type: "mybattingrecord", data: [] });
+  RandomList.push({ type: "mybettingrecord", data: [] });
   RandomList.push({ type: "attendancecheck", data: [] });
   for (let i = 0; i < NewsletterList.length; i++) {
     // console.log("NewsletterList..........", NewsletterList[i]);

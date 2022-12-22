@@ -1,3 +1,3 @@
-const callGambleList = () => {
+const callBettingList = () => {
   const URL = "";
 };
