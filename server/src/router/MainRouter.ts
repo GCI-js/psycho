@@ -22,5 +22,6 @@ MainRouter.use("/hashtag", HashtagRouter);
 MainRouter.use("/betting", BettingRouter);
 MainRouter.use("/question", QuestionRouter);
 MainRouter.use("/newsletter", NewsletterRouter);
+MainRouter.use("/question", QuestionRouter);
 
 export default MainRouter;
