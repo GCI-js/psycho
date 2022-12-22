@@ -16,8 +16,7 @@ export const HashtagController = {
     let newHashtagId: string = await GetNewId(HashtagModel, "hashtagId");
     let newHashtag: Hashtag = {
       hashtagId: newHashtagId,
-      name: req.body.name,
-      type: req.body.type,
+      ...req.body,
       mbtiCnt: Array(16).fill(0),
     };
     await HashtagModel.create(newHashtag);

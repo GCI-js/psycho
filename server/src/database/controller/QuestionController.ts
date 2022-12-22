@@ -9,12 +9,7 @@ export const QuestionController = {
     let newQuestionId: string = await GetNewId(QuestionModel, "questionId");
     let newQuestion: Question = {
       questionId: newQuestionId,
-      image: req.body.image,
-      title: req.body.title,
-      type: req.body.type,
-      date: req.body.date,
-      contents: req.body.contents,
-      mbtiChange: req.body.mbtiChange,
+      ...req.body,
     };
     await QuestionModel.create(newQuestion);
     let filter = { questionId: newQuestionId };

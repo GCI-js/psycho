@@ -12,11 +12,7 @@ export const NewsletterController = {
     );
     let newNewsletter: Newsletter = {
       newsletterId: newNewsletterId,
-      thumbnail: req.body.thumbnail,
-      title: req.body.title,
-      hashtags: req.body.hashtags,
-      url: req.body.url,
-      writer: req.body.writer,
+      ...req.body,
     };
     await NewsletterModel.create(newNewsletter);
     let filter = { newsletterId: newNewsletterId };
