@@ -1,12 +1,12 @@
 import { model, Schema } from "mongoose";
-import { Gamble } from "../../../../common/type/Gamble";
+import { Betting } from "../../../../common/type/Betting";
 
-export const DOCUMENT_NAME = "Gamble";
-export const COLLECTION_NAME = "gambles";
+export const DOCUMENT_NAME = "Betting";
+export const COLLECTION_NAME = "bettings";
 
-const gambleSchema = new Schema(
+const bettingSchema = new Schema(
   {
-    gambleId: { type: String, required: true },
+    bettingId: { type: String, required: true },
     surveyId: { type: String, required: false },
     openTime: { type: Number, required: false },
     closeTime: { type: Number, required: false },
@@ -40,8 +40,8 @@ const gambleSchema = new Schema(
   { versionKey: false }
 );
 
-export const GambleModel = model<Gamble>(
+export const BettingModel = model<Betting>(
   DOCUMENT_NAME,
-  gambleSchema,
+  bettingSchema,
   COLLECTION_NAME
 );

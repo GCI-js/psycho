@@ -30,22 +30,22 @@ export function MainPage() {
 
     console.log("tmp........", tmp);
     // setResult([...result, ...tmp]);
-    result.push(tmp[0]);
-    result.push(tmp[1]);
-    result.push(tmp[2]);
-    result.push(tmp[3]);
-    result.push(tmp[4]);
+    for (let i = 0; i < 5; i++) {
+      if (tmp[i] != undefined) {
+        result.push(tmp[i]);
+      }
+    }
     setResult([...result]);
     console.log("result........", result);
 
     // setItem([...item, ...item.slice(5)]);
-    let tmp2 = item.slice(5);
-    let newItems = [
-      (item: any) =>
-        item.filter((item: any, i: any) => {
-          i >= 5;
-        }),
-    ];
+    // let tmp2 = item.slice(5);
+    // let newItems = [
+    //   (item: any) =>
+    //     item.filter((item: any, i: any) => {
+    //       i >= 5;
+    //     }),
+    // ];
     // setItem([...tmp2]);
     item = item.slice(5);
     setIsLoading(false);

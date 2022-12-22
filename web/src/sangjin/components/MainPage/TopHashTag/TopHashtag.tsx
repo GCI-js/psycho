@@ -18,27 +18,27 @@ const hashtagSecond = hashtagList.slice(4, 8);
 const TopHashtag = () => {
   return (
     <div>
-      <div className="card_item">
-        <div className="card_header">실시간 TOP 8 해쉬태그</div>
+      <div className="tophashtag_card_item">
+        <div className="tophashtag_card_header">실시간 TOP 8 해쉬태그</div>
 
-        <div className="card_tag">
+        <div className="tophashtag_card_tag">
           {hashtagFirst.map(function (i, index): JSX.Element {
             // console.log("I.........", i);
 
             return (
-              <div className="hashtag">
+              <div className="tophashtag_hashtag">
                 <span>#{i.name} </span>
               </div>
             );
           })}
           {/* <a href={props.url}>#{props.hashtag}</a> */}
         </div>
-        <div className="card_tag">
+        <div className="tophashtag_card_tag">
           {hashtagSecond.map(function (i, index): JSX.Element {
             // console.log("I.........", i);
 
             return (
-              <div className="hashtag">
+              <div className="tophashtag_hashtag">
                 <span>#{i.name} </span>
               </div>
             );

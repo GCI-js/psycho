@@ -17,6 +17,7 @@ import {
 import { User } from "../../../common/type/User";
 import PieChart from "./components/PieChart/PieChart";
 import TrendLineChart from "./components/TrendLineChart/TrendLineChart";
+import QuestionPage from "./components/Question/QuestionPage";
 
 const DUMMY_DATA_BETTING_RESULT = {
   ...MockBettingResult,
@@ -56,8 +57,8 @@ const DUMMY_DATA_PIE_CHART = {
 const BettingGraph = () => {
   return (
     <div>
-      <div style={{ width: 375, height: 375 }}>
-        <PieChart data={DUMMY_DATA_PIE_CHART} />
+      <div>
+        <QuestionPage />
       </div>
       <div>
         <TrendLineChart />

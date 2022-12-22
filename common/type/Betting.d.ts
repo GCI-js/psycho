@@ -1,6 +1,6 @@
-export interface Gamble {
+export interface Betting {
   _id?: string;
-  gambleId: string;
+  bettingId: string;
   surveyId: string;
   openTime: number;
   closeTime: number;
