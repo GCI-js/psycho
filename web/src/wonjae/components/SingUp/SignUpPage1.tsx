@@ -22,8 +22,8 @@ function SignUpPage1() {
   return (
     <div className="container">
       <BackButton onClick={moveBack} />
-      <LargeTitle text="회원가입" />
-      <MediumTitle text={mediumText} />
+      <LargeTitle customClass="" text="회원가입" />
+      <MediumTitle customClass="" text={mediumText} />
 
       {/* Component From Wonjae */}
       {/* <div>

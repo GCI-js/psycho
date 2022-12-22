@@ -18,8 +18,8 @@ function SignUpPage3() {
   return (
     <div>
       <BackButton onClick={moveBack} />
-      <LargeTitle text="회원가입" />
-      <MediumTitle text={mediumText} />
+      <LargeTitle customClass="" text="회원가입" />
+      <MediumTitle customClass="" text={mediumText} />
       <MainButton text="게속" onClick={moveToNext} />
     </div>
   );

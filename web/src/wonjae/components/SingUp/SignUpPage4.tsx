@@ -15,7 +15,7 @@ function SignUpPage4() {
   return (
     <div>
       <BackButton onClick={moveBack} />
-      <LargeTitle text="이용약관" />
+      <LargeTitle customClass="" text="이용약관" />
       <MainButton text="게속" onClick={moveToNext} />
     </div>
   );
