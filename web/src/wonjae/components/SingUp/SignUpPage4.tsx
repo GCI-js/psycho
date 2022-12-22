@@ -16,7 +16,7 @@ function SignUpPage4() {
     <div>
       <BackButton onClick={moveBack} />
       <LargeTitle customClass="" text="이용약관" />
-      <MainButton text="게속" onClick={moveToNext} />
+      <MainButton text="계속" onClick={moveToNext} />
     </div>
   );
 }
