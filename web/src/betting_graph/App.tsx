@@ -20,20 +20,20 @@ import TrendLineChart from "./components/TrendLineChart/TrendLineChart";
 import QuestionPage from "./components/Question/QuestionPage";
 
 const DUMMY_DATA_BETTING_RESULT = {
-  ...MockBettingResult,
+  ...MockBettingResult[0],
 };
 const DUMMY_DATA_BETTING_RESULT_NOT_END = {
-  ...MockBettingResult,
+  ...MockBettingResult[0],
   openTime: Date.now(),
   closeTime: Date.now() + 100000000,
 };
 const DUMMY_DATA_BETTING_RESULT_NOT_CHECK = {
-  ...MockBettingResult,
+  ...MockBettingResult[0],
   // openTime: Date.now(),
   // closeTime: Date.now() + 1000000,
 };
 const DUMMY_DATA_BETTING_RESULT_CHECK = {
-  ...MockBettingResult,
+  ...MockBettingResult[0],
   // openTime: Date.now(),
   // closeTime: Date.now() + 1000000,
 };
