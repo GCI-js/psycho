@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
 import "./BettingPopup.css";
-import GambleType from "../../../../../common/type/Gamble";
+import BettingType from "../../../../../common/type/Betting";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
 
 interface BettingPopupProps {
-  data: GambleType.Gamble;
+  data: BettingType.Betting;
   show: boolean;
 }
 

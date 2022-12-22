@@ -4,7 +4,7 @@ import BettingResult from "./components/BettingResult/BettingResult";
 import BettingResultPast from "./components/BettingResultPast/BettingResultPast";
 import Betting from "./components/Betting/Betting";
 import BettingPopup from "./components/BettingPopup/BettingPopup";
-import MockBettingResult from "../../../common/mock_data/mock_gambles.json";
+import MockBettingResult from "../../../common/mock_data/mock_bettings.json";
 import MockUser from "../../../common/mock_data/mock_users.json";
 import MockHashTags from "../../../common/mock_data/mock_hashtags.json";
 import RemainedBalance from "./components/RemainedBalance/RemainedBalance";
