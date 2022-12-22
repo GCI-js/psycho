@@ -2,11 +2,11 @@ import * as React from "react";
 
 
 type Trigger = [number, React.Dispatch<React.SetStateAction<number>>];
-interface Key2Trigger {[key: string]: Trigger}
+interface Key2Trigger {[key: string]: Trigger[]}
 
 namespace shepherd {
 
-    const _key2trigger: Key2Trigger = {};
+    const _key2triggers: Key2Trigger = {};
 
     export function whip(lamb: string, pose: string) {
         const lamb2pose = readPoses();
@@ -27,13 +27,13 @@ namespace shepherd {
     export function bleat() {
         chase("lamb-" + readLamb());
     }
-    export function adopt(trigger: Trigger, key: string) {
-        _key2trigger[key] = trigger;
+    export function adopt(key: string) {
+        if (_key2triggers[key] == undefined) _key2triggers[key] = [];
+        _key2triggers[key].push(React.useState(0));
     }
     export function chase(key: string) {
-        if (!_key2trigger[key]) return;
-        const [v, setValue] = _key2trigger[key];
-        setValue(v + 1);
+        if (!_key2triggers[key]) return;
+        _key2triggers[key].forEach(([v, setValue]) => setValue(v + 1));
     }
 }
 

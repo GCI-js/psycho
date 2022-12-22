@@ -5,12 +5,20 @@ import shepherd from "../../service/shepherd";
 import "./index.scss";
 
 
-export default function Lamb(properties: any) {
+interface Properties extends React.PropsWithChildren {
+    "data-lamb": string;
+    className?: string;
+}
+interface ChildProperties {
+    "data-pose": string;
+}
+
+export default function Lamb(properties: Properties) {
     console.log(`<Lamb>${properties["data-lamb"]}</Lamb>`, );
     const lamb = properties["data-lamb"];
-    const cl_names = ["std-page", properties.className].join(" ");
+    const cl_names = ["std-page-shfa78wagiud", properties.className].join(" ");
     const ref = React.useRef(null);
-    const pages = properties.children;
+    const pages = properties.children as React.ReactElement<ChildProperties>[];
     const ct = pages.length;
     const std_pages = Array(ct);
     const pagings = Array(ct);
@@ -22,7 +30,7 @@ export default function Lamb(properties: any) {
         std_pages[i] = <div key={i}>{v}</div>;
         pagings[i] = setValue;
     }
-    shepherd.adopt(React.useState(0), "lamb-" + lamb);
+    shepherd.adopt("lamb-" + lamb);
 
     React.useEffect(() => {
         let loc = names.indexOf(shepherd.readPoses()[lamb]);
