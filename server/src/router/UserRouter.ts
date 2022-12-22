@@ -60,32 +60,39 @@ UserRouter.put("/edit/:id", async (req: Request, res: Response) => {
   // let day = d.getDay()
   // let newConnHist=[];
   // newConnHist[day]=1;
+
+  // let newUserData: User = {
+  //   userId: req.params.id,
+  //   nickname: req.body.nickname ? req.body.nickname : userData.nickname,
+  //   kakaoKey: req.body.kakaoKey ? req.body.kakaoKey : userData.kakaoKey,
+  //   googleKey: req.body.googleKey ? req.body.googleKey : userData.googleKey,
+  //   naverKey: req.body.naverKey ? req.body.naverKey : userData.naverKey,
+  //   signUpStage: req.body.signUpStage
+  //     ? req.body.signUpStage
+  //     : userData.signUpStage,
+  //   bloodType: req.body.bloodType ? req.body.bloodType : userData.bloodType,
+  //   country: req.body.country ? req.body.country : userData.country,
+  //   city: req.body.city ? req.body.city : userData.city,
+  //   district: req.body.district ? req.body.district : userData.district,
+  //   gender: req.body.gender ? req.body.gender : userData.gender,
+  //   birth: req.body.birth ? req.body.birth : userData.birth,
+  //   mbtis: req.body.mbtis ? req.body.mbtis : userData.mbtis,
+  //   hashtags: req.body.hashtags ? req.body.hashtags : userData.hashtags,
+  //   recentResponse: req.body.recentResponse
+  //     ? req.body.recentResponse
+  //     : userData.recentResponse,
+  //   balance: req.body.balance ? req.body.balance : userData.balance,
+  //   gambleHist: req.body.gambleHist ? req.body.gambleHist : userData.gambleHist,
+  //   connHist: req.body.connHist ? req.body.connHist : userData.connHist,
+  //   lastConn: req.body.lastConn ? req.body.lastConn : userData.lastConn,
+  //   contConn: req.body.contConn ? req.body.contConn : userData.contConn,
+  // };
+
   let newUserData: User = {
-    userId: req.params.id,
-    nickname: req.body.nickname ? req.body.nickname : userData.nickname,
-    kakaoKey: req.body.kakaoKey ? req.body.kakaoKey : userData.kakaoKey,
-    googleKey: req.body.googleKey ? req.body.googleKey : userData.googleKey,
-    naverKey: req.body.naverKey ? req.body.naverKey : userData.naverKey,
-    signUpStage: req.body.signUpStage
-      ? req.body.signUpStage
-      : userData.signUpStage,
-    bloodType: req.body.bloodType ? req.body.bloodType : userData.bloodType,
-    country: req.body.country ? req.body.country : userData.country,
-    city: req.body.city ? req.body.city : userData.city,
-    district: req.body.district ? req.body.district : userData.district,
-    gender: req.body.gender ? req.body.gender : userData.gender,
-    birth: req.body.birth ? req.body.birth : userData.birth,
-    mbtis: req.body.mbtis ? req.body.mbtis : userData.mbtis,
-    hashtags: req.body.hashtags ? req.body.hashtags : userData.hashtags,
-    recentResponse: req.body.recentResponse
-      ? req.body.recentResponse
-      : userData.recentResponse,
-    balance: req.body.balance ? req.body.balance : userData.balance,
-    gambleHist: req.body.gambleHist ? req.body.gambleHist : userData.gambleHist,
-    connHist: req.body.connHist ? req.body.connHist : userData.connHist,
-    lastConn: req.body.lastConn ? req.body.lastConn : userData.lastConn,
-    contConn: req.body.contConn ? req.body.contConn : userData.contConn,
+    ...userData,
+    ...req.body,
   };
+  console.log(newUserData);
   await UserController.updateOne(newUserData);
   res.status(200).json(await UserController.findOne(req.params.id));
 });
