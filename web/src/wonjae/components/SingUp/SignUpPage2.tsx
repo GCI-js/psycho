@@ -9,15 +9,19 @@ function SignUpPage2() {
   const mediumText = `거의 다 됐어요!
     조금만 더 힘내세요!`;
 
+  const moveBack = () => {
+    shepherd.whip("wonjae", "sginUp1");
+    console.log("whip to 1");
+  };
   const moveToNext = () => {
     shepherd.whip("wonjae", "signUp3");
   };
 
   return (
     <div>
-      <BackButton />
-      <LargeTitle text="회원가입" />
-      <MediumTitle text={mediumText} />
+      <BackButton onClick={moveBack} />
+      <LargeTitle customClass="" text="회원가입" />
+      <MediumTitle customClass="" text={mediumText} />
       <MainButton text="게속" onClick={moveToNext} />
     </div>
   );

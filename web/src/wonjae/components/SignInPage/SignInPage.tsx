@@ -14,8 +14,8 @@ function SignInPage() {
 
   return (
     <>
-      <LargeTitle text="로그인" />
-      <MediumTitle text={mediumTitleText} />
+      <LargeTitle text="로그인" customClass="" />
+      <MediumTitle customClass="" text={mediumTitleText} />
       <br />
       <br />
       <LoginGoogle />

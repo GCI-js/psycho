@@ -11,22 +11,20 @@ function WelcomePage() {
   const mediumTitle = `Psycho는 당시의 MBTI
   변동을 추적해드려요 !`;
   var userNum = 30030;
-  const gotoLoginPage = () => {
-    // shepherd.whip("wonjae", "signIn");
-
-    // debug
-    shepherd.whip("wonjae", "signUp1");
+  const gotoSignInPage = () => {
+    shepherd.whip("wonjae", "signIn");
+    // shepherd.whip("wonjae", "signUp1");
   };
 
   return (
     <div>
-      <div className="wonjae_frame">
-        <LargeTitle text="반가워요!" />
+      <div className="welcome_img_container">
+        <LargeTitle customClass="wonjae_title" text="반가워요!" />
         <img src={welcomeImage} />
       </div>
-      <MediumTitle text={mediumTitle} />
+      <MediumTitle customClass="welcome_medium_title" text={mediumTitle} />
       <div className="user_num_phrase">벌써 {userNum}명이 가입했어요!</div>
-      <MainButton text="시작해볼까요?" onClick={gotoLoginPage} />
+      <MainButton text="시작해볼까요?" onClick={gotoSignInPage} />
     </div>
   );
 }
