@@ -1,0 +1,18 @@
+{
+  "ENFP": 0,
+  "ENFJ": 1,
+  "ENTP": 2,
+  "ENTJ": 3,
+  "ESFP": 4,
+  "ESFJ": 5,
+  "ESTP": 6,
+  "ESTJ": 7,
+  "INFP": 8,
+  "INFJ": 9,
+  "INTP": 10,
+  "INTJ": 11,
+  "ISFP": 12,
+  "ISFJ": 13,
+  "ISTP": 14,
+  "ISTJ": 15
+}
