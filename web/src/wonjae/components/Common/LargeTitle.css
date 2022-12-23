@@ -1,19 +1,9 @@
 .large_title {
-  margin-top: 50px;
-  text-align: left;
-  /* position: absolute; */
-  width: 329px;
-  height: 41px;
-  left: 26px;
-  top: 112px;
-
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
   font-size: 34px;
   line-height: 41px;
-  /* identical to box height, or 121% */
-
   letter-spacing: 0.374px;
 
   color: #000000;

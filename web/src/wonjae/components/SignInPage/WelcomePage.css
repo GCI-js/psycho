@@ -1,46 +1,41 @@
 .wonjae_title {
-  position: absolute;
-  width: 80%;
-  left: 26px;
-  top: 112px;
+  margin-inline-start: 26pt;
+  margin-top: 80pt;
+  text-align: left;
 }
 
-.wonjae_frame {
-  /* position: absolute; */
+.welcome_img_container {
+  position: absolute;
+  top: 0px;
   height: 70%;
-  width: max-content;
+  width: 100%;
 
   background: rgba(40, 40, 41, 0.1);
   border-radius: 0px;
 }
 
-.wonjae_medium_title {
-  /* Medium Title */
+.welcome_medium_title {
+  position: absolute;
+  height: 82px;
+  left: 45px;
+  right: 45px;
+  bottom: 158px;
 
-  /* width: 144px; */
-  /* height: 22px; */
-
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 22px;
-  /* identical to box height, or 92% */
-
-  text-align: center;
-  letter-spacing: -0.408px;
-
-  color: #ffffff;
-
-  /* Inside auto layout */
-
-  flex: none;
-  order: 0;
-  flex-grow: 0;
+  margin-top: 35pt;
+  text-align: left;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .user_num_phrase {
-  position: relative;
+  position: absolute;
+  width: 305px;
+  height: 48px;
+  left: 42px;
+  top: calc(50% - 48px / 2 + 313px);
+
+  /* position: relative;
   top: 30px;
-  margin-top: 30px;
+  margin-top: 30px; */
 }

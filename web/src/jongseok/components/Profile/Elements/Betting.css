@@ -1,4 +1,4 @@
-.gambleContainer {
+.bettingContainer {
   display: flex;
   flex-direction: column;
   border-radius: 10px;
@@ -11,14 +11,14 @@
   font-size: 12px;
   background-color: #eaeaea;
 }
-.gambleTitle {
+.bettingTitle {
   font-weight: bold;
   font-size: 16px;
   margin-bottom: 10px;
   padding-top: 16px;
   padding-left: 16px;
 }
-.gambleContent {
+.bettingContent {
   padding: 12px 23px 14px 23px;
   font-family: "Inter";
   font-style: normal;

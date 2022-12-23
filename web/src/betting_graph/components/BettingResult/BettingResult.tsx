@@ -1,7 +1,7 @@
 import React, { PureComponent } from "react";
 import "./BettingResult.css";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../../../../../common/type/Gamble";
+import BettingType from "../../../../../common/type/Betting";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
 
@@ -9,7 +9,7 @@ const BUTTON_WIDTH = 132;
 const BUTTON_HEIGHT = 40;
 
 interface BettingResultProps {
-  data: GambleType.Gamble[];
+  data: BettingType.Betting[];
   userData: {
     bettingCoin: number;
     choose: number;

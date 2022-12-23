@@ -1,45 +1,45 @@
 import * as React from "react";
-import "./MyBattingRecord.css";
+import "./MyBettingRecord.css";
 
-export type gambleHistType = {
-  gambleId: number;
+export type bettingHistType = {
+  bettingId: number;
   index: number;
   balance: number;
   result: number;
 };
-export const gambleHistList: gambleHistType[] = [
+export const bettingHistList: bettingHistType[] = [
   {
-    gambleId: 1,
+    bettingId: 1,
     index: 0,
     balance: 1200,
     result: -1,
   },
   {
-    gambleId: 1,
+    bettingId: 1,
     index: 0,
     balance: 1200,
     result: -1,
   },
   {
-    gambleId: 1,
+    bettingId: 1,
     index: 0,
     balance: 1200,
     result: 1,
   },
 ];
 
-const MyBattingRecord = () => {
-  var day = gambleHistList.length;
+const MyBettingRecord = () => {
+  var day = bettingHistList.length;
   var win = 0;
   var loose = 0;
   var money = 0;
-  for (var i = 0; i < gambleHistList.length; i++) {
-    if (gambleHistList[i].result === 1) {
+  for (var i = 0; i < bettingHistList.length; i++) {
+    if (bettingHistList[i].result === 1) {
       win++;
-      money += gambleHistList[i].balance;
-    } else if (gambleHistList[i].result === -1) {
+      money += bettingHistList[i].balance;
+    } else if (bettingHistList[i].result === -1) {
       loose++;
-      money -= gambleHistList[i].balance;
+      money -= bettingHistList[i].balance;
     }
   }
   return (
@@ -58,6 +58,6 @@ const MyBattingRecord = () => {
   );
 };
 
-export default MyBattingRecord;
+export default MyBettingRecord;
 
 <style scoped></style>;

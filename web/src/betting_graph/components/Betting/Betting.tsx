@@ -3,7 +3,7 @@ import "./Betting.css";
 import imgGameDie3D from "./img/game_die_3d_1.svg";
 import BettingPopup from "../BettingPopup/BettingPopup";
 import CountDownTimer from "../CountDownTimer/CountDownTimer";
-import GambleType from "../../../../../common/type/Gamble";
+import BettingType from "../../../../../common/type/Betting";
 
 import { BettingUtils } from "./utils";
 
@@ -11,7 +11,7 @@ const BUTTON_WIDTH = 300;
 const BUTTON_HEIGHT = 57;
 
 interface BettingProps {
-  data: GambleType.Gamble;
+  data: BettingType.Betting;
   // data: BettingDataItem;
 }
 

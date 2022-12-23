@@ -3,11 +3,12 @@ import "./LargeTitle.css";
 
 interface IProps {
   text: String;
+  customClass: string;
 }
 
 function LargeTitle(props: IProps) {
   return (
-    <div className="large_title">
+    <div className={props.customClass + " large_title"}>
       <b>{props.text}</b>
     </div>
   );

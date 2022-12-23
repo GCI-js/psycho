@@ -8,7 +8,7 @@ import ChnageMBTI from "./ChangeMBTI";
 import HashTag from "./HashtagSearchResult";
 import { getRandomList, RandomListInit } from "./RandomList";
 import HashtagSearchResult from "./HashtagSearchResult";
-import MyBattingRecord from "./MyBattingRecord/MyBattingRecord";
+import MyBettingRecord from "./MyBettingRecord/MyBettingRecord";
 import AttendanceCheck from "./AttendanceCheck/AttendanceCheck";
 import TopHashtag from "./TopHashTag/TopHashtag";
 export function MainPage() {
@@ -30,22 +30,22 @@ export function MainPage() {
 
     console.log("tmp........", tmp);
     // setResult([...result, ...tmp]);
-    result.push(tmp[0]);
-    result.push(tmp[1]);
-    result.push(tmp[2]);
-    result.push(tmp[3]);
-    result.push(tmp[4]);
+    for (let i = 0; i < 5; i++) {
+      if (tmp[i] != undefined) {
+        result.push(tmp[i]);
+      }
+    }
     setResult([...result]);
     console.log("result........", result);
 
     // setItem([...item, ...item.slice(5)]);
-    let tmp2 = item.slice(5);
-    let newItems = [
-      (item: any) =>
-        item.filter((item: any, i: any) => {
-          i >= 5;
-        }),
-    ];
+    // let tmp2 = item.slice(5);
+    // let newItems = [
+    //   (item: any) =>
+    //     item.filter((item: any, i: any) => {
+    //       i >= 5;
+    //     }),
+    // ];
     // setItem([...tmp2]);
     item = item.slice(5);
     setIsLoading(false);
@@ -96,8 +96,8 @@ export function MainPage() {
             return <AttendanceCheck />;
           } else if (i.type === "changembti") {
             return <ChnageMBTI />;
-          } else if (i.type === "mybattingrecord") {
-            return <MyBattingRecord />;
+          } else if (i.type === "mybettingrecord") {
+            return <MyBettingRecord />;
           } else if (i.type === "hashtagsearchresult") {
             return <HashtagSearchResult />;
           } else if (i.type === "tophashtag") {
