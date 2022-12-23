@@ -8,5 +8,6 @@ import { createRoot } from "react-dom/client";
 import Seoha from "./seoha/App";
 
 import "./index.scss";
+import "./fonts/inter.css";
 
 createRoot(document.getElementById("app")).render(<Seoha />);
