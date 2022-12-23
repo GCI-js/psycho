@@ -1,5 +1,5 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
-import QuestionButton from "../QuestionButton/QuestionButton";
+import QuestionContent from "../QuestionContent/QuestionContent";
 import imgCryingFace3d from "./images/crying_face_3d.svg";
 const QuestionEnd = () => {
   const button1 = () => {
@@ -8,17 +8,23 @@ const QuestionEnd = () => {
   const button2 = () => {
     console.log("button2 Clicked");
   };
+
+  const [questionData, setQuestionData] = useState({
+    title: "오늘의 질문",
+    remained: "이번 주 질문이 N개 남았어요.",
+    questionTitle: "모든 질문에 답하셨어요!",
+    questionBody:
+      "더 많은 질문에 답하고 싶으시다면 10 MBTI코인 을 사용하셔야 해요!",
+    image: imgCryingFace3d,
+    buttonLeft: "코인 결제",
+    buttonRight: "기다리기",
+  });
+
+  // setQuestionData(data);
+  console.log(questionData);
   return (
-    <div>
-      <div>
-        <img src={imgCryingFace3d} alt="crying_face_3d" />
-      </div>
-      <QuestionButton
-        text1="코인 결제"
-        onClick1={button1}
-        text2="기다리기"
-        onClick2={button2}
-      />
+    <div className="">
+      <QuestionContent pdata={questionData} />
     </div>
   );
 };

@@ -17,7 +17,7 @@ import {
 import { User } from "../../../common/type/User";
 import PieChart from "./components/PieChart/PieChart";
 import TrendLineChart from "./components/TrendLineChart/TrendLineChart";
-import QuestionPage from "./components/Question/QuestionPage";
+import QuestionPage from "./components/QuestionPage/QuestionPage";
 
 const DUMMY_DATA_BETTING_RESULT = {
   ...MockBettingResult,
