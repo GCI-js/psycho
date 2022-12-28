@@ -63,9 +63,9 @@
     ],
     "recentResponse": [true, true, true, true, true, true, true],
     "balance": 1000000000,
-    "gambleHist": [
+    "bettingHist": [
       {
-        "gambleId": "1",
+        "bettingId": "1",
         "index": 0,
         "balance": 1200,
         "result": -1
@@ -73,7 +73,8 @@
     ],
     "connHist": [1, 1, 1, 0, 1, 0, 0],
     "lastConn": 1665575139000,
-    "contConn": 1
+    "contConn": 1,
+    "signUpStage": 0
   },
   {
     "userId": "1",
@@ -139,9 +140,9 @@
     ],
     "recentResponse": [true, true, true, true, true, true, true],
     "balance": 7878787878,
-    "gambleHist": [
+    "bettingHist": [
       {
-        "gambleId": "1",
+        "bettingId": "1",
         "index": 1,
         "balance": 2000,
         "result": -1
@@ -149,6 +150,7 @@
     ],
     "connHist": [1, 0, 1, 1, 1, 0, 0],
     "lastConn": 1665575139000,
-    "contConn": 3
+    "contConn": 3,
+    "signUpStage": 0
   }
 ]

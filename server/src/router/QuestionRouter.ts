@@ -1,9 +1,8 @@
-import express, { NextFunction, Request, Response } from 'express';
-import { QuestionController } from '../database/controller/QuestionController';
-
+import express from "express";
+import { QuestionController } from "../database/controller/QuestionController";
 export const QuestionRouter = express.Router();
 
-QuestionRouter.get('/list', async (req: Request, res: Response, next: NextFunction) => {
-  const questionList = await QuestionController.findAllQuestions();
-  res.status(200).json(questionList);
-})
+QuestionRouter.post("/", QuestionController.createQuestion);
+QuestionRouter.get("/items", QuestionController.readQuestions);
+QuestionRouter.put("/items/:questionId", QuestionController.updateQuestion);
+QuestionRouter.delete("/items/:questionId", QuestionController.deleteQuestion);

@@ -1,44 +1,33 @@
-.card_item {
+.newletter_card_item {
   display: flex;
   flex-direction: column;
-  border-radius: 10px;
-  margin: 10px;
-  /* width: 500px;
-	height: 150px; */
-  padding: 5px;
-  /* overflow: hidden;
-	word-wrap: break-word; */
+  border-radius: 8px;
+  margin-top: 17px;
   font-size: 12px;
   background-color: #eaeaea;
-  /* width: 343px;
-  height: 315px;
-  background-color: #eaeaea;
-  overflow: auto;
-  margin-top: 17px; */
 }
-.card_header {
+.newletter_card_header {
   margin-top: 16px;
   margin-left: 16px;
-  margin-bottom: 12px;
   /* font-family:  */
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
   font-size: 16px;
-  font-style: Bold;
   line-height: 24px;
-  line-height: 123.94%;
-  vertical-align: Center;
   text-align: left;
   letter-spacing: 0.44px;
+  color: #000000;
 }
-.card_img {
+.newletter_card_img {
   margin-left: 20px;
   margin-right: 20px;
+  margin-top: 12px;
 }
 /* justify-content: center; */
-.card_title {
+.newletter_card_title {
   margin-top: 19px;
   margin-left: 16px;
-  margin-bottom: 4px;
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
@@ -49,7 +38,8 @@
   color: #000000;
 }
 
-.card_tag {
+.newletter_card_tag {
+  margin-top: 4px;
   margin-left: 20px;
   font-family: "Inter";
   font-style: normal;
@@ -58,18 +48,27 @@
   line-height: 22px;
 
   letter-spacing: -0.408px;
+  /* justify-content: flex-start; */
   text-align: left;
   color: #434343;
 }
 
-.card_desc {
+.newletter_card_desc {
   display: flex;
   justify-content: space-around;
   margin-bottom: 10px;
 }
 
-.card_button {
-  margin-top: 20px;
+.newletter_card_button {
+  margin-top: 21px;
+  margin-bottom: 14px;
+  margin-right: 14px;
   background-color: transparent;
   border-width: 0px;
+  width: 44px;
+  height: 44px;
+}
+
+.newletter_card_tag_name {
+  margin-left: 5px;
 }

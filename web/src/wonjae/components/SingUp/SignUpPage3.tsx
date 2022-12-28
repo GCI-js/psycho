@@ -1,19 +1,25 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import shepherd from "../../../seoha/service/shepherd";
+import BackButton from "../Common/BackButton";
 import LargeTitle from "../Common/LargeTitle";
 import MainButton from "../Common/MainButton";
 import MediumTitle from "../Common/MediumTitle";
 
 function SignUpPage3() {
-  const navigate = useNavigate();
   const mediumText = `마지막 페이지에요!`;
+  const moveBack = () => {
+    shepherd.whip("wonjae", "sginUp2");
+  };
 
-  const moveToNext = () => {};
+  const moveToNext = () => {
+    shepherd.whip("wonjae", "signUp4");
+  };
 
   return (
     <div>
-      <LargeTitle text="회원가입" />
-      <MediumTitle text={mediumText} />
+      <BackButton onClick={moveBack} />
+      <LargeTitle customClass="" text="회원가입" />
+      <MediumTitle customClass="" text={mediumText} />
       <MainButton text="게속" onClick={moveToNext} />
     </div>
   );

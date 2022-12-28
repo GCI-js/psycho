@@ -8,7 +8,7 @@ import ChnageMBTI from "./ChangeMBTI";
 import HashTag from "./HashtagSearchResult";
 import { getRandomList, RandomListInit } from "./RandomList";
 import HashtagSearchResult from "./HashtagSearchResult";
-import MyBattingRecord from "./MyBattingRecord/MyBattingRecord";
+import MyBettingRecord from "./MyBettingRecord/MyBettingRecord";
 import AttendanceCheck from "./AttendanceCheck/AttendanceCheck";
 import TopHashtag from "./TopHashTag/TopHashtag";
 export function MainPage() {
@@ -16,19 +16,38 @@ export function MainPage() {
   let RandomList: any[] = [];
   RandomList = getRandomList();
 
-  const [result, setResult] = useState<any[]>([]);
-  const [item, setItem] = useState<any[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  let [result, setResult] = useState<any[]>([]);
+  let [item, setItem] = useState<any[]>([]);
+  let [isLoading, setIsLoading] = useState<boolean>(true);
 
   const fetchMoreData = async () => {
     console.log("fetchMoreData............");
     setIsLoading(true);
-    // console.log("result........", result);
-    let tmp = [...result.concat(item.slice(0, 3))];
-    // console.log("tmp........", tmp);
+    // let tmp;
+    // if (item.length >= 3) {
+    console.log("item,,,,", item);
+    let tmp = item.slice(0, 5);
 
-    setResult(tmp);
-    setItem(item.slice(3));
+    console.log("tmp........", tmp);
+    // setResult([...result, ...tmp]);
+    for (let i = 0; i < 5; i++) {
+      if (tmp[i] != undefined) {
+        result.push(tmp[i]);
+      }
+    }
+    setResult([...result]);
+    console.log("result........", result);
+
+    // setItem([...item, ...item.slice(5)]);
+    // let tmp2 = item.slice(5);
+    // let newItems = [
+    //   (item: any) =>
+    //     item.filter((item: any, i: any) => {
+    //       i >= 5;
+    //     }),
+    // ];
+    // setItem([...tmp2]);
+    item = item.slice(5);
     setIsLoading(false);
   };
 
@@ -50,22 +69,21 @@ export function MainPage() {
   }, [isLoading]);
   const getFetchData = async () => {
     console.log("getFetchData........");
-    Newsletter_example = getNewsletterList();
-
+    console.log("RandomList.....", RandomList);
     setResult([...RandomList.slice(0, 7)]);
     setItem([...RandomList.slice(7)]);
     setIsLoading(false);
   };
 
   useEffect(() => {
-    getFetchData();
-    RandomListInit();
+    // getFetchData();
+    // RandomListInit();
     window.addEventListener("scroll", _infiniteScroll, true);
     return () => window.removeEventListener("scroll", _infiniteScroll, true);
   }, [_infiniteScroll]);
   useEffect(() => {
-    getFetchData();
     RandomListInit();
+    getFetchData();
   }, []);
 
   return (
@@ -78,8 +96,8 @@ export function MainPage() {
             return <AttendanceCheck />;
           } else if (i.type === "changembti") {
             return <ChnageMBTI />;
-          } else if (i.type === "mybattingrecord") {
-            return <MyBattingRecord />;
+          } else if (i.type === "mybettingrecord") {
+            return <MyBettingRecord />;
           } else if (i.type === "hashtagsearchresult") {
             return <HashtagSearchResult />;
           } else if (i.type === "tophashtag") {

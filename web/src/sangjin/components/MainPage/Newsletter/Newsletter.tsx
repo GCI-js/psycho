@@ -14,10 +14,10 @@ export type NewsletterType = {
 const Newsletter = (props: NewsletterType) => {
   return (
     <div>
-      <div className="card_item">
-        <div className="card_header">MBTI 뉴스레터</div>
+      <div className="newletter_card_item">
+        <div className="newletter_card_header">MBTI 뉴스레터</div>
 
-        <div className="card_img">
+        <div className="newletter_card_img">
           <a href={props.url}>
             <img
               src={props.thumbnail}
@@ -29,27 +29,32 @@ const Newsletter = (props: NewsletterType) => {
             ></img>
           </a>
         </div>
-        <div className="card_desc">
+        <div className="newletter_card_desc">
           <div>
-            <div className="card_title">
+            <div className="newletter_card_title">
               <span>{props.title}</span>
             </div>
             {/* <div className="card_text">
               <a href={props.url}>{props.writer}</a>
             </div> */}
-            <div className="card_tag">
+            <div className="newletter_card_tag">
               {props.hashtag.map(function (i): JSX.Element {
                 // console.log("I.........", i);
-                return <span>#{i.name} </span>;
+                return (
+                  <span className="newletter_card_tag_name">#{i.name} </span>
+                );
               })}
               {/* <a href={props.url}>#{props.hashtag}</a> */}
             </div>
           </div>
-          <div>
-            <button type="button" className="card_button">
-              <img src={icon} width="40px" height="40px"></img>
-            </button>
-          </div>
+          <img
+            src={icon}
+            className="newletter_card_button"
+            onClick={(e) => {
+              e.preventDefault();
+              window.location.href = props.url;
+            }}
+          ></img>
         </div>
       </div>
     </div>

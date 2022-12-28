@@ -1,0 +1,3 @@
+const callBettingList = () => {
+  const URL = "";
+};

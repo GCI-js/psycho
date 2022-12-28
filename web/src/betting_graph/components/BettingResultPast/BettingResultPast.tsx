@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import "./BettingResultPast.css";
-import GambleType from "../../../../../common/type/Gamble";
+import BettingType from "../../../../../common/type/Betting";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
 
@@ -9,7 +9,7 @@ const BUTTON_HEIGHT = 40;
 
 interface BettingResultPastProps {
   // data: BettingResultPastDataItem;
-  data: GambleType.Gamble;
+  data: BettingType.Betting;
   userData: {
     bettingCoin: number;
     choose: number;
