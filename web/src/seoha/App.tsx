@@ -15,9 +15,9 @@ import Navigation from "./component/Navigation";
 
 import './App.scss';
 
-
 export default function App() {
-    console.log("<App/>");
+  console.log("<App/>");
+
 
     React.useEffect(
         () => window.addEventListener("popstate", shepherd.bleat), []);
@@ -34,5 +34,7 @@ export default function App() {
             <Wonjae data-pose="wonjae"/>
         </Lamb>
         <Navigation/>
+
     </div>
+  );
 }

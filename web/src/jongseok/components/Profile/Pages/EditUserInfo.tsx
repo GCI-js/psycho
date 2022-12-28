@@ -2,8 +2,16 @@ import React, { useState } from "react";
 import "./EditUserInfo.css";
 // import DropDown from "./Dropdown";
 import BasicButton from "../../Common/BasicButton";
+import Dropdown from "../Elements/Dropdown";
 const EditUserInfo = () => {
   const dummyUserName = "아크릴오므라이스";
+
+  const nationOptionData = [
+    { key: 1, value: "대한민국" },
+    { key: 2, value: "미국" },
+    { key: 3, value: "일본" },
+  ];
+  const [dropdownVisibility, setDropdownVisibility] = useState(false);
 
   const handleIsEditUserInfo = () => {};
   const [selectedNation, setSelectedNation] = useState("");
@@ -99,6 +107,61 @@ const EditUserInfo = () => {
     <div className="editUserInfoContainer">
       <div className="username">{`@${dummyUserName}`}</div>
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
+
+      <div className="selectBox">
+        <button onClick={(e) => setDropdownVisibility(!dropdownVisibility)}>
+          {/* This line must be fixed */}
+          {dropdownVisibility ? "국가" : "국가"}
+        </button>
+        <Dropdown visibility={dropdownVisibility}>
+          <ul>
+            {nationOptionData.map((nation) => {
+              return <li>{nation.value}</li>;
+            })}
+          </ul>
+        </Dropdown>
+      </div>
+      <div className="selectBox">
+        <button onClick={(e) => setDropdownVisibility(!dropdownVisibility)}>
+          {/* This line must be fixed */}
+          {dropdownVisibility ? "거주지" : "거주지"}
+        </button>
+        <Dropdown visibility={dropdownVisibility}>
+          <ul>
+            {nationOptionData.map((nation) => {
+              return <li>{nation.value}</li>;
+            })}
+          </ul>
+        </Dropdown>
+      </div>
+      <div className="selectBox">
+        <button onClick={(e) => setDropdownVisibility(!dropdownVisibility)}>
+          {/* This line must be fixed */}
+          {dropdownVisibility ? "성별" : "성별"}
+        </button>
+        <Dropdown visibility={dropdownVisibility}>
+          <ul>
+            {nationOptionData.map((nation) => {
+              return <li>{nation.value}</li>;
+            })}
+          </ul>
+        </Dropdown>
+      </div>
+      <div className="selectBox">
+        <button onClick={(e) => setDropdownVisibility(!dropdownVisibility)}>
+          {/* This line must be fixed */}
+          {dropdownVisibility ? "생년월일" : "생년월일"}
+        </button>
+        <Dropdown visibility={dropdownVisibility}>
+          <ul>
+            {nationOptionData.map((nation) => {
+              return <li>{nation.value}</li>;
+            })}
+          </ul>
+        </Dropdown>
+      </div>
+
+      {/* 
       <select
         className="selectBox nation"
         value={selectedNation}
@@ -210,7 +273,7 @@ const EditUserInfo = () => {
             </option>
           ))}
         </select>
-      </div>
+      </div> */}
       <BasicButton content="계속" pFunction={handleIsEditUserInfo} />
     </div>
   );
