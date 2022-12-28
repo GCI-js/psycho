@@ -3,44 +3,14 @@ ul {
   padding-left: 0px;
 }
 
-.selectNation {
-  display: inline-block;
-  width: 120px;
-  border: 1px solid #999;
-}
-
-.selectNation .selectedNation {
-  display: flex;
-  justify-content: space-between;
-  padding: 8px 5px;
-}
-
-.selectNation .selectedNation .selected-value {
-  max-width: 90px;
-}
-
-.selectNation .selectedNation .arrow {
+.dropdownIcon {
   width: 24px;
-  /* background: url("https://uxwing.com/wp-content/themes/uxwing/download/02-arrow-direction/arrow-bottom.png")
-    no-repeat 70% 50%; */
-  background: url("../img/downwardArrow.png") no-repeat 70% 50%;
-  background-size: 50% 50%;
+  height: 24px;
 }
-
-.selectNation ul {
-  width: 120px;
-  border: 1px solid #999;
-  position: absolute;
-  background: #fff;
-  border-top: none;
-  margin: 1px 0 0 -1px;
-  cursor: pointer;
+.dropdownDownwardIcon {
+  width: 16px;
+  height: 8px;
 }
-
-.selectNation ul li {
-  padding: 8px 5px;
-}
-
 .choiceText {
   font-family: "Inter";
   font-style: normal;
@@ -77,17 +47,63 @@ ul {
   border: 0px solid;
   border-radius: 4px;
   /* color: inherit; */
-  background-color: #ededed;
+  /* background-color: #ededed; */
   /* appearance: none; */
   /* -webkit-appearance: none; */
   /* -moz-appearance: none; */
   /* background-image: url("../img/cryFaceIcon.png"); */
 }
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.dropdownButton {
+  background-color: #ededed;
+  border: 0px;
+  border-radius: 12px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-between;
+}
 
 .nation {
   width: 340px;
   height: 40px;
-  background-image: url("../img/selectNation.png");
+  padding: 16px;
+}
+.city {
+  width: 165px;
+  height: 44px;
+  padding: 16px;
+}
+
+.district {
+  width: 165px;
+  height: 44px;
+  padding: 16px;
+}
+.gender {
+  width: 340px;
+  height: 40px;
+  padding: 16px;
+}
+.year {
+  width: 145px;
+  height: 40px;
+  padding: 16px;
+}
+.month {
+  width: 81px;
+  height: 40px;
+  padding: 16px;
+  /* margin left is temporary */
+  margin-left: 20px;
+}
+.day {
+  width: 81px;
+  height: 40px;
+  padding: 16px;
 }
 .editUserInfoContainer {
   display: flex;
