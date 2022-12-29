@@ -18,9 +18,13 @@
         }
     }
     > .display {
-        height: calc(100% - 110px);
+        height: calc(100% - 129px);
         position: absolute;
-        overflow: scroll;
         width: 100%;
     }
+}
+
+.app-j238dndx8w4hweh>.display>div>div {
+    height: 100%;
+    overflow-y: scroll;
 }

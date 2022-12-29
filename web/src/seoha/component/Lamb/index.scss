@@ -1,7 +1,8 @@
 .std-page-shfa78wagiud {
     > div {
+        width: inherit;
+        height: inherit;
         display: none;
-        box-sizing: border-box;
         &.on {
             display: block;
         }
