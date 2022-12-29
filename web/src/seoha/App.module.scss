@@ -1,4 +1,4 @@
-.app-j238dndx8w4hweh {
+.index:global {
     > .search-bar {
         height: 54px;
         align-items: center;
@@ -18,9 +18,8 @@
         }
     }
     > .display {
-        height: calc(100% - 110px);
+        height: calc(100% - 130px);
         position: absolute;
-        overflow: scroll;
         width: 100%;
     }
 }

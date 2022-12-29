@@ -1,0 +1,12 @@
+.index:global {
+    > div {
+        width: inherit;
+        height: inherit;
+        display: none;
+        &.on {
+            height: 100%;
+            width: 100%;
+            display: block;
+        }
+    }
+}

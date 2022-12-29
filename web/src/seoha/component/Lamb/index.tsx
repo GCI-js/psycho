@@ -1,14 +1,24 @@
 import * as React from "react";
 
+import idiotproof from "../../service/idiotproof";
 import shepherd from "../../service/shepherd";
 
-import "./index.scss";
+import styles from './index.module.scss';
 
 
-export default function Lamb(properties: any) {
-    console.log(`<Lamb>${properties["data-lamb"]}</Lamb>`, );
+interface ChildProperties {
+    "data-pose": string;
+}
+interface Properties extends React.PropsWithChildren {
+    "data-lamb": string;
+    className?: string;
+    children: React.ReactElement<ChildProperties>[];
+}
+
+export default function Lamb(properties: Properties) {
+    const component_id = idiotproof.trace(`Lamb-${properties["data-lamb"]}`);
     const lamb = properties["data-lamb"];
-    const cl_names = ["std-page", properties.className].join(" ");
+    const cl_name = [styles.index, properties.className].join(" ");
     const ref = React.useRef(null);
     const pages = properties.children;
     const ct = pages.length;
@@ -22,19 +32,15 @@ export default function Lamb(properties: any) {
         std_pages[i] = <div key={i}>{v}</div>;
         pagings[i] = setValue;
     }
-    shepherd.adopt(React.useState(0), "lamb-" + lamb);
+    shepherd.adopt("lamb-" + lamb, component_id);
 
     React.useEffect(() => {
         let loc = names.indexOf(shepherd.readPoses()[lamb]);
-        if (loc < 0) {
-            loc = 0;
-            shepherd.whip(lamb, names[loc]);
-        }
+        if (loc < 0) shepherd.whip(lamb, names[loc = 0]);
         tracker[1](loc);
         pagings[loc](pages[loc]);
         ref.current.children[tracker[0]].classList.remove("on");
         ref.current.children[loc].classList.add("on");
     });
-
-    return <div className={cl_names} ref={ref}>{std_pages}</div>
+    return <div className={cl_name} ref={ref}>{std_pages}</div>
 }
