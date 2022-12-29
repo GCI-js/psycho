@@ -11,16 +11,18 @@ interface ChildProperties {
 }
 interface Properties extends React.PropsWithChildren {
     "data-lamb": string;
-    className?: string;
     children: React.ReactElement<ChildProperties>[];
+    className?: string;
+    childClassName?: string;
 }
 
 export default function Lamb(properties: Properties) {
     const component_id = idiotproof.trace(`Lamb-${properties["data-lamb"]}`);
     const lamb = properties["data-lamb"];
     const cl_name = [styles.index, properties.className].join(" ");
+    const cl_name_ = properties.childClassName;
     const ref = React.useRef(null);
-    const pages = properties.children as React.ReactElement<ChildProperties>[];
+    const pages = properties.children;
     const ct = pages.length;
     const std_pages = Array(ct);
     const pagings = Array(ct);
@@ -29,7 +31,7 @@ export default function Lamb(properties: Properties) {
     for (let i = 0; i < ct; i++) {
         names[i] = pages[i].props["data-pose"];
         const [v, setValue] = React.useState(null);
-        std_pages[i] = <div key={i}>{v}</div>;
+        std_pages[i] = <div className={cl_name_} key={i}>{v}</div>;
         pagings[i] = setValue;
     }
     shepherd.adopt("lamb-" + lamb, component_id);

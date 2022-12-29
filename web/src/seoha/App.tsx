@@ -26,7 +26,7 @@ export default function App() {
           search bar
           <div className="btn"></div>
       </div>
-      <Lamb data-lamb="test" className="display">
+      <Lamb data-lamb="test" className="display" childClassName="page">
           <Jongseok data-pose="jongseok"/>
           <BettingGraph data-pose="younghoon"/>
           <Sangjin data-pose="sangjin"/>

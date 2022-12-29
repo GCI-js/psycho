@@ -1,15 +1,10 @@
 .index:global {
     > div {
-        width: inherit;
-        height: inherit;
+        height: 100%;
+        width: 100%;
         display: none;
         &.on {
-            height: 100%;
-            width: 100%;
             display: block;
-            
-            // have to fix this style
-            overflow-y: scroll;
         }
     }
 }
