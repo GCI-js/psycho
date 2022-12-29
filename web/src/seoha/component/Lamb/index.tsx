@@ -20,7 +20,7 @@ export default function Lamb(properties: Properties) {
     const lamb = properties["data-lamb"];
     const cl_name = [styles.index, properties.className].join(" ");
     const ref = React.useRef(null);
-    const pages = properties.children;
+    const pages = properties.children as React.ReactElement<ChildProperties>[];
     const ct = pages.length;
     const std_pages = Array(ct);
     const pagings = Array(ct);
