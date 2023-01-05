@@ -1,74 +1,70 @@
 .newletter_card_item {
-  display: flex;
-  flex-direction: column;
-  border-radius: 8px;
-  margin-top: 17px;
-  font-size: 12px;
-  background-color: #eaeaea;
+	display: flex;
+	flex-direction: column;
+	border-radius: 8px;
+	margin-top: 17px;
+	font-size: 12px;
+	background-color: #eaeaea;
 }
 .newletter_card_header {
-  margin-top: 16px;
-  margin-left: 16px;
-  /* font-family:  */
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  text-align: left;
-  letter-spacing: 0.44px;
-  color: #000000;
+	margin-top: 16px;
+	margin-left: 16px;
+	/* font-family:  */
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 24px;
+	text-align: left;
+	letter-spacing: 0.44px;
+	color: #000000;
 }
 .newletter_card_img {
-  margin-left: 20px;
-  margin-right: 20px;
-  margin-top: 12px;
+	margin-left: 20px;
+	margin-right: 20px;
+	margin-top: 12px;
 }
-/* justify-content: center; */
 .newletter_card_title {
-  margin-top: 19px;
-  margin-left: 16px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 24px;
-  letter-spacing: 0.44px;
-
-  color: #000000;
+	margin-top: 19px;
+	margin-left: 16px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.44px;
+	color: #000000;
+	text-align: left;
 }
 
 .newletter_card_tag {
-  margin-top: 4px;
-  margin-left: 20px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 22px;
-
-  letter-spacing: -0.408px;
-  /* justify-content: flex-start; */
-  text-align: left;
-  color: #434343;
+	margin-top: 4px;
+	margin-left: 20px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 400;
+	font-size: 14px;
+	line-height: 22px;
+	letter-spacing: -0.408px;
+	text-align: left;
+	color: #434343;
 }
 
 .newletter_card_desc {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 10px;
+	display: flex;
+	justify-content: space-around;
+	margin-bottom: 10px;
 }
-
 .newletter_card_button {
-  margin-top: 21px;
-  margin-bottom: 14px;
-  margin-right: 14px;
-  background-color: transparent;
-  border-width: 0px;
-  width: 44px;
-  height: 44px;
+	margin-top: 21px;
+	margin-bottom: 14px;
+	margin-right: 14px;
+	background-color: transparent;
+	border-width: 0px;
+	width: 44px;
+	height: 44px;
 }
 
 .newletter_card_tag_name {
-  margin-left: 5px;
+	margin-left: 5px;
 }
