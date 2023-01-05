@@ -16,11 +16,11 @@ const EditUserInfo = () => {
     <div className="editUserInfoContainer">
       <div className="username">{`@${dummyUserName}`}</div>
       <div className="choiceText">{`본인을 설명하는 해시태그를 적어주세요\n`}</div>
-      <div>
-        <input
-          type="text"
-          placeholder="해쉬태그는 43개까지 추가할 수 있어요!"
-        />
+
+      <div className="selectBox">
+        <button className="nation dropdownButton" onClick={(e) => {}}>
+          해쉬태그는 43개까지 추가할 수 있어요
+        </button>
       </div>
 
       <BasicButton
