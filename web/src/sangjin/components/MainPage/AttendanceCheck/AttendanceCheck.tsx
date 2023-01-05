@@ -1,7 +1,7 @@
 import * as React from "react";
 import "./AttendanceCheck.css";
 
-export const connHist: number[] = [1, 1, 0, 1, 0, 1, 0];
+export const connHist: number[] = [1, 0, 1, 1, 0, 1, 0];
 var styleList: string[] = ["", "", "", "", "", "", ""];
 for (var i = 0; i < connHist.length; i++) {
 	if (connHist[i] == 0) {
@@ -49,9 +49,7 @@ const AttendanceCheck = () => {
 					<table className="card_attchk_tablein">
 						<td className={styleList[0]}>월</td>
 						<td className={styleList[1]}>화 </td>
-						<td>
-							<div className={styleList[2]}>수</div>
-						</td>
+						<td className={styleList[2]}>수</td>
 						<td className={styleList[3]}>목</td>
 						<td className={styleList[4]}>금</td>
 						<td className={styleList[5]}>토</td>
