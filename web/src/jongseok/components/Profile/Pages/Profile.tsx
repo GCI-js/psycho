@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MBTIHistogram from "../Elements/MbtiHistogram";
 import HashtagList from "../Elements/HashtagList";
-import Gamble from "../Elements/Gamble";
+import Betting from "../Elements/Betting";
 import settingIcon from "../img/setting.png";
 import "./Profile.css";
 // import pencilImg from "../img/pencil.png";
@@ -30,7 +30,7 @@ const Profile = () => {
         <div>
           <MBTIHistogram />
           <HashtagList />
-          <Gamble />
+          <Betting />
         </div>
       )}
     </div>

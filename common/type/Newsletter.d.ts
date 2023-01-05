@@ -3,7 +3,7 @@ export interface Newsletter {
   newsletterId: string;
   thumbnail: string; // image url
   title: string;
-  hashtags: Hashtag[];
+  hashtags: string[]; // hashtag names
   url: string; // original post url
   writer: string;
 }

@@ -8,7 +8,7 @@ import ChnageMBTI from "./ChangeMBTI";
 import HashTag from "./HashtagSearchResult";
 import { getRandomList, RandomListInit } from "./RandomList";
 import HashtagSearchResult from "./HashtagSearchResult";
-import MyBattingRecord from "./MyBattingRecord/MyBattingRecord";
+import MyBettingRecord from "./MyBettingRecord/MyBettingRecord";
 import AttendanceCheck from "./AttendanceCheck/AttendanceCheck";
 import TopHashtag from "./TopHashTag/TopHashtag";
 export function MainPage() {
@@ -96,8 +96,8 @@ export function MainPage() {
             return <AttendanceCheck />;
           } else if (i.type === "changembti") {
             return <ChnageMBTI />;
-          } else if (i.type === "mybattingrecord") {
-            return <MyBattingRecord />;
+          } else if (i.type === "mybettingrecord") {
+            return <MyBettingRecord />;
           } else if (i.type === "hashtagsearchresult") {
             return <HashtagSearchResult />;
           } else if (i.type === "tophashtag") {

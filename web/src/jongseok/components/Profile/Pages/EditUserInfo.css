@@ -1,3 +1,16 @@
+ul {
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.dropdownIcon {
+  width: 24px;
+  height: 24px;
+}
+.dropdownDownwardIcon {
+  width: 16px;
+  height: 8px;
+}
 .choiceText {
   font-family: "Inter";
   font-style: normal;
@@ -34,17 +47,63 @@
   border: 0px solid;
   border-radius: 4px;
   /* color: inherit; */
-  background-color: #ededed;
-  appearance: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
+  /* background-color: #ededed; */
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
   /* background-image: url("../img/cryFaceIcon.png"); */
+}
+.row {
+  display: flex;
+  flex-direction: row;
+}
+.dropdownButton {
+  background-color: #ededed;
+  border: 0px;
+  border-radius: 12px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-between;
 }
 
 .nation {
   width: 340px;
   height: 40px;
-  background-image: url("../img/selectNation.png");
+  padding: 16px;
+}
+.city {
+  width: 165px;
+  height: 44px;
+  padding: 16px;
+}
+
+.district {
+  width: 165px;
+  height: 44px;
+  padding: 16px;
+}
+.gender {
+  width: 340px;
+  height: 40px;
+  padding: 16px;
+}
+.year {
+  width: 145px;
+  height: 40px;
+  padding: 16px;
+}
+.month {
+  width: 81px;
+  height: 40px;
+  padding: 16px;
+  /* margin left is temporary */
+  margin-left: 20px;
+}
+.day {
+  width: 81px;
+  height: 40px;
+  padding: 16px;
 }
 .editUserInfoContainer {
   display: flex;
@@ -58,4 +117,50 @@
   /* overflow: hidden;
 	word-wrap: break-word; */
   font-size: 12px;
+}
+
+@keyframes slide-fade-in-dropdown-animation {
+  0% {
+    transform: translateY(-100%);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.slide-fade-in-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-in-dropdown > ul {
+  animation: slide-fade-in-dropdown-animation 0.4s ease;
+}
+
+@keyframes slide-fade-out-dropdown-animation {
+  0% {
+    transform: translateY(0);
+  }
+
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.slide-fade-out-dropdown {
+  overflow: hidden;
+}
+
+.slide-fade-out-dropdown > ul {
+  animation: slide-fade-out-dropdown-animation 0.4s ease;
+  animation-fill-mode: forwards;
+}
+
+.components-dropdown > ul {
+  position: relative;
+  top: 5px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  padding-left: 0;
+  list-style: none;
 }

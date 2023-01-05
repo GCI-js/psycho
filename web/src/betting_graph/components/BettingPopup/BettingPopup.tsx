@@ -1,11 +1,11 @@
 import React, { PureComponent } from "react";
 import "./BettingPopup.css";
-import GambleType from "../../../../../common/type/Gamble";
+import BettingType from "../../../../../common/type/Betting";
 import { BettingUtils } from "../Betting/utils";
 import BettingContent from "../BettingContent/BettingContent";
 
 interface BettingPopupProps {
-  data: GambleType.Gamble;
+  data: BettingType.Betting;
   show: boolean;
 }
 
@@ -86,7 +86,8 @@ export default class Example extends PureComponent<
     return (
       <div
         className="modal"
-        style={{ display: this.state.showModal2 ? "block" : "block" }}
+        // style={{ display: this.state.showModal2 ? "block" : "block" }}
+        style={{ display: disp }}
         onClick={this.handleOpenClose}
       >
         {/* <div className="rootBettingPopup" style={{ display: disp }}> */}
