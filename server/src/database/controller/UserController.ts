@@ -2,6 +2,7 @@ import { UserModel } from "../model/UserModel";
 import { User } from "../../../../common/type/User";
 import { Request, Response } from "express";
 import { GetNewId } from "../../component/Util";
+import { OAuth2Client } from "google-auth-library";
 
 export const UserController = {
   createUser: async (req: Request, res: Response) => {
@@ -41,4 +42,24 @@ export const UserController = {
     console.log("readUserCount");
     res.status(200).json(await UserModel.count({}));
   },
+  authGoogle: async (req: Request, res: Response) => {
+    const oAuth2Client = new OAuth2Client(
+      process.env.CLIENT_ID,
+      process.env.CLIENT_SECRET,
+      "postmessage"
+    );
+    const { tokens } = await oAuth2Client.getToken(req.body.code); // exchange code for tokens
+    console.log(tokens);
+
+    res.json(tokens);
+  },
+  // authGoogleRefresh:async(req:Request,res:Response)=>{
+  //   const user = new UserRefreshClient(
+  //     clientId,
+  //     clientSecret,
+  //     req.body.refreshToken,
+  //   );
+  //   const { credentials } = await user.refreshAccessToken(); // optain new tokens
+  //   res.json(credentials);
+  //},
 };
