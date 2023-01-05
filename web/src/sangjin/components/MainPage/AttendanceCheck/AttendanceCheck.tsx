@@ -1,33 +1,66 @@
 import * as React from "react";
 import "./AttendanceCheck.css";
 
-export const connHist: number[] = [0, 1, 0, 0, 0, 1, 0];
-
+export const connHist: number[] = [1, 1, 0, 1, 0, 1, 0];
+var styleList: string[] = ["", "", "", "", "", "", ""];
+for (var i = 0; i < connHist.length; i++) {
+	if (connHist[i] == 0) {
+		styleList[i] = "";
+	} else {
+		if (i == 0 && connHist[1] == 0) {
+			styleList[i] = "attchek_yes";
+		} else if (i == 0 && connHist[1] == 1) {
+			styleList[i] = "attchek_first";
+		} else if (i == 6 && connHist[5] == 0) {
+			styleList[i] = "attchek_yes";
+		} else if (i == 6 && connHist[5] == 1) {
+			styleList[i] = "attchek_last";
+		} else if (connHist[i - 1] == 1 && connHist[i + 1] == 1) {
+			styleList[i] = "attchek_middle";
+		} else if (connHist[i - 1] == 0 && connHist[i + 1] == 1) {
+			styleList[i] = "attchek_first";
+		} else if (connHist[i - 1] == 1 && connHist[i + 1] == 0) {
+			styleList[i] = "attchek_last";
+		} else if (connHist[i - 1] == 0 && connHist[i + 1] == 0) {
+			styleList[i] = "attchek_yes";
+		}
+	}
+	//0 : no
+	//1 : first
+	//2 : middle
+	//3 : last
+	//4 : yes
+}
 const AttendanceCheck = () => {
-  return (
-    <div>
-      <div className="card_attchk">
-        <div className="card_attchk_header">출석체크!</div>
-
-        <table className="card_attchk_table">
-          <td className={connHist[0] === 1 ? "attchek_yes" : ""}>월</td>
-          <td className={connHist[1] === 1 ? "attchek_yes" : ""}>화</td>
-          <td className={connHist[2] === 1 ? "attchek_yes" : ""}>수</td>
-          <td className={connHist[3] === 1 ? "attchek_yes" : ""}>목</td>
-          <td className={connHist[4] === 1 ? "attchek_yes" : ""}>금</td>
-          <td className={connHist[5] === 1 ? "attchek_yes" : ""}>토</td>
-          <td className={connHist[6] === 1 ? "attchek_yes" : ""}>일</td>
-        </table>
-        {/* <div>월</div>
-          <div>화</div>
-          <div>수</div>
-          <span>목</span>
-          <span>금</span>
-          <span>토</span>
-          <span>일</span> */}
-      </div>
-    </div>
-  );
+	return (
+		<div>
+			<div className="card_attchk">
+				<div className="card_attchk_header">출석체크!</div>
+				<div className="tablediv">
+					<table className="card_attchk_table">
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+					</table>
+					<table className="card_attchk_tablein">
+						<td className={styleList[0]}>월</td>
+						<td className={styleList[1]}>화 </td>
+						<td>
+							<div className={styleList[2]}>수</div>
+						</td>
+						<td className={styleList[3]}>목</td>
+						<td className={styleList[4]}>금</td>
+						<td className={styleList[5]}>토</td>
+						<td className={styleList[6]}>일</td>
+					</table>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default AttendanceCheck;
