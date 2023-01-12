@@ -1,25 +1,26 @@
 import { useEffect, useState } from "react";
 
+
 namespace idiotproof {
 
-    let _interval_id = 0;
-    const _id2memory: {[id: number]: number} = {};
-    export function reverseInterval() {
-        const id = useState(_interval_id)[0];
-        if (id == _interval_id) _interval_id++;
+    const _id2memory: {[id: string]: number} = {};
+    export function clearReverse(id: string) {
         if (id in _id2memory) clearInterval(_id2memory[id]);
-        return id;
     }
-    export function setReverse(id: number, run: Function, duration: number) {
+    export function reverseInterval(
+        id: string, run: Function, duration: number
+    ) {
         _id2memory[id] = setInterval(run, duration);
     }
 
     let _component_id = 0;
-    export function trace(message: string) {
+    export function trace(run: Function, tag: string = "____") {
         const id = useState(_component_id)[0];
         if (id == _component_id) _component_id++;
-        console.log(`<${message}-${id}>`);
-        useEffect(() => console.log(`</${message}-${id}>`));
+        const name = run.name;
+        const msg = `${tag}\t${id}\t${name}`
+        console.log(`<${msg}>`);
+        useEffect(() => console.log(`</${msg}>`));
         return id;
     }
 

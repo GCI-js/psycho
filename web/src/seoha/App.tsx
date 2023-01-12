@@ -1,6 +1,5 @@
 import * as React from "react";
 
-
 import shepherd from "./service/shepherd";
 import idiotproof from "./service/idiotproof";
 
@@ -15,23 +14,21 @@ import Navigation from "./component/Navigation";
 import styles from "./App.module.scss";
 
 
-export default function App() {
-  idiotproof.trace("App");
-
-  React.useEffect(
-      () => window.addEventListener("popstate", shepherd.bleat), []);
-
-  return <div className={styles.index}>
-      <div className="search-bar">
-          search bar
-          <div className="btn"></div>
-      </div>
-      <Lamb data-lamb="test" className="display" childClassName="page">
-          <Jongseok data-pose="jongseok"/>
-          <BettingGraph data-pose="younghoon"/>
-          <Sangjin data-pose="sangjin"/>
-          <Wonjae data-pose="wonjae"/>
-      </Lamb>
-      <Navigation/>
-  </div>
+export default function App(properties: Properties) {
+    const id = [`_${idiotproof.trace(App)}`, properties.id].join();
+    const cl = [styles.index, properties.className].join(" ");
+    React.useEffect(shepherd.initialize, []);
+    return <div id={id} className={cl}>
+        <div className="search-bar">
+            search bar
+            <div className="btn"></div>
+        </div>
+        <Lamb data-lamb="test" className="display" pageClassName="page">
+            <Jongseok data-pose="jongseok"/>
+            <BettingGraph data-pose="younghoon"/>
+            <Sangjin data-pose="sangjin"/>
+            <Wonjae data-pose="wonjae"/>
+        </Lamb>
+        <Navigation/>
+    </div>
 }

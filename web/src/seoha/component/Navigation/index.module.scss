@@ -1,4 +1,4 @@
-.navigation-asalbfa7 {
+.index:global {
     width: 100%;
     background: #f0f0f0;
     display: flex;
@@ -13,7 +13,9 @@
     > div {
         cursor: pointer;
     }
-    .search-svg {
+}
+:local {
+    .search_svg  {
         width: 24px;
         height: 24px;
         fill: none;

@@ -9,6 +9,13 @@ declare module "*.png" {
 }
 
 declare module '*.module.scss' {
-    const styles: {index: string};
+    const styles: {[index: string]: string};
     export default styles;
+}
+
+declare interface Properties {
+    id?: string;
+    className?: string;
+    onMouseDown?: React.MouseEventHandler<HTMLDivElement>;
+    onClick?: React.MouseEventHandler<HTMLDivElement>;
 }
