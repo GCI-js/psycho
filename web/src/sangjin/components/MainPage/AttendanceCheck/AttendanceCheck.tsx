@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./AttendanceCheck.css";
-
+import coin from "./icon_coin.png";
 export const connHist: number[] = [1, 0, 1, 1, 0, 1, 0];
 var styleList: string[] = ["", "", "", "", "", "", ""];
 for (var i = 0; i < connHist.length; i++) {
@@ -35,27 +35,23 @@ const AttendanceCheck = () => {
 	return (
 		<div>
 			<div className="card_attchk">
-				<div className="card_attchk_header">출석체크!</div>
-				<div className="tablediv">
-					<table className="card_attchk_table">
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-						<td></td>
-					</table>
-					<table className="card_attchk_tablein">
-						<td className={styleList[0]}>월</td>
-						<td className={styleList[1]}>화 </td>
-						<td className={styleList[2]}>수</td>
-						<td className={styleList[3]}>목</td>
-						<td className={styleList[4]}>금</td>
-						<td className={styleList[5]}>토</td>
-						<td className={styleList[6]}>일</td>
-					</table>
+				<div className="card_attchk_head">
+					<div className="card_attchk_head_title">출석체크!</div>
+					<div className="card_attchk_onul">
+						오늘도 출석!
+						<img src={coin} className="attchk_coin"></img>
+						+100
+					</div>
 				</div>
+				<table className="card_attchk_tablein">
+					<td className={styleList[0]}>월</td>
+					<td className={styleList[1]}>화 </td>
+					<td className={styleList[2]}>수</td>
+					<td className={styleList[3]}>목</td>
+					<td className={styleList[4]}>금</td>
+					<td className={styleList[5]}>토</td>
+					<td className={styleList[6]}>일</td>
+				</table>
 			</div>
 		</div>
 	);

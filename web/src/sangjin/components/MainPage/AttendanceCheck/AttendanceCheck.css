@@ -6,7 +6,14 @@
 	font-size: 12px;
 	background-color: #eaeaea;
 }
-.card_attchk_header {
+
+.card_attchk_head {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.card_attchk_head_title {
 	margin-top: 16px;
 	margin-left: 16px;
 	margin-bottom: 14px;
@@ -20,6 +27,34 @@
 	color: #000000;
 }
 
+.card_attchk_onul {
+	margin-top: 17px;
+	margin-right: 9px;
+	width: 124px;
+	height: 22px;
+	background: #d9d9d9;
+	border-radius: 5px;
+	line-height: 22px;
+	font-family: "Inter";
+	font-style: normal;
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 22px;
+	letter-spacing: -0.408px;
+	color: #000000;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+.attchk_coin {
+	margin-left: 6px;
+	margin-right: 2px;
+	margin-top: 2px;
+	background-color: transparent;
+	border-width: 0px;
+	width: 16px;
+	height: 16px;
+}
 .card_attendance {
 	margin-left: 6px;
 	margin-right: 7px;
@@ -28,7 +63,7 @@
 	height: 40px;
 	background-color: #7676803d;
 }
-.card_attchk_table {
+/* .card_attchk_table {
 	position: absolute;
 	margin-left: 1.749%;
 	margin-right: 2.04%;
@@ -45,14 +80,14 @@
 	width: 96.2%;
 }
 .card_attchk_table td {
-	/* border-right: 1px rgba(84, 84, 88, 0.65) solid; */
+	border-right: 1px rgba(84, 84, 88, 0.65) solid;
 }
-/* .card_attchk_table td:first-child {
+.card_attchk_table td:first-child {
   border-left: 0;
-} */
+}
 .card_attchk_table td:last-child {
 	border-right: 1px transparent solid;
-}
+} */
 
 .attchek_first {
 	height: 31px;
@@ -76,11 +111,11 @@
 	background-color: #636366;
 	border-radius: 9px;
 }
-.tablediv {
+/* .tablediv {
 	position: relative;
-}
+} */
 .card_attchk_tablein {
-	position: relative;
+	/* position: relative; */
 	margin-left: 1.749%;
 	margin-right: 2.04%;
 	margin-bottom: 8px;
@@ -91,7 +126,7 @@
 	border-radius: 9px;
 	height: 40px;
 	vertical-align: middle;
-	background-color: transparent;
+	background-color: #7676803d;
 	color: white;
 	border-spacing: 0px;
 	width: 96.2%;

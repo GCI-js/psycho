@@ -4,7 +4,7 @@ export const getNewsletterList = (): NewsletterType[] => {
 	return NewsletterList;
 };
 
-const getNewsletterListAPI = () => {
+export const getNewsletterListAPI = () => {
 	const [newsletters, setewsletters] = useState<NewsletterType[]>([]);
 
 	const apiGet = async () => {
@@ -14,21 +14,25 @@ const getNewsletterListAPI = () => {
 		// if(response){
 
 		// }
-		const apiUrl: string = "/items";
+		var tmpurl = "http://43.201.148.199:8080/newsletter";
+		const apiUrl: string = tmpurl + "/items";
 		await fetch(apiUrl, {
 			method: "GET",
 			headers: {
 				"Content-Type": "application/json",
 			},
 		})
-			.then((res: Response) => res.json())
-			.then(function (res) {
-				if (res.status === "200") {
-					setewsletters(res.data);
+			.then((res) => {
+				if (res.status === 200) {
 					console.log(res);
 				} else {
 					throw new Error("error");
 				}
+				res.json();
+			})
+			.then((data) => {
+				// setewsletters(<NewsletterType[]>);
+				console.log("data...", data);
 			});
 	};
 
