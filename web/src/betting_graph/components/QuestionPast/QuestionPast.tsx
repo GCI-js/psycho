@@ -2,6 +2,10 @@ import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionContent from "../QuestionContent/QuestionContent";
 import imgSushi3d from "./images/sushi_3d.svg";
 
+/**
+ * 지나간 질문 컴포넌트
+ * @returns
+ */
 const QuestionPast = () => {
   const [questionData, setQuestionData] = useState({
     title: "지나간 질문",

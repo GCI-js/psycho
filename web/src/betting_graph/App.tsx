@@ -12,12 +12,6 @@ import PieChart from "./components/PieChart/PieChart";
 import TrendLineChart from "./components/TrendLineChart/TrendLineChart";
 import QuestionPage from "./components/QuestionPage/QuestionPage";
 
-const DUMMY_DATA_USER = {
-  ...MockUser[0],
-  bloodType: "A" as BloodType,
-  gender: "male" as Gender,
-};
-
 const DUMMY_DATA_PIE_CHART = {
   ...MockHashTags[0],
   type: "free" as HashtagType,
