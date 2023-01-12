@@ -1,46 +1,7 @@
-import { NewsletterType } from "./Newsletter";
-import { useEffect, useState } from "react";
+import { NewsletterType } from "./NewsletterType";
+
 export const getNewsletterList = (): NewsletterType[] => {
 	return NewsletterList;
-};
-
-export const getNewsletterListAPI = () => {
-	const [newsletters, setewsletters] = useState<NewsletterType[]>([]);
-
-	const apiGet = async () => {
-		// const response = await fetch("http://,,,,," + "/items");
-		// const data = await response.json();
-		// setewsletters(data);
-		// if(response){
-
-		// }
-		var tmpurl = "http://43.201.148.199:8080/newsletter";
-		const apiUrl: string = tmpurl + "/items";
-		await fetch(apiUrl, {
-			method: "GET",
-			headers: {
-				"Content-Type": "application/json",
-			},
-		})
-			.then((res) => {
-				if (res.status === 200) {
-					console.log(res);
-				} else {
-					throw new Error("error");
-				}
-				res.json();
-			})
-			.then((data) => {
-				// setewsletters(<NewsletterType[]>);
-				console.log("data...", data);
-			});
-	};
-
-	useEffect(() => {
-		apiGet();
-	}, []);
-
-	return newsletters;
 };
 
 export const NewsletterList: NewsletterType[] = [

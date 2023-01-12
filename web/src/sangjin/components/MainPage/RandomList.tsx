@@ -1,28 +1,20 @@
 import { getNewsletterList } from "./Newsletter/NewsletterList";
-import { getNewsletterListAPI } from "./Newsletter/NewsletterList";
 
 export type RandomType = {
 	type: string;
 	data: [];
 };
 
-export const getRandomList = (): RandomType[] => {
-	return RandomList;
-};
-
 export const RandomList: RandomType[] = [];
 
-export function RandomListInit() {
-	console.log("RandomListInit.........");
+export const RandomListInit = (): RandomType[] => {
+	//RandomList에 컴포넌트 type과 필요한 data 삽입
 	let NewsletterList: any[] = [];
 	NewsletterList = getNewsletterList();
-	RandomList.push({ type: "tophashtag", data: [] });
 	RandomList.push({ type: "changembti", data: [] });
 	RandomList.push({ type: "hashtagsearchresult", data: [] });
-	RandomList.push({ type: "mybettingrecord", data: [] });
-	RandomList.push({ type: "attendancecheck", data: [] });
 	for (let i = 0; i < NewsletterList.length; i++) {
-		// console.log("NewsletterList..........", NewsletterList[i]);
 		RandomList.push({ type: "newsletter", data: NewsletterList[i] });
 	}
-}
+	return RandomList;
+};
