@@ -1,12 +1,10 @@
 import React, { useState } from "react";
 import MBTIHistogram from "../Elements/MbtiHistogram";
 import HashtagList from "../Elements/HashtagList";
-import Betting from "../Elements/Betting";
 import settingIcon from "../img/setting.png";
 import "./Profile.css";
-// import pencilImg from "../img/pencil.png";
 const Profile = () => {
-  const [isEdit, setIsEdit] = useState(false);
+  //userName은 백엔드에서 userName생성하는 코드 가져와서 써야합니다.
   const dummyUserName = "아크릴오므라이스";
   return (
     <div className="container">
@@ -26,13 +24,10 @@ const Profile = () => {
           onClick={() => {}}
         />
       </div>
-      {isEdit ? null : (
-        <div>
-          <MBTIHistogram />
-          <HashtagList />
-          <Betting />
-        </div>
-      )}
+      <div>
+        <MBTIHistogram />
+        <HashtagList />
+      </div>
     </div>
   );
 };

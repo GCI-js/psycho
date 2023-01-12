@@ -3,6 +3,10 @@ import Hashtag, { HashtagItem } from "./Hashtag";
 import "./HashtagList.css";
 interface HashtagItems extends Array<HashtagItem> {}
 
+/*
+[2022.01.12 jongseok lee] 
+Hashtag List를 관리하는 component입니다.
+*/
 const HashtagList = () => {
   let dummyNationHashtags: HashtagItems = [
     { content: "대한민국", color: "orange" },

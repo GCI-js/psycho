@@ -67,6 +67,11 @@ const data = [
     "J/P": 12.34,
   },
 ];
+
+/**
+ * 라인 차트를 그리는 함수
+ * @returns
+ */
 const TrendLineChart = () => {
   const lineType = "linear";
   const [lineStroke, setLineStroke] = useState({
@@ -95,6 +100,12 @@ const TrendLineChart = () => {
   console.log(lineStroke);
   console.log(currentSelectedLine);
   const COLORS = ["#9F7DE1CC", "#AD00FFFF", "#AD00FFFF", "#000000FF"];
+
+  /**
+   * legend 를 커스텀할 수 있는 함수
+   * @param props
+   * @returns
+   */
   const renderCusomizedLegend = (props: any) => {
     const { payload } = props;
     return (
@@ -134,7 +145,7 @@ const TrendLineChart = () => {
           </div>
         </div>
       </div>
-      <LineChart
+      <LineChart // 라인 차트 컴포넌트
         width={375}
         height={300}
         data={data}
@@ -145,28 +156,19 @@ const TrendLineChart = () => {
           bottom: 5,
         }}
       >
-        {/* <CartesianGrid strokeDasharray="3 3" /> */}
-        {/* <XAxis dataKey="name" /> */}
-        {/* <YAxis /> */}
         <Tooltip />
-        {/* <Legend /> */}
-
-        {/* <Legend content={renderLegend} /> */}
         <Legend
-          content={renderCusomizedLegend}
-          // payload={data.map((item: any, index: any) => ({
-          //   id: index,
-          //   type: "circle",
-          //   value: `${item.name} (${item.value})`,
-          //   color: COLORS[index % COLORS.length],
-          // }))}
+          content={renderCusomizedLegend} // 커스텀  legend 렌더링
         />
-        <ReferenceLine y={50} label="" stroke="black" />
-        <Line
+        <ReferenceLine
+          y={50}
+          label=""
+          stroke="black" // 중간선
+        />
+        <Line // 각 개별 line
           type={lineType}
           dataKey="E/I"
           stroke={COLORS[0]}
-          // activeDot={{ r: 10.1 }}
           strokeWidth={1 + lineStroke["E/I"]}
           dot={false}
           onClick={(e) => {
@@ -203,7 +205,6 @@ const TrendLineChart = () => {
             lineClickHandler("J/P", e);
           }}
         />
-        {/* <Line type="monotone" dataKey="J/P" stroke="#000000FF" /> */}
       </LineChart>
     </div>
   );

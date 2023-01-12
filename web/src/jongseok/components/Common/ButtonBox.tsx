@@ -13,12 +13,9 @@ const ButtonBox = ({ state, content, setState }: ButtonBoxItem) => {
   } else {
     selected = " notSelected";
   }
-  // console.log(state);
-  // console.log(buttonBox);
   return (
     <button
       className={`buttonBox${selected}`}
-      // onClick={setState}
       onClick={() => {
         setState(content);
       }}
