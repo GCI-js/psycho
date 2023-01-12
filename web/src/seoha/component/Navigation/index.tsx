@@ -9,12 +9,13 @@ import styles from './index.module.scss';
 export default function Navigation(properties: Properties) {
     const id = [`_${idiotproof.trace(Navigation)}`, properties.id].join();
     const cl = [styles.index, properties.className].join(" ");
+    console.log(styles)
     return <div id={id} className={cl}>
         <div onClick={() => shepherd.whip("test", "jongseok")}>
             js
         </div>
         <div>
-            <Search className="search-svg"/>
+            <Search className={styles.search_svg}/>
         </div>
         <div onClick={() => shepherd.whip("test", "younghoon")}>
             yh

@@ -7,14 +7,25 @@ import styles from './index.module.scss';
 
 
 interface PageProperties {
+    // 라우팅 대상이 되는 각 페이지의 고유한 이름입니다. 이 값은 매핑 자료구조에서 키값으로 쓰입니다.
     "data-pose": string;
 }
 interface Properties_ extends React.PropsWithChildren, Properties {
+    // 해당 라우터의 고유한 이름입니다. 이 값은 매핑 자료구조에서 키값으로 쓰입니다.
     "data-lamb": string;
-    children: React.ReactElement<PageProperties>[];
+    // 실제 라우팅 될 컴포넌트들을 인자로 받습니다.
+    children: React.ReactElement<PageProperties>[]
+    // 라우팅이 될 컴포넌트들에게 공통으로 적용될 클래스 이름입니다. 스타일링을 위해 쓰입니다.
     pageClassName?: string;
 }
 
+/*
+라우터의 결과값을 보여주는 컴포넌트를 랜더링합니다.
+여기서 라우팅이라 함은 서로 보여준다는 행위에서 배반사건의 관계성을 가지는
+페이지들에 대한 제어를 의미합니다.
+처음 랜더링하는 페이지는 '가상돔 => 실제돔의 전체 렌더링' 흐름으로 이어지고
+두번째 랜더링하는 페이지는 '가상돔 => 실제돔의 display속성 변경' 흐름으로 이어집니다.
+*/
 export default function Lamb(properties: Properties_) {
     const id = [`_${idiotproof.trace(Lamb, "lamb")}`, properties.id].join();
     const cl = [styles.index, properties.className].join(" ");

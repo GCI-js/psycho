@@ -13,7 +13,9 @@
     > div {
         cursor: pointer;
     }
-    .search-svg {
+}
+:local {
+    .search_svg  {
         width: 24px;
         height: 24px;
         fill: none;

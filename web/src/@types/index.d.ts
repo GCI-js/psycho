@@ -9,7 +9,7 @@ declare module "*.png" {
 }
 
 declare module '*.module.scss' {
-    const styles: {index: string};
+    const styles: {[index: string]: string};
     export default styles;
 }
 
