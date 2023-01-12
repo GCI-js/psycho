@@ -1,0 +1,28 @@
+.index:global {
+    > .search-bar {
+        height: 54px;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        margin: 10px 23px;
+        border: 1px solid black;
+        border-radius: 27px;
+        padding-right: 5px;
+        padding-left: 27px;
+        box-sizing: border-box;
+        > .btn {
+            height: 44px;
+            width: 44px;
+            border-radius: 22px;
+            background: black;
+        }
+    }
+    > .display {
+        position: absolute;
+        height: calc(100% - 129px);
+        width: 100%;
+        > .page {
+            overflow-y: scroll;
+        }
+    }
+}
