@@ -1,16 +1,17 @@
 import React from "react";
-import backButtonIcon from "../../Assets/MenuTitle.svg";
+import backButtonIcon from "../../Assets/icon_BackButton.svg";
 import "./BackButton.css";
 
 interface IProps {
   onClick: () => void;
 }
 
+// 뒤로가기 버튼
 function BackButton(props: IProps) {
   return (
-    <div className="button_wrapper">
+    <div className="back_button_wrapper">
       <img
-        className="back_button"
+        className="back_button_img"
         src={backButtonIcon}
         onClick={props.onClick}
       ></img>

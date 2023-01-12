@@ -8,8 +8,8 @@ interface IProps {
 
 function MainButton(props: IProps) {
   return (
-    <div className="wonjae_main_btn" onClick={props.onClick}>
-      <div className="wonjae_main_btn_text">{props.text}</div>
+    <div className="main_btn" onClick={props.onClick}>
+      <div className="main_btn_txt">{props.text}</div>
     </div>
   );
 }
