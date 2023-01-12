@@ -1,6 +1,3 @@
-import * as React from "react";
-
-
 interface Properties {
     className: string;
 }
@@ -15,6 +12,3 @@ export default function Search(properties: Properties) {
         <path d="M20 20L17 17" stroke="#33363F" stroke-width="2" stroke-linecap="round"/>
     </svg>
 }
-
-
-
