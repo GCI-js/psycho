@@ -1,32 +1,28 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
-import QuestionButton from "../QuestionButton/QuestionButton";
+import QuestionContent from "../QuestionContent/QuestionContent";
 import imgRocket3d from "./images/rocket_3d.svg";
+import "./QuestionToday.css";
 
+/**
+ * 오늘의 질문
+ * @returns
+ */
 const QuestionToday = () => {
-  const button1 = () => {
-    console.log("button1 Clicked");
-  };
-  const button2 = () => {
-    console.log("button2 Clicked");
-  };
-  return (
-    <div>
-      <div className="QuestionPageTitle">오늘의 질문</div>
-      <div>
-        <img src={imgRocket3d} alt="rocket3d" />
-      </div>
-      <div>이번주 질문이 N개 남았어요. skip</div>
-      <div>금요일의 질문</div>
-      <div>
-        이메일에 가능한 빨리 회신하려고 하고 지저분한 편지함을 참을 수 없습니다.
-      </div>
+  const [questionData, setQuestionData] = useState({
+    title: "오늘의 질문",
+    remained: "이번 주 질문이 N개 남았어요.",
+    questionTitle: "금요일의 질문",
+    questionBody:
+      "이메일에 가능한 빨리 회신하려고 하고 지저분한 편지함을 참을 수 없습니다.",
+    image: imgRocket3d,
+    buttonLeft: "동의",
+    buttonRight: "비동의",
+  });
 
-      <QuestionButton
-        text1="동의"
-        onClick1={button1}
-        text2="비동의"
-        onClick2={button2}
-      />
+  console.log(questionData);
+  return (
+    <div className="">
+      <QuestionContent pdata={questionData} />
     </div>
   );
 };

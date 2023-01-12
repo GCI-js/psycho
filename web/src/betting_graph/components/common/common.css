@@ -1,0 +1,15 @@
+.LargeTitle {
+  /* Large Title */
+
+  /* position: absolute; */
+  height: 41px;
+  left: 30px;
+  right: 31px;
+  bottom: 653px;
+
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+}
