@@ -1,4 +1,4 @@
-import { NewsletterType } from "./NewsletterType";
+import { NewsletterType } from "../sangjin/components/Newsletter/NewsletterType";
 
 export const getNewsletterList = (): NewsletterType[] => {
 	return NewsletterList;

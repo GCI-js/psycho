@@ -1,4 +1,4 @@
-import { getNewsletterList } from "./Newsletter/NewsletterList";
+import { getNewsletterList } from "./NewsletterList";
 
 export type RandomType = {
 	type: string;

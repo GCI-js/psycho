@@ -3,8 +3,7 @@ import * as React from "react";
 import shepherd from "./service/shepherd";
 import idiotproof from "./service/idiotproof";
 
-import Jongseok from "../components/ProfilePage/App";
-import Sangjin from "../sangjin/App";
+import Jongseok from "../component/ProfilePage/App";
 import Wonjae from "../wonjae/App";
 
 import Lamb from "./component/Lamb";
@@ -24,7 +23,6 @@ export default function App(properties: Properties) {
         </div>
         <Lamb data-lamb="test" className="display" pageClassName="page">
             <Jongseok data-pose="jongseok"/>
-            <Sangjin data-pose="sangjin"/>
             <Wonjae data-pose="wonjae"/>
         </Lamb>
         <Navigation/>

@@ -1,9 +1,7 @@
-import React, { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./MainPage.css";
-import Newsletter from "./Newsletter/Newsletter";
-import ChnageMBTI from "./ChangeMBTI";
-import { RandomListInit } from "./RandomList";
-import HashtagSearchResult from "./HashtagSearchResult";
+import Newsletter from "../Newsletter/Newsletter";
+import { RandomListInit } from "../../service/randomList";
 
 export function MainPage() {
 	let RandomList: any[] = [];
@@ -68,9 +66,9 @@ export function MainPage() {
 				{result.map(function (i): JSX.Element {
 					//result에 있는 컴포넌트 mainpage에 띄우기
 					if (i.type === "changembti") {
-						return <ChnageMBTI />;
+						return <></>;
 					} else if (i.type === "hashtagsearchresult") {
-						return <HashtagSearchResult />;
+						return <></>;
 					} else {
 						return (
 							<Newsletter

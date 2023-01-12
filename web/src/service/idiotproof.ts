@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 
+// 원래는 되어야 하는데 기술적 결함으로 안되는 부분에 대한 예방책들
 namespace idiotproof {
 
     const _id2memory: {[id: string]: number} = {};

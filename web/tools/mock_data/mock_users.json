@@ -1,0 +1,156 @@
+[
+  {
+    "userId": "0",
+    "nickname": "아크릴 오므라이스",
+    "kakaoKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "googleKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "naverKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "bloodType": "A",
+    "country": "대한민국",
+    "city": "서울특별시",
+    "district": "송파구",
+    "gender": "female",
+    "birth": 1623767425000,
+    "mbtis": [
+      {
+        "date": 1661990400000,
+        "EI": 50,
+        "NS": 50,
+        "FT": 50,
+        "JP": 50
+      },
+      {
+        "date": 1662076800000,
+        "EI": 52,
+        "NS": 48,
+        "FT": 50,
+        "JP": 50
+      },
+      {
+        "date": 1662163200000,
+        "EI": 52,
+        "NS": 48,
+        "FT": 55,
+        "JP": 46
+      }
+    ],
+    "hashtags": [
+      {
+        "hashtagId": "0",
+        "name": "GCI",
+        "mbtiCnt": [0, 0]
+      },
+      {
+        "hashtagId": "1",
+        "name": "MBTI",
+        "mbtiCnt": [0, 0]
+      }
+    ],
+    "recentResponse": [true, true, true, true, true, true, true],
+    "balance": 1000000000,
+    "bettingHist": [
+      {
+        "bettingId": "1",
+        "index": 0,
+        "balance": 1200,
+        "result": -1
+      }
+    ],
+    "connHist": [1, 1, 1, 0, 1, 0, 0],
+    "lastConn": 1665575139000,
+    "contConn": 1,
+    "signUpStage": 0
+  },
+  {
+    "userId": "1",
+    "nickname": "공부하는 기린",
+    "kakaoKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "googleKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "naverKey": {
+      "tokenType": "",
+      "accessToken": "",
+      "refreshToken": "",
+      "expiration": 0
+    },
+    "bloodType": "O",
+    "country": "대한민국",
+    "city": "서울특별시",
+    "district": "강남구",
+    "gender": "male",
+    "birth": 785203200000,
+    "mbtis": [
+      {
+        "date": 1661990400000,
+        "EI": 50,
+        "NS": 50,
+        "FT": 50,
+        "JP": 50
+      },
+      {
+        "date": 1662076800000,
+        "EI": 55,
+        "NS": 50,
+        "FT": 45,
+        "JP": 47
+      },
+      {
+        "date": 1662163200000,
+        "EI": 60,
+        "NS": 50,
+        "FT": 40,
+        "JP": 44
+      }
+    ],
+    "hashtags": [
+      {
+        "hashtagId": "0",
+        "name": "HELLO",
+        "mbtiCnt": [0, 0]
+      },
+      {
+        "hashtagId": "1",
+        "name": "WORLD",
+        "mbtiCnt": [0, 0]
+      }
+    ],
+    "recentResponse": [true, true, true, true, true, true, true],
+    "balance": 7878787878,
+    "bettingHist": [
+      {
+        "bettingId": "1",
+        "index": 1,
+        "balance": 2000,
+        "result": -1
+      }
+    ],
+    "connHist": [1, 0, 1, 1, 1, 0, 0],
+    "lastConn": 1665575139000,
+    "contConn": 3,
+    "signUpStage": 0
+  }
+]
