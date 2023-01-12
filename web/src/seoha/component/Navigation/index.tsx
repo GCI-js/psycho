@@ -1,15 +1,15 @@
-import * as React from "react";
-
 import shepherd from "../../service/shepherd";
+import idiotproof from "../../service/idiotproof";
 
 import Search from "../../../svg/Search";
 
-import './index.scss';
+import styles from './index.module.scss';
 
 
-export default function Navigation() {
-    console.log("<Navigation/>");
-    return <div className="navigation-asalbfa7">
+export default function Navigation(properties: Properties) {
+    const id = [`_${idiotproof.trace(Navigation)}`, properties.id].join();
+    const cl = [styles.index, properties.className].join(" ");
+    return <div id={id} className={cl}>
         <div onClick={() => shepherd.whip("test", "jongseok")}>
             js
         </div>
