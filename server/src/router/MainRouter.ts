@@ -11,7 +11,7 @@ import { NewsletterRouter } from "./NewsletterRouter";
 
 const MainRouter = express.Router();
 
-MainRouter.use("/", Logger.writeRequest, CheckApiKey);
+MainRouter.use("/", Logger.writeRequest); //, CheckApiKey);
 
 MainRouter.use("/connTest", ConnectionTest.connTest);
 MainRouter.use("/nicknameTest", NickNameGenerator.nicnknameTest);
