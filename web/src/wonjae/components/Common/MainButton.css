@@ -1,4 +1,4 @@
-.wonjae_main_btn {
+.main_btn {
   /* Auto layout */
 
   display: flex;
@@ -16,7 +16,7 @@
   border-radius: 100px;
 }
 
-.wonjae_main_btn_text {
+.main_btn_txt {
   font-family: "Inter";
   font-style: normal;
   font-weight: 700;
