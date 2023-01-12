@@ -12,3 +12,10 @@ declare module '*.module.scss' {
     const styles: {index: string};
     export default styles;
 }
+
+declare interface Properties {
+    id?: string;
+    className?: string;
+    onMouseDown?: React.MouseEventHandler<HTMLDivElement>;
+    onClick?: React.MouseEventHandler<HTMLDivElement>;
+}
