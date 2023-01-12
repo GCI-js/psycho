@@ -1,14 +1,12 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionContent from "../QuestionContent/QuestionContent";
 import imgCryingFace3d from "./images/crying_face_3d.svg";
-const QuestionEnd = () => {
-  const button1 = () => {
-    console.log("button1 Clicked");
-  };
-  const button2 = () => {
-    console.log("button2 Clicked");
-  };
 
+/**
+ * 모든 질문에 답을 다 했을 경우에 대한 컴포넌트
+ * @returns
+ */
+const QuestionEnd = () => {
   const [questionData, setQuestionData] = useState({
     title: "오늘의 질문",
     remained: "이번 주 질문이 N개 남았어요.",

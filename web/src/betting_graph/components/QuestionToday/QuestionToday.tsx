@@ -3,14 +3,11 @@ import QuestionContent from "../QuestionContent/QuestionContent";
 import imgRocket3d from "./images/rocket_3d.svg";
 import "./QuestionToday.css";
 
+/**
+ * 오늘의 질문
+ * @returns
+ */
 const QuestionToday = () => {
-  const button1 = () => {
-    console.log("button1 Clicked");
-  };
-  const button2 = () => {
-    console.log("button2 Clicked");
-  };
-
   const [questionData, setQuestionData] = useState({
     title: "오늘의 질문",
     remained: "이번 주 질문이 N개 남았어요.",
@@ -22,7 +19,6 @@ const QuestionToday = () => {
     buttonRight: "비동의",
   });
 
-  // setQuestionData(data);
   console.log(questionData);
   return (
     <div className="">

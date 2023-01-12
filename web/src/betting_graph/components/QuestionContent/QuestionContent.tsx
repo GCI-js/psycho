@@ -3,7 +3,9 @@ import QuestionButton from "../QuestionButton/QuestionButton";
 import "./QuestionContent.css";
 import "../common/common.css";
 
+// 질문 컴포넌트의 내용을 담당하는 컴포넌트
 const QuestionContent = ({ pdata }: any) => {
+  // 더미 버튼. 개발 필요
   const button1 = () => {
     console.log("button1 Clicked");
   };
@@ -17,13 +19,7 @@ const QuestionContent = ({ pdata }: any) => {
     questionBody: pdata.questionBody,
     image: pdata.image,
   });
-  // var pageTitle = data.title;
-  // var remained = data.remained;
-  // var questionTitle = data.questionTitle;
-  // var questionBody = data.questionBody;
-  // var image = data.image;
-  // console.log("question today: ");
-  // console.log(pdata);
+
   return (
     <div className="QuestionContentPage">
       <div className="QuestionContentPageTitle LargeTitle">{pdata.title}</div>

@@ -8,6 +8,11 @@ interface IProps {
   onClick2: () => void;
 }
 
+/**
+ * 질문 버튼 함수
+ * @param props
+ * @returns
+ */
 function QuestionButton(props: IProps) {
   return (
     <div className="QuestionButtonRow">

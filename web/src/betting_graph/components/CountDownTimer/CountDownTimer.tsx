@@ -6,6 +6,9 @@ interface ICountdown {
   seconds: number;
 }
 
+/**
+ *  카운트다운 타이머 완성형 함수.
+ * */
 const CountDownTimer = ({
   hours = 0,
   minutes = 0,

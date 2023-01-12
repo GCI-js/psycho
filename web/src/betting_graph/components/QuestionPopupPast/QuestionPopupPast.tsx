@@ -1,14 +1,8 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionButton from "../QuestionButton/QuestionButton";
 import imgCoin3d from "./images/coin_3d.svg";
-import RemainedBalance from "../RemainedBalance/RemainedBalance";
 import MockUser from "../../../../../common/mock_data/mock_users.json";
-import {
-  BloodType,
-  Gender,
-  HashtagType,
-  Mbti,
-} from "../../../../../common/type/common";
+import { BloodType, Gender } from "../../../../../common/type/common";
 import "./QuestionPopupPast.css";
 
 const DUMMY_DATA_USER = {
@@ -17,7 +11,12 @@ const DUMMY_DATA_USER = {
   gender: "male" as Gender,
 };
 
+/**
+ * 지난 질문
+ * @returns
+ */
 const QuestionPopupPast = () => {
+  // 더미 버튼
   const button1 = () => {
     console.log("button1 Clicked");
   };
@@ -25,10 +24,10 @@ const QuestionPopupPast = () => {
     console.log("button2 Clicked");
   };
 
+  // 토글 더미 버튼, 누르면 등장하도록 동작
   const toggleButton = () => {
     console.log("toggle Clicked");
     setModalStatus(!modalStatus);
-    // setModalDisplay();
     console.log("modal status: " + modalStatus);
   };
   const [modalStatus, setModalStatus] = useState(false);
@@ -39,7 +38,6 @@ const QuestionPopupPast = () => {
         추가 결제 토글
       </div>
       <div style={{ display: modalStatus ? "block" : "none" }}>
-        <RemainedBalance data={DUMMY_DATA_USER} />
         <div className="QuestionPastPopupComponent">
           <div>
             <img src={imgCoin3d} alt="imgCoin3d" />
