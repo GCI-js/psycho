@@ -3,6 +3,11 @@ import "./Setting.css";
 import rightArrowIcon from "../img/rightArrow.png";
 
 const Setting = () => {
+  /*
+[2022.01.12 jongseok lee] 
+컴포넌트들 배열만 되어있습니다. CSS 수정해야 합니다 !
+*/
+
   const [profileSettingSelected, setProfileSettingSelected] = useState(true);
   const [pushSettingSelected, setPushSettingSelected] = useState(true);
   const [languageSettingSelected, setlanguageSettingSelected] = useState(true);

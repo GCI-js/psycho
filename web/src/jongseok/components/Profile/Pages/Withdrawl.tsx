@@ -3,15 +3,15 @@ import "./Withdrawl.css";
 // import DropDown from "./Dropdown";
 import BasicButton from "../../Common/BasicButton";
 import cryFaceIcon from "../img/cryFaceIcon.png";
+/*
+[2022.01.12 jongseok lee] 
+컴포넌트들 배열만 되어있습니다. CSS 수정해야 합니다 !
+*/
 const Withdrawal = () => {
   const dummyUserName = "아크릴오므라이스";
 
   const handleWithdrawal = () => {};
   const [selectedNation, setSelectedNation] = useState("");
-
-  const handleChangeNation = (event: any) => {
-    setSelectedNation(event.target.value);
-  };
 
   return (
     <div className="withdrawalContainer">

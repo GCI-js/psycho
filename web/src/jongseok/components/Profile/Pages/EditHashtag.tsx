@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "./EditUserInfo.css";
-// import DropDown from "./Dropdown";
 import BasicButton from "../../Common/BasicButton";
 import Hashtag, { HashtagItem } from "../Elements/Hashtag";
 interface HashtagItems extends Array<HashtagItem> {}
-const EditUserInfo = () => {
+const EditHashtag = () => {
   const dummyUserName = "아크릴오므라이스";
 
-  const handleIsEditUserInfo = () => {};
-  const [selectedNation, setSelectedNation] = useState("");
-
-  const handleChangeNation = (event: any) => {
-    setSelectedNation(event.target.value);
-  };
+  /*
+[2022.01.12 jongseok lee] 
+컴포넌트들 배열만 되어있습니다. CSS 수정해야 합니다. 
+Hashtag 입력시 등록되는 function구현이 필요합니다.
+*/
+  const handleIsEditHashtag = () => {};
   let dummyNationHashtags: HashtagItems = [
     { content: "고기구이", color: "orange" },
     { content: "과자", color: "orange" },
@@ -47,10 +46,10 @@ const EditUserInfo = () => {
 
       <BasicButton
         content="프로필 수정 완료!"
-        pFunction={handleIsEditUserInfo}
+        pFunction={handleIsEditHashtag}
       />
     </div>
   );
 };
 
-export default EditUserInfo;
+export default EditHashtag;
