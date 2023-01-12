@@ -42,17 +42,13 @@
   font-weight: 700;
   font-size: 14px;
   line-height: 22px;
-  /* identical to box height, or 157% */
-
   display: flex;
   align-items: center;
   letter-spacing: -0.408px;
   padding-left: 10px;
   padding-right: 10px;
-
   height: 25px;
   background: #ffb45c;
   border-radius: 20px;
-
   color: #000000;
 }

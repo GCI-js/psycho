@@ -11,28 +11,29 @@ import Wonjae from "../wonjae/App";
 
 import Navigation from "./component/Navigation";
 
-
-
-import './App.scss';
-
+import "./App.scss";
 
 export default function App() {
-    console.log("<App/>");
+  console.log("<App/>");
 
-    React.useEffect(
-        () => window.addEventListener("popstate", shepherd.bleat), []);
+  React.useEffect(
+    () => window.addEventListener("popstate", shepherd.bleat),
+    []
+  );
 
-    return <div className="app-j238dndx8w4hweh">
-        <div className="search-bar">
-            search bar
-            <div className="btn"></div>
-        </div>
-        <Lamb data-lamb="test" className="display">
-            <Jongseok data-pose="jongseok"/>
-            <BettingGraph data-pose="younghoon"/>
-            <Sangjin data-pose="sangjin"/>
-            <Wonjae data-pose="wonjae"/>
-        </Lamb>
-        <Navigation/>
+  return (
+    <div className="app-j238dndx8w4hweh">
+      <div className="search-bar">
+        search bar
+        <div className="btn"></div>
+      </div>
+      <Lamb data-lamb="test" className="display">
+        <Jongseok data-pose="jongseok" />
+        <BettingGraph data-pose="younghoon" />
+        <Sangjin data-pose="sangjin" />
+        <Wonjae data-pose="wonjae" />
+      </Lamb>
+      <Navigation />
     </div>
+  );
 }

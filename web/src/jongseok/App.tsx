@@ -12,7 +12,9 @@ function ProfileStats() {
   return (
     <div className="jongseok">
       {/* <DeleteUser /> */}
-      <Profile />
+      {/* <EditUserInfo /> */}
+      {/* <Profile /> */}
+      <EditHashtag />
     </div>
     // <div className="App">
     // 	<header className="App-header">
