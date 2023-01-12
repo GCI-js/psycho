@@ -40,9 +40,13 @@ const EditProfile = () => {
   ]);
 
   const handleIsEditUserInfo = () => {
-    // setIsEditUserInfo(true)
+    /*계속버튼 클릭시 들어가는 로직*/
   };
 
+  /*
+[2022.01.12 jongseok lee] 
+MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더러워서 버리는게 나을 거 같다는 생각도 들음. 과감히 지워도 됨
+*/
   const handleMBTISelectBox = (MBTI: string) => {
     let newMBTIState = MBTIStates.map((MBTIState) => {
       if (MBTIState.MBTI === MBTI) {
