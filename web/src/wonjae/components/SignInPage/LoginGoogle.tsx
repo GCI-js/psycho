@@ -7,6 +7,7 @@ import {
 import "./SignInPage.css";
 import shepherd from "../../../seoha/service/shepherd";
 import { getUserWithCredential, updateUserInfo } from "../../WJ_ServerAPI";
+import LoginGoogleCore from "./LoginGoogleCore";
 
 function LoginGoogle() {
   const CLIENT_ID =
@@ -56,21 +57,14 @@ function LoginGoogle() {
     console.log("Login Failed!! :(");
   };
 
-  const googleLogin = useGoogleLogin({
-    onSuccess: (tokenResponse) => console.log(tokenResponse),
-  });
+  // const googleLogin = useGoogleLogin({
+  //   onSuccess: (tokenResponse) => console.log(tokenResponse),
+  // });
 
   return (
-    <React.Fragment>
-      <GoogleOAuthProvider clientId={CLIENT_ID}>
-        {/* GoogleLogin -> useGoogleLogin 함수 사용으로 대체
-        <GoogleLogin
-          onSuccess={(credentialResponse) => onSuccess(credentialResponse)}
-          onError={() => onFailure}
-        /> */}
-        <button onClick={() => googleLogin()}>Sign in with google</button>
-      </GoogleOAuthProvider>
-    </React.Fragment>
+    <GoogleOAuthProvider clientId={CLIENT_ID}>
+      <LoginGoogleCore />
+    </GoogleOAuthProvider>
   );
 }
 

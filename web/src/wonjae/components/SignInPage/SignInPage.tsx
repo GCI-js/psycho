@@ -5,6 +5,7 @@ import LoginNaver from "./LoginNaver";
 import LoginNaverSDK from "./LoginNaverSDK";
 import LargeTitle from "../Common/LargeTitle";
 import MediumTitle from "../Common/MediumTitle";
+import signInImg from "../../Assets/SignInImage.png";
 
 function SignInPage() {
   const mediumTitleText: String = `
@@ -14,13 +15,19 @@ function SignInPage() {
 
   return (
     <>
-      <LargeTitle text="로그인" customClass="" />
-      <MediumTitle customClass="" text={mediumTitleText} />
+      <div className="welcome_img_container">
+        <LargeTitle text="로그인" customClass="" />
+        <MediumTitle customClass="" text={mediumTitleText} />
+        <img src={signInImg} />
+      </div>
+
       <br />
       <br />
       <LoginGoogle />
-      <LoginKakao />
-      <LoginNaver />
+      {/* Only Use Google Login in Prototype */}
+      {/* <LoginKakao />
+      <LoginNaver /> */}
+      {/* Login Naver Button with NaverSDK */}
       {/* <LoginNaverSDK /> */}
     </>
   );
