@@ -15,7 +15,7 @@ export default function Navigation(properties: Properties) {
       <div>
         <Search className={styles.search_svg} />
       </div>
-      <div onClick={() => shepherd.whip("test", "younghoon")}>yh</div>
+      <div onClick={() => shepherd.whip("test", "WelcomePage")}>Welcom</div>
       <div onClick={() => shepherd.whip("test", "sangjin")}>sj</div>
       <div onClick={() => shepherd.whip("test", "wonjae")}>wj</div>
     </div>
