@@ -1,11 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
-import "./MainPage.css";
+import "./NewsletterPage.css";
 import { RandomListInit } from "../../service/randomList";
 import Newsletter from "../Newsletter/Newsletter";
 
 // import Newsletter from "../../@types/Newsletter";
 
-export function MainPage() {
+export function NewsletterPage() {
   let RandomList: any[] = [];
   let [result, setResult] = useState<any[]>([]);
   let [item, setItem] = useState<any[]>([]);

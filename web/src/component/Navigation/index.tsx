@@ -11,13 +11,18 @@ export default function Navigation(properties: Properties) {
   console.log(styles);
   return (
     <div id={id} className={cl}>
-      <div onClick={() => shepherd.whip("test", "ProfilePage")}>Profile</div>
-      <div>
-        <Search className={styles.search_svg} />
+      <div onClick={() => shepherd.whip("test", "NewsletterPage")}>
+        Newsletter
       </div>
-      <div onClick={() => shepherd.whip("test", "WelcomePage")}>Welcom</div>
-      <div onClick={() => shepherd.whip("test", "sangjin")}>sj</div>
-      <div onClick={() => shepherd.whip("test", "wonjae")}>wj</div>
+      <div onClick={() => shepherd.whip("test", "QuestionPage")}>Question</div>
+      <div onClick={() => shepherd.whip("test", "ProfilePage")}>Profile</div>
+      <div onClick={() => shepherd.whip("test", "Setting")}>Setting</div>
+      {/* <div>
+        <Search className={styles.search_svg} />
+      </div> */}
+      {/* <div onClick={() => shepherd.whip("test", "WelcomePage")}>
+        WelcomePage
+      </div> */}
     </div>
   );
 }
