@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./EditUserInfo.css";
 import BasicButton from "../BasicButton/BasicButton";
 import Dropdown from "../DropDown/Dropdown";
-import downwardArrow from "../img/downwardArrow.png";
+import downwardArrow from "../../img/downwardArrow.png";
 import selectNation from "../../img/selectNation.png";
 import selectCity from "../../img/selectCity.png";
 import selectDistrict from "../../img/selectDistrict.png";

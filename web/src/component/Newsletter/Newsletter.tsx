@@ -3,10 +3,6 @@ import "./Newsletter.css";
 import icon from "./icon_newsletter.png";
 // import { Newsletter } from "../../@types/Newsletter";
 
-/**
- * 뉴스레터 타입 commom에서 가져오던게 아닌가봄
- * NewsletterType 옛날 코드 따왔음
- */
 type NewsletterType = {
   newsletterId: string;
   thumbnail: string;
