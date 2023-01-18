@@ -1,6 +1,6 @@
 import React, { PureComponent } from "react";
 import { PieChart, Pie, Cell } from "recharts";
-import HashTagType from "../../../../../common/type/Hashtag";
+import HashTagType from "../../@types/Hashtag";
 
 const COLORS = ["#454BA1", "#7E3972", "#E94036", "#F9B5A2"]; // 피그마에 있는 mbti 별 색상값
 const RADIAN = Math.PI / 180;

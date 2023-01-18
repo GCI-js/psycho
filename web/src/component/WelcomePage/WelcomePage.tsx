@@ -1,10 +1,10 @@
 import React from "react";
 import "./WelcomePage.css";
-import "./Common/MainButton";
-import MainButton from "./Common/MainButton";
-import LargeTitle from "./Common/LargeTitle";
-import MediumTitle from "./Common/MediumTitle";
-import welcomeImage from "../Assets/WelcomeImg.png";
+// import "./Common/MainButton";
+import MainButton from "../MainButton/MainButton";
+import "../../css/common.css";
+import MediumTitle from "../MediumTitle/MediumTitle";
+import welcomeImage from "../../img/WelcomeImg.png";
 
 function WelcomePage() {
   const largeTitle = "반가워요!";
@@ -19,7 +19,7 @@ function WelcomePage() {
   return (
     <div>
       <div className="welcome_img_container">
-        <LargeTitle customClass="wonjae_title" text={largeTitle} />
+        <div className="LargeTitle wonjae_title">{largeTitle}</div>
         <img src={welcomeImage} />
       </div>
       <MediumTitle customClass="welcome_medium_title" text={mediumTitle} />
