@@ -1,5 +1,5 @@
 import React from "react";
-import Hashtag, { HashtagItem } from "./Hashtag";
+import Hashtag, { HashtagItem } from "../Hashtag/Hashtag";
 import "./HashtagList.css";
 interface HashtagItems extends Array<HashtagItem> {}
 

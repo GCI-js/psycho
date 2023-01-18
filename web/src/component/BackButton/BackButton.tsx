@@ -1,7 +1,9 @@
 import React from "react";
 import backButtonIcon from "../../Assets/icon_BackButton.svg";
 import "./BackButton.css";
-
+/**
+ *  Icon_BackButton.svg 실종 이슈
+ */
 interface IProps {
   onClick: () => void;
 }

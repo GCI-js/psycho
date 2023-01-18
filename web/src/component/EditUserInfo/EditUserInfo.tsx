@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./EditUserInfo.css";
-import BasicButton from "../../Common/BasicButton";
-import Dropdown from "../Elements/Dropdown";
+import BasicButton from "../BasicButton/BasicButton";
+import Dropdown from "../DropDown/Dropdown";
 import downwardArrow from "../img/downwardArrow.png";
-import selectNation from "../img/selectNation.png";
-import selectCity from "../img/selectCity.png";
-import selectDistrict from "../img/selectDistrict.png";
-import selectGender from "../img/selectGender.png";
+import selectNation from "../../img/selectNation.png";
+import selectCity from "../../img/selectCity.png";
+import selectDistrict from "../../img/selectDistrict.png";
+import selectGender from "../../img/selectGender.png";
 const EditUserInfo = () => {
   /*
 [2022.01.12 jongseok lee] 
