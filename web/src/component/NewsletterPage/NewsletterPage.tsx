@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import "./NewsletterPage.css";
 import { RandomListInit } from "../../service/randomList";
 import Newsletter from "../Newsletter/Newsletter";
+import shepherd from "../../service/shepherd";
 
 // import Newsletter from "../../@types/Newsletter";
 
@@ -60,7 +61,9 @@ export function NewsletterPage() {
     RandomList = RandomListInit();
     getFetchData();
   }, []);
-
+  if (!localStorage.getItem("isOldUser")) {
+    shepherd.whip("test", "WelcomePage");
+  }
   return (
     <div>
       <div className="header">뉴스피드</div>

@@ -21,13 +21,19 @@ export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
   React.useEffect(shepherd.initialize, []);
+  const setOld = () => {
+    localStorage.setItem("isOldUser", "true");
+  };
+  const setNew = () => {
+    localStorage.removeItem("isOldUser");
+  };
   return (
     <div id={id} className={cl}>
+      <button onClick={setOld}>setOld</button>
+      <button onClick={setNew}>setNew</button>
       <Lamb data-lamb="test" className="display" pageClassName="page">
         <NewsletterPage data-pose="NewsletterPage" />
-        {!localStorage.getItem("isOldUser") && (
-          <WelcomePage data-pose="WelcomePage" />
-        )}
+        <WelcomePage data-pose="WelcomePage" />
 
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
