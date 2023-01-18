@@ -11,6 +11,11 @@ import Lamb from "./component/Lamb";
 import Navigation from "./component/Navigation";
 
 import styles from "./App.module.scss";
+import { NewsletterPage } from "./component/NewsletterPage/NewsletterPage";
+import QuestionPage from "./component/QuestionPage/QuestionPage";
+import Setting from "./component/Setting/Setting";
+import EditProfile from "./component/EditProfile/EditProfile";
+import EditUserInfo from "./component/EditUserInfo/EditUserInfo";
 
 export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
@@ -18,13 +23,17 @@ export default function App(properties: Properties) {
   React.useEffect(shepherd.initialize, []);
   return (
     <div id={id} className={cl}>
-      <div className="search-bar">
-        search bar
-        <div className="btn"></div>
-      </div>
       <Lamb data-lamb="test" className="display" pageClassName="page">
+        <NewsletterPage data-pose="NewsletterPage" />
+        {!localStorage.getItem("isOldUser") && (
+          <WelcomePage data-pose="WelcomePage" />
+        )}
+
+        <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
-        <WelcomePage data-pose="WelcomePage" />
+        <Setting data-pose="Setting" />
+        <EditProfile data-pose="EditProfile" />
+        <EditUserInfo data-pose="EditUserInfo" />
       </Lamb>
       <Navigation />
     </div>
