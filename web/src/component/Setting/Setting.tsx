@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Setting.css";
-import rightArrowIcon from "../img/rightArrow.png";
+import rightArrowIcon from "../../img/rightArrow.png";
 
 const Setting = () => {
   /*

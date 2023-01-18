@@ -2,8 +2,9 @@ import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionButton from "../QuestionButton/QuestionButton";
 import QuestionEnd from "../QuestionEnd/QuestionEnd";
 import QuestionToday from "../QuestionToday/QuestionToday";
-import QuestionPopupPast from "../QuestionPopupPast/QuestionPopupPast";
 import QuestionPast from "../QuestionPast/QuestionPast";
+
+// import QuestionPopupPast from "../QuestionPopupPast/QuestionPopupPast";
 
 /**
  * 오늘의 질문을 확인하는 질문 페이지.
@@ -15,8 +16,8 @@ const QuestionPage = () => {
     <div>
       <QuestionToday />
       <QuestionEnd />
-      <QuestionPopupPast />
       <QuestionPast />
+      {/* <QuestionPopupPast /> */}
     </div>
   );
 };

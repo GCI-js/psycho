@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import MBTIHistogram from "../Elements/MbtiHistogram";
-import HashtagList from "../Elements/HashtagList";
-import settingIcon from "../img/setting.png";
+import MBTIHistogram from "../MbtiHistogram/MbtiHistogram";
+import HashtagList from "../HashtagList/HashtagList";
+import settingIcon from "../../img/setting.png";
 import "./Profile.css";
 const Profile = () => {
   //userName은 백엔드에서 userName생성하는 코드 가져와서 써야합니다.
