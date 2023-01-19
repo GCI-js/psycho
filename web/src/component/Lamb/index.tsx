@@ -37,7 +37,6 @@ export default function Lamb(properties: Properties_) {
   const names = Array(ct);
   const [pages, i2setPage] = [Array(ct), Array(ct)];
   for (let i = 0; i < ct; i++) {
-    console.log(children[i]);
     names[i] = children[i].props["data-pose"];
     [pages[i], i2setPage[i]] = React.useState(null);
   }

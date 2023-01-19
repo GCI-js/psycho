@@ -20,9 +20,9 @@ export default function Navigation(properties: Properties) {
       {/* <div>
         <Search className={styles.search_svg} />
       </div> */}
-      {/* <div onClick={() => shepherd.whip("test", "WelcomePage")}>
+      <div onClick={() => shepherd.whip("test", "WelcomePage")}>
         WelcomePage
-      </div> */}
+      </div>
     </div>
   );
 }

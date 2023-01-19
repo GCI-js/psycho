@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./EditUserInfo.css";
+import "./RegisterPage2.css";
 import BasicButton from "../BasicButton/BasicButton";
 import Dropdown from "../DropDown/Dropdown";
 import downwardArrow from "../../img/downwardArrow.png";
@@ -7,7 +7,8 @@ import selectNation from "../../img/selectNation.png";
 import selectCity from "../../img/selectCity.png";
 import selectDistrict from "../../img/selectDistrict.png";
 import selectGender from "../../img/selectGender.png";
-const EditUserInfo = () => {
+import shepherd from "../../service/shepherd";
+const RegisterPage2 = () => {
   /*
 [2022.01.12 jongseok lee] 
 username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야하는지 정확히 정해지면 따로 다른 파일로 빼는게 더 나을거 같습니다. 
@@ -94,7 +95,6 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const [birthDayDropdownVisibility, setBirthDayDropdownVisibility] =
     useState(false);
 
-  const handleIsEditUserInfo = () => {};
   const [selectedNation, setSelectedNation] = useState("");
   const [selectedCity, setSelectedCity] = useState("");
   const [selectedDistrict, setSelectedDistrict] = useState("");
@@ -269,10 +269,18 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           </Dropdown>
         </div>
       </div>
-
-      <BasicButton content="계속" pFunction={handleIsEditUserInfo} />
+      <button
+        className="BasicButton"
+        onClick={() => shepherd.whip("test", "TermsInUsePage")}
+      >
+        계속
+      </button>
+      {/* <BasicButton
+        content="계속"
+        pFunction={shepherd.whip("test", "TermsInUsePage")}
+      /> */}
     </div>
   );
 };
 
-export default EditUserInfo;
+export default RegisterPage2;

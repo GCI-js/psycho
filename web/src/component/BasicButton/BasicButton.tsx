@@ -7,6 +7,7 @@ interface BasicButtonInterface {
 }
 
 const BasicButton = ({ content, pFunction }: BasicButtonInterface) => {
+  console.log("XXX" + pFunction);
   return (
     <button className="basicButton" onClick={pFunction}>
       {content}
