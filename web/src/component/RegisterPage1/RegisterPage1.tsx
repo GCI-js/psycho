@@ -1,11 +1,12 @@
 import { url } from "inspector";
 import React, { useState } from "react";
-import "./EditProfile.css";
+import "./RegisterPage1.css";
 import MBTISelectFrame from "../../img/MBTISelectFrame.png";
 import bloodTypeSelectFrame from "../../img/bloodTypeSelectFrame.png";
 import ButtonBox from "../ButtonBox/ButtonBox";
 import BasicButton from "../BasicButton/BasicButton";
-import EditUserInfo from "../EditUserInfo/EditUserInfo";
+import RegisterPage2 from "../RegisterPage2/RegisterPage2";
+import shepherd from "../../service/shepherd";
 
 interface MBTIStates {
   MBTI: string;
@@ -17,8 +18,8 @@ interface bloodTypeStates {
   state: boolean;
 }
 
-const EditProfile = () => {
-  const [isEditUserInfo, setIsEditUserInfo] = useState(false);
+const RegisterPage1 = () => {
+  const [isRegisterPage2, setIsRegisterPage2] = useState(false);
   const dummyUserName = "아크릴오므라이스";
   const [MBTIStates, setMBTIStates] = React.useState<MBTIStates[]>([
     { MBTI: "E", state: false },
@@ -39,7 +40,7 @@ const EditProfile = () => {
     { bloodType: "O", state: false },
   ]);
 
-  const handleIsEditUserInfo = () => {
+  const handleIsRegisterPage2 = () => {
     /*계속버튼 클릭시 들어가는 로직*/
   };
 
@@ -134,8 +135,8 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
     setBloodTypeStates([...newBloodTypeStates]);
   };
 
-  if (isEditUserInfo) {
-    return <EditUserInfo />;
+  if (isRegisterPage2) {
+    return <RegisterPage2 />;
   }
   return (
     <div className="editProfileContainer">
@@ -179,9 +180,18 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
           );
         })}
       </div>
-      <BasicButton content="계속" pFunction={handleIsEditUserInfo} />
+      <button
+        className="BasicButton"
+        onClick={() => shepherd.whip("test", "RegisterPage2")}
+      >
+        계속
+      </button>
+      {/* <BasicButton
+        content="계속"
+        pFunction={shepherd.whip("test", "RegisterPage2")}
+      /> */}
     </div>
   );
 };
 
-export default EditProfile;
+export default RegisterPage1;

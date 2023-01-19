@@ -7,6 +7,9 @@ import shepherd from "../../service/shepherd";
 // import Newsletter from "../../@types/Newsletter";
 
 export function NewsletterPage() {
+  if (!localStorage.getItem("isOldUser")) {
+    shepherd.whip("test", "WelcomePage");
+  }
   let RandomList: any[] = [];
   let [result, setResult] = useState<any[]>([]);
   let [item, setItem] = useState<any[]>([]);
@@ -61,9 +64,6 @@ export function NewsletterPage() {
     RandomList = RandomListInit();
     getFetchData();
   }, []);
-  if (!localStorage.getItem("isOldUser")) {
-    shepherd.whip("test", "WelcomePage");
-  }
   return (
     <div>
       <div className="header">뉴스피드</div>
