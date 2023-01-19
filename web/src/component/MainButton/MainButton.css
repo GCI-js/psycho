@@ -7,10 +7,8 @@
   padding: 15px 0px;
   gap: 10px;
 
-  position: absolute;
   width: 344px;
-  left: calc(50% - 344px / 2);
-  bottom: 30px;
+  margin: 0 auto;
 
   background: #000000;
   border-radius: 100px;
