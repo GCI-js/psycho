@@ -1,4 +1,5 @@
 import * as React from "react";
+import { useState } from "react";
 
 import shepherd from "./service/shepherd";
 import idiotproof from "./service/idiotproof";
@@ -21,16 +22,13 @@ import { TermsInUsePage } from "./component/TermsInUsePage";
 export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
+  const [navVisible, setNavVisible] = useState(true);
   React.useEffect(shepherd.initialize, []);
-  const setNew = () => {
-    localStorage.removeItem("isOldUser");
-  };
   return (
     <div id={id} className={cl}>
-      <button onClick={setNew}>setNew</button>
       <Lamb data-lamb="test" className="display" pageClassName="page">
         <NewsletterPage data-pose="NewsletterPage" />
-        <WelcomePage data-pose="WelcomePage" />
+        <WelcomePage data-pose="WelcomePage" setNavVisible={setNavVisible} />
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
@@ -38,7 +36,7 @@ export default function App(properties: Properties) {
         <RegisterPage2 data-pose="RegisterPage2" />
         <TermsInUsePage data-pose="TermsInUsePage" />
       </Lamb>
-      <Navigation />
+      {navVisible && <Navigation />}
     </div>
   );
 }
