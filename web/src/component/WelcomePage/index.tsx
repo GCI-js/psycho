@@ -1,9 +1,4 @@
-import React from "react";
-
-// import "./Common/MainButton";
 import MainButton from "../MainButton/MainButton";
-import "../../css/common.css";
-import MediumTitle from "../MediumTitle/MediumTitle";
 import welcomeImage from "../../img/WelcomeImg.png";
 import shepherd from "../../service/shepherd";
 import styles from "./index.module.scss";
@@ -13,7 +8,7 @@ interface Props extends Properties {
   setNavVisible: Function;
 }
 
-function WelcomePage(properties: Props) {
+const WelcomePage = (properties: Props) => {
   properties.setNavVisible(false);
   const id = [`_${idiotproof.trace(WelcomePage)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
@@ -38,6 +33,6 @@ function WelcomePage(properties: Props) {
       </div>
     </div>
   );
-}
+};
 
 export default WelcomePage;

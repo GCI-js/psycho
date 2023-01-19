@@ -3,9 +3,7 @@ import { useState } from "react";
 
 import shepherd from "./service/shepherd";
 import idiotproof from "./service/idiotproof";
-
-// import Jongseok from "../component/ProfilePage/App";
-// import Wonjae from "../wonjae/App";
+import "./css/common.module.scss";
 import ProfileStats from "./component/ProfilePage/App";
 import WelcomePage from "./component/WelcomePage";
 import Lamb from "./component/Lamb";
@@ -15,7 +13,7 @@ import styles from "./App.module.scss";
 import { NewsletterPage } from "./component/NewsletterPage/NewsletterPage";
 import QuestionPage from "./component/QuestionPage/QuestionPage";
 import Setting from "./component/Setting/Setting";
-import RegisterPage1 from "./component/RegisterPage1/RegisterPage1";
+import RegisterPage1 from "./component/RegisterPage1";
 import RegisterPage2 from "./component/RegisterPage2/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage/TermsInUsePage";
 

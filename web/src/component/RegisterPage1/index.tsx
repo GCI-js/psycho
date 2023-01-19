@@ -1,81 +1,37 @@
-import { url } from "inspector";
 import React, { useState } from "react";
-import "./RegisterPage1.css";
-import MBTISelectFrame from "../../img/MBTISelectFrame.png";
 import bloodTypeSelectFrame from "../../img/bloodTypeSelectFrame.png";
 import ButtonBox from "../ButtonBox/ButtonBox";
-import BasicButton from "../BasicButton/BasicButton";
 import RegisterPage2 from "../RegisterPage2/RegisterPage2";
 import shepherd from "../../service/shepherd";
+import idiotproof from "../../service/idiotproof";
+import styles from "./index.module.scss";
+import { MBTISelectBox } from "../MBTISelectBox";
 
-interface MBTIStates {
-  MBTI: string;
-  state: boolean;
-}
 
-interface bloodTypeStates {
+interface BloodTypeStates {
   bloodType: string;
   state: boolean;
 }
 
-const RegisterPage1 = () => {
+const RegisterPage1 = (properties: Properties) => {
+  const id = [`_${idiotproof.trace(RegisterPage1)}`, properties.id].join();
+  const cl = [styles.index, properties.className].join(" ");
+
   const [isRegisterPage2, setIsRegisterPage2] = useState(false);
   const dummyUserName = "아크릴오므라이스";
-  const [MBTIStates, setMBTIStates] = React.useState<MBTIStates[]>([
-    { MBTI: "E", state: false },
-    { MBTI: "S", state: false },
-    { MBTI: "T", state: false },
-    { MBTI: "J", state: false },
-    { MBTI: "I", state: false },
-    { MBTI: "N", state: false },
-    { MBTI: "F", state: false },
-    { MBTI: "P", state: false },
-  ]);
+  
   const [bloodTypeStates, setBloodTypeStates] = React.useState<
-    bloodTypeStates[]
+    BloodTypeStates[]
   >([
     { bloodType: "A", state: false },
     { bloodType: "B", state: false },
     { bloodType: "AB", state: false },
     { bloodType: "O", state: false },
   ]);
-
-  const handleIsRegisterPage2 = () => {
-    /*계속버튼 클릭시 들어가는 로직*/
-  };
-
   /*
 [2022.01.12 jongseok lee] 
 MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더러워서 버리는게 나을 거 같다는 생각도 들음. 과감히 지워도 됨
 */
-  const handleMBTISelectBox = (MBTI: string) => {
-    let newMBTIState = MBTIStates.map((MBTIState) => {
-      if (MBTIState.MBTI === MBTI) {
-        return { MBTI: MBTIState.MBTI, state: !MBTIState.state };
-      } else {
-        return { MBTI: MBTIState.MBTI, state: MBTIState.state };
-      }
-    });
-    if (MBTI === "E" && newMBTIState[0].state && newMBTIState[4].state) {
-      newMBTIState[4].state = false; // I
-    } else if (MBTI === "S" && newMBTIState[1].state && newMBTIState[5].state) {
-      newMBTIState[5].state = false; // N
-    } else if (MBTI === "T" && newMBTIState[2].state && newMBTIState[6].state) {
-      newMBTIState[6].state = false; // F
-    } else if (MBTI === "J" && newMBTIState[3].state && newMBTIState[7].state) {
-      newMBTIState[7].state = false; // P
-    } else if (MBTI === "I" && newMBTIState[4].state && newMBTIState[0].state) {
-      newMBTIState[0].state = false; // E
-    } else if (MBTI === "N" && newMBTIState[5].state && newMBTIState[1].state) {
-      newMBTIState[1].state = false; // S
-    } else if (MBTI === "F" && newMBTIState[6].state && newMBTIState[2].state) {
-      newMBTIState[2].state = false; // T
-    } else if (MBTI === "P" && newMBTIState[7].state && newMBTIState[3].state) {
-      newMBTIState[3].state = false; // J
-    }
-
-    setMBTIStates([...newMBTIState]);
-  };
 
   const handleBloodTypeSelectBox = (bloodType: string) => {
     let newBloodTypeStates = bloodTypeStates.map((bloodTypeState) => {
@@ -139,7 +95,7 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
     return <RegisterPage2 />;
   }
   return (
-    <div className="editProfileContainer">
+    <div id={id} className={cl}>
       <div className="username">{`@${dummyUserName}`}</div>
       <div className="userDetailTitle">닉네임</div>
       <div>
@@ -148,20 +104,7 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
       </div>
       <div className="userDetailTitle">MBTI를 선택해주세요</div>
       <div>
-        <div
-          className="selectMBTIBox"
-          style={{ background: `url(${MBTISelectFrame})` }}
-        >
-          {MBTIStates.map((el) => {
-            return (
-              <ButtonBox
-                state={el.state}
-                setState={handleMBTISelectBox}
-                content={el.MBTI}
-              />
-            );
-          })}
-        </div>
+        <MBTISelectBox />
       </div>
       <div>
         <div className="userDetailTitle">혈액형을 선택해주세요</div>

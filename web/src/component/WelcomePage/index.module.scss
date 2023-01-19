@@ -20,17 +20,6 @@
       order: 0;
 
       margin: 112px 0 0 26px;
-      display: flex;
-      font-family: "Inter";
-      font-style: normal;
-      font-weight: 700;
-      font-size: 34px;
-      line-height: 41px;
-      /* identical to box height, or 121% */
-
-      letter-spacing: 0.374px;
-
-      color: #000000;
     }
     > .welcome_icon {
       flex: none;
@@ -48,7 +37,6 @@
     flex-direction: column;
     justify-content: space-evenly;
     > .context {
-      display: flex;
       flex: none;
       order: 1;
 
@@ -66,7 +54,6 @@
       color: #000000;
     }
     > .main_button {
-      display: flex;
       flex: none;
       order: 2;
       width: 100%;
