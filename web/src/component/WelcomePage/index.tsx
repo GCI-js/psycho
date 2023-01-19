@@ -26,7 +26,6 @@ function WelcomePage(properties: Props) {
       <div className="top_container">
         <div className="large_title">{largeTitle}</div>
         <img className="welcome_icon" src={welcomeImage} />
-        {/* <WelcomeIcon className={styles.welcomeIcon_svg} /> */}
       </div>
       <div className="bottom_container">
         <div className="context">{context}</div>
