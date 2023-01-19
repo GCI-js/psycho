@@ -16,7 +16,7 @@ import QuestionPage from "./component/QuestionPage/QuestionPage";
 import Setting from "./component/Setting/Setting";
 import RegisterPage1 from "./component/RegisterPage1/RegisterPage1";
 import RegisterPage2 from "./component/RegisterPage2/RegisterPage2";
-import { TermsInUsePage } from "./component/TermsInUsePage/TermsInUsePage";
+import { TermsInUsePage } from "./component/TermsInUsePage";
 
 export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
