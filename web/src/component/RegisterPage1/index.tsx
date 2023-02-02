@@ -7,7 +7,6 @@ import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";
 import { MBTISelectBox } from "../MBTISelectBox";
 
-
 interface BloodTypeStates {
   bloodType: string;
   state: boolean;
@@ -19,7 +18,7 @@ const RegisterPage1 = (properties: Properties) => {
 
   const [isRegisterPage2, setIsRegisterPage2] = useState(false);
   const dummyUserName = "아크릴오므라이스";
-  
+
   const [bloodTypeStates, setBloodTypeStates] = React.useState<
     BloodTypeStates[]
   >([
