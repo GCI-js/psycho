@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./RegisterPage2.css";
-import BasicButton from "../BasicButton/BasicButton";
+import MainButton from "../MainButton/MainButton";
 import Dropdown from "../DropDown/Dropdown";
 import downwardArrow from "../../img/downwardArrow.png";
 import selectNation from "../../img/selectNation.png";
