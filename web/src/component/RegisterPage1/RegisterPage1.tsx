@@ -4,7 +4,7 @@ import "./RegisterPage1.css";
 import MBTISelectFrame from "../../img/MBTISelectFrame.png";
 import bloodTypeSelectFrame from "../../img/bloodTypeSelectFrame.png";
 import ButtonBox from "../ButtonBox/ButtonBox";
-import BasicButton from "../BasicButton/BasicButton";
+import MainButton from "../MainButton/MainButton";
 import RegisterPage2 from "../RegisterPage2/RegisterPage2";
 import shepherd from "../../service/shepherd";
 

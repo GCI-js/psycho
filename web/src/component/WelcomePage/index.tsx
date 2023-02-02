@@ -1,5 +1,4 @@
 import React from "react";
-
 // import "./Common/MainButton";
 import MainButton from "../MainButton/MainButton";
 import "../../css/common.css";
