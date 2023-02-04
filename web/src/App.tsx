@@ -14,10 +14,12 @@ import Navigation from "./component/Navigation";
 import styles from "./App.module.scss";
 import { NewsletterPage } from "./component/NewsletterPage/NewsletterPage";
 import QuestionPage from "./component/QuestionPage/QuestionPage";
-import Setting from "./component/Setting/Setting";
+import Setting from "./component/Setting/index";
 import RegisterPage1 from "./component/RegisterPage1/RegisterPage1";
 import RegisterPage2 from "./component/RegisterPage2/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage";
+import EditProfilePage1 from "./component/EditProfilePage1/index";
+import EditProfilePage2 from "./component/EditProfilePage2/index";
 
 export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
@@ -32,6 +34,8 @@ export default function App(properties: Properties) {
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
+        <EditProfilePage1 data-pose="EditProfilePage1" />
+        <EditProfilePage2 data-pose="EditProfilePage2" />
         <RegisterPage1 data-pose="RegisterPage1" />
         <RegisterPage2 data-pose="RegisterPage2" />
         <TermsInUsePage data-pose="TermsInUsePage" />
