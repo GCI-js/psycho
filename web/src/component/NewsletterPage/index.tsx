@@ -1,18 +1,24 @@
 import { useCallback, useEffect, useState } from "react";
 import "./NewsletterPage.css";
-import { RandomListInit } from "../../service/randomList";
+import { RandomListInit, RandomType } from "../../service/randomList";
 import Newsletter from "../Newsletter/Newsletter";
 import shepherd from "../../service/shepherd";
+import idiotproof from "../../service/idiotproof";
+import Setting from "../Setting";
+import styles from "./index.module.scss";
 
-// import Newsletter from "../../@types/Newsletter";
 
-export function NewsletterPage() {
+export const NewsletterPage= (properties: Properties) => {
+
+  const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
+  const cl = [styles.index, properties.className].join(" ");
+
   if (!localStorage.getItem("isOldUser")) {
     shepherd.whip("test", "WelcomePage");
   }
-  let RandomList: any[] = [];
-  let [result, setResult] = useState<any[]>([]);
-  let [item, setItem] = useState<any[]>([]);
+  let RandomList: RandomType[] = [];
+  let [result, setResult] = useState<RandomType[]>([]);
+  let [item, setItem] = useState<RandomType[]>([]);
   let [isLoading, setIsLoading] = useState<boolean>(true);
 
   const getFetchData = async () => {
@@ -65,9 +71,9 @@ export function NewsletterPage() {
     getFetchData();
   }, []);
   return (
-    <div>
-      <div className="header">뉴스피드</div>
-      <div className="contents">
+    <div id={id} className={cl}>
+      <div className="NewsletterPageheader">뉴스피드</div>
+      <div className="NewsletterPagecontents">
         {result.map(function (i): JSX.Element {
           //result에 있는 컴포넌트 mainpage에 띄우기
           if (i.type === "changembti") {
@@ -80,7 +86,7 @@ export function NewsletterPage() {
                 title={i.data.title}
                 thumbnail={i.data.thumbnail}
                 url={i.data.url}
-                hashtag={i.data.hashtag}
+                hashtags={i.data.hashtags}
                 writer={i.data.writer}
                 newsletterId={i.data.newsletterId}
               ></Newsletter>
