@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "./RegisterPage2.css";
 import MainButton from "../MainButton/MainButton";
+import styles from "./index.module.scss";
 import Dropdown from "../DropDown/Dropdown";
 import downwardArrow from "../../img/downwardArrow.png";
 import selectNation from "../../img/selectNation.png";
@@ -8,12 +8,16 @@ import selectCity from "../../img/selectCity.png";
 import selectDistrict from "../../img/selectDistrict.png";
 import selectGender from "../../img/selectGender.png";
 import shepherd from "../../service/shepherd";
-const RegisterPage2 = () => {
+import idiotproof from "../../service/idiotproof";
+const RegisterPage2 = (properties: Properties) => {
   /*
 [2022.01.12 jongseok lee] 
 username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야하는지 정확히 정해지면 따로 다른 파일로 빼는게 더 나을거 같습니다. 
 포맷 참고를 위해 코드는 남겨둡니다.
 */
+  const id = [`_${idiotproof.trace(RegisterPage2)}`, properties.id].join();
+  const cl = [styles.index, properties.className].join(" ");
+
   const dummyUserName = "아크릴오므라이스";
 
   const nationOptionData = [
@@ -125,8 +129,15 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
     setSelectedBirthDay(event.target.value);
   };
   return (
-    <div className="editUserInfoContainer">
-      <div className="username">{`@${dummyUserName}`}</div>
+    <div id={id} className={cl}>
+      {/* <div className="username">{`@${dummyUserName}`}</div> */}
+      <div className="large-title">{`회원가입\n`}</div>
+      <div className="medium-title-box">
+        <div className="medium-title">{`거의 다 됐어요! \n `}</div>
+        <div className="medium-title">{`조금만 더 힘내세요!\n`}</div>
+      </div>
+      <div className="small-title">{`프로필의 내용은 바로 공개되지 않아요!\n`}</div>
+
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
       <div className="selectBox">
         <button

@@ -14,7 +14,7 @@ import { NewsletterPage } from "./component/NewsletterPage/NewsletterPage";
 import QuestionPage from "./component/QuestionPage/QuestionPage";
 import Setting from "./component/Setting";
 import RegisterPage1 from "./component/RegisterPage1";
-import RegisterPage2 from "./component/RegisterPage2/RegisterPage2";
+import RegisterPage2 from "./component/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage";
 
 export default function App(properties: Properties) {
