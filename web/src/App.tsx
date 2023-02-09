@@ -32,7 +32,10 @@ export default function App(properties: Properties) {
         <Setting data-pose="Setting" />
         <RegisterPage1 data-pose="RegisterPage1" />
         <RegisterPage2 data-pose="RegisterPage2" />
-        <TermsInUsePage data-pose="TermsInUsePage" />
+        <TermsInUsePage
+          data-pose="TermsInUsePage"
+          setNavVisible={setNavVisible}
+        />
       </Lamb>
       {navVisible && <Navigation />}
     </div>
