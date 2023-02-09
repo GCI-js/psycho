@@ -12,7 +12,7 @@ import Navigation from "./component/Navigation";
 import styles from "./App.module.scss";
 import { NewsletterPage } from "./component/NewsletterPage/NewsletterPage";
 import QuestionPage from "./component/QuestionPage/QuestionPage";
-import Setting from "./component/Setting/Setting";
+import Setting from "./component/Setting";
 import RegisterPage1 from "./component/RegisterPage1";
 import RegisterPage2 from "./component/RegisterPage2/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage";
