@@ -30,7 +30,10 @@ export default function App(properties: Properties) {
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
-        <RegisterPage1 data-pose="RegisterPage1" />
+        <RegisterPage1
+          data-pose="RegisterPage1"
+          setNavVisible={setNavVisible}
+        />
         <RegisterPage2 data-pose="RegisterPage2" />
         <TermsInUsePage
           data-pose="TermsInUsePage"

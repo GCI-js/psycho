@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
 import MBTISelectFrame from "../../img/MBTISelectFrame.png";
-import ButtonBox from "../ButtonBox/ButtonBox";
+import ButtonBox from "../ButtonBox";
 interface MBTIStates {
   MBTI: string;
   state: boolean;
