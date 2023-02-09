@@ -48,5 +48,19 @@
     letter-spacing: -0.408px;
 
     color: #ffffff;
+  .medium-title {
+    /* Large Title */
+
+    /* position: absolute; */
+    width: 335px;
+    height: 41px;
+    left: calc(50% - 335px / 2 - 2.5px);
+    /* top: 186px; */
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 29px;
   }
 }
