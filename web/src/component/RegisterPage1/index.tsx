@@ -1,5 +1,3 @@
-import { useState } from "react";
-import RegisterPage2 from "../RegisterPage2/RegisterPage2";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";

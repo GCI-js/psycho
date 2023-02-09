@@ -1,19 +1,16 @@
-import { useCallback, useEffect, useState } from "react";
+import * as React from "react";
+
 import "./NewsletterPage.css";
 import { RandomListInit } from "../../service/randomList";
 import Newsletter from "../Newsletter/Newsletter";
-import shepherd from "../../service/shepherd";
 
-// import Newsletter from "../../@types/Newsletter";
 
 export function NewsletterPage() {
-  if (!localStorage.getItem("isOldUser")) {
-    shepherd.whip("test", "WelcomePage");
-  }
+
   let RandomList: any[] = [];
-  let [result, setResult] = useState<any[]>([]);
-  let [item, setItem] = useState<any[]>([]);
-  let [isLoading, setIsLoading] = useState<boolean>(true);
+  let [result, setResult] = React.useState<any[]>([]);
+  let [item, setItem] = React.useState<any[]>([]);
+  let [isLoading, setIsLoading] = React.useState<boolean>(true);
 
   const getFetchData = async () => {
     // randomList에서 화면에 띄울 데이터(Result)에 넣고 나머지는 Item에 저장
@@ -36,7 +33,7 @@ export function NewsletterPage() {
     setIsLoading(false);
   };
 
-  const _infiniteScroll = useCallback(() => {
+  const _infiniteScroll = React.useCallback(() => {
     //스크롤 이벤트
     let scrollHeight = Math.max(
       document.documentElement.scrollHeight,
@@ -53,13 +50,13 @@ export function NewsletterPage() {
     }
   }, [isLoading]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     //스크롤 이벤트 등록
     window.addEventListener("scroll", _infiniteScroll, true);
     return () => window.removeEventListener("scroll", _infiniteScroll, true);
   }, [_infiniteScroll]);
 
-  useEffect(() => {
+  React.useEffect(() => {
     //페이지 랜더링시 실행될 function
     RandomList = RandomListInit();
     getFetchData();
