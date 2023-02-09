@@ -1,7 +1,6 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionButton from "../QuestionButton/QuestionButton";
 import "./QuestionContent.css";
-import "../../css/common.css";
 
 // 질문 컴포넌트의 내용을 담당하는 컴포넌트
 const QuestionContent = ({ pdata }: any) => {
