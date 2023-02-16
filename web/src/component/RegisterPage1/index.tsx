@@ -1,5 +1,5 @@
 import { useState } from "react";
-import RegisterPage2 from "../RegisterPage2/RegisterPage2";
+import RegisterPage2 from "../RegisterPage2";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";
@@ -7,6 +7,7 @@ import { MBTISelectBox } from "../MBTISelectBox";
 import { BloodTypeSelectBox } from "../BloodTypeSelectBox";
 import ArrowLeft from "../../img/Arrow_left.png";
 import NicknameFlag from "../../img/nicknameFlag.png";
+import { getRandNickname } from "../../service/getRandNickname";
 
 interface Props extends Properties {
   setNavVisible: Function;
@@ -15,6 +16,7 @@ interface Props extends Properties {
 const RegisterPage1 = (properties: Props) => {
   const id = [`_${idiotproof.trace(RegisterPage1)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
+  const [nickname, setNickname] = useState("");
   const dummyUserName = "아크릴오므라이스";
   properties.setNavVisible(false);
   /*
@@ -24,6 +26,9 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
   const handleBackButton = () => {
     shepherd.whip("test", "WelcomePage");
   };
+  const genNickname = () => {
+    setNickname(getRandNickname());
+  }
   return (
     <div id={id} className={cl}>
       <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
@@ -42,8 +47,9 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
             className="nickname-input"
             type="text"
             placeholder={`@${dummyUserName}`}
+            value={nickname}
           />
-          <button className="nickname-gen-button">랜덤 생성</button>
+          <button className="nickname-gen-button" onClick={genNickname}>랜덤 생성</button>
         </div>
       </div>
       <div className="mbti-area">
