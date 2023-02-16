@@ -1,5 +1,4 @@
-import { useState } from "react";
-import RegisterPage2 from "../RegisterPage2";
+import { useEffect, useState } from "react";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";
@@ -8,6 +7,18 @@ import { BloodTypeSelectBox } from "../BloodTypeSelectBox";
 import ArrowLeft from "../../img/Arrow_left.png";
 import NicknameFlag from "../../img/nicknameFlag.png";
 import { getRandNickname } from "../../service/getRandNickname";
+import { getInitUserData } from "../../service/getInitUserData";
+import { MBTIStateToValue, MBTIValueToState } from "../../service/convertMBTI";
+
+interface MBTIStates {
+  MBTI: string;
+  state: boolean;
+}
+
+interface BloodTypeStates {
+  bloodType: string;
+  state: boolean;
+}
 
 interface Props extends Properties {
   setNavVisible: Function;
@@ -16,19 +27,65 @@ interface Props extends Properties {
 const RegisterPage1 = (properties: Props) => {
   const id = [`_${idiotproof.trace(RegisterPage1)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
+  let userData: any = localStorage.getItem("userData");
+  if (userData == null) {
+    userData = getInitUserData();
+  }
   const [nickname, setNickname] = useState("");
-  const dummyUserName = "아크릴오므라이스";
+  const [MBTIStates, setMBTIStates] = useState<MBTIStates[]>([
+    { MBTI: "E", state: false },
+    { MBTI: "N", state: false },
+    { MBTI: "F", state: false },
+    { MBTI: "J", state: false },
+    { MBTI: "I", state: false },
+    { MBTI: "S", state: false },
+    { MBTI: "T", state: false },
+    { MBTI: "P", state: false },
+  ]);
+  const [bloodTypeStates, setBloodTypeStates] = useState<BloodTypeStates[]>([
+    { bloodType: "A", state: false },
+    { bloodType: "B", state: false },
+    { bloodType: "AB", state: false },
+    { bloodType: "O", state: false },
+  ]);
+  const [emptyNicknameAlertVisible, setEmptyNicknameAlertVisible] =
+    useState(false);
+
+  const nicknamePlaceHolder = "랜덤 생성 버튼을 눌러주세요!";
   properties.setNavVisible(false);
-  /*
-[2022.01.12 jongseok lee] 
-MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더러워서 버리는게 나을 거 같다는 생각도 들음. 과감히 지워도 됨
-*/
+
+  useEffect(() => {
+    setNickname(userData.nickname);
+    setMBTIStates(MBTIValueToState(userData.mbtis[0]));
+    setBloodTypeStates([
+      { bloodType: "A", state: userData.bloodType == "A" ? true : false },
+      { bloodType: "B", state: userData.bloodType == "B" ? true : false },
+      { bloodType: "AB", state: userData.bloodType == "AB" ? true : false },
+      { bloodType: "O", state: userData.bloodType == "O" ? true : false },
+    ]);
+  }, []);
   const handleBackButton = () => {
     shepherd.whip("test", "WelcomePage");
   };
   const genNickname = () => {
     setNickname(getRandNickname());
-  }
+  };
+  const gotoNextStep = () => {
+    userData.nickname = nickname;
+    userData.mbtis.unshift(MBTIStateToValue(MBTIStates));
+    userData.bloodType =
+      bloodTypeStates[0].state == true
+        ? "A"
+        : bloodTypeStates[1].state == true
+        ? "B"
+        : bloodTypeStates[2].state == true
+        ? "AB"
+        : bloodTypeStates[3].state == true
+        ? "O"
+        : "";
+    localStorage.setItem("userData", userData);
+    shepherd.whip("test", "RegisterPage2");
+  };
   return (
     <div id={id} className={cl}>
       <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
@@ -46,10 +103,12 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
           <input
             className="nickname-input"
             type="text"
-            placeholder={`@${dummyUserName}`}
+            placeholder={nicknamePlaceHolder}
             value={nickname}
           />
-          <button className="nickname-gen-button" onClick={genNickname}>랜덤 생성</button>
+          <button className="nickname-gen-button" onClick={genNickname}>
+            랜덤 생성
+          </button>
         </div>
       </div>
       <div className="mbti-area">
@@ -62,20 +121,23 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
             (모르신다면 선택하지 않으셔도 괜찮아요!)
           </div>
         </div>
-        <MBTISelectBox />
+        <MBTISelectBox MBTIStates={MBTIStates} setMBTIStates={setMBTIStates} />
       </div>
       <div className="blood-type-area">
         <div className="small-grey-title">
           <div className="border">혈액형</div>을 선택해주세요
         </div>
-        <BloodTypeSelectBox />
+        <BloodTypeSelectBox
+          bloodTypeStates={bloodTypeStates}
+          setBloodTypeStates={setBloodTypeStates}
+        />
       </div>
-      <button
-        className="next-step-button"
-        onClick={() => shepherd.whip("test", "RegisterPage2")}
-      >
-        계속
-      </button>
+      {nickname == "" && <button className="next-step-button-off">계속</button>}
+      {nickname != "" && (
+        <button className="next-step-button-on" onClick={gotoNextStep}>
+          계속
+        </button>
+      )}
     </div>
   );
 };

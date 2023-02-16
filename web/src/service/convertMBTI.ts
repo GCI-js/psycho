@@ -21,7 +21,7 @@ export const MBTIValueToState = (mbti: Mbti) => {
 
 export const MBTIStateToValue = (mbti: MBTIState[]) => {
   let mbtiValue: Mbti = {
-    date: new Date().getUTCMilliseconds(),
+    date: new Date().getTime(),
     EI: mbti[0].state == true ? 25 : 75,
     NS: mbti[1].state == true ? 25 : 75,
     FT: mbti[2].state == true ? 25 : 75,

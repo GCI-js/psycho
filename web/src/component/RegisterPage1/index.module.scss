@@ -105,7 +105,13 @@
     margin-top: 29px;
     gap: 9px;
   }
-  > .next-step-button {
+  > .next-step-button-on {
+    display: flex;
+    flex: none;
+    order: 5;
+    margin-top: 34px;
+  }
+  > .next-step-button-off {
     display: flex;
     flex: none;
     order: 5;
