@@ -7,6 +7,7 @@ import styles from "./index.module.scss";
 import { terms } from "../../resource/termsInUsePageText";
 
 import MainButton from "../MainButton/MainButton";
+import ArrowLeft from "../../img/Arrow_left.png";
 
 interface Props extends Properties {
   setNavVisible: Function;
@@ -29,9 +30,13 @@ export const TermsInUsePage = (properties: Props) => {
     properties.setNavVisible(true);
     shepherd.whip("test", "NewsletterPage");
   };
+  const handleBackButton = () => {
+    shepherd.whip("test", "RegisterPage2");
+  };
 
   return (
     <div id={id} className={cl}>
+      <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
       <div className="large_title">이용약관</div>
 
       <div className="term_and_agree">
@@ -43,11 +48,10 @@ export const TermsInUsePage = (properties: Props) => {
 
         <div className="agree_box">
           <div className="checkbox_wrapper">
-            <input
-              type="checkbox"
-              checked={isAgreed}
-              onChange={() => checkHandler()}
-            />
+            <div
+              className={`check_box ${isAgreed ? "checked" : "unchecked"}`}
+              onClick={() => checkHandler()}
+            ></div>
             <div className="text">
               본인은 19세 이상이며 이용약관에 동의합니다.
             </div>
