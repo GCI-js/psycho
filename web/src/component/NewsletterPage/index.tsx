@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 import "./NewsletterPage.css";
 import { RandomListInit, RandomType } from "../../service/randomList";
-import Newsletter from "../Newsletter/Newsletter";
+import Newsletter from "../Newsletter/";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import Setting from "../Setting";
@@ -13,9 +13,6 @@ export const NewsletterPage= (properties: Properties) => {
   const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
-  if (!localStorage.getItem("isOldUser")) {
-    shepherd.whip("test", "WelcomePage");
-  }
   let RandomList: RandomType[] = [];
   let [result, setResult] = useState<RandomType[]>([]);
   let [item, setItem] = useState<RandomType[]>([]);

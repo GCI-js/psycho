@@ -1,13 +1,17 @@
 import * as React from "react";
-import "./Newsletter.css";
 import icon from "./icon_newsletter.png";
 import { Newsletter } from "../../@types/Newsletter";
+import styles from "./index.module.scss";
+import idiotproof from "../../service/idiotproof";
+import Setting from "../Setting";
 
+const Newsletter = (props: Newsletter,properties: Properties) => {
 
-
-const Newsletter = (props: Newsletter) => {
+    const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
+    const cl = [styles.index, properties.className].join(" ");
+  
   return (
-    <div>
+    <div id={id} className={cl}>
       <div className="newletter_card_item">
         <div className="newletter_card_header">MBTI 뉴스레터</div>
         <div className="newletter_card_img">
@@ -20,7 +24,7 @@ const Newsletter = (props: Newsletter) => {
           </a>
         </div>
         <div className="newletter_card_desc">
-          <div>
+          <div className="newsletter_card_col">
             <div className="newletter_card_title">
               <span>{props.title}</span>
             </div>
