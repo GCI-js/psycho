@@ -33,8 +33,14 @@ export default function App(properties: Properties) {
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
-        <EditProfilePage1 data-pose="EditProfilePage1" />
-        <EditProfilePage2 data-pose="EditProfilePage2" />
+        <EditProfilePage1
+          data-pose="EditProfilePage1"
+          setNavVisible={setNavVisible}
+        />
+        <EditProfilePage2
+          data-pose="EditProfilePage2"
+          setNavVisible={setNavVisible}
+        />
         <RegisterPage1
           data-pose="RegisterPage1"
           setNavVisible={setNavVisible}

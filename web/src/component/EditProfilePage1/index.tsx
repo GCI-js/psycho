@@ -1,191 +1,68 @@
-import { url } from "inspector";
-import React, { useState } from "react";
-import "./index.module.css";
-import MBTISelectFrame from "../../img/MBTISelectFrame.png";
-import bloodTypeSelectFrame from "../../img/bloodTypeSelectFrame.png";
-import ButtonBox from "../ButtonBox/ButtonBox";
-import MainButton from "../MainButton/MainButton";
-import RegisterPage2 from "../RegisterPage2/RegisterPage2";
+import { useState } from "react";
+import EditProfilePage2 from "../EditProfilePage2";
 import shepherd from "../../service/shepherd";
+import idiotproof from "../../service/idiotproof";
+import styles from "./index.module.scss";
+import { MBTISelectBox } from "../MBTISelectBox";
+import { BloodTypeSelectBox } from "../BloodTypeSelectBox";
+import ArrowLeft from "../../img/Arrow_left.png";
+import NicknameFlag from "../../img/nicknameFlag.png";
 
-interface MBTIStates {
-  MBTI: string;
-  state: boolean;
+interface Props extends Properties {
+  setNavVisible: Function;
 }
 
-interface bloodTypeStates {
-  bloodType: string;
-  state: boolean;
-}
-
-const EditProfilePage1 = () => {
-  const [isRegisterPage2, setIsRegisterPage2] = useState(false);
+const EditProfilePage1 = (properties: Props) => {
+  const id = [`_${idiotproof.trace(EditProfilePage1)}`, properties.id].join();
+  const cl = [styles.index, properties.className].join(" ");
   const dummyUserName = "아크릴오므라이스";
-  const [MBTIStates, setMBTIStates] = React.useState<MBTIStates[]>([
-    { MBTI: "E", state: false },
-    { MBTI: "S", state: false },
-    { MBTI: "T", state: false },
-    { MBTI: "J", state: false },
-    { MBTI: "I", state: false },
-    { MBTI: "N", state: false },
-    { MBTI: "F", state: false },
-    { MBTI: "P", state: false },
-  ]);
-  const [bloodTypeStates, setBloodTypeStates] = React.useState<
-    bloodTypeStates[]
-  >([
-    { bloodType: "A", state: false },
-    { bloodType: "B", state: false },
-    { bloodType: "AB", state: false },
-    { bloodType: "O", state: false },
-  ]);
-
-  const handleIsRegisterPage2 = () => {
-    /*계속버튼 클릭시 들어가는 로직*/
-  };
-
+  properties.setNavVisible(true);
   /*
 [2022.01.12 jongseok lee] 
 MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더러워서 버리는게 나을 거 같다는 생각도 들음. 과감히 지워도 됨
 */
-  const handleMBTISelectBox = (MBTI: string) => {
-    let newMBTIState = MBTIStates.map((MBTIState) => {
-      if (MBTIState.MBTI === MBTI) {
-        return { MBTI: MBTIState.MBTI, state: !MBTIState.state };
-      } else {
-        return { MBTI: MBTIState.MBTI, state: MBTIState.state };
-      }
-    });
-    if (MBTI === "E" && newMBTIState[0].state && newMBTIState[4].state) {
-      newMBTIState[4].state = false; // I
-    } else if (MBTI === "S" && newMBTIState[1].state && newMBTIState[5].state) {
-      newMBTIState[5].state = false; // N
-    } else if (MBTI === "T" && newMBTIState[2].state && newMBTIState[6].state) {
-      newMBTIState[6].state = false; // F
-    } else if (MBTI === "J" && newMBTIState[3].state && newMBTIState[7].state) {
-      newMBTIState[7].state = false; // P
-    } else if (MBTI === "I" && newMBTIState[4].state && newMBTIState[0].state) {
-      newMBTIState[0].state = false; // E
-    } else if (MBTI === "N" && newMBTIState[5].state && newMBTIState[1].state) {
-      newMBTIState[1].state = false; // S
-    } else if (MBTI === "F" && newMBTIState[6].state && newMBTIState[2].state) {
-      newMBTIState[2].state = false; // T
-    } else if (MBTI === "P" && newMBTIState[7].state && newMBTIState[3].state) {
-      newMBTIState[3].state = false; // J
-    }
-
-    setMBTIStates([...newMBTIState]);
+  const handleBackButton = () => {
+    shepherd.whip("test", "WelcomePage");
   };
-
-  const handleBloodTypeSelectBox = (bloodType: string) => {
-    let newBloodTypeStates = bloodTypeStates.map((bloodTypeState) => {
-      if (bloodTypeState.bloodType === bloodType) {
-        return {
-          bloodType: bloodTypeState.bloodType,
-          state: !bloodTypeState.state,
-        };
-      } else {
-        return {
-          bloodType: bloodTypeState.bloodType,
-          state: bloodTypeState.state,
-        };
-      }
-    });
-    if (
-      bloodType === "A" &&
-      newBloodTypeStates[0].state &&
-      (newBloodTypeStates[1].state ||
-        newBloodTypeStates[2].state ||
-        newBloodTypeStates[3].state)
-    ) {
-      newBloodTypeStates[1].state = false;
-      newBloodTypeStates[2].state = false;
-      newBloodTypeStates[3].state = false;
-    } else if (
-      bloodType === "B" &&
-      newBloodTypeStates[1].state &&
-      (newBloodTypeStates[0].state ||
-        newBloodTypeStates[2].state ||
-        newBloodTypeStates[3].state)
-    ) {
-      newBloodTypeStates[0].state = false;
-      newBloodTypeStates[2].state = false;
-      newBloodTypeStates[3].state = false;
-    } else if (
-      bloodType === "AB" &&
-      newBloodTypeStates[2].state &&
-      (newBloodTypeStates[0].state ||
-        newBloodTypeStates[1].state ||
-        newBloodTypeStates[3].state)
-    ) {
-      newBloodTypeStates[0].state = false;
-      newBloodTypeStates[1].state = false;
-      newBloodTypeStates[3].state = false;
-    } else if (
-      bloodType === "O" &&
-      newBloodTypeStates[3].state &&
-      (newBloodTypeStates[0].state ||
-        newBloodTypeStates[1].state ||
-        newBloodTypeStates[2].state)
-    ) {
-      newBloodTypeStates[0].state = false;
-      newBloodTypeStates[1].state = false;
-      newBloodTypeStates[2].state = false;
-    }
-    setBloodTypeStates([...newBloodTypeStates]);
-  };
-
-  if (isRegisterPage2) {
-    return <RegisterPage2 />;
-  }
   return (
-    <div className="editProfileContainer">
-      <div className="username">{`@${dummyUserName}`}</div>
-      <div className="userDetailTitle">닉네임</div>
-      <div>
-        <input type="text" placeholder={`@${dummyUserName}`} />
-        <button>랜덤 생성</button>
-      </div>
-      <div className="userDetailTitle">MBTI를 선택해주세요</div>
-      <div>
-        <div
-          className="selectMBTIBox"
-          style={{ background: `url(${MBTISelectFrame})` }}
-        >
-          {MBTIStates.map((el) => {
-            return (
-              <ButtonBox
-                state={el.state}
-                setState={handleMBTISelectBox}
-                content={el.MBTI}
-              />
-            );
-          })}
+    <div id={id} className={cl}>
+      <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
+      <div className="large-title">@{dummyUserName}</div>
+      <div className="nickname-area">
+        <div className="small-grey-title">
+          <div className="border">닉네임</div>
+        </div>
+        <div className="nickname-generator">
+          <img className="nickname-icon" src={NicknameFlag} />
+          <input
+            className="nickname-input"
+            type="text"
+            placeholder={`@${dummyUserName}`}
+          />
+          <button className="nickname-gen-button">랜덤 생성</button>
         </div>
       </div>
-      <div>
-        <div className="userDetailTitle">혈액형을 선택해주세요</div>
+      <div className="mbti-area">
+        <div className="text">
+          <div className="small-grey-title">
+            <div className="border">MBTI</div>
+            {"를 선택해주세요  "}
+          </div>
+        </div>
+        <MBTISelectBox />
       </div>
-      <div
-        className="selectBloodTypeBox"
-        style={{ background: `url(${bloodTypeSelectFrame})` }}
-      >
-        {bloodTypeStates.map((el) => {
-          return (
-            <ButtonBox
-              state={el.state}
-              setState={handleBloodTypeSelectBox}
-              content={el.bloodType}
-            />
-          );
-        })}
+      <div className="blood-type-area">
+        <div className="small-grey-title">
+          <div className="border">혈액형</div>을 선택해주세요
+        </div>
+        <BloodTypeSelectBox />
       </div>
-
-      <MainButton
-        text="계속"
+      <button
+        className="next-step-button"
         onClick={() => shepherd.whip("test", "EditProfilePage2")}
-        />
-
+      >
+        계속
+      </button>
     </div>
   );
 };
