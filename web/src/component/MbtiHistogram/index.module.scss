@@ -1,0 +1,44 @@
+.index:global {
+    > .histogramContainer {
+        background-color: #eaeaea;
+        border-radius: 8px;
+        margin-top: 17px;
+        > .histogram-title{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.44px;
+            color: #000000;
+            padding-top: 16px;
+            padding-left: 16px;
+        }
+        > .histogram-weekly{
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 20px;
+            display: flex;
+            align-items: center;
+            letter-spacing: 0.25px;
+            color: #94A3B3;
+            padding-left: 16px;
+
+        }
+    }
+    
+ 
+  
+
+
+
+  
+
+  
+
+
+}

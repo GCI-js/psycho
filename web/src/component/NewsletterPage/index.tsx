@@ -2,7 +2,7 @@ import { useCallback, useEffect, useState } from "react";
 import "./NewsletterPage.css";
 import { RandomListInit, RandomType } from "../../service/randomList";
 import Newsletter from "../Newsletter/";
-import {MBTIHistogram} from "../MbtiHistogram/MbtiHistogram"
+import {MBTIHistogram} from "../MbtiHistogram"
 
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
