@@ -3,7 +3,7 @@ import ECharts, { EChartsReactProps } from "echarts-for-react";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
 import Setting from "../Setting";
-
+import { Mbti } from "../../@types/common";
 /*
 [2022.01.12 jongseok lee] 
 MBTI Histogram은 MBTI 변화 추이를 EChart로 그리는 component입니다. 영훈 화가님이 그려온 그림으로 대체하면 됩니다. 
@@ -12,13 +12,26 @@ MBTI Histogram은 MBTI 변화 추이를 EChart로 그리는 component입니다. 
 export const MBTIHistogram: React.FC = (properties: Properties) => {
     const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
     const cl = [styles.index, properties.className].join(" ");
-  
+    
+    
+    // if (!localStorage.getItem("Mbti")) {
+    
 
+    // }
+    // const [mbtiData, setmbtiData] = useState({
+    //     source: [
+    //       ["type", "Jan", "Feb", "Mar", "Apr", "May"],
+    //       ["E/I", 80, 40, 90, 60, 50],
+    //       ["S/N", 70, 30, 90, 70, 70],
+    //       ["T/F", 60, 90, 70, 50, 20],
+    //       ["P/J", 50, 80, 60, 95, 85],
+    //     ],
+    //   })
     const [options, setOptions] = useState({
     color: ["#8deb40", "#006699", "#4cabce", "#e5323e"],
     dataset: {
       source: [
-        ["type", "Jan", "Feb", "Mar", "Apr", "May"],
+        ["type", "", " ", "  ", "   ", "    "],
         ["E/I", 80, 40, 90, 60, 50],
         ["S/N", 70, 30, 90, 70, 70],
         ["T/F", 60, 90, 70, 50, 20],
