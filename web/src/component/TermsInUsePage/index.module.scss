@@ -41,8 +41,9 @@
       > .terms_wrapper {
         overflow-y: scroll;
         > .terms {
-          font-family: "Inter";
           white-space: pre-wrap;
+          font-family: "Inter";
+          overflow-y: hidden;
           font-style: normal;
           font-weight: 700;
           font-size: 12px;
@@ -61,6 +62,7 @@
       > .checkbox_wrapper {
         display: flex;
         flex-direction: row;
+        margin-left: 10px;
         align-items: center;
         > .check_box {
           box-sizing: border-box;
