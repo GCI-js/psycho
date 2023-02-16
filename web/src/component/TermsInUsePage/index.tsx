@@ -7,13 +7,18 @@ import { terms } from "../../resource/termsInUsePageText";
 
 import MainButton from "../MainButton/MainButton";
 
-export const TermsInUsePage = (properties: Properties) => {
+interface Props extends Properties {
+  setNavVisible: Function;
+}
+
+export const TermsInUsePage = (properties: Props) => {
   const id = [`_${idiotproof.trace(TermsInUsePage)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
   console.log(styles);
 
   const handleRegisterDone = () => {
     localStorage.setItem("isOldUser", "true");
+    properties.setNavVisible(true);
     shepherd.whip("test", "NewsletterPage");
   };
   return (
