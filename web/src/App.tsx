@@ -10,7 +10,7 @@ import Lamb from "./component/Lamb";
 import Navigation from "./component/Navigation";
 
 import styles from "./App.module.scss";
-import { NewsletterPage } from "./component/NewsletterPage/NewsletterPage";
+import { NewsletterPage } from "./component/NewsletterPage";
 import QuestionPage from "./component/QuestionPage/QuestionPage";
 import Setting from "./component/Setting";
 import RegisterPage1 from "./component/RegisterPage1";
