@@ -3,9 +3,7 @@ import { useState } from "react";
 
 import shepherd from "./service/shepherd";
 import idiotproof from "./service/idiotproof";
-
-// import Jongseok from "../component/ProfilePage/App";
-// import Wonjae from "../wonjae/App";
+import "./css/common.module.scss";
 import ProfileStats from "./component/ProfilePage/App";
 import WelcomePage from "./component/WelcomePage";
 import Lamb from "./component/Lamb";
@@ -15,8 +13,8 @@ import styles from "./App.module.scss";
 import { NewsletterPage } from "./component/NewsletterPage";
 import QuestionPage from "./component/QuestionPage/QuestionPage";
 import Setting from "./component/Setting";
-import RegisterPage1 from "./component/RegisterPage1/RegisterPage1";
-import RegisterPage2 from "./component/RegisterPage2/RegisterPage2";
+import RegisterPage1 from "./component/RegisterPage1";
+import RegisterPage2 from "./component/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage";
 
 export default function App(properties: Properties) {
@@ -32,9 +30,15 @@ export default function App(properties: Properties) {
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
-        <RegisterPage1 data-pose="RegisterPage1" />
+        <RegisterPage1
+          data-pose="RegisterPage1"
+          setNavVisible={setNavVisible}
+        />
         <RegisterPage2 data-pose="RegisterPage2" />
-        <TermsInUsePage data-pose="TermsInUsePage" />
+        <TermsInUsePage
+          data-pose="TermsInUsePage"
+          setNavVisible={setNavVisible}
+        />
       </Lamb>
       {navVisible && <Navigation />}
     </div>
