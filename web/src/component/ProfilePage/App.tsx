@@ -2,9 +2,7 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import Profile from "../Profile/Profile";
-import EditProfile from "../RegisterPage1";
-import EditUserInfo from "../RegisterPage2";
-import Setting from "../Setting";
+
 function ProfileStats() {
   return (
     // <div className="jongseok">
