@@ -131,7 +131,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   return (
     <div id={id} className={cl}>
       {/* <div className="username">{`@${dummyUserName}`}</div> */}
-      <div className="large-title">{`회원가입\n`}</div>
+      <div className="register large-title">{`회원가입\n`}</div>
       <div className="medium-title-box">
         <div className="medium-title">{`거의 다 됐어요! \n `}</div>
         <div className="medium-title">{`조금만 더 힘내세요!\n`}</div>
@@ -139,15 +139,17 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
       <div className="small-title">{`프로필의 내용은 바로 공개되지 않아요!\n`}</div>
 
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
-      <div className="selectBox">
+      <div className={styles.selectBox}>
         <button
-          className="nation dropdownButton"
+          className={styles.nation + " " + styles.dropdownButton}
           onClick={(e) =>
             setNationDropdownVisibility(!nationDropdownVisibility)
           }
         >
           <img className="dropdownIcon" src={selectNation} />
-          {nationDropdownVisibility ? "국가" : "국가"}
+          <div className="dropdown-text">
+            {nationDropdownVisibility ? "국가" : "국가"}
+          </div>
           <img className="dropdownDownwardIcon" src={downwardArrow} />
         </button>
         <Dropdown visibility={nationDropdownVisibility}>
@@ -160,14 +162,16 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
       </div>
       <div className="choiceText">{`거주하는 시, 구를 선택해주세요\n`}</div>
       <div className="row">
-        <div className="selectBox">
+        <div className={styles.selectBox}>
           <button
-            className="city dropdownButton"
+            className={styles.city + " " + styles.dropdownButton}
             onClick={(e) => setCityDropdownVisibility(!cityDropdownVisibility)}
           >
             <img className="dropdownIcon" src={selectCity} />
             {/* This line must be fixed */}
-            {cityDropdownVisibility ? "시" : "시"}
+            <div className="dropdown-text ">
+              {cityDropdownVisibility ? "시" : "시"}
+            </div>
             <img className="dropdownDownwardIcon" src={downwardArrow} />
           </button>
           <Dropdown visibility={cityDropdownVisibility}>
@@ -178,16 +182,18 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
             </ul>
           </Dropdown>
         </div>
-        <div className="selectBox">
+        <div className={styles.selectBox}>
           <button
-            className="district dropdownButton"
+            className={styles.district + " " + styles.dropdownButton}
             onClick={(e) =>
               setDistrictDropdownVisibility(!districtDropdownVisibility)
             }
           >
             <img className="dropdownIcon" src={selectDistrict} />
             {/* This line must be fixed */}
-            {districtDropdownVisibility ? "구" : "구"}
+            <div className="dropdown-text">
+              {districtDropdownVisibility ? "구" : "구"}
+            </div>
             <img className="dropdownDownwardIcon" src={downwardArrow} />
           </button>
           <Dropdown visibility={districtDropdownVisibility}>
@@ -200,16 +206,18 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
         </div>
       </div>
       <div className="choiceText">{`성별을 선택해주세요\n`}</div>
-      <div className="selectBox">
+      <div className={styles.selectBox}>
         <button
-          className="gender dropdownButton"
+          className={styles.gender + " " + styles.dropdownButton}
           onClick={(e) =>
             setGenderDropdownVisibility(!genderDropdownVisibility)
           }
         >
           <img className="dropdownIcon" src={selectGender} />
           {/* This line must be fixed */}
-          {genderDropdownVisibility ? "성별" : "성별"}
+          <div className="dropdown-text">
+            {genderDropdownVisibility ? "성별" : "성별"}
+          </div>
           <img className="dropdownDownwardIcon" src={downwardArrow} />
         </button>
         <Dropdown visibility={genderDropdownVisibility}>
@@ -222,15 +230,17 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
       </div>
       <div className="choiceText">{`생년월일을 선택해주세요\n`}</div>
       <div className="row">
-        <div className="selectBox">
+        <div className={styles.selectBox}>
           <button
-            className="year dropdownButton"
+            className={styles.year + " " + styles.dropdownButton}
             onClick={(e) =>
               setBirthYearDropdownVisibility(!birthYearDropdownVisibility)
             }
           >
             {/* This line must be fixed */}
-            {birthYearDropdownVisibility ? "년" : "년"}
+            <div className="dropdown-text">
+              {birthYearDropdownVisibility ? "년" : "년"}
+            </div>
             <img className="dropdownDownwardIcon" src={downwardArrow} />
           </button>
           <Dropdown visibility={birthYearDropdownVisibility}>
@@ -241,15 +251,17 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
             </ul>
           </Dropdown>
         </div>
-        <div className="selectBox">
+        <div className={styles.selectBox}>
           <button
-            className="month dropdownButton"
+            className={styles.month + " " + styles.dropdownButton}
             onClick={(e) =>
               setBirthMonthDropdownVisibility(!birthMonthDropdownVisibility)
             }
           >
             {/* This line must be fixed */}
-            {birthMonthDropdownVisibility ? "월" : "월"}
+            <div className="dropdown-text">
+              {birthMonthDropdownVisibility ? "월" : "월"}
+            </div>
             <img className="dropdownDownwardIcon" src={downwardArrow} />
           </button>
           <Dropdown visibility={birthMonthDropdownVisibility}>
@@ -260,15 +272,17 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
             </ul>
           </Dropdown>
         </div>
-        <div className="selectBox">
+        <div className={styles.selectBox}>
           <button
-            className="day dropdownButton"
+            className={styles.day + " " + styles.dropdownButton}
             onClick={(e) =>
               setBirthDayDropdownVisibility(!birthDayDropdownVisibility)
             }
           >
             {/* This line must be fixed */}
-            {birthDayDropdownVisibility ? "일" : "일"}
+            <div className="dropdown-text">
+              {birthDayDropdownVisibility ? "일" : "일"}
+            </div>
             <img className="dropdownDownwardIcon" src={downwardArrow} />
           </button>
           <Dropdown visibility={birthDayDropdownVisibility}>

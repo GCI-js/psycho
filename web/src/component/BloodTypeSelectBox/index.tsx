@@ -1,7 +1,7 @@
 import { useState } from "react";
 import bloodTypeSelectFrame from "../../img/bloodTypeSelectFrame.png";
 import idiotproof from "../../service/idiotproof";
-import ButtonBox from "../ButtonBox/ButtonBox";
+import ButtonBox from "../ButtonBox";
 import styles from "./index.module.scss";
 
 interface BloodTypeStates {
@@ -81,7 +81,9 @@ export const BloodTypeSelectBox = (properties: Properties) => {
     <div
       id={id}
       className={cl}
-      style={{ background: `url(${bloodTypeSelectFrame})` }}
+      style={{
+        background: `url(${bloodTypeSelectFrame}) rgba(118, 118, 128, 0.24)`,
+      }}
     >
       {bloodTypeStates.map((el) => {
         return (

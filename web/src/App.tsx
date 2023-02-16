@@ -10,7 +10,7 @@ import Lamb from "./component/Lamb";
 import Navigation from "./component/Navigation";
 
 import styles from "./App.module.scss";
-import { NewsletterPage } from "./component/NewsletterPage/NewsletterPage";
+import { NewsletterPage } from "./component/NewsletterPage";
 import QuestionPage from "./component/QuestionPage/QuestionPage";
 import Setting from "./component/Setting";
 import RegisterPage1 from "./component/RegisterPage1";
@@ -30,7 +30,10 @@ export default function App(properties: Properties) {
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
-        <RegisterPage1 data-pose="RegisterPage1" />
+        <RegisterPage1
+          data-pose="RegisterPage1"
+          setNavVisible={setNavVisible}
+        />
         <RegisterPage2 data-pose="RegisterPage2" />
         <TermsInUsePage
           data-pose="TermsInUsePage"

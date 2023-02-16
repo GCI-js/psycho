@@ -8,6 +8,47 @@
     letter-spacing: 0.374px;
     color: #000000;
   }
+  .small-grey-title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: rgba(0, 0, 0, 0.35);
+  }
+  .tiny-grey-title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
+    color: #999999;
+  }
+  .border {
+    display: inline;
+    font-weight: 700;
+  }
+  .next-step-button {
+    width: 344px;
+    height: 52px;
+    background-color: black;
+    border-radius: 100px;
+
+    align-items: center;
+    justify-content: center;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 22px;
+    /* identical to box height, or 92% */
+
+    text-align: center;
+    letter-spacing: -0.408px;
+
+    color: #ffffff;
+  }
   .medium-title {
     /* Large Title */
 
@@ -22,5 +63,15 @@
     font-weight: 400;
     font-size: 24px;
     line-height: 29px;
+  }
+  .dropdown-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.5);
+    width: calc(100% - 72px);
+    text-align: left;
   }
 }
