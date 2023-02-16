@@ -2,6 +2,8 @@ import { useCallback, useEffect, useState } from "react";
 import "./NewsletterPage.css";
 import { RandomListInit, RandomType } from "../../service/randomList";
 import Newsletter from "../Newsletter/";
+import {MBTIHistogram} from "../MbtiHistogram/MbtiHistogram"
+
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import Setting from "../Setting";
@@ -73,8 +75,8 @@ export const NewsletterPage= (properties: Properties) => {
       <div className="NewsletterPagecontents">
         {result.map(function (i): JSX.Element {
           //result에 있는 컴포넌트 mainpage에 띄우기
-          if (i.type === "changembti") {
-            return <></>;
+          if (i.type === "MbtiHistogram") {
+            return <MBTIHistogram/>;
           } else if (i.type === "hashtagsearchresult") {
             return <></>;
           } else {
