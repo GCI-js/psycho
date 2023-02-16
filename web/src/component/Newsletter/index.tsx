@@ -32,8 +32,7 @@ const Newsletter = (props: Newsletter,properties: Properties) => {
             <div className="newletter_card_tag">
               {props.hashtags.map(function (i): JSX.Element {
                 return (
-                  <span className="newletter_card_tag_name"></span>
-                  // <span className="newletter_card_tag_name">#{i.name} </span>
+                  <span className="newletter_card_tag_name">#{i} </span>
                 );
               })}
             </div>
