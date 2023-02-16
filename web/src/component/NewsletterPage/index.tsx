@@ -15,6 +15,9 @@ export const NewsletterPage= (properties: Properties) => {
   const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
+  if (!localStorage.getItem("isOldUser")) {
+    shepherd.whip("test", "WelcomePage");
+  }
   let RandomList: RandomType[] = [];
   let [result, setResult] = useState<RandomType[]>([]);
   let [item, setItem] = useState<RandomType[]>([]);
