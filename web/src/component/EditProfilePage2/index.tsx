@@ -14,11 +14,6 @@ interface Props extends Properties {
 
 const EditProfilePag2 = (properties: Props) => {
   properties.setNavVisible(true);
-  /*
-  [2022.01.12 jongseok lee]
-  username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야하는지 정확히 정해지면 따로 다른 파일로 빼는게 더 나을거 같습니다.
-  포맷 참고를 위해 코드는 남겨둡니다.
-  */
   const dummyUserName = "아크릴오므라이스";
 
   const nationOptionData = [
