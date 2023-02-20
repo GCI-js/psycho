@@ -1,5 +1,5 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
-import QuestionButton from "../QuestionButton/QuestionButton";
+import QuestionButton from "../QuestionButton";
 import "./QuestionContent.css";
 
 // 질문 컴포넌트의 내용을 담당하는 컴포넌트

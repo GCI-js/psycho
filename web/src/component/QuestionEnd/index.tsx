@@ -1,5 +1,5 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
-import QuestionContent from "../QuestionContent/QuestionContent";
+import QuestionContent from "../QuestionContent";
 import imgCryingFace3d from "./images/crying_face_3d.svg";
 
 /**
