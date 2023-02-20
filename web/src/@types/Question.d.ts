@@ -1,3 +1,5 @@
+import { Option } from "./common";
+
 export interface Question {
   _id?: string;
   questionId: string;

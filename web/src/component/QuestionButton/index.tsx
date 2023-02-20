@@ -5,8 +5,8 @@ import idiotproof from "../../service/idiotproof";
 interface IProps extends Properties {
   text1: String;
   text2: String;
-  onClick1: any;
-  onClick2: any;
+  onClick1: () => void;
+  onClick2: () => void;
 }
 
 /**
@@ -21,20 +21,10 @@ const QuestionButton = (props: IProps) => {
   return (
     <div id={id} className={cl}>
       <div className="QuestionButtonRow">
-        <div
-          className="QuestionButtonColumn"
-          onClick={() => {
-            props.onClick1;
-          }}
-        >
+        <div className="QuestionButtonColumn" onClick={props.onClick1}>
           <div className="QuestionButtonLeft">{props.text1}</div>
         </div>
-        <div
-          className="QuestionButtonColumn"
-          onClick={() => {
-            props.onClick2;
-          }}
-        >
+        <div className="QuestionButtonColumn" onClick={props.onClick2}>
           <div className="QuestionButtonRight">{props.text2}</div>
         </div>
       </div>

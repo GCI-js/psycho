@@ -41,9 +41,9 @@ const QuestionContent = (properties: Props) => {
         </div>
 
         <QuestionButton
-          text1={properties.qdata.contents.options[0]}
+          text1={properties.qdata.contents.options[0].name}
           onClick1={button1}
-          text2={properties.qdata.contents.options[1]}
+          text2={properties.qdata.contents.options[1].name}
           onClick2={button2}
         />
       </div>
