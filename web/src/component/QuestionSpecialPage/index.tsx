@@ -18,7 +18,8 @@ const QuestionSpecialPage = (properties: Properties) => {
   ].join();
   const cl = [styles.index, properties.className].join(" ");
   const [questionData, setQuestionData] = useState({
-    ...MockQuestion[1],
+    ...MockQuestion[2],
+    image: umbrella3d,
   });
 
   const fetchData = async () => {
