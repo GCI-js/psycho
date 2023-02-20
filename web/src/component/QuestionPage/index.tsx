@@ -1,8 +1,8 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
-import QuestionButton from "../QuestionButton";
-import QuestionEnd from "../QuestionEnd";
-import QuestionToday from "../QuestionToday";
-import QuestionPast from "../QuestionPast";
+// import QuestionButton from "../QuestionButton";
+// import QuestionEnd from "../QuestionEnd";
+// import QuestionToday from "../QuestionToday";
+// import QuestionPast from "../QuestionPast";
 import QuestionSpecialPage from "../QuestionSpecialPage";
 
 // import QuestionPopupPast from "../QuestionPopupPast/QuestionPopupPast";
@@ -16,9 +16,9 @@ const QuestionPage = () => {
   return (
     <div>
       <QuestionSpecialPage />
-      <QuestionToday />
+      {/* <QuestionToday />
       <QuestionEnd />
-      <QuestionPast />
+      <QuestionPast /> */}
       {/* <QuestionPopupPast /> */}
     </div>
   );

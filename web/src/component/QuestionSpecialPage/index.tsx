@@ -1,22 +1,24 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
+import { Question } from "../../@types/Question";
 import QuestionContent from "../QuestionContent";
 import umbrella3d from "../../img/umbrella_3d.svg";
 import styles from "./index.module.scss";
+import idiotproof from "../../service/idiotproof";
+
+import MockQuestion from "../../../../common/mock_data/mock_questions.json";
 
 /**
  * 오늘의 질문
  * @returns
  */
-const QuestionSpecialPage = () => {
+const QuestionSpecialPage = (properties: Properties) => {
+  const id = [
+    `_${idiotproof.trace(QuestionSpecialPage)}`,
+    properties.id,
+  ].join();
+  const cl = [styles.index, properties.className].join(" ");
   const [questionData, setQuestionData] = useState({
-    title: "스페셜 질문",
-    remained: "8월의 스페셜 질문이에요!",
-    questionTitle: "8월의 스페셜 질문",
-    questionBody:
-      "이 헌법공포 당시의 국회의원의 임기는 제1항에 의한 국회의 최초의 집회일 전일까지로 한다. 국무총리·국무위원 또는 정부위원은 국회나 그 위원회에 출석하여 국정처리상황을 보고하거나 의견을 진술하고 질문에 응답할 수 있다.",
-    image: umbrella3d,
-    buttonLeft: "A",
-    buttonRight: "B",
+    ...MockQuestion[1],
   });
 
   const fetchData = async () => {
@@ -24,8 +26,9 @@ const QuestionSpecialPage = () => {
   };
 
   return (
-    <div className="">
-      <QuestionContent pdata={questionData} />
+    <div id={id} className={cl}>
+      <div>hello</div>
+      <QuestionContent qdata={questionData} />
     </div>
   );
 };

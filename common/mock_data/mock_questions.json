@@ -3,6 +3,7 @@
     "questionId": "1",
     "image": "http://m.blog.naver.com/superbin0713/220075350926",
     "title": "금요일의 질문",
+    "quote": "",
     "type": "mbti",
     "date": 1661990400000,
     "contents": {
@@ -24,6 +25,7 @@
     "surveyId": "1",
     "image": "https://i.ytimg.com/vi/xhc5Ds-3ahM/maxresdefault.jpg",
     "title": "돌발 질문! 짜장vs짬뽕",
+    "quote": "",
     "type": "survey",
     "date": 1661990400000,
     "contents": {

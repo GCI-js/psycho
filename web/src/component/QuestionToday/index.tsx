@@ -2,27 +2,31 @@ import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionContent from "../QuestionContent";
 import imgRocket3d from "./images/rocket_3d.svg";
 import "./QuestionToday.css";
+import MockQuestion from "../../../../common/mock_data/mock_questions.json";
 
 /**
  * 오늘의 질문
  * @returns
  */
 const QuestionToday = () => {
-  const [questionData, setQuestionData] = useState({
-    title: "오늘의 질문",
-    remained: "이번 주 질문이 N개 남았어요.",
-    questionTitle: "금요일의 질문",
-    questionBody:
-      "이메일에 가능한 빨리 회신하려고 하고 지저분한 편지함을 참을 수 없습니다.",
-    image: imgRocket3d,
-    buttonLeft: "동의",
-    buttonRight: "비동의",
+  const [questionAdditionalData, setQuestionAdditionalData] = useState({
+    componentTitle: "오늘의 질문",
   });
+  const [questionData, setQuestionData] = useState({
+    ...MockQuestion[0],
+  });
+
+  const [buttonInfo, setButtonInfo] = useState({
+    button1: "동의",
+    button2: "비동의",
+  });
+
+  const [properties, setProperties] = useState({});
 
   console.log(questionData);
   return (
     <div className="">
-      <QuestionContent pdata={questionData} />
+      <QuestionContent qdata={questionData} />
     </div>
   );
 };
