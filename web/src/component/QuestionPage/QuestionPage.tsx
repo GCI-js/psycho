@@ -3,6 +3,7 @@ import QuestionButton from "../QuestionButton/QuestionButton";
 import QuestionEnd from "../QuestionEnd/QuestionEnd";
 import QuestionToday from "../QuestionToday/QuestionToday";
 import QuestionPast from "../QuestionPast/QuestionPast";
+import QuestionSpecialPage from "../QuestionSpecialPage";
 
 // import QuestionPopupPast from "../QuestionPopupPast/QuestionPopupPast";
 
@@ -14,6 +15,7 @@ import QuestionPast from "../QuestionPast/QuestionPast";
 const QuestionPage = () => {
   return (
     <div>
+      <QuestionSpecialPage />
       <QuestionToday />
       <QuestionEnd />
       <QuestionPast />
