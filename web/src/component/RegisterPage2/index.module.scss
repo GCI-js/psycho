@@ -1,4 +1,11 @@
 .index:global {
+  display: flex;
+  flex-direction: column;
+  padding-left: 25px;
+
+  > .register {
+    margin-top: 112px;
+  }
   > .editUserInfoContainer {
     display: flex;
     flex-direction: column;
@@ -24,6 +31,21 @@
     color: rgba(0, 0, 0, 0.5);
     margin-bottom: 40px;
   }
+  > .row {
+    display: flex;
+    flex-direction: row;
+  }
+
+  > .dropdownButton {
+    background-color: #ededed;
+    border: 0px;
+    border-radius: 12px;
+    display: flex;
+    /* flex-direction: row; */
+    align-items: center;
+    justify-content: space-between;
+  }
+
   > .dropdownIcon {
     width: 24px;
     height: 24px;
@@ -40,6 +62,7 @@
     line-height: 19px;
     white-space: pre-wrap;
     color: #000000;
+    margin-bottom: 13px;
   }
   > .choiceBirth {
     display: flex;
@@ -54,78 +77,96 @@
     font-size: 34px;
     font-weight: 700;
   }
-  > .selectBox {
-    /* margin: 0; */
-    min-width: 0;
-    display: flex;
-    width: 100%;
-    padding: 8px 16px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
-    border: 0px solid;
-    border-radius: 4px;
-    margin-bottom: 25px;
-    /* color: inherit; */
-    /* background-color: #ededed; */
-    /* appearance: none; */
-    /* -webkit-appearance: none; */
-    /* -moz-appearance: none; */
-    /* background-image: url("../img/cryFaceIcon.png"); */
-  }
-  > .row {
-    display: flex;
-    flex-direction: row;
-  }
-  > .dropdownButton {
-    background-color: #ededed;
-    border: 0px;
-    border-radius: 12px;
-    display: flex;
-    /* flex-direction: row; */
-    align-items: center;
-    justify-content: space-between;
-  }
-  > .nation {
-    width: 340px;
-    height: 40px;
-    padding: 16px;
-  }
-  > .city {
-    width: 165px;
-    height: 44px;
-    padding: 16px;
+
+  > .slide-fade-out-dropdown {
+    overflow: hidden;
   }
 
-  > .district {
-    width: 165px;
-    height: 44px;
-    padding: 16px;
+  > .slide-fade-out-dropdown > ul {
+    animation: slide-fade-out-dropdown-animation 0.4s ease;
+    animation-fill-mode: forwards;
   }
-  > .gender {
-    width: 340px;
-    height: 40px;
-    padding: 16px;
+
+  > .components-dropdown > ul {
+    position: relative;
+    top: 5px;
+    margin-top: 0;
+    margin-bottom: 5px;
+    padding-left: 0;
+    list-style: none;
   }
-  > .year {
-    width: 145px;
-    height: 40px;
-    padding: 16px;
+  > .nationText {
+    width: 252px;
   }
-  > .month {
-    width: 81px;
-    height: 40px;
-    padding: 16px;
-    /* margin left is temporary */
-    margin-left: 20px;
-  }
-  > .day {
-    width: 81px;
-    height: 40px;
-    padding: 16px;
-  }
+}
+.dropdownButton {
+  background-color: #ededed;
+  border: 0px;
+  border-radius: 12px;
+  display: flex;
+  /* flex-direction: row; */
+  align-items: center;
+  justify-content: space-between;
+}
+.nation {
+  width: 340px;
+  height: 40px;
+  padding: 16px;
+}
+.city {
+  width: 165px;
+  height: 44px;
+  padding: 16px;
+}
+.district {
+  width: 165px;
+  height: 44px;
+  padding: 16px;
+  margin-left: 10px;
+}
+.gender {
+  width: 340px;
+  height: 40px;
+  padding: 16px;
+}
+.year {
+  width: 145px;
+  height: 40px;
+  padding: 16px;
+}
+.month {
+  width: 81px;
+  height: 40px;
+  padding: 16px;
+  /* margin left is temporary */
+  margin-left: 16px;
+}
+.day {
+  width: 81px;
+  height: 40px;
+  padding: 16px;
+  margin-left: 16px;
+}
+.selectBox {
+  /* margin: 0; */
+  min-width: 0;
+  display: flex;
+  // width: 100%;
+  // padding: 8px 16px;
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 22px;
+  border: 0px solid;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  /* color: inherit; */
+  /* background-color: #ededed; */
+  /* appearance: none; */
+  /* -webkit-appearance: none; */
+  /* -moz-appearance: none; */
+  /* background-image: url("../img/cryFaceIcon.png"); */
 }
 ul {
   list-style-type: none;
@@ -158,22 +199,4 @@ ul {
   100% {
     transform: translateY(-100%);
   }
-}
-
-.slide-fade-out-dropdown {
-  overflow: hidden;
-}
-
-.slide-fade-out-dropdown > ul {
-  animation: slide-fade-out-dropdown-animation 0.4s ease;
-  animation-fill-mode: forwards;
-}
-
-.components-dropdown > ul {
-  position: relative;
-  top: 5px;
-  margin-top: 0;
-  margin-bottom: 5px;
-  padding-left: 0;
-  list-style: none;
 }

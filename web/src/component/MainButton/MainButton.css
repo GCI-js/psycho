@@ -10,8 +10,17 @@
   width: 344px;
   margin: 0 auto;
 
-  background: #000000;
   border-radius: 100px;
+}
+
+.enabled {
+  background: #000000;
+  color: #ffffff;
+}
+
+.disabled {
+  background: #eaeaea;
+  color: rgba(0, 0, 0, 0.25);
 }
 
 .main_btn_txt {
@@ -24,8 +33,6 @@
 
   text-align: center;
   /* letter-spacing: -0.408px; */
-
-  color: #ffffff;
 
   /* Inside auto layout */
 
