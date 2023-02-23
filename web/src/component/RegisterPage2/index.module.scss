@@ -1,8 +1,14 @@
 .index:global {
   display: flex;
   flex-direction: column;
-  padding-left: 25px;
-
+  padding: 0 25px;
+  > .back-button {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 21px;
+    top: 56px;
+  }
   > .register {
     margin-top: 112px;
   }
@@ -34,6 +40,7 @@
   > .row {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
   }
 
   > .dropdownButton {
@@ -98,6 +105,9 @@
   > .nationText {
     width: 252px;
   }
+  > .next-step-button {
+    margin-top: 34px;
+  }
 }
 .dropdownButton {
   background-color: #ededed;
@@ -147,27 +157,104 @@
   padding: 16px;
   margin-left: 16px;
 }
+
 .selectBox {
-  /* margin: 0; */
-  min-width: 0;
+  position: relative;
+  height: 44px;
+
+  background: rgba(237, 237, 237, 0.8);
+  border-radius: 12px;
   display: flex;
-  // width: 100%;
-  // padding: 8px 16px;
-  font-family: "Inter";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 22px;
-  border: 0px solid;
-  border-radius: 4px;
-  margin-bottom: 25px;
-  /* color: inherit; */
-  /* background-color: #ededed; */
-  /* appearance: none; */
-  /* -webkit-appearance: none; */
-  /* -moz-appearance: none; */
-  /* background-image: url("../img/cryFaceIcon.png"); */
+  flex-direction: row;
+  align-items: center;
+
+  > .icon {
+    position: absolute;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  > .select {
+    -o-appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none; // 기본 화살표 없애기
+
+    position: relative;
+    width: inherit;
+    height: inherit;
+    border: 0 none;
+    outline: 0 none;
+    padding: 0 40px;
+    background: transparent;
+    z-index: 3; // select가 위로 올라와야 함
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.408px;
+    color: rgba(0, 0, 0, 0.5);
+  }
+
+  > .iconArrow {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    z-index: 1;
+    width: 30px;
+
+    margin-right: 10px;
+
+    height: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    > img {
+      transition: 0.3s; // 부드럽게 회전
+    }
+  }
+
+  > .select:focus + .icoArrow img {
+    transform: rotate(180deg);
+  }
 }
+
+.fullBox {
+  width: 340px;
+}
+
+.halfBox {
+  width: 165px;
+}
+
+.yearBox {
+  width: 145px;
+  > .select {
+    padding: 0 15px;
+  }
+}
+
+.monthBox {
+  width: 81px;
+  > .select {
+    padding: 0 15px;
+  }
+}
+
+.dayBox {
+  width: 81px;
+  > .select {
+    padding: 0 15px;
+  }
+}
+
 ul {
   list-style-type: none;
   padding-left: 0px;

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import MainButton from "../MainButton/MainButton";
 import styles from "./index.module.scss";
-import Dropdown from "../DropDown/Dropdown";
+import Dropdown from "../DropDown";
 import downwardArrow from "../../img/downwardArrow.png";
 import selectNation from "../../img/selectNation.png";
 import selectCity from "../../img/selectCity.png";
@@ -9,6 +9,8 @@ import selectDistrict from "../../img/selectDistrict.png";
 import selectGender from "../../img/selectGender.png";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
+import ArrowLeft from "../../img/Arrow_left.png";
+
 const RegisterPage2 = (properties: Properties) => {
   /*
 [2022.01.12 jongseok lee] 
@@ -128,9 +130,14 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
+  const handleBackButton = () => {
+    shepherd.whip("test", "RegisterPage1");
+  };
   return (
     <div id={id} className={cl}>
       {/* <div className="username">{`@${dummyUserName}`}</div> */}
+      <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
+
       <div className="register large-title">{`회원가입\n`}</div>
       <div className="medium-title-box">
         <div className="medium-title">{`거의 다 됐어요! \n `}</div>
@@ -139,8 +146,26 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
       <div className="small-title">{`프로필의 내용은 바로 공개되지 않아요!\n`}</div>
 
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
-      <div className={styles.selectBox}>
-        <button
+      <div
+        className={
+          styles.selectBox + " " + styles.dropdownButton + " " + styles.fullBox
+        }
+      >
+        <span className={styles.icon}>
+          <img src={selectNation} alt="" />
+        </span>
+        <select className={styles.select}>
+          <option disabled selected>
+            국가
+          </option>
+          {nationOptionData.map((nation) => {
+            return <option>{nation.value}</option>;
+          })}
+        </select>
+        <span className={styles.iconArrow}>
+          <img src={downwardArrow} alt="" />
+        </span>
+        {/* <button
           className={styles.nation + " " + styles.dropdownButton}
           onClick={(e) =>
             setNationDropdownVisibility(!nationDropdownVisibility)
@@ -158,152 +183,149 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               return <li>{nation.value}</li>;
             })}
           </ul>
-        </Dropdown>
+        </Dropdown> */}
       </div>
       <div className="choiceText">{`거주하는 시, 구를 선택해주세요\n`}</div>
       <div className="row">
-        <div className={styles.selectBox}>
-          <button
-            className={styles.city + " " + styles.dropdownButton}
-            onClick={(e) => setCityDropdownVisibility(!cityDropdownVisibility)}
-          >
-            <img className="dropdownIcon" src={selectCity} />
-            {/* This line must be fixed */}
-            <div className="dropdown-text ">
-              {cityDropdownVisibility ? "시" : "시"}
-            </div>
-            <img className="dropdownDownwardIcon" src={downwardArrow} />
-          </button>
-          <Dropdown visibility={cityDropdownVisibility}>
-            <ul>
-              {cityOptionData.map((city) => {
-                return <li>{city.value}</li>;
-              })}
-            </ul>
-          </Dropdown>
+        <div
+          className={
+            styles.selectBox +
+            " " +
+            styles.dropdownButton +
+            " " +
+            styles.halfBox
+          }
+        >
+          <span className={styles.icon}>
+            <img src={selectCity} alt="" />
+          </span>
+          <select className={styles.select}>
+            <option disabled selected>
+              시
+            </option>
+            {cityOptionData.map((city) => {
+              return <option>{city.value}</option>;
+            })}
+          </select>
+          <span className={styles.iconArrow}>
+            <img src={downwardArrow} alt="" />
+          </span>
         </div>
-        <div className={styles.selectBox}>
-          <button
-            className={styles.district + " " + styles.dropdownButton}
-            onClick={(e) =>
-              setDistrictDropdownVisibility(!districtDropdownVisibility)
-            }
-          >
-            <img className="dropdownIcon" src={selectDistrict} />
-            {/* This line must be fixed */}
-            <div className="dropdown-text">
-              {districtDropdownVisibility ? "구" : "구"}
-            </div>
-            <img className="dropdownDownwardIcon" src={downwardArrow} />
-          </button>
-          <Dropdown visibility={districtDropdownVisibility}>
-            <ul>
-              {districtOptionData.map((district) => {
-                return <li>{district.value}</li>;
-              })}
-            </ul>
-          </Dropdown>
+        <div
+          className={
+            styles.selectBox +
+            " " +
+            styles.dropdownButton +
+            " " +
+            styles.halfBox
+          }
+        >
+          <span className={styles.icon}>
+            <img src={selectDistrict} alt="" />
+          </span>
+          <select className={styles.select}>
+            <option disabled selected>
+              구
+            </option>
+            {districtOptionData.map((district) => {
+              return <option>{district.value}</option>;
+            })}
+          </select>
+          <span className={styles.iconArrow}>
+            <img src={downwardArrow} alt="" />
+          </span>
         </div>
       </div>
       <div className="choiceText">{`성별을 선택해주세요\n`}</div>
-      <div className={styles.selectBox}>
-        <button
-          className={styles.gender + " " + styles.dropdownButton}
-          onClick={(e) =>
-            setGenderDropdownVisibility(!genderDropdownVisibility)
-          }
-        >
-          <img className="dropdownIcon" src={selectGender} />
-          {/* This line must be fixed */}
-          <div className="dropdown-text">
-            {genderDropdownVisibility ? "성별" : "성별"}
-          </div>
-          <img className="dropdownDownwardIcon" src={downwardArrow} />
-        </button>
-        <Dropdown visibility={genderDropdownVisibility}>
-          <ul>
-            {genderOptionData.map((gender) => {
-              return <li>{gender.value}</li>;
-            })}
-          </ul>
-        </Dropdown>
+      <div
+        className={
+          styles.selectBox + " " + styles.dropdownButton + " " + styles.fullBox
+        }
+      >
+        <span className={styles.icon}>
+          <img src={selectGender} alt="" />
+        </span>
+        <select className={styles.select}>
+          <option disabled selected>
+            성별
+          </option>
+          {genderOptionData.map((gender) => {
+            return <option>{gender.value}</option>;
+          })}
+        </select>
+        <span className={styles.iconArrow}>
+          <img src={downwardArrow} alt="" />
+        </span>
       </div>
       <div className="choiceText">{`생년월일을 선택해주세요\n`}</div>
       <div className="row">
-        <div className={styles.selectBox}>
-          <button
-            className={styles.year + " " + styles.dropdownButton}
-            onClick={(e) =>
-              setBirthYearDropdownVisibility(!birthYearDropdownVisibility)
-            }
-          >
-            {/* This line must be fixed */}
-            <div className="dropdown-text">
-              {birthYearDropdownVisibility ? "년" : "년"}
-            </div>
-            <img className="dropdownDownwardIcon" src={downwardArrow} />
-          </button>
-          <Dropdown visibility={birthYearDropdownVisibility}>
-            <ul>
-              {birthYearOptionData.map((birthYear) => {
-                return <li>{birthYear.value}</li>;
-              })}
-            </ul>
-          </Dropdown>
+        <div
+          className={
+            styles.selectBox +
+            " " +
+            styles.dropdownButton +
+            " " +
+            styles.yearBox
+          }
+        >
+          <select className={styles.select}>
+            <option disabled selected>
+              년
+            </option>
+            {birthYearOptionData.map((year) => {
+              return <option>{year.value}</option>;
+            })}
+          </select>
+          <span className={styles.iconArrow}>
+            <img src={downwardArrow} alt="" />
+          </span>
         </div>
-        <div className={styles.selectBox}>
-          <button
-            className={styles.month + " " + styles.dropdownButton}
-            onClick={(e) =>
-              setBirthMonthDropdownVisibility(!birthMonthDropdownVisibility)
-            }
-          >
-            {/* This line must be fixed */}
-            <div className="dropdown-text">
-              {birthMonthDropdownVisibility ? "월" : "월"}
-            </div>
-            <img className="dropdownDownwardIcon" src={downwardArrow} />
-          </button>
-          <Dropdown visibility={birthMonthDropdownVisibility}>
-            <ul>
-              {birthMonthOptionData.map((birthMonth) => {
-                return <li>{birthMonth.value}</li>;
-              })}
-            </ul>
-          </Dropdown>
+        <div
+          className={
+            styles.selectBox +
+            " " +
+            styles.dropdownButton +
+            " " +
+            styles.monthBox
+          }
+        >
+          <select className={styles.select}>
+            <option disabled selected>
+              월
+            </option>
+            {birthMonthOptionData.map((month) => {
+              return <option>{month.value}</option>;
+            })}
+          </select>
+          <span className={styles.iconArrow}>
+            <img src={downwardArrow} alt="" />
+          </span>
         </div>
-        <div className={styles.selectBox}>
-          <button
-            className={styles.day + " " + styles.dropdownButton}
-            onClick={(e) =>
-              setBirthDayDropdownVisibility(!birthDayDropdownVisibility)
-            }
-          >
-            {/* This line must be fixed */}
-            <div className="dropdown-text">
-              {birthDayDropdownVisibility ? "일" : "일"}
-            </div>
-            <img className="dropdownDownwardIcon" src={downwardArrow} />
-          </button>
-          <Dropdown visibility={birthDayDropdownVisibility}>
-            <ul>
-              {birthDayOptionData.map((birthDay) => {
-                return <li>{birthDay.value}</li>;
-              })}
-            </ul>
-          </Dropdown>
+
+        <div
+          className={
+            styles.selectBox + " " + styles.dropdownButton + " " + styles.dayBox
+          }
+        >
+          <select className={styles.select}>
+            <option disabled selected>
+              일
+            </option>
+            {birthDayOptionData.map((day) => {
+              return <option>{day.value}</option>;
+            })}
+          </select>
+          <span className={styles.iconArrow}>
+            <img src={downwardArrow} alt="" />
+          </span>
         </div>
       </div>
       <button
-        className="BasicButton"
+        className="next-step-button"
         onClick={() => shepherd.whip("test", "TermsInUsePage")}
       >
         계속
       </button>
-      {/* <BasicButton
-        content="계속"
-        pFunction={shepherd.whip("test", "TermsInUsePage")}
-      /> */}
     </div>
   );
 };
