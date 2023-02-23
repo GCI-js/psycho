@@ -133,12 +133,12 @@ const RegisterPage1 = (properties: Props) => {
           setBloodTypeStates={setBloodTypeStates}
         />
       </div>
-      {nickname == "" && <button className="next-step-button-off">계속</button>}
-      {nickname != "" && (
-        <button className="next-step-button-on" onClick={gotoNextStep}>
-          계속
-        </button>
-      )}
+      <button
+        className={`next-step-button${nickname == "" ? "-off" : "-on"}`}
+        onClick={nickname == "" ? () => {} : gotoNextStep}
+      >
+        계속
+      </button>
     </div>
   );
 };
