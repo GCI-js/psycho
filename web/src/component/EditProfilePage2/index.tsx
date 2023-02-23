@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./index.module.css";
 import MainButton from "../MainButton/MainButton";
-import Dropdown from "../DropDown/Dropdown";
+import Dropdown from "../DropDown";
 import downwardArrow from "../../img/downwardArrow.png";
 import selectNation from "../../img/selectNation.png";
 import selectCity from "../../img/selectCity.png";

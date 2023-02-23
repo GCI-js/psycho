@@ -49,13 +49,16 @@ MBTI 버튼 클릭했을시 이펙트 출력하는 부분 코드가 매우 더�
             {"를 선택해주세요  "}
           </div>
         </div>
-        <MBTISelectBox />
+        <MBTISelectBox MBTIStates={[]} setMBTIStates={() => {}} />
       </div>
       <div className="blood-type-area">
         <div className="small-grey-title">
           <div className="border">혈액형</div>을 선택해주세요
         </div>
-        <BloodTypeSelectBox />
+        <BloodTypeSelectBox
+          bloodTypeStates={[]}
+          setBloodTypeStates={() => {}}
+        />
       </div>
       <button
         className="next-step-button"
