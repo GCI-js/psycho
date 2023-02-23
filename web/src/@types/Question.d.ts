@@ -1,17 +1,20 @@
+import { Option } from "./common";
+
 export interface Question {
   _id?: string;
   questionId: string;
   surveyId?: string;
   image: string; // image url
+  quote: string; // quote
   title: string;
-  type: "mbti" | "survey";
+  type: string; //"mbti" | "survey";
   date: number;
   contents: {
     main: string;
     options: Option[];
   };
   mbtiChange?: {
-    factor: "EI" | "NS" | "FT" | "JP";
+    factor: string; // "EI" | "NS" | "FT" | "JP";
     value: number;
   }[];
 }

@@ -11,7 +11,7 @@ import Navigation from "./component/Navigation";
 
 import styles from "./App.module.scss";
 import { NewsletterPage } from "./component/NewsletterPage";
-import QuestionPage from "./component/QuestionPage/QuestionPage";
+import QuestionPage from "./component/QuestionPage";
 
 import Setting from "./component/Setting";
 import RegisterPage1 from "./component/RegisterPage1";
