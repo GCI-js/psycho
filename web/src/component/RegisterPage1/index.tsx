@@ -28,8 +28,11 @@ const RegisterPage1 = (properties: Props) => {
   const id = [`_${idiotproof.trace(RegisterPage1)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
   let userData: any = localStorage.getItem("userData");
-  if (userData == null) {
+  if (userData == null || userData.nickname == undefined) {
+    console.log("HERE");
+    console.log(userData);
     userData = getInitUserData();
+    console.log(userData);
   }
   const [nickname, setNickname] = useState("");
   const [MBTIStates, setMBTIStates] = useState<MBTIStates[]>([
@@ -48,8 +51,6 @@ const RegisterPage1 = (properties: Props) => {
     { bloodType: "AB", state: false },
     { bloodType: "O", state: false },
   ]);
-  const [emptyNicknameAlertVisible, setEmptyNicknameAlertVisible] =
-    useState(false);
 
   const nicknamePlaceHolder = "랜덤 생성 버튼을 눌러주세요!";
   properties.setNavVisible(false);
