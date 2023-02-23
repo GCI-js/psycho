@@ -1,26 +1,27 @@
 .index:global {
+  width: 100%;
   height: 100%;
-  background: white;
   display: flex;
   flex-direction: column;
   padding-left: 25px;
+  justify-content: center;
   > .back-button {
     width: 24px;
     height: 24px;
-    position: absolute;
-    left: 21px;
-    top: 56px;
+    flex: none;
+    order: 0;
+    margin-top: 56px;
   }
   > .large-title {
     display: flex;
     flex: none;
-    order: 0;
-    margin-top: 112px;
+    order: 1;
+    margin-top: 32px;
   }
   > .medium-title {
     width: 340px;
     height: 109px;
-    order: 1;
+    order: 2;
     margin-top: 33px;
   }
   > .nickname-area {
@@ -29,7 +30,7 @@
     display: flex;
     flex: none;
     flex-direction: column;
-    order: 2;
+    order: 3;
     margin-top: 31px;
     gap: 9px;
     > .nickname-generator {
@@ -84,7 +85,7 @@
     display: flex;
     flex: none;
     flex-direction: column;
-    order: 3;
+    order: 4;
     margin-top: 29px;
     gap: 9px;
     > .text {
@@ -101,20 +102,22 @@
     display: flex;
     flex: none;
     flex-direction: column;
-    order: 4;
+    order: 5;
     margin-top: 29px;
     gap: 9px;
   }
   > .next-step-button-on {
     display: flex;
     flex: none;
-    order: 5;
+    order: 6;
     margin-top: 34px;
+    margin-bottom: 30px;
   }
   > .next-step-button-off {
     display: flex;
     flex: none;
-    order: 5;
+    order: 6;
     margin-top: 34px;
+    margin-bottom: 30px;
   }
 }
