@@ -5,22 +5,17 @@ import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
 import Setting from "../Setting";
 
-const Newsletter = (props: Newsletter,properties: Properties) => {
+const Newsletter = (props: Newsletter, properties: Properties) => {
+  const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
+  const cl = [styles.index, properties.className].join(" ");
 
-    const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
-    const cl = [styles.index, properties.className].join(" ");
-  
   return (
     <div id={id} className={cl}>
       <div className="newletter_card_item">
         <div className="newletter_card_header">MBTI 뉴스레터</div>
         <div className="newletter_card_img">
           <a href={props.url}>
-            <img
-              src={props.thumbnail}
-              width="97%"
-              height="184px"
-            ></img>
+            <img src={props.thumbnail} width="97%" height="184px"></img>
           </a>
         </div>
         <div className="newletter_card_desc">
