@@ -11,11 +11,14 @@ import Navigation from "./component/Navigation";
 
 import styles from "./App.module.scss";
 import { NewsletterPage } from "./component/NewsletterPage";
-import QuestionPage from "./component/QuestionPage/QuestionPage";
+import QuestionPage from "./component/QuestionPage";
+
 import Setting from "./component/Setting";
 import RegisterPage1 from "./component/RegisterPage1";
 import RegisterPage2 from "./component/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage";
+import EditProfilePage1 from "./component/EditProfilePage1/index";
+import EditProfilePage2 from "./component/EditProfilePage2/index";
 
 export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
@@ -30,6 +33,14 @@ export default function App(properties: Properties) {
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
+        <EditProfilePage1
+          data-pose="EditProfilePage1"
+          setNavVisible={setNavVisible}
+        />
+        <EditProfilePage2
+          data-pose="EditProfilePage2"
+          setNavVisible={setNavVisible}
+        />
         <RegisterPage1
           data-pose="RegisterPage1"
           setNavVisible={setNavVisible}

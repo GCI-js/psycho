@@ -4,6 +4,7 @@ import rightArrowIcon from "../../img/rightArrow.png";
 import idiotproof from "../../service/idiotproof";
 import shepherd from "../../service/shepherd";
 import styles from "./index.module.scss";
+import MainButton from "../MainButton/MainButton";
 
 const Setting = (properties: Properties) => {
   /*
@@ -29,7 +30,7 @@ const Setting = (properties: Properties) => {
       <div className="settingContainer">
         <div className="settingTitle">설정</div>
         <div className="settingBoxContainer">
-          <div className="settingBox">
+          <div className="settingBox" onClick={() => shepherd.whip("test", "EditProfilePage1")}>
             <div className="settingBoxPadding">
               <text className="settingText">프로필 수정</text>
               <img
@@ -97,7 +98,7 @@ const Setting = (properties: Properties) => {
               </div>
             </div>
           </div>
-          <div className="settingBox">
+          <div className="settingBox" onClick={() => shepherd.whip("test", "TermsInUsePage")}>
             <div className="settingBoxPadding">
               <text className="settingText">이용약관</text>
               <img

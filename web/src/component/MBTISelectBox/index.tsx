@@ -8,23 +8,17 @@ interface MBTIStates {
   state: boolean;
 }
 
-export const MBTISelectBox = (properties: Properties) => {
+interface Props extends Properties {
+  MBTIStates: MBTIStates[];
+  setMBTIStates: Function;
+}
+
+export const MBTISelectBox = (properties: Props) => {
   const id = [`_${idiotproof.trace(MBTISelectBox)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
-  const [MBTIStates, setMBTIStates] = useState<MBTIStates[]>([
-    { MBTI: "E", state: false },
-    { MBTI: "S", state: false },
-    { MBTI: "T", state: false },
-    { MBTI: "J", state: false },
-    { MBTI: "I", state: false },
-    { MBTI: "N", state: false },
-    { MBTI: "F", state: false },
-    { MBTI: "P", state: false },
-  ]);
-
   const handleMBTISelectBox = (MBTI: string) => {
-    let newMBTIState = MBTIStates.map((MBTIState) => {
+    let newMBTIState = properties.MBTIStates.map((MBTIState) => {
       if (MBTIState.MBTI === MBTI) {
         return { MBTI: MBTIState.MBTI, state: !MBTIState.state };
       } else {
@@ -49,7 +43,7 @@ export const MBTISelectBox = (properties: Properties) => {
       newMBTIState[3].state = false; // J
     }
 
-    setMBTIStates([...newMBTIState]);
+    properties.setMBTIStates([...newMBTIState]);
   };
 
   return (
@@ -60,7 +54,7 @@ export const MBTISelectBox = (properties: Properties) => {
         background: `url(${MBTISelectFrame}) rgba(118, 118, 128, 0.24)`,
       }}
     >
-      {MBTIStates.map((el) => {
+      {properties.MBTIStates.map((el) => {
         return (
           <ButtonBox
             state={el.state}
