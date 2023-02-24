@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./index.module.css";
+import "./index.module.scss";
 import MainButton from "../MainButton/MainButton";
 import Dropdown from "../DropDown/Dropdown";
 import downwardArrow from "../../img/downwardArrow.png";

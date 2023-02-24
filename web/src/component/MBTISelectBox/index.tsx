@@ -54,9 +54,10 @@ export const MBTISelectBox = (properties: Props) => {
         background: `url(${MBTISelectFrame}) rgba(118, 118, 128, 0.24)`,
       }}
     >
-      {properties.MBTIStates.map((el) => {
+      {properties.MBTIStates.map((el, index) => {
         return (
           <ButtonBox
+            key={index}
             state={el.state}
             setState={handleMBTISelectBox}
             content={el.MBTI}

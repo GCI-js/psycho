@@ -84,9 +84,10 @@ export const BloodTypeSelectBox = (properties: Props) => {
         background: `url(${bloodTypeSelectFrame}) rgba(118, 118, 128, 0.24)`,
       }}
     >
-      {properties.bloodTypeStates.map((el) => {
+      {properties.bloodTypeStates.map((el, index) => {
         return (
           <ButtonBox
+            key={index}
             state={el.state}
             setState={handleBloodTypeSelectBox}
             content={el.bloodType}
