@@ -11,31 +11,30 @@ const Newsletter = (props: Newsletter, properties: Properties) => {
 
   return (
     <div id={id} className={cl}>
-      <div className="newletter_card_item">
-        <div className="newletter_card_header">MBTI 뉴스레터</div>
-        <div className="newletter_card_img">
+      <div className="newletter-card-item">
+        <div className="newletter-card-header">MBTI 뉴스레터</div>
+        <div className="newletter-card-img">
           <a href={props.url}>
             <img src={props.thumbnail} width="97%" height="184px"></img>
           </a>
         </div>
-        <div className="newletter_card_desc">
-          <div className="newsletter_card_col">
-            <div className="newletter_card_title">
+        <div className="newletter-card-desc">
+          <div className="newsletter-card-col">
+            <div className="newletter-card-title">
               <span>{props.title}</span>
             </div>
 
-            <div className="newletter_card_tag">
+            <div className="newletter-card-tag">
               {props.hashtags.map(function (i): JSX.Element {
                 return (
-                  <span className="newletter_card_tag_name"></span>
-                  // <span className="newletter_card_tag_name">#{i.name} </span>
+                  <span className="newletter-card-tag-name">#{i} </span>
                 );
               })}
             </div>
           </div>
           <img
             src={icon}
-            className="newletter_card_button"
+            className="newletter-card-button"
             onClick={(e) => {
               e.preventDefault();
               window.location.href = props.url;
