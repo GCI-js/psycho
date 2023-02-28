@@ -1,5 +1,6 @@
 export const newsletter = [
   {
+    newsletterId: "0",
     title: "나와 어울리는 개발자 유형 찾기",
     hashtag: "#개발자 #mbti #코딩 #프로그래밍",
     writer: "HuemoneLab Co.,Ltd",
@@ -7,6 +8,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 유형별 사랑할 때 특징들",
     hashtag: "#MBTI  #연애 #썸 #플러팅",
     writer: "정보도우미, 살구꿀팁",
@@ -14,6 +16,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 아파트에서 생활하는 법",
     hashtag: "#아파트 #mbti #부동산",
     link: "https://socialspeaker.tistory.com/entry/MBTI-%EC%9C%A0%ED%98%95%EB%B3%84-%EC%95%84%ED%8C%[…]-%EC%83%9D%ED%99%9C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95",
@@ -21,6 +24,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 유형별 절대 못하는 것",
     hashtag: "#절대불가 #네버 #MBTI #못하는것",
     writer: "VISUALDIVE , MBTI알리미",
@@ -28,6 +32,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "재미로 보는 MBTI - 성격유형별 여자친구 특성,ENFJ",
     hashtag: "#여자친구 #ENFJ #성격 #좋은남친어려움",
     writer: "후회없는하루",
@@ -35,6 +40,7 @@ export const newsletter = [
     thumbnail: "https://ssl.pstatic.net/static.post/image/m/im/loader.gif",
   },
   {
+    newsletterId: "0",
     title: "재미로 보는 MBTI - 유형별 여름휴가 준비 모습",
     hashtag: "#MBTI #휴가 #여름 #준비",
     writer: "정보도우미",
@@ -42,6 +48,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI, 유형별 짤",
     hashtag: "#MBTI #짤 #유형별",
     writer: "살구꿀팁, 정보도우미",
@@ -49,6 +56,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "mbti별 수능점수",
     hashtag: "#수능 #입시 #mbti #내신 #수학 #영어 #국어",
     writer: "나무위키",
@@ -56,6 +64,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 궁합 테스트",
     hashtag: "#궁합 #mbti #운명의상대",
     link: "https://pushoong.com/MBTI/relationship/",
@@ -63,6 +72,7 @@ export const newsletter = [
     thumbnail: "/static_local_root/img/pushoong/favicon_full.png",
   },
   {
+    newsletterId: "0",
     title: "2020 프로그래머스 개발자 MBTI 유형 설문조사 리포트",
     hashtag: "#프로그래머 #MBTI #설문조사 #내친구는과연",
     writer: "프로그래머스",
@@ -70,6 +80,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI별 직업 추천",
     hashtag: "#MBTI #직업 #추천",
     writer: "인플래닛",
@@ -78,6 +89,7 @@ export const newsletter = [
       "//i1.daumcdn.net/thumb/R336x0/?fname=http://t1.daumcdn.net/brunch/static/img/help/pc/top/side_banner_20171219.png",
   },
   {
+    newsletterId: "0",
     title: "구글, 애플, 나이키의 MBTI",
     hashtag: "#구글 #애플 #나이키 #브랜드 #아키타입",
     writer: "김자유 from 'brunch'",
@@ -86,6 +98,7 @@ export const newsletter = [
       "//i1.daumcdn.net/thumb/R336x0/?fname=http://t1.daumcdn.net/brunch/static/img/help/pc/top/side_banner_20171219.png",
   },
   {
+    newsletterId: "0",
     title: "MBTI 컨텐츠로 MZ세대 공략하기",
     hashtag: "#MBTI #MZ세대 #컨텐츠",
     writer: "슴씨 피드",
@@ -94,6 +107,7 @@ export const newsletter = [
       "//i1.daumcdn.net/thumb/R336x0/?fname=http://t1.daumcdn.net/brunch/static/img/help/pc/top/side_banner_20171219.png",
   },
   {
+    newsletterId: "0",
     title: "banggooso 연애 능력 테스트",
     hashtag: "#MBTI #연애 #데이트",
     writer: "방구석연구소, softsphere",
@@ -102,6 +116,7 @@ export const newsletter = [
       "https://cdn.banggooso.com/assets/images/uploadImg/1596642366(M).jpg",
   },
   {
+    newsletterId: "0",
     title: "우주 직장인 MBTI",
     hashtag: "#우주 #직장인 #MBTI #플로우 #프롬본부",
     writer: "플로우X프롬본부",
@@ -109,6 +124,7 @@ export const newsletter = [
     thumbnail: "https://cdn.1store.io/basecamp/images/beedance/favicon.png",
   },
   {
+    newsletterId: "0",
     title: "19금 능력치 테스트",
     hashtag: "#19금 #잠자리 #테스트 #MBTI",
     writer: "Loma/GLAM",
@@ -116,6 +132,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "돼지유형테스트",
     hashtag: "#MBTI #돼지 #먹방 #음식 #테스트",
     writer: "사윤스튜디오",
@@ -123,6 +140,7 @@ export const newsletter = [
     thumbnail: "/logo1.svg",
   },
   {
+    newsletterId: "0",
     title: "mbti가 반반씩 있다면",
     hashtag: "#반반 #중립",
     writer: "텅장주의 카드뉴스",
@@ -130,6 +148,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 소개팅",
     hashtag: "#mbti #소개팅 #궁합 #사랑 #아제가바빠서 #연락두절",
     writer: "띵스플로우",
@@ -138,6 +157,7 @@ export const newsletter = [
       "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimg_empty.55d4c7d2.png&w=3840&q=75",
   },
   {
+    newsletterId: "0",
     title: "재미로 보는 16가지 MBTI별 여행지 추천",
     hashtag: "#여행 #추천",
     writer: "Travie 강화송 기자",
@@ -145,6 +165,7 @@ export const newsletter = [
     thumbnail: "https://cdn.travie.com/image/icon_brunch.png",
   },
   {
+    newsletterId: "0",
     title: "한국인이 MBTI를 좋아하는 이유",
     hashtag: "#MBTI #한국 #한국인 #분류론",
     writer: "김성지 기자",
@@ -153,6 +174,7 @@ export const newsletter = [
       "https://ditoday.com/wp-content/themes/ditoday2023/images/logos/di-symbol.svg",
   },
   {
+    newsletterId: "0",
     title: "한국인이 MBTI를 좋아하는 이유",
     hashtag: "#한국인 #MBTI #좋아하는이유 #성리학",
     writer: "Editor 김성지",
@@ -161,6 +183,7 @@ export const newsletter = [
       "https://ditoday.com/wp-content/themes/ditoday2023/images/logos/di-symbol.svg",
   },
   {
+    newsletterId: "0",
     title: "소시오패스 싸이코패스 MBTI에 대해서 알아봐요",
     hashtag: "#소시오패스 #싸이코패스 #MBTI",
     writer: "생각 블로그",
@@ -169,6 +192,7 @@ export const newsletter = [
       "https://blog.kakaocdn.net/dn/UNFAl/btqV2VJGZUN/CrufwmDWM0gAArpaHs3Hvk/img.png",
   },
   {
+    newsletterId: "0",
     title: "MBTI 이상형 테스트",
     hashtag: "#이상형 #MBTI #테스트",
     writer: "Araut",
@@ -176,6 +200,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "또다시 SNS를 점령한 MBTI?!",
     hashtag: "#타입스 #유퀴즈",
     writer: "고구마팜",
@@ -184,6 +209,7 @@ export const newsletter = [
       "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E",
   },
   {
+    newsletterId: "0",
     title: "mbti보다 더 정확한 테스트",
     hashtag: "#애고그램 #mbti #egogram #성향파악",
     writer: "egogramtest",
@@ -191,6 +217,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "거지 되는 MBTI, 부자 되는 MBTI... 따로 있다? ",
     hashtag: "#MBTI #재운 #연예인",
     writer: "오승희, 사이다경제",
@@ -199,6 +226,7 @@ export const newsletter = [
       "https://img.cidermics.com/images/contents/20210722/e195ebc0-eaae-11eb-9e12-4bf91923e155.jpg",
   },
   {
+    newsletterId: "0",
     title: "MBTI N S 차이 10가지 총정리",
     hashtag: "#NS #mbti #짤 #밈",
     link: "https://ddnews.co.kr/mbti-n-s-%EC%B0%A8%EC%9D%B4/",
@@ -207,6 +235,7 @@ export const newsletter = [
       "https://ddnews.co.kr/wp-content/uploads/2022/03/MBTI-N-S-차이-4.jpg",
   },
   {
+    newsletterId: "0",
     title: "Personality tests become hugely popular among young Koreans",
     hashtag: "#MBTI인기 #해외뉴스",
     writer: "이하린 기자",
@@ -214,6 +243,7 @@ export const newsletter = [
     thumbnail: "/www2/img/amn_close.png",
   },
   {
+    newsletterId: "0",
     title: "ENFJ 남자 특징 5가지",
     hashtag: "#ENFJ #남자친구 #이상형 #궁합",
     writer: "뚝딱뉴스",
@@ -222,6 +252,7 @@ export const newsletter = [
       "https://ddnews.co.kr/wp-content/uploads/2022/11/ENFJ-남자-특징-7-1024x611.jpg",
   },
   {
+    newsletterId: "0",
     title: "에고그램 테스트",
     hashtag: "#성격유형검사 #에고그램 #성격유형",
     writer: "egogramtest.kr",
@@ -229,6 +260,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 궁합",
     hashtag: "#MBTI #궁합 #연애",
     link: "https://ddnews.co.kr/mbti-%EA%B6%81%ED%95%A9%ED%91%9C-%EC%97%B0%EC%95%A0%EA%B6%81%ED%95%A9-%EC%B9%9C%EA%B5%AC%EA%B6%81%ED%95%A9/",
@@ -237,6 +269,7 @@ export const newsletter = [
       "https://ddnews.co.kr/wp-content/uploads/2021/12/mbti-궁합-3.png",
   },
   {
+    newsletterId: "0",
     title: "MBTI & 에니어그램 조합 정리",
     hashtag: "#MBTI, #에니어그램, #Enneagram",
     writer: "노트 주인 from 노트#1",
@@ -245,6 +278,7 @@ export const newsletter = [
       "https://tistory1.daumcdn.net/tistory/4648736/attach/7a7181b9b37d4c1cb6dc69a0f7d04744",
   },
   {
+    newsletterId: "0",
     title: "인생 겜BTI",
     hashtag: "#MBTI #플레이오 #게임 #게임성향 #게임추천",
     writer: "플레이오",
@@ -253,6 +287,7 @@ export const newsletter = [
       "https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0fa84812-8302-43bc-bffd-eb521b035ed1%2F%25EC%259D%25B8%25EC%2583%259D%25EA%25B2%259C%25EB%25B9%2584%25ED%258B%25B0%25EC%2595%2584%25EC%259D%25B4.png&blockId=48c179f2-3b84-4256-b4ec-02330afec471&width=3600",
   },
   {
+    newsletterId: "0",
     title: "MBTI 소개팅",
     hashtag: "#mbti #소개팅 #채팅",
     link: "https://storyplay.com/story/54",
@@ -260,6 +295,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "mbti별 범죄를 저지르면 무슨 범죄를 저지를까",
     hashtag: "#mbti #범죄",
     writer: "카스퍼z",
@@ -268,6 +304,7 @@ export const newsletter = [
       "https://blog.kakaocdn.net/dn/bAlvmU/btrB7cipTra/uUKajQ4YcXyVhSFm6Rs5Yk/img.png",
   },
   {
+    newsletterId: "0",
     title: "MBTI 마피아 다이닝",
     hashtag: "#MBTI #소셜다이닝",
     link: "https://fidelio.site/Events/?idx=54",
@@ -275,6 +312,7 @@ export const newsletter = [
     thumbnail: "/common/img/default_profile.png",
   },
   {
+    newsletterId: "0",
     title: "MBTI별 어울리는 직업 추천",
     hashtag: "#직업 #추천 #특징",
     writer: "잡코리아",
@@ -283,6 +321,7 @@ export const newsletter = [
       "https://i.jobkorea.kr/content/images/ver_1/gnb/jk_logo.png?20190718",
   },
   {
+    newsletterId: "0",
     title: "ENTP 엔티피 대표연예인 모음 11탄(리정, 한예슬, 이찬혁, 영탁)",
     hashtag: "#MBTI #ENTP #연예인 #리정 #한예슬 #이찬혁 #영탁",
     writer: "고양휘",
@@ -291,6 +330,7 @@ export const newsletter = [
       "https://blog.kakaocdn.net/dn/u5zIz/btrox0WMaTH/YKre7iio8I8vjSEebSx4gk/img.png",
   },
   {
+    newsletterId: "0",
     title: "태니지먼트",
     hashtag: "#업무 #회사 #회사MBTI",
     writer: "태니지먼트",
@@ -298,6 +338,7 @@ export const newsletter = [
     thumbnail: "/common/img/default_profile.png",
   },
   {
+    newsletterId: "0",
     title: "MBTI 팩폭 모음",
     hashtag: "#MBTI #팩폭 #특징",
     writer: "뚝딱뉴스 깨비",
@@ -306,6 +347,7 @@ export const newsletter = [
       "https://ddnews.co.kr/wp-content/uploads/2022/03/MBTI-팩폭-모음-1.jpg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 성격 유형 로맨틱 순위, 연애 스타일 정리",
     hashtag: "#로맨틱 #연애 #mbti",
     writer: "잡앤스토리 J&S",
@@ -314,6 +356,7 @@ export const newsletter = [
       "https://tistory1.daumcdn.net/tistory/3947839/attach/64587f8c6f384a85a655c9f339f2bf7f",
   },
   {
+    newsletterId: "0",
     title: "MBTI 팩폭 모음 1탄, 2탄 총정리(팩트체크)",
     hashtag: "#팩트 #팩트폭행 #MBTI",
     writer: "뚝딱뉴스",
@@ -322,6 +365,7 @@ export const newsletter = [
       "https://ddnews.co.kr/wp-content/uploads/2022/03/MBTI-팩폭-모음-1.jpg",
   },
   {
+    newsletterId: "0",
     title: "MBTI별 덕질할 때 하기 힘든 행동들",
     hashtag: "#MBTI #덕질 #힘든행동",
     writer: "Pocamarket",
@@ -329,6 +373,7 @@ export const newsletter = [
     thumbnail: "https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/9ZKKP6NpzIr.png",
   },
   {
+    newsletterId: "0",
     title: "내 MBTI 와 잘 맞는 회사는 어디?",
     hashtag: "#MBTI #취업 #jobplanet #회사 #취준생",
     writer: "Jobplanet",
@@ -337,6 +382,7 @@ export const newsletter = [
       "https://jpassets.jobplanet.co.kr/production/uploads/material/media/10441/img_200banner.png",
   },
   {
+    newsletterId: "0",
     title: "내 MBTI와 잘 맞는 회사는 어디?",
     hashtag: "#취준 #이직 #회사 #취직 #MBTI #취뽀",
     writer: " 컴퍼니 타임스",
@@ -345,6 +391,7 @@ export const newsletter = [
       "https://jpassets.jobplanet.co.kr/production/uploads/material/media/10441/img_200banner.png",
   },
   {
+    newsletterId: "0",
     title: "재미로 보는 mbti 순위 총정리",
     hashtag: "#MBTI #순위 #특징",
     writer: "혜빈",
@@ -352,6 +399,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI는 정말 과학일까? 우리가 몰랐던 MBTI의 모든 것 | SBS 스페셜",
     hashtag: "#MBTI #과학 #SBS스페셜 #진실",
     writer: "달리 [SBS 교양 공식채널]",
@@ -359,6 +407,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 경로당/노인정",
     hashtag: "#유튜브 #영상 #만화",
     writer: "에익쿠",
@@ -366,6 +415,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "[MBTI 유형별 만화] 48편 - 인간관계와 연애궁합의 차이",
     hashtag: "#MBTI #연애 #궁합 #인간관계",
     writer: "티제월드 TJ world",
@@ -373,6 +423,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "SBS스페셜 MBTI의 모든 것",
     hashtag: "#SBS스페셜 #교양 #과학",
     writer: "SBS 교양 공식 채널",
@@ -380,6 +431,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "핫트랙스 MBTI 스티커",
     hashtag: "#MBTI, #다이어리꾸미기, #다꾸",
     writer: "핫트랙스",
@@ -388,6 +440,7 @@ export const newsletter = [
       "//image.kyobobook.co.kr/newimages/giftshop_new/resources/images/pc/kyobo/img_brand_more_kyobo@2x.png",
   },
   {
+    newsletterId: "0",
     title:
       "MBTI 유형별 특징 몰아보기 (총 10편) ㅣ 꼬시기 쉬운 MBTI 유형, MBTI별 사랑꾼 순위, 꼬시기 힘든 MBTI 유형 등등",
     hashtag: "#MBTI #사랑꾼 #게으름 #한국인",
@@ -396,6 +449,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "“INTJ & INTP”의 만남",
     hashtag: "#INTJ #INTP #안소희 #원더걸스 #MBTI",
     writer: "안소희",
@@ -403,6 +457,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "[두루마리] MBTI I만 모인 메탈밴드. track 1",
     hashtag: "#MBTI #음악 #I #메탈밴드",
     writer: "빵송국",
@@ -410,6 +465,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "mbti 문항이 과학적으로 증명된 이유",
     hashtag: "#mbti  #심리 #과학적 #증명",
     writer: "assesta",
@@ -417,6 +473,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "메마른 웃음이 난무하는 ISTP들의 밥상머리",
     hashtag: "#박명수 #주우재 #mbti #istp #막걸리",
     writer: "핀트",
@@ -424,6 +481,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "ENFP는 누르면 극락갈 플레이리스트(playlist)",
     hashtag: "#ENFP #Playlist #MBTI",
     writer: "손다로우쉬",
@@ -431,6 +489,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "유미의 MBTI들 INTP편",
     hashtag: "#강유미 #INTP",
     writer: "강유미 yumi kang 좋아서 하는 채널",
@@ -438,6 +497,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 인사이드",
     hashtag: "#MBTI인사이드 #MBTI하우스 #사회실험",
     writer: "킥더허들스튜디오",
@@ -445,6 +505,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "일자리 없는 청년 166만명…일하려면 MBTI 내라는 회사들이 나타났다?!",
     hashtag: "#MBTI #비디오머그 #취업",
     writer: "비디오머그",
@@ -452,6 +513,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 성향별 투자에 성공하는 방법은?",
     hashtag: "#mbti #투자 #투자왕",
     writer: "미래에셋자산운용",
@@ -459,6 +521,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "INFP에게 먼저 다가가도 될까요? ",
     hashtag: "#유튜브 #인플루엔서 #마마무 #휘인 ",
     writer: "휘인",
@@ -466,6 +529,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "ISTJ 여자 특징 7가지, 화나게 만드는 4가지",
     hashtag: "#ISTJ #여자 #특징 #분노",
     writer: "궁금한 심리",
@@ -473,6 +537,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 유형별 죽었는지 확인하는 방법",
     hashtag: "#MBTI #MBTI만화 #MBTI일상툰 #죽었는지확인",
     writer: "MBTI일상툰",
@@ -480,6 +545,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI, 오해와 진실",
     hashtag: "#MBTI #1030 #성격테스트 #오해와진실",
     writer: "중앙일보",
@@ -487,6 +553,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 유형별 헤어지는 이유",
     hashtag: "#MBTI #헤어짐 #연인",
     writer: "MBTI일상툰",
@@ -494,6 +561,7 @@ export const newsletter = [
     thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
+    newsletterId: "0",
     title: "MBTI 유형별 말버릇",
     hashtag: "#MBTI #만화 #일상툰 #유머",
     writer: "MBTI일상툰",

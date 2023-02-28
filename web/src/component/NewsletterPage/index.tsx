@@ -1,13 +1,12 @@
 import { useCallback, useEffect, useState } from "react";
-import "./NewsletterPage.css";
 import { RandomListInit, RandomType } from "../../service/randomList";
 import Newsletter from "../Newsletter/";
-import { MBTIHistogram } from "../MbtiHistogram";
 
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import Setting from "../Setting";
 import styles from "./index.module.scss";
+import { newsletter } from "../../resource/newsletter";
 
 export const NewsletterPage = (properties: Properties) => {
   const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
@@ -76,24 +75,17 @@ export const NewsletterPage = (properties: Properties) => {
     <div id={id} className={cl}>
       <div className="large-title">뉴스피드</div>
       <div className="page-contents">
-        {newsletters.map(function (i): JSX.Element {
-          //result에 있는 컴포넌트 mainpage에 띄우기
-          if (i.type === "MbtiHistogram") {
-            return <MBTIHistogram />;
-          } else if (i.type === "hashtagsearchresult") {
-            return <></>;
-          } else {
-            return (
-              <Newsletter
-                title={i.data.title}
-                thumbnail={i.data.thumbnail}
-                url={i.data.url}
-                hashtags={i.data.hashtags}
-                writer={i.data.writer}
-                newsletterId={i.data.newsletterId}
-              ></Newsletter>
-            );
-          }
+        {newsletter.map(function (e): JSX.Element {
+          return (
+            <Newsletter
+              title={e.title}
+              thumbnail={e.thumbnail}
+              link={e.link}
+              hashtag={e.hashtag}
+              writer={e.writer}
+              newsletterId={e.newsletterId}
+            ></Newsletter>
+          );
         })}
       </div>
     </div>
