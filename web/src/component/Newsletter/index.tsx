@@ -14,7 +14,7 @@ const Newsletter = (props: Newsletter, properties: Properties) => {
       <div className="newletter-card-item">
         <div className="newletter-card-header">MBTI 뉴스레터</div>
         <div className="newletter-card-img">
-          <a href={props.url}>
+          <a href={props.link}>
             <img src={props.thumbnail} width="97%" height="184px"></img>
           </a>
         </div>
@@ -25,11 +25,7 @@ const Newsletter = (props: Newsletter, properties: Properties) => {
             </div>
 
             <div className="newletter-card-tag">
-              {props.hashtags.map(function (i): JSX.Element {
-                return (
-                  <span className="newletter-card-tag-name">#{i} </span>
-                );
-              })}
+              <span className="newletter-card-tag-name">{props.hashtag} </span>
             </div>
           </div>
           <img
@@ -37,7 +33,7 @@ const Newsletter = (props: Newsletter, properties: Properties) => {
             className="newletter-card-button"
             onClick={(e) => {
               e.preventDefault();
-              window.location.href = props.url;
+              window.location.href = props.link;
             }}
           ></img>
         </div>

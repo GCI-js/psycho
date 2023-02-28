@@ -1,4 +1,4 @@
-import { getNewsletterList } from "./newsletterList";
+import { newsletter } from "../resource/newsletter";
 import { Newsletter } from "../@types/Newsletter";
 export type RandomType = {
 	type: string;
@@ -10,7 +10,7 @@ export const RandomList: RandomType[] = [];
 export const RandomListInit = (): RandomType[] => {
 	//RandomList에 컴포넌트 type과 필요한 data 삽입
 	let NewsletterList: Newsletter[] = [];
-	NewsletterList = getNewsletterList();
+	NewsletterList = newsletter;
 	RandomList.push({ type: "MbtiHistogram", data: [] });
 	RandomList.push({ type: "hashtagsearchresult", data: [] });
 	for (let i = 0; i < NewsletterList.length; i++) {
