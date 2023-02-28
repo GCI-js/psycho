@@ -1,0 +1,62 @@
+.index:global {
+  > .QuestionButtonRow {
+    display: table;
+    width: 100% /*Optional*/;
+  }
+  > .QuestionButtonColumn {
+    display: table-cell;
+    text-align: center;
+    background-color: #ffffff /*Optional*/;
+    height: 47px;
+  }
+
+  > .QuestionButtonLeft {
+    /* Auto layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 15px 0px; */
+    margin: auto;
+    gap: 10px;
+
+    width: 120px;
+    height: 40px;
+
+    background: #000000;
+    color: #ffffff;
+    border-radius: 100px;
+    text-align: center;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+
+  > .QuestionButtonRight {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* padding: 15px 0px; */
+    margin: auto;
+    gap: 10px;
+
+    width: 120px;
+    height: 40px;
+
+    background: #000000;
+    color: #ffffff;
+    border-radius: 100px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+  }
+}

@@ -11,29 +11,8 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
-    writer: "",
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
+    writer: "123",
   },
 
   {
@@ -42,28 +21,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
 
@@ -73,28 +31,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
 
@@ -104,28 +41,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
 
@@ -135,28 +51,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
   {
@@ -165,28 +60,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
 
@@ -196,28 +70,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
   {
@@ -226,28 +79,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
   {
@@ -256,28 +88,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
   {
@@ -286,28 +97,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
   {
@@ -316,28 +106,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
   {
@@ -346,28 +115,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
   {
@@ -376,28 +124,7 @@ export const NewsletterList: Newsletter[] = [
     thumbnail:
       "https://content.surfit.io/thumbs/image/wkRX5/yRXDa/924179560630625122811b/cover-center-2x.webp",
     url: "https://surfit.io/link/yRXDa",
-    hashtags: [
-      // {
-      //   hashtag_id: "0",
-      //   name: "GCI",
-      // },
-      // {
-      //   hashtag_id: "1",
-      //   name: "MBTI",
-      // },
-      // {
-      //   hashtag_id: "2",
-      //   name: "1030",
-      // },
-      // {
-      //   hashtag_id: "3",
-      //   name: "성격테스트",
-      // },
-      // {
-      //   hashtag_id: "4",
-      //   name: "오해와진실",
-      // },
-    ],
+    hashtags: [ "GCI", "MBTI", "1030", "성격테스트", ],
     writer: "",
   },
 ];
