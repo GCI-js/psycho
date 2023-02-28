@@ -2,17 +2,15 @@ import { useCallback, useEffect, useState } from "react";
 import "./NewsletterPage.css";
 import { RandomListInit, RandomType } from "../../service/randomList";
 import Newsletter from "../Newsletter/";
-import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import Setting from "../Setting";
 import styles from "./index.module.scss";
 
-
-export const NewsletterPage= (properties: Properties) => {
-
+export const NewsletterPage = (properties: Properties) => {
   const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
-
+  
+  const [newsletters, setNewsletters] = useState()
   let RandomList: RandomType[] = [];
   let [result, setResult] = useState<RandomType[]>([]);
   let [item, setItem] = useState<RandomType[]>([]);
@@ -69,9 +67,9 @@ export const NewsletterPage= (properties: Properties) => {
   }, []);
   return (
     <div id={id} className={cl}>
-      <div className="NewsletterPageheader">뉴스피드</div>
-      <div className="NewsletterPagecontents">
-        {result.map(function (i): JSX.Element {
+      <div className="large-title">뉴스피드</div>
+      <div className="page-contents">
+        {newsletters.map(function (i): JSX.Element {
           //result에 있는 컴포넌트 mainpage에 띄우기
           if (i.type === "changembti") {
             return <></>;
@@ -93,4 +91,4 @@ export const NewsletterPage= (properties: Properties) => {
       </div>
     </div>
   );
-}
+};
