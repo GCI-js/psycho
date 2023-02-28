@@ -11,6 +11,7 @@ import MockQuestion from "../../../../common/mock_data/mock_questions.json";
 const QuestionEnd = () => {
   const [questionData, setQuestionData] = useState({
     ...MockQuestion[0],
+    image: imgCryingFace3d,
   });
 
   // setQuestionData(data);

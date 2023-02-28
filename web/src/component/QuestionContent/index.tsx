@@ -1,7 +1,6 @@
 import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionButton from "../QuestionButton";
 import { Question } from "../../@types/Question";
-import "./QuestionContent.css";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
 
@@ -39,7 +38,6 @@ const QuestionContent = (properties: Props) => {
         <div className="QuestionContentQuestionBody" style={{}}>
           {properties.qdata.contents.main}
         </div>
-
         <QuestionButton
           text1={properties.qdata.contents.options[0].name}
           onClick1={button1}

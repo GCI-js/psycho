@@ -14,6 +14,7 @@ const QuestionToday = () => {
   });
   const [questionData, setQuestionData] = useState({
     ...MockQuestion[0],
+    image: imgRocket3d,
   });
 
   const [buttonInfo, setButtonInfo] = useState({
