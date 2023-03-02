@@ -130,6 +130,10 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
+  const [isAllSelected, setIsAllSelected] = useState(false);
+  const gotoNextStep = () => {
+    shepherd.whip("test", "TermsInUsePage");
+  };
   const handleBackButton = () => {
     shepherd.whip("test", "RegisterPage1");
   };
@@ -138,68 +142,39 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
       {/* <div className="username">{`@${dummyUserName}`}</div> */}
       <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
 
-      <div className="register large-title">{`회원가입\n`}</div>
+      <div className="large-title">{`회원가입`}</div>
       <div className="medium-title-box">
-        <div className="medium-title">{`거의 다 됐어요! \n `}</div>
-        <div className="medium-title">{`조금만 더 힘내세요!\n`}</div>
+        <div className="medium-title">{`거의 다 됐어요!`}</div>
+        <div className="medium-title">{`조금만 더 힘내세요!`}</div>
       </div>
       <div className="small-title">{`프로필의 내용은 바로 공개되지 않아요!\n`}</div>
 
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
-      <div
-        className={
-          styles.selectBox + " " + styles.dropdownButton + " " + styles.fullBox
-        }
-      >
-        <span className={styles.icon}>
-          <img src={selectNation} alt="" />
-        </span>
-        <select className={styles.select}>
-          <option disabled selected>
-            국가
-          </option>
-          {nationOptionData.map((nation) => {
-            return <option>{nation.value}</option>;
-          })}
-        </select>
-        <span className={styles.iconArrow}>
-          <img src={downwardArrow} alt="" />
-        </span>
-        {/* <button
-          className={styles.nation + " " + styles.dropdownButton}
-          onClick={(e) =>
-            setNationDropdownVisibility(!nationDropdownVisibility)
-          }
-        >
-          <img className="dropdownIcon" src={selectNation} />
-          <div className="dropdown-text">
-            {nationDropdownVisibility ? "국가" : "국가"}
-          </div>
-          <img className="dropdownDownwardIcon" src={downwardArrow} />
-        </button>
-        <Dropdown visibility={nationDropdownVisibility}>
-          <ul>
+      <div className="row">
+        <div className={"selectBox dropdownButton fullBox"}>
+          <span className="icon">
+            <img src={selectNation} alt="" />
+          </span>
+          <select className="select">
+            <option disabled selected>
+              국가
+            </option>
             {nationOptionData.map((nation) => {
-              return <li>{nation.value}</li>;
+              return <option>{nation.value}</option>;
             })}
-          </ul>
-        </Dropdown> */}
+          </select>
+          <span className="iconArrow">
+            <img src={downwardArrow} alt="" />
+          </span>
+        </div>
       </div>
       <div className="choiceText">{`거주하는 시, 구를 선택해주세요\n`}</div>
       <div className="row">
-        <div
-          className={
-            styles.selectBox +
-            " " +
-            styles.dropdownButton +
-            " " +
-            styles.halfBox
-          }
-        >
-          <span className={styles.icon}>
+        <div className="selectBox dropdownButton halfBox">
+          <span className="icon">
             <img src={selectCity} alt="" />
           </span>
-          <select className={styles.select}>
+          <select className="select">
             <option disabled selected>
               시
             </option>
@@ -207,23 +182,15 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               return <option>{city.value}</option>;
             })}
           </select>
-          <span className={styles.iconArrow}>
+          <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
         </div>
-        <div
-          className={
-            styles.selectBox +
-            " " +
-            styles.dropdownButton +
-            " " +
-            styles.halfBox
-          }
-        >
-          <span className={styles.icon}>
+        <div className="selectBox dropdownButton halfBox">
+          <span className="icon">
             <img src={selectDistrict} alt="" />
           </span>
-          <select className={styles.select}>
+          <select className="select">
             <option disabled selected>
               구
             </option>
@@ -231,44 +198,34 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               return <option>{district.value}</option>;
             })}
           </select>
-          <span className={styles.iconArrow}>
+          <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
         </div>
       </div>
       <div className="choiceText">{`성별을 선택해주세요\n`}</div>
-      <div
-        className={
-          styles.selectBox + " " + styles.dropdownButton + " " + styles.fullBox
-        }
-      >
-        <span className={styles.icon}>
-          <img src={selectGender} alt="" />
-        </span>
-        <select className={styles.select}>
-          <option disabled selected>
-            성별
-          </option>
-          {genderOptionData.map((gender) => {
-            return <option>{gender.value}</option>;
-          })}
-        </select>
-        <span className={styles.iconArrow}>
-          <img src={downwardArrow} alt="" />
-        </span>
+      <div className="row">
+        <div className={"selectBox dropdownButton fullBox"}>
+          <span className="icon">
+            <img src={selectGender} alt="" />
+          </span>
+          <select className="select">
+            <option disabled selected>
+              성별
+            </option>
+            {genderOptionData.map((gender) => {
+              return <option>{gender.value}</option>;
+            })}
+          </select>
+          <span className="iconArrow">
+            <img src={downwardArrow} alt="" />
+          </span>
+        </div>
       </div>
       <div className="choiceText">{`생년월일을 선택해주세요\n`}</div>
       <div className="row">
-        <div
-          className={
-            styles.selectBox +
-            " " +
-            styles.dropdownButton +
-            " " +
-            styles.yearBox
-          }
-        >
-          <select className={styles.select}>
+        <div className="selectBox dropdownButton yearBox">
+          <select className="select">
             <option disabled selected>
               년
             </option>
@@ -276,20 +233,12 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               return <option>{year.value}</option>;
             })}
           </select>
-          <span className={styles.iconArrow}>
+          <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
         </div>
-        <div
-          className={
-            styles.selectBox +
-            " " +
-            styles.dropdownButton +
-            " " +
-            styles.monthBox
-          }
-        >
-          <select className={styles.select}>
+        <div className="selectBox dropdownButton monthBox">
+          <select className="select">
             <option disabled selected>
               월
             </option>
@@ -297,17 +246,13 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               return <option>{month.value}</option>;
             })}
           </select>
-          <span className={styles.iconArrow}>
+          <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
         </div>
 
-        <div
-          className={
-            styles.selectBox + " " + styles.dropdownButton + " " + styles.dayBox
-          }
-        >
-          <select className={styles.select}>
+        <div className={"selectBox dropdownButton dayBox"}>
+          <select className="select">
             <option disabled selected>
               일
             </option>
@@ -315,14 +260,14 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               return <option>{day.value}</option>;
             })}
           </select>
-          <span className={styles.iconArrow}>
+          <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
         </div>
       </div>
       <button
-        className="next-step-button"
-        onClick={() => shepherd.whip("test", "TermsInUsePage")}
+        className={`next-step-button${isAllSelected ? "-on" : "-off"}`}
+        onClick={isAllSelected ? gotoNextStep : () => {}}
       >
         계속
       </button>
