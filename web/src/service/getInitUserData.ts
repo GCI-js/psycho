@@ -1,6 +1,6 @@
 export const getInitUserData = () => {
   let user = {
-    nickname: "",
+    nickname: "애미야 물좀다오",
     mbtis: [
       {
         date: new Date().getTime(),

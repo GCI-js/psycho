@@ -1,33 +1,16 @@
 .index:global {
-    > .NewsletterPageheader{
-        font-family: "Inter";
-        font-style: normal;
-        font-weight: 700;
-        font-size: 34px;
-        line-height: 41px;
-        letter-spacing: 0.374px;
-        color: #000000;
-        text-align: left;
-        margin-left: 30px;
-        margin-top: 42px;
-        margin-bottom: 22px;
-        letter-spacing: 0.374px;
-        color: #000000;
-    }
-
-    > .NewsletterPagecontents {
-        margin-left: 23px;
-        margin-right: 23px;
-    }
-    
- 
-  
-
-
-
-  
-
-  
-
-
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  > .large-title {
+    margin-top: 60px;
+    margin-left: 26px;
+    flex: none;
+    order: 0;
+  }
+  > .page-contents {
+    margin-top: 12px;
+    margin-left: 23px;
+    margin-right: 23px;
+  }
 }
