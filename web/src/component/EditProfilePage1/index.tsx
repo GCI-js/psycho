@@ -93,6 +93,7 @@ const EditProfilePage1 = (properties: Props) => {
             {"를 선택해주세요  "}
           </div>
         </div>
+
         <MBTISelectBox MBTIStates={MBTIStates} setMBTIStates={setMBTIStates} />
       </div>
       <div className="blood-type-area">
