@@ -73,7 +73,12 @@ export const NewsletterPage = (properties: Properties) => {
   }, []);
   return (
     <div id={id} className={cl}>
-      <div className="large-title">뉴스피드</div>
+      <div
+        className="large-title"
+        onClick={() => shepherd.whip("test", "WelcomePage")}
+      >
+        뉴스피드
+      </div>
       <div className="page-contents">
         {newsletter.map(function (e): JSX.Element {
           return (

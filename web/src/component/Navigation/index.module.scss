@@ -1,24 +1,37 @@
 .index:global {
-    width: 100%;
-    background: #f0f0f0;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    z-index: 1;
-    height: 55px;
-    bottom: 0px;
-    padding: 0px 15px;
-    box-sizing: border-box;
-    > div {
-        cursor: pointer;
+  width: 100%;
+  background: #f0f0f0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: fixed;
+  z-index: 1;
+  height: 55px;
+  bottom: 0px;
+  padding: 0px 15px;
+  box-sizing: border-box;
+  > .icon-wrapper {
+    width: 32px;
+    height: 32px;
+    > .fill-icon {
+      width: 32px;
+      height: 32px;
+      cursor: pointer;
     }
+    > .icon {
+      width: 24px;
+      height: 24px;
+      margin: 4px;
+      cursor: pointer;
+    }
+    -webkit-tap-highlight-color: transparent;
+  }
 }
 
 :local {
-    .search_svg  {
-        width: 24px;
-        height: 24px;
-        fill: none;
-    }
+  .search_svg {
+    width: 24px;
+    height: 24px;
+    fill: none;
+  }
 }
