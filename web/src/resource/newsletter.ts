@@ -5,15 +5,16 @@ export const newsletter = [
     hashtag: "#개발자 #mbti #코딩 #프로그래밍",
     writer: "HuemoneLab Co.,Ltd",
     link: "https://mbti.codemate.kr/",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://mbti.codemate.kr/static/media/headerLogo.c5b39579.png",
   },
   {
     newsletterId: "0",
     title: "MBTI 유형별 사랑할 때 특징들",
     hashtag: "#MBTI  #연애 #썸 #플러팅",
     writer: "정보도우미, 살구꿀팁",
-    link: "https://socialspeaker.tistory.com/entry/MBTI-%EC%9C%A0%ED%98%95%EB%B3%84-%EC%82%AC%EB%9E%[…]5-%EB%A7%A4%EB%A0%A5-%EC%A7%88%ED%88%AC?utm_source=dable",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    link: "https://socialspeaker.tistory.com/entry/MBTI-%EC%9C%A0%ED%98%95%EB%B3%84-%EC%82%AC%EB%9E%91%ED%95%A0%EB%95%8C-%ED%8A%B9%EC%A7%95%EB%93%A4-%ED%91%9C%ED%98%84%EB%B0%A9%EB%B2%95-%EC%9D%B4%EC%83%81%ED%98%95-%ED%94%8C%EB%9F%AC%ED%8C%85-%EB%A7%A4%EB%A0%A5-%EC%A7%88%ED%88%AC",
+    thumbnail:
+      "https://blog.kakaocdn.net/dn/2b1Bc/btrnte3s7VN/bqeRKp4qYwcH2Ytt5odxxk/img.jpg",
   },
   {
     newsletterId: "0",

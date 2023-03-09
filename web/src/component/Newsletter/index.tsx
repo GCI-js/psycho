@@ -1,5 +1,5 @@
 import * as React from "react";
-import icon from "./icon_newsletter.png";
+import icon from "../../img/newsletterSelectButton.png";
 import { Newsletter } from "../../@types/Newsletter";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
