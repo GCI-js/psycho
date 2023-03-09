@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import MainButton from "../MainButton/MainButton";
 import styles from "./index.module.scss";
 import Dropdown from "../DropDown";
@@ -10,6 +10,8 @@ import selectGender from "../../img/selectGender.png";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import ArrowLeft from "../../img/Arrow_left.png";
+import { getInitUserData } from "../../service/getInitUserData";
+import { User } from "../../@types/User";
 
 const RegisterPage2 = (properties: Properties) => {
   /*
@@ -20,6 +22,8 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const id = [`_${idiotproof.trace(RegisterPage2)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
+  // let userData: User = localStorage.getItem("userData");
+  // if (userData == null) userData = getInitUserData();
   const dummyUserName = "아크릴오므라이스";
 
   const nationOptionData = [
@@ -58,35 +62,36 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
     { key: 8, value: "1999" },
   ];
   const birthMonthOptionData = [
-    { key: 1, value: "1" },
-    { key: 2, value: "2" },
-    { key: 3, value: "3" },
-    { key: 4, value: "4" },
-    { key: 5, value: "5" },
-    { key: 6, value: "6" },
-    { key: 7, value: "7" },
-    { key: 8, value: "8" },
-    { key: 9, value: "9" },
+    { key: 1, value: "01" },
+    { key: 2, value: "02" },
+    { key: 3, value: "03" },
+    { key: 4, value: "04" },
+    { key: 5, value: "05" },
+    { key: 6, value: "06" },
+    { key: 7, value: "07" },
+    { key: 8, value: "08" },
+    { key: 9, value: "09" },
     { key: 10, value: "10" },
     { key: 11, value: "11" },
     { key: 12, value: "12" },
   ];
   const birthDayOptionData = [
-    { key: 1, value: "1" },
-    { key: 2, value: "2" },
-    { key: 3, value: "3" },
-    { key: 4, value: "4" },
-    { key: 5, value: "5" },
-    { key: 6, value: "6" },
-    { key: 7, value: "7" },
-    { key: 8, value: "8" },
-    { key: 9, value: "9" },
+    { key: 1, value: "01" },
+    { key: 2, value: "02" },
+    { key: 3, value: "03" },
+    { key: 4, value: "04" },
+    { key: 5, value: "05" },
+    { key: 6, value: "06" },
+    { key: 7, value: "07" },
+    { key: 8, value: "08" },
+    { key: 9, value: "09" },
     { key: 10, value: "10" },
     { key: 11, value: "11" },
     { key: 12, value: "12" },
     { key: 31, value: "31" },
   ];
 
+  const [isAllSelected, setIsAllSelected] = useState(true);
   const [nationDropdownVisibility, setNationDropdownVisibility] =
     useState(false);
   const [cityDropdownVisibility, setCityDropdownVisibility] = useState(false);
@@ -109,6 +114,35 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const [selectedBirthMonth, setSelectedBirthMonth] = useState("");
   const [selectedBirthDay, setSelectedBirthDay] = useState("");
 
+  const selectedValues = [
+    selectedNation,
+    selectedCity,
+    selectedDistrict,
+    selectedGender,
+    selectedBirthYear,
+    selectedBirthMonth,
+    selectedBirthDay,
+  ];
+
+  const checkIfAllSelected = () => {
+    if (
+      selectedNation !== "" &&
+      selectedCity !== "" &&
+      selectedDistrict !== "" &&
+      selectedGender !== "" &&
+      selectedBirthYear !== "" &&
+      selectedBirthMonth !== "" &&
+      selectedBirthDay !== ""
+    )
+      setIsAllSelected(true);
+    else setIsAllSelected(false);
+  };
+
+  // check for all value is updated
+  useEffect(() => {
+    checkIfAllSelected();
+  }, selectedValues);
+
   const handleChangeNation = (event: any) => {
     setSelectedNation(event.target.value);
   };
@@ -130,8 +164,9 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
-  const [isAllSelected, setIsAllSelected] = useState(false);
+
   const gotoNextStep = () => {
+    // console.log(userData);
     shepherd.whip("test", "TermsInUsePage");
   };
   const handleBackButton = () => {
@@ -155,7 +190,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           <span className="icon">
             <img src={selectNation} alt="" />
           </span>
-          <select className="select">
+          <select className="select" onChange={handleChangeNation}>
             <option disabled selected>
               국가
             </option>
@@ -174,12 +209,12 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           <span className="icon">
             <img src={selectCity} alt="" />
           </span>
-          <select className="select">
+          <select className="select" onChange={handleChangeCity}>
             <option disabled selected>
               시
             </option>
             {cityOptionData.map((city) => {
-              return <option>{city.value}</option>;
+              return <option value={city.value}>{city.value}</option>;
             })}
           </select>
           <span className="iconArrow">
@@ -190,12 +225,12 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           <span className="icon">
             <img src={selectDistrict} alt="" />
           </span>
-          <select className="select">
+          <select className="select" onChange={handleChangeDistrict}>
             <option disabled selected>
               구
             </option>
             {districtOptionData.map((district) => {
-              return <option>{district.value}</option>;
+              return <option value={district.value}>{district.value}</option>;
             })}
           </select>
           <span className="iconArrow">
@@ -209,12 +244,12 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           <span className="icon">
             <img src={selectGender} alt="" />
           </span>
-          <select className="select">
+          <select className="select" onChange={handleChangeGender}>
             <option disabled selected>
               성별
             </option>
             {genderOptionData.map((gender) => {
-              return <option>{gender.value}</option>;
+              return <option value={gender.value}>{gender.value}</option>;
             })}
           </select>
           <span className="iconArrow">
@@ -225,12 +260,12 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
       <div className="choiceText">{`생년월일을 선택해주세요\n`}</div>
       <div className="row">
         <div className="selectBox dropdownButton yearBox">
-          <select className="select">
+          <select className="select" onChange={handleChangeBirthYear}>
             <option disabled selected>
               년
             </option>
             {birthYearOptionData.map((year) => {
-              return <option>{year.value}</option>;
+              return <option value={year.value}>{year.value}</option>;
             })}
           </select>
           <span className="iconArrow">
@@ -238,12 +273,12 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           </span>
         </div>
         <div className="selectBox dropdownButton monthBox">
-          <select className="select">
+          <select className="select" onChange={handleChangeBirthMonth}>
             <option disabled selected>
               월
             </option>
             {birthMonthOptionData.map((month) => {
-              return <option>{month.value}</option>;
+              return <option value={month.value}>{month.value}</option>;
             })}
           </select>
           <span className="iconArrow">
@@ -252,12 +287,12 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
         </div>
 
         <div className={"selectBox dropdownButton dayBox"}>
-          <select className="select">
+          <select className="select" onChange={handleChangeBirthDay}>
             <option disabled selected>
               일
             </option>
             {birthDayOptionData.map((day) => {
-              return <option>{day.value}</option>;
+              return <option value={day.value}>{day.value}</option>;
             })}
           </select>
           <span className="iconArrow">
