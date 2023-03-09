@@ -25,10 +25,10 @@ export const MBTIHistogram: React.FC = (properties: Properties) => {
   //       ["P/J", 50, 80, 60, 95, 85],
   //     ],
   //   })
-  localStorage.setItem("E/I", "10,20,30,40,50"); //Dummy setItem
-  localStorage.setItem("S/N", "70,30,90,70,70"); //Dummy setItem
-  localStorage.setItem("T/F", "60, 90, 70, 50, 20"); //Dummy setItem
-  localStorage.setItem("P/J", "50, 80, 60, 95, 90"); //Dummy setItem
+  localStorage.setItem("EI", "10,20,30,40,50"); //Dummy setItem
+  localStorage.setItem("SN", "70,30,90,70,70"); //Dummy setItem
+  localStorage.setItem("TF", "60, 90, 70, 50, 20"); //Dummy setItem
+  localStorage.setItem("PJ", "50, 80, 60, 95, 90"); //Dummy setItem
   let getLocal = (mbtiCategory: string) => {
     return localStorage
       .getItem(mbtiCategory)
@@ -37,10 +37,10 @@ export const MBTIHistogram: React.FC = (properties: Properties) => {
         return parseInt(item, 10);
       });
   };
-  const EI = getLocal("E/I");
-  const SN = getLocal("S/N");
-  const TF = getLocal("T/F");
-  const PJ = getLocal("P/J");
+  const EI = getLocal("EI");
+  const SN = getLocal("SN");
+  const TF = getLocal("TF");
+  const PJ = getLocal("PJ");
   const [options, setOptions] = useState({
     color: ["#8deb40", "#006699", "#4cabce", "#e5323e"],
     dataset: {
