@@ -130,7 +130,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
-  const [isAllSelected, setIsAllSelected] = useState(false);
+  const [isAllSelected, setIsAllSelected] = useState(true);
   const gotoNextStep = () => {
     shepherd.whip("test", "TermsInUsePage");
   };
