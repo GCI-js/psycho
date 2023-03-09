@@ -164,7 +164,6 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
-
   const gotoNextStep = () => {
     // console.log(userData);
     shepherd.whip("test", "TermsInUsePage");

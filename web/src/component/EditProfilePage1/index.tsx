@@ -9,6 +9,7 @@ import { getInitUserData } from "../../service/getInitUserData";
 import { MBTIValueToState } from "../../service/convertMBTI";
 import ArrowLeft from "../../img/Arrow_left.png";
 import NicknameFlag from "../../img/nicknameFlag.png";
+import { getRandNickname } from "../../service/getRandNickname";
 
 interface MBTIStates {
   MBTI: string;
@@ -63,10 +64,11 @@ const EditProfilePage1 = (properties: Props) => {
       { bloodType: "AB", state: userData.bloodType == "AB" ? true : false },
       { bloodType: "O", state: userData.bloodType == "O" ? true : false },
     ]);
-    console.log("debug");
     console.log(userData);
   }, []);
-
+  const genNickname = () => {
+    setNickname(getRandNickname());
+  };
   return (
     <div id={id} className={cl}>
       <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
@@ -83,7 +85,9 @@ const EditProfilePage1 = (properties: Props) => {
             placeholder={`@${nickname}`}
             // value={`${nickname}`}
           />
-          <button className="nickname-gen-button">랜덤 생성</button>
+          <button className="nickname-gen-button" onClick={genNickname}>
+            랜덤 생성
+          </button>
         </div>
       </div>
       <div className="mbti-area">
@@ -106,7 +110,7 @@ const EditProfilePage1 = (properties: Props) => {
         />
       </div>
       <button
-        className="next-step-button"
+        className="next-step-button-on"
         onClick={() => shepherd.whip("test", "EditProfilePage2")}
       >
         계속
