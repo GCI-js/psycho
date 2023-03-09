@@ -27,12 +27,9 @@ interface Props extends Properties {
 const RegisterPage1 = (properties: Props) => {
   const id = [`_${idiotproof.trace(RegisterPage1)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
-  let userData: any = localStorage.getItem("userData");
+  let userData: any = JSON.parse(localStorage.getItem("userData"));
   if (userData == null || userData.nickname == undefined) {
-    console.log("HERE");
-    console.log(userData);
     userData = getInitUserData();
-    console.log(userData);
   }
   const [nickname, setNickname] = useState("");
   const [MBTIStates, setMBTIStates] = useState<MBTIStates[]>([
@@ -71,7 +68,10 @@ const RegisterPage1 = (properties: Props) => {
   const genNickname = () => {
     setNickname(getRandNickname());
   };
-  const gotoNextStep = () => {
+  const saveUserData = async (userData: any) => {
+    localStorage.setItem("userData", JSON.stringify(userData));
+  };
+  const gotoNextStep = async () => {
     userData.nickname = nickname;
     userData.mbtis.unshift(MBTIStateToValue(MBTIStates));
     userData.bloodType =
@@ -84,7 +84,10 @@ const RegisterPage1 = (properties: Props) => {
         : bloodTypeStates[3].state == true
         ? "O"
         : "";
-    localStorage.setItem("userData", userData);
+    await saveUserData(userData);
+    console.log(
+      "TTTTTT" + JSON.parse(localStorage.getItem("userData")).nickname
+    );
     shepherd.whip("test", "RegisterPage2");
   };
   return (

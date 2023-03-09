@@ -15,7 +15,7 @@ export const getInitUserData = () => {
     city: "",
     district: "",
     gender: "",
-    birth: 0,
+    birth: "",
   };
   return user;
 };
