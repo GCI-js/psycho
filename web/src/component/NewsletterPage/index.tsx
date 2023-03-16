@@ -12,8 +12,6 @@ export const NewsletterPage = (properties: Properties) => {
   const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
-  const [newsletters, setNewsletters] = useState();
-
   if (!localStorage.getItem("isOldUser")) {
     shepherd.whip("test", "WelcomePage");
   }
