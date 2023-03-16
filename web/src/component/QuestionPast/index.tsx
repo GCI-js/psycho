@@ -11,6 +11,8 @@ import MockQuestion from "../../../../common/mock_data/mock_questions.json";
 const QuestionPast = (properties: Properties) => {
   const [questionData, setQuestionData] = useState({
     ...MockQuestion[0],
+    image: imgSushi3d,
+
   });
 
   // setQuestionData(data);

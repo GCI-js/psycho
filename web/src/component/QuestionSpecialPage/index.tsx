@@ -28,7 +28,6 @@ const QuestionSpecialPage = (properties: Properties) => {
 
   return (
     <div id={id} className={cl}>
-      <div>hello</div>
       <QuestionContent qdata={questionData} />
     </div>
   );
