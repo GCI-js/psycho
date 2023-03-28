@@ -16,53 +16,53 @@ export const newsletter = [
     thumbnail:
       "https://blog.kakaocdn.net/dn/2b1Bc/btrnte3s7VN/bqeRKp4qYwcH2Ytt5odxxk/img.jpg",
   },
-  {
-    newsletterId: "0",
-    title: "MBTI 아파트에서 생활하는 법",
-    hashtag: "#아파트 #mbti #부동산",
-    link: "https://socialspeaker.tistory.com/entry/MBTI-%EC%9C%A0%ED%98%95%EB%B3%84-%EC%95%84%ED%8C%[…]-%EC%83%9D%ED%99%9C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95",
-    writer: "살구꿀팁, 정보도우미",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
-  },
-  {
-    newsletterId: "0",
-    title: "MBTI 유형별 절대 못하는 것",
-    hashtag: "#절대불가 #네버 #MBTI #못하는것",
-    writer: "VISUALDIVE , MBTI알리미",
-    link: "https://mbti119.tistory.com/entry/MBTI-%EC%9C%A0%ED%98%95%EB%B3%84-%EC%A0%88%EB%8C%80-[…]84%EC%A7%9C-%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94%EA%B2%83",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
-  },
+  // {
+  //   newsletterId: "0",
+  //   title: "MBTI 아파트에서 생활하는 법",
+  //   hashtag: "#아파트 #mbti #부동산",
+  //   link: "https://socialspeaker.tistory.com/entry/MBTI-%EC%9C%A0%ED%98%95%EB%B3%84-%EC%95%84%ED%8C%[…]-%EC%83%9D%ED%99%9C%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95",
+  //   writer: "살구꿀팁, 정보도우미",
+  //   thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+  // },
+  // {
+  //   newsletterId: "0",
+  //   title: "MBTI 유형별 절대 못하는 것",
+  //   hashtag: "#절대불가 #네버 #MBTI #못하는것",
+  //   writer: "VISUALDIVE , MBTI알리미",
+  //   link: "https://mbti119.tistory.com/entry/MBTI-%EC%9C%A0%ED%98%95%EB%B3%84-%EC%A0%88%EB%8C%80-[…]84%EC%A7%9C-%ED%95%A0-%EC%88%98-%EC%97%86%EB%8A%94%EA%B2%83",
+  //   thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+  // },
   {
     newsletterId: "0",
     title: "재미로 보는 MBTI - 성격유형별 여자친구 특성,ENFJ",
     hashtag: "#여자친구 #ENFJ #성격 #좋은남친어려움",
     writer: "후회없는하루",
     link: "https://post.naver.com/viewer/postView.nhn?volumeNo=31014040&memberNo=7130658",
-    thumbnail: "https://ssl.pstatic.net/static.post/image/m/im/loader.gif",
+    thumbnail: "https://post-phinf.pstatic.net/MjAyMTAzMjNfMjk1/MDAxNjE2NDU0MTY4NjMw.mKXObQS-tojSQmkN3-qXF5_iBVrz5-v6T3jj7apLPBcg.41gnqEvBY_dpqi7bJ9lBUhssPzl8dmlRAWbgastTvZIg.JPEG/FB_IMG_1613887920336.jpg?type=w1200",
   },
-  {
-    newsletterId: "0",
-    title: "재미로 보는 MBTI - 유형별 여름휴가 준비 모습",
-    hashtag: "#MBTI #휴가 #여름 #준비",
-    writer: "정보도우미",
-    link: "https://socialspeaker.tistory.com/entry/%EC%9E%AC%EB%AF%B8%EB%A1%9C-%EB%B3%B4%EB%8A%94-MB[…]%ED%9C%B4%EA%B0%80-%EC%A4%80%EB%B9%84-%EB%AA%A8%EC%8A%B5",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
-  },
-  {
-    newsletterId: "0",
-    title: "MBTI, 유형별 짤",
-    hashtag: "#MBTI #짤 #유형별",
-    writer: "살구꿀팁, 정보도우미",
-    link: "https://socialspeaker.tistory.com/entry/mbti-%EC%9C%A0%ED%98%95-%EB%B3%84-%EA%B0%81%EC%A2[…]%84-%ED%8A%B9%EC%A7%95-mbti-%EC%A7%A4-%EB%AA%A8%EC%9D%8C ",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
-  },
+  // {
+  //   newsletterId: "0",
+  //   title: "재미로 보는 MBTI - 유형별 여름휴가 준비 모습",
+  //   hashtag: "#MBTI #휴가 #여름 #준비",
+  //   writer: "정보도우미",
+  //   link: "https://socialspeaker.tistory.com/entry/%EC%9E%AC%EB%AF%B8%EB%A1%9C-%EB%B3%B4%EB%8A%94-MB[…]%ED%9C%B4%EA%B0%80-%EC%A4%80%EB%B9%84-%EB%AA%A8%EC%8A%B5",
+  //   thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+  // },
+  // {
+  //   newsletterId: "0",
+  //   title: "MBTI, 유형별 짤",
+  //   hashtag: "#MBTI #짤 #유형별",
+  //   writer: "살구꿀팁, 정보도우미",
+  //   link: "https://socialspeaker.tistory.com/entry/mbti-%EC%9C%A0%ED%98%95-%EB%B3%84-%EA%B0%81%EC%A2[…]%84-%ED%8A%B9%EC%A7%95-mbti-%EC%A7%A4-%EB%AA%A8%EC%9D%8C ",
+  //   thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+  // },
   {
     newsletterId: "0",
     title: "mbti별 수능점수",
     hashtag: "#수능 #입시 #mbti #내신 #수학 #영어 #국어",
     writer: "나무위키",
     link: "https://namu.wiki/w/%EB%8C%80%ED%95%99%EC%88%98%ED%95%99%EB%8A%A5%EB%A0%A5%EC%8B%9C%ED%97%98/MBTI",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.namu.wiki/i/jUA1-S0XP6jCUjn8rbiTFBZZ-g_QrJCc-qQe2B2OBJQLhnSMzpqKQYutmGiErDF_egFSGM8D_bD-RRQ7S59wBSUM0E0oOhiJstrzwLmQfEg20qUKvDZeZ7gQOGKGpWwauyOaAjJEw-nAlL-EQereeA.webp",
   },
   {
     newsletterId: "0",
@@ -70,7 +70,7 @@ export const newsletter = [
     hashtag: "#궁합 #mbti #운명의상대",
     link: "https://pushoong.com/MBTI/relationship/",
     writer: "인싸놀이터, 푸슝",
-    thumbnail: "/static_local_root/img/pushoong/favicon_full.png",
+    thumbnail: "https://www.notion.so/image/https%3A%2F%2Fd29dbfyawlamz6.cloudfront.net%2Fstatic%2Fimg%2Fpushoong%2Ffavicon_full.47c62592e1aa.png?table=block&id=0ff80304-3f83-4737-b50d-9813e6226eac&cache=v2",
   },
   {
     newsletterId: "0",
@@ -78,7 +78,7 @@ export const newsletter = [
     hashtag: "#프로그래머 #MBTI #설문조사 #내친구는과연",
     writer: "프로그래머스",
     link: "https://programmers.co.kr/pages/2020-mbti-survey",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://grepp-cloudfront.s3.ap-northeast-2.amazonaws.com/programmers_imgs/banners/2020-mbti-prgms/mbti_survey-img_sns.png",
   },
   {
     newsletterId: "0",
@@ -87,7 +87,7 @@ export const newsletter = [
     writer: "인플래닛",
     link: "https://brunch.co.kr/@inplanet/16",
     thumbnail:
-      "//i1.daumcdn.net/thumb/R336x0/?fname=http://t1.daumcdn.net/brunch/static/img/help/pc/top/side_banner_20171219.png",
+      "https://img1.daumcdn.net/thumb/C100x100/?fname=http://t1.daumcdn.net/brunch/service/user/8cso/image/Fz36NsX2EjXMJr5e2oKrc9boFHU.png",
   },
   {
     newsletterId: "0",
@@ -96,7 +96,7 @@ export const newsletter = [
     writer: "김자유 from 'brunch'",
     link: "https://brunch.co.kr/@thinkaboutlove/224",
     thumbnail:
-      "//i1.daumcdn.net/thumb/R336x0/?fname=http://t1.daumcdn.net/brunch/static/img/help/pc/top/side_banner_20171219.png",
+      "https://blog.printsome.com/wp-content/uploads/Brand-archetypes-infographic-3000x5000.jpg",
   },
   {
     newsletterId: "0",
@@ -105,7 +105,7 @@ export const newsletter = [
     writer: "슴씨 피드",
     link: "https://brunch.co.kr/@thesmc/1",
     thumbnail:
-      "//i1.daumcdn.net/thumb/R336x0/?fname=http://t1.daumcdn.net/brunch/static/img/help/pc/top/side_banner_20171219.png",
+      "https://img1.daumcdn.net/thumb/C100x100/?fname=http://t1.daumcdn.net/brunch/service/user/adhh/image/pEEn4DI-Cvngl378_BKUDQBhPNk.png",
   },
   {
     newsletterId: "0",
@@ -122,7 +122,7 @@ export const newsletter = [
     hashtag: "#우주 #직장인 #MBTI #플로우 #프롬본부",
     writer: "플로우X프롬본부",
     link: "https://basecamp.from.kr/flow?utm_source=facebook&utm_medium=social&utm_campaign=profile&utm_content=210309_all_BT",
-    thumbnail: "https://cdn.1store.io/basecamp/images/beedance/favicon.png",
+    thumbnail: "https://basecamp.from.kr/_next/image?url=https%3A%2F%2Fcdn.1store.io%2Fbasecamp%2Fimages%2Fhome%2Fmain.png&w=384&q=75",
   },
   {
     newsletterId: "0",
@@ -130,7 +130,7 @@ export const newsletter = [
     hashtag: "#19금 #잠자리 #테스트 #MBTI",
     writer: "Loma/GLAM",
     link: "https://lomastore.com/19types/intro",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://lomastore.com/19types/1f22bbbb8750342d56435009ee30b4da.svg",
   },
   {
     newsletterId: "0",
@@ -138,7 +138,7 @@ export const newsletter = [
     hashtag: "#MBTI #돼지 #먹방 #음식 #테스트",
     writer: "사윤스튜디오",
     link: "https://pigmbti.sayun.studio/",
-    thumbnail: "/logo1.svg",
+    thumbnail: "https://cdn.sayun.studio/pigmbti/images/all.jpg",
   },
   {
     newsletterId: "0",
@@ -146,7 +146,7 @@ export const newsletter = [
     hashtag: "#반반 #중립",
     writer: "텅장주의 카드뉴스",
     link: "https://www.dmitory.com/issue/248205780",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfu-vZEprzpxWclQDHs1ecxLEpJIAP0yvqsuK-CiwVHZFA8xdjGb8Y9NxpwTaiyXJzdoY&usqp=CAU",
   },
   {
     newsletterId: "0",
@@ -155,7 +155,7 @@ export const newsletter = [
     writer: "띵스플로우",
     link: "https://storyplay.com/share/story/HloeSpaeoIlpayHeSp",
     thumbnail:
-      "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fimg_empty.55d4c7d2.png&w=3840&q=75",
+      "https://storyplay.com/_next/image?url=https%3A%2F%2Fd1n3v67f38xwek.cloudfront.net%2FeyJidWNrZXQiOiJzdG9yeXBsYXktcHJvZCIsImtleSI6IlN0b3J5RmlsZXMvYmExM2FjNzItZTUxMS00NzFhLThiMDUtZWFhY2QzOGQ0MGJiIiwib3V0cHV0Rm9ybWF0IjoicG5nIiwiZWRpdHMiOnsicmVzaXplIjp7InJvdGF0ZSI6bnVsbCwid2lkdGgiOjEwMDAsImhlaWdodCI6MTAwMCwiZml0IjoiaW5zaWRlIn19fQ%3D%3D&w=1920&q=75",
   },
   {
     newsletterId: "0",
@@ -163,16 +163,7 @@ export const newsletter = [
     hashtag: "#여행 #추천",
     writer: "Travie 강화송 기자",
     link: "https://www.travie.com/news/articleView.html?idxno=50327",
-    thumbnail: "https://cdn.travie.com/image/icon_brunch.png",
-  },
-  {
-    newsletterId: "0",
-    title: "한국인이 MBTI를 좋아하는 이유",
-    hashtag: "#MBTI #한국 #한국인 #분류론",
-    writer: "김성지 기자",
-    link: "https://ditoday.com/%ED%95%9C%EA%B5%AD%EC%9D%B8%EC%9D%B4-mbti%EB%A5%BC-%EC%A2%8B%EC%95%84%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0/",
-    thumbnail:
-      "https://ditoday.com/wp-content/themes/ditoday2023/images/logos/di-symbol.svg",
+    thumbnail: "https://cdn.travie.com/news/photo/202204/50327_21775_5944.jpg",
   },
   {
     newsletterId: "0",
@@ -181,7 +172,7 @@ export const newsletter = [
     writer: "Editor 김성지",
     link: "https://ditoday.com/%ED%95%9C%EA%B5%AD%EC%9D%B8%EC%9D%B4-mbti%EB%A5%BC-%EC%A2%8B%EC%95%84%ED%95%98%EB%8A%94-%EC%9D%B4%EC%9C%A0/",
     thumbnail:
-      "https://ditoday.com/wp-content/themes/ditoday2023/images/logos/di-symbol.svg",
+      "https://ditoday.com/wp-content/uploads/2022/08/MBTI_Reason_Korea-648x365.jpg",
   },
   {
     newsletterId: "0",
@@ -198,7 +189,7 @@ export const newsletter = [
     hashtag: "#이상형 #MBTI #테스트",
     writer: "Araut",
     link: "https://mbtilovetest.netlify.app/",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://blog.kakaocdn.net/dn/ufbci/btq6pUOiOWq/tFfTkW9W0CvmpKxcaon6L0/img.jpg",
   },
   {
     newsletterId: "0",
@@ -207,7 +198,7 @@ export const newsletter = [
     writer: "고구마팜",
     link: "https://gogumafarm.kr/bbs/board.php?bo_table=article&wr_id=937",
     thumbnail:
-      "data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%200%200'%3E%3C/svg%3E",
+      "https://gogumafarm.kr/wp-content/uploads/2023/01/image-1158.png",
   },
   {
     newsletterId: "0",
@@ -215,7 +206,7 @@ export const newsletter = [
     hashtag: "#애고그램 #mbti #egogram #성향파악",
     writer: "egogramtest",
     link: "https://egogramtest.kr/",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://d2u3dcdbebyaiu.cloudfront.net/uploads/atch_img/143/2384d58995240f6ba05eeda37f10bf9d_res.jpeg",
   },
   {
     newsletterId: "0",
@@ -224,7 +215,7 @@ export const newsletter = [
     writer: "오승희, 사이다경제",
     link: "https://cidermics.com/contents/detail/2426",
     thumbnail:
-      "https://img.cidermics.com/images/contents/20210722/e195ebc0-eaae-11eb-9e12-4bf91923e155.jpg",
+      "https://img.cidermics.com/images/contents/20201218/e6855090-4139-11eb-8597-ef7a4736fdeb.jpg",
   },
   {
     newsletterId: "0",
@@ -241,7 +232,7 @@ export const newsletter = [
     hashtag: "#MBTI인기 #해외뉴스",
     writer: "이하린 기자",
     link: "https://www.koreatimes.co.kr/www/nation/2022/08/281_335268.html",
-    thumbnail: "/www2/img/amn_close.png",
+    thumbnail: "https://img.koreatimes.co.kr/upload/newsV2/images/202208/5d5d4687f16647abb112399c19fff83e.jpg/dims/resize/740/optimize",
   },
   {
     newsletterId: "0",
@@ -251,14 +242,6 @@ export const newsletter = [
     link: "https://ddnews.co.kr/enfj-%eb%82%a8%ec%9e%90-%ed%8a%b9%ec%a7%95/#more-10038",
     thumbnail:
       "https://ddnews.co.kr/wp-content/uploads/2022/11/ENFJ-남자-특징-7-1024x611.jpg",
-  },
-  {
-    newsletterId: "0",
-    title: "에고그램 테스트",
-    hashtag: "#성격유형검사 #에고그램 #성격유형",
-    writer: "egogramtest.kr",
-    link: "https://egogramtest.kr/",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
     newsletterId: "0",
@@ -276,7 +259,7 @@ export const newsletter = [
     writer: "노트 주인 from 노트#1",
     link: "https://hobbymemo.tistory.com/576",
     thumbnail:
-      "https://tistory1.daumcdn.net/tistory/4648736/attach/7a7181b9b37d4c1cb6dc69a0f7d04744",
+      "https://blog.kakaocdn.net/dn/bYzeMv/btraXWM5mRZ/DTLUeu4sZgjxzqku9kXB51/img.png",
   },
   {
     newsletterId: "0",
@@ -286,14 +269,6 @@ export const newsletter = [
     link: "https://play.playio.kr/mbti",
     thumbnail:
       "https://oopy.lazyrockets.com/api/v2/notion/image?src=https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0fa84812-8302-43bc-bffd-eb521b035ed1%2F%25EC%259D%25B8%25EC%2583%259D%25EA%25B2%259C%25EB%25B9%2584%25ED%258B%25B0%25EC%2595%2584%25EC%259D%25B4.png&blockId=48c179f2-3b84-4256-b4ec-02330afec471&width=3600",
-  },
-  {
-    newsletterId: "0",
-    title: "MBTI 소개팅",
-    hashtag: "#mbti #소개팅 #채팅",
-    link: "https://storyplay.com/story/54",
-    writer: "스플 MBTI 연구소",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
   },
   {
     newsletterId: "0",
@@ -310,7 +285,7 @@ export const newsletter = [
     hashtag: "#MBTI #소셜다이닝",
     link: "https://fidelio.site/Events/?idx=54",
     writer: "Fidelio",
-    thumbnail: "/common/img/default_profile.png",
+    thumbnail: "https://cdn.imweb.me/thumbnail/20220225/a4540e01316cd.jpg",
   },
   {
     newsletterId: "0",
@@ -319,7 +294,7 @@ export const newsletter = [
     writer: "잡코리아",
     link: "https://www.jobkorea.co.kr/goodjob/tip/view?News_No=18406",
     thumbnail:
-      "https://i.jobkorea.kr/content/images/ver_1/gnb/jk_logo.png?20190718",
+      "https://img.jobkorea.co.kr/images/ContentsManagement/SmartEditor/2020/11/2020111715025_SEU.jpg",
   },
   {
     newsletterId: "0",
@@ -336,17 +311,17 @@ export const newsletter = [
     hashtag: "#업무 #회사 #회사MBTI",
     writer: "태니지먼트",
     link: "https://blog.tanagement.co.kr/",
-    thumbnail: "/common/img/default_profile.png",
+    thumbnail: "https://cdn.imweb.me/thumbnail/20220726/9252ec731dceb.png",
   },
-  {
-    newsletterId: "0",
-    title: "MBTI 팩폭 모음",
-    hashtag: "#MBTI #팩폭 #특징",
-    writer: "뚝딱뉴스 깨비",
-    link: "https://ddnews.co.kr/mbti-%ED%8C%A9%ED%8F%AD-%EB%AA%A8%EC%9D%8C/",
-    thumbnail:
-      "https://ddnews.co.kr/wp-content/uploads/2022/03/MBTI-팩폭-모음-1.jpg",
-  },
+  // {
+  //   newsletterId: "0",
+  //   title: "MBTI 팩폭 모음",
+  //   hashtag: "#MBTI #팩폭 #특징",
+  //   writer: "뚝딱뉴스 깨비",
+  //   link: "https://ddnews.co.kr/mbti-%ED%8C%A9%ED%8F%AD-%EB%AA%A8%EC%9D%8C/",
+  //   thumbnail:
+  //     "https://ddnews.co.kr/wp-content/uploads/2022/03/MBTI-팩폭-모음-1.jpg",
+  // },
   {
     newsletterId: "0",
     title: "MBTI 성격 유형 로맨틱 순위, 연애 스타일 정리",
@@ -371,7 +346,7 @@ export const newsletter = [
     hashtag: "#MBTI #덕질 #힘든행동",
     writer: "Pocamarket",
     link: "https://m.facebook.com/pocamarket/photos/pcb.213889257461926/213889197461932/?type=3&source=48&refid=52&__tn__=EH-R",
-    thumbnail: "https://static.xx.fbcdn.net/rsrc.php/v3/yt/r/9ZKKP6NpzIr.png",
+    thumbnail: "https://scontent-ssn1-1.xx.fbcdn.net/v/t39.30808-6/241392963_213889204128598_6252384128993961808_n.png?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_ohc=lGXEdXtvyOkAX-lvsw-&_nc_ht=scontent-ssn1-1.xx&oh=00_AfD-Cq7HTG3Fxap_r04Inn-SMOfPRGWgLPQ0BkkcZH1Lpg&oe=64184892",
   },
   {
     newsletterId: "0",
@@ -380,16 +355,7 @@ export const newsletter = [
     writer: "Jobplanet",
     link: "https://www.jobplanet.co.kr/contents/news-2848",
     thumbnail:
-      "https://jpassets.jobplanet.co.kr/production/uploads/material/media/10441/img_200banner.png",
-  },
-  {
-    newsletterId: "0",
-    title: "내 MBTI와 잘 맞는 회사는 어디?",
-    hashtag: "#취준 #이직 #회사 #취직 #MBTI #취뽀",
-    writer: " 컴퍼니 타임스",
-    link: "https://www.jobplanet.co.kr/contents/news-2848",
-    thumbnail:
-      "https://jpassets.jobplanet.co.kr/production/uploads/material/media/10441/img_200banner.png",
+      "https://jpassets.jobplanet.co.kr/production/uploads/material/media/9098/mbti-%EC%84%B1%EA%B2%A9-%EC%9C%A0%ED%98%95%ED%91%9C4.jpg",
   },
   {
     newsletterId: "0",
@@ -397,15 +363,7 @@ export const newsletter = [
     hashtag: "#MBTI #순위 #특징",
     writer: "혜빈",
     link: "https://youtu.be/mfQ4fPDYYto",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
-  },
-  {
-    newsletterId: "0",
-    title: "MBTI는 정말 과학일까? 우리가 몰랐던 MBTI의 모든 것 | SBS 스페셜",
-    hashtag: "#MBTI #과학 #SBS스페셜 #진실",
-    writer: "달리 [SBS 교양 공식채널]",
-    link: "https://www.youtube.com/watch?v=j1TxAEFqIRU",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/mfQ4fPDYYto/mqdefault_6s.webp?du=3000&sqp=CIqxyqAG&rs=AOn4CLD9RdArQiH2YeCtTBvF0FR5_l0GDg",
   },
   {
     newsletterId: "0",
@@ -413,7 +371,7 @@ export const newsletter = [
     hashtag: "#유튜브 #영상 #만화",
     writer: "에익쿠",
     link: "https://www.youtube.com/watch?v=bQnjZYD-mg4",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/bQnjZYD-mg4/mqdefault_6s.webp?du=3000&sqp=CJDAyqAG&rs=AOn4CLBcWk_17VyG9WIjcpAnW8h4x5Q8Yg",
   },
   {
     newsletterId: "0",
@@ -421,7 +379,7 @@ export const newsletter = [
     hashtag: "#MBTI #연애 #궁합 #인간관계",
     writer: "티제월드 TJ world",
     link: "https://youtu.be/9q-B0bOCW1g",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/9q-B0bOCW1g/mqdefault_6s.webp?du=3000&sqp=CLDUyqAG&rs=AOn4CLCqYNylpNwuskbGYX9YYd8DSOhlJg",
   },
   {
     newsletterId: "0",
@@ -429,7 +387,7 @@ export const newsletter = [
     hashtag: "#SBS스페셜 #교양 #과학",
     writer: "SBS 교양 공식 채널",
     link: "https://youtu.be/j1TxAEFqIRU",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/j1TxAEFqIRU/mqdefault_6s.webp?du=3000&sqp=CICDyqAG&rs=AOn4CLCNAXx9XR-COwyKV7DHLu_slLEo2w",
   },
   {
     newsletterId: "0",
@@ -447,7 +405,7 @@ export const newsletter = [
     hashtag: "#MBTI #사랑꾼 #게으름 #한국인",
     writer: "캘리노트",
     link: "https://youtu.be/KF-4r3qOWGM ",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/KF-4r3qOWGM/mqdefault_6s.webp?du=3000&sqp=CL7OyqAG&rs=AOn4CLDmRouMG5QTU9FSJnri7IPlanBkNg",
   },
   {
     newsletterId: "0",
@@ -455,7 +413,7 @@ export const newsletter = [
     hashtag: "#INTJ #INTP #안소희 #원더걸스 #MBTI",
     writer: "안소희",
     link: "https://www.youtube.com/watch?v=3s5rGYYWR6w&ab_channel=%EC%95%88%EC%86%8C%ED%9D%AC",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/3s5rGYYWR6w/mqdefault_6s.webp?du=3000&sqp=CLC1yqAG&rs=AOn4CLDziYKAcd_ATye6Q2IfWa3BUn0d9A",
   },
   {
     newsletterId: "0",
@@ -463,7 +421,7 @@ export const newsletter = [
     hashtag: "#MBTI #음악 #I #메탈밴드",
     writer: "빵송국",
     link: "https://www.youtube.com/watch?v=W9urHV6-CmA",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/W9urHV6-CmA/mqdefault_6s.webp?du=3000&sqp=CKC7yqAG&rs=AOn4CLBs9FAxKApzN-utecAjHb18UNRBOA",
   },
   {
     newsletterId: "0",
@@ -471,7 +429,7 @@ export const newsletter = [
     hashtag: "#mbti  #심리 #과학적 #증명",
     writer: "assesta",
     link: "https://www.youtube.com/watch?v=ksJnb459Bj4",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/ksJnb459Bj4/mqdefault_6s.webp?du=3000&sqp=CLqsyqAG&rs=AOn4CLDYkhriKEbVgrX8eqErneSKkGYlhQ",
   },
   {
     newsletterId: "0",
@@ -479,7 +437,7 @@ export const newsletter = [
     hashtag: "#박명수 #주우재 #mbti #istp #막걸리",
     writer: "핀트",
     link: "https://www.youtube.com/watch?v=9kCwpSCHhRQ&ab_channel=%ED%95%80%ED%8A%B8",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/9kCwpSCHhRQ/mqdefault_6s.webp?du=3000&sqp=CPSVyqAG&rs=AOn4CLApuzWiAkhXBU54d7irEq2yFTwh7g",
   },
   {
     newsletterId: "0",
@@ -487,7 +445,7 @@ export const newsletter = [
     hashtag: "#ENFP #Playlist #MBTI",
     writer: "손다로우쉬",
     link: "https://www.youtube.com/watch?v=3pthhAiA_6U",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/vi/3pthhAiA_6U/hq720.jpg?sqp=-oaymwEcCOgCEMoBSFXyq4qpAw4IARUAAIhCGAFwAcABBg==&rs=AOn4CLCD1JqanGcV6UMj-2eMiYK56xmkbw",
   },
   {
     newsletterId: "0",
@@ -495,7 +453,7 @@ export const newsletter = [
     hashtag: "#강유미 #INTP",
     writer: "강유미 yumi kang 좋아서 하는 채널",
     link: "https://www.youtube.com/watch?v=a50lC2G-6gY&list=PLkzM1g1eTbDHkmyc_zchMLRxm-qDrilsu&index=1",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/a50lC2G-6gY/mqdefault_6s.webp?du=3000&sqp=CPaWyqAG&rs=AOn4CLB4tdZqL_2u69AwFDVzQ31uyi9PRA",
   },
   {
     newsletterId: "0",
@@ -503,7 +461,7 @@ export const newsletter = [
     hashtag: "#MBTI인사이드 #MBTI하우스 #사회실험",
     writer: "킥더허들스튜디오",
     link: "https://youtu.be/VxnvTBH8yg4",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/VxnvTBH8yg4/mqdefault_6s.webp?du=3000&sqp=COyRyqAG&rs=AOn4CLAaG7_ssCIwjNHBQShD_J6SoUQtQA",
   },
   {
     newsletterId: "0",
@@ -511,7 +469,7 @@ export const newsletter = [
     hashtag: "#MBTI #비디오머그 #취업",
     writer: "비디오머그",
     link: "https://www.youtube.com/watch?v=wmLKGelGX6s",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/wmLKGelGX6s/mqdefault_6s.webp?du=3000&sqp=COa_yqAG&rs=AOn4CLDXyTrU7ue4ntUs_tE6sPtBlLyEEQ",
   },
   {
     newsletterId: "0",
@@ -519,7 +477,7 @@ export const newsletter = [
     hashtag: "#mbti #투자 #투자왕",
     writer: "미래에셋자산운용",
     link: "https://youtu.be/M4H2Hu7X8ps",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/M4H2Hu7X8ps/mqdefault_6s.webp?du=3000&sqp=CNHRyqAG&rs=AOn4CLC_YCjOVy0uN6HdbUnngMnZB_uQOA",
   },
   {
     newsletterId: "0",
@@ -527,23 +485,23 @@ export const newsletter = [
     hashtag: "#유튜브 #인플루엔서 #마마무 #휘인 ",
     writer: "휘인",
     link: "https://youtu.be/3bo_JBVQcEM",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/3bo_JBVQcEM/mqdefault_6s.webp?du=3000&sqp=CPubyqAG&rs=AOn4CLAiT14Q4Gm4oKhgfYMsfpP55yOOAA",
   },
-  {
-    newsletterId: "0",
-    title: "ISTJ 여자 특징 7가지, 화나게 만드는 4가지",
-    hashtag: "#ISTJ #여자 #특징 #분노",
-    writer: "궁금한 심리",
-    link: "https://mailremember.com/%EC%95%8C%EA%B3%A0-%EB%B3%B4%EB%A9%B4-%EB%86%80%EB%9D%BC%EB%[…]94%EB%82%98%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-4%EA%B0%80/",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
-  },
+  // {
+  //   newsletterId: "0",
+  //   title: "ISTJ 여자 특징 7가지, 화나게 만드는 4가지",
+  //   hashtag: "#ISTJ #여자 #특징 #분노",
+  //   writer: "궁금한 심리",
+  //   link: "https://mailremember.com/%EC%95%8C%EA%B3%A0-%EB%B3%B4%EB%A9%B4-%EB%86%80%EB%9D%BC%EB%[…]94%EB%82%98%EA%B2%8C-%EB%A7%8C%EB%93%9C%EB%8A%94-4%EA%B0%80/",
+  //   thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+  // },
   {
     newsletterId: "0",
     title: "MBTI 유형별 죽었는지 확인하는 방법",
     hashtag: "#MBTI #MBTI만화 #MBTI일상툰 #죽었는지확인",
     writer: "MBTI일상툰",
     link: "https://www.youtube.com/watch?v=lzq1ZstWAU4&ab_channel=MBTI%EC%9D%BC%EC%83%81%ED%88%B0",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/lzq1ZstWAU4/mqdefault_6s.webp?du=3000&sqp=CJyhyqAG&rs=AOn4CLDIWaomdbxB31UWi42K4LlCj5-5HA",
   },
   {
     newsletterId: "0",
@@ -551,7 +509,7 @@ export const newsletter = [
     hashtag: "#MBTI #1030 #성격테스트 #오해와진실",
     writer: "중앙일보",
     link: "https://www.youtube.com/watch?v=rZ-x5uNhb4w",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/rZ-x5uNhb4w/mqdefault_6s.webp?du=3000&sqp=CLzJyqAG&rs=AOn4CLBkFcodAPoInQO_a_nUQAL-OWDQUg",
   },
   {
     newsletterId: "0",
@@ -559,7 +517,7 @@ export const newsletter = [
     hashtag: "#MBTI #헤어짐 #연인",
     writer: "MBTI일상툰",
     link: "https://www.youtube.com/watch?v=NneMtQ-yMcc&ab_channel=MBTI%EC%9D%BC%EC%83%81%ED%88%B0",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/NneMtQ-yMcc/mqdefault_6s.webp?du=3000&sqp=CLWpyqAG&rs=AOn4CLBn1tTHVxPHSw1exDwFVqzwKoFGpA",
   },
   {
     newsletterId: "0",
@@ -567,6 +525,6 @@ export const newsletter = [
     hashtag: "#MBTI #만화 #일상툰 #유머",
     writer: "MBTI일상툰",
     link: "https://youtu.be/19MpaZMa7Jg",
-    thumbnail: "https://www.16personalities.com/static/images/system/logo.svg",
+    thumbnail: "https://i.ytimg.com/an_webp/19MpaZMa7Jg/mqdefault_6s.webp?du=3000&sqp=COjByqAG&rs=AOn4CLDIUDxlt8KPk-4IKSQHOUtRlr2tIg",
   },
 ];
