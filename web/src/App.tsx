@@ -28,8 +28,8 @@ export default function App(properties: Properties) {
   return (
     <div id={id} className={cl}>
       <Lamb data-lamb="test" className="display" pageClassName="page">
-        <NewsletterPage data-pose="NewsletterPage" />
         <WelcomePage data-pose="WelcomePage" setNavVisible={setNavVisible} />
+        <NewsletterPage data-pose="NewsletterPage" />
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
         <Setting data-pose="Setting" />
