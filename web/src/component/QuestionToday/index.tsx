@@ -3,6 +3,7 @@ import QuestionContent from "../QuestionContent";
 import imgRocket3d from "./images/rocket_3d.svg";
 import "./QuestionToday.css";
 import MockQuestion from "../../../../common/mock_data/mock_questions.json";
+import shepherd from "../../service/shepherd";
 
 /**
  * 오늘의 질문
@@ -25,9 +26,21 @@ const QuestionToday = () => {
   const [properties, setProperties] = useState({});
 
   console.log(questionData);
+
+  const agreeButtion = () => {
+    shepherd.whip("test", "QuestionEnd");
+  };
+  const disagreeButtion = () => {
+    shepherd.whip("test", "QuestionEnd");
+  };
+
   return (
     <div className="">
-      <QuestionContent qdata={questionData} />
+      <QuestionContent
+        qdata={questionData}
+        agree={agreeButtion}
+        disagree={disagreeButtion}
+      />
     </div>
   );
 };

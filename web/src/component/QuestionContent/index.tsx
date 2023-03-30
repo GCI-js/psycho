@@ -6,19 +6,14 @@ import idiotproof from "../../service/idiotproof";
 
 interface Props extends Properties {
   qdata: Question;
+  agree: () => void;
+  disagree: () => void;
 }
 // 질문 컴포넌트의 내용을 담당하는 컴포넌트
 const QuestionContent = (properties: Props) => {
   const id = [`_${idiotproof.trace(QuestionContent)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
   // 더미 버튼. 개발 필요
-  const button1 = () => {
-    console.log("button1 Clicked");
-  };
-  const button2 = () => {
-    console.log("button2 Clicked");
-  };
-
   return (
     <div id={id} className={cl}>
       <div className="QuestionContentPage">
@@ -40,9 +35,9 @@ const QuestionContent = (properties: Props) => {
         </div>
         <QuestionButton
           text1={properties.qdata.contents.options[0].name}
-          onClick1={button1}
+          onClick1={properties.agree}
           text2={properties.qdata.contents.options[1].name}
-          onClick2={button2}
+          onClick2={properties.disagree}
         />
       </div>
     </div>
