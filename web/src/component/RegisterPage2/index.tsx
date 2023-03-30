@@ -36,6 +36,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const nationOptionData = nationList.map((nation, index) => {
     return { key: index + 1, value: nation };
   });
+
   const cityOptionData = [
     { key: 1, value: "서울" },
     // { key: 2, value: "부산" },
