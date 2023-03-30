@@ -9,6 +9,7 @@ import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import ArrowLeft from "../../img/Arrow_left.png";
 import { districtList } from "../../resource/districtList";
+import { nationList } from "../../resource/nationList";
 
 const RegisterPage2 = (properties: Properties) => {
   /*
@@ -26,11 +27,15 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   let userData: any = JSON.parse(localStorage.getItem("userData"));
   if (userData == null) handleBackButton();
 
-  const nationOptionData = [
-    { key: 1, value: "대한민국" },
-    // { key: 2, value: "미국" },
-    // { key: 3, value: "일본" },
-  ];
+  // const nationOptionData = [
+  // { key: 1, value: "대한민국" },
+  // { key: 2, value: "미국" },
+  // { key: 3, value: "일본" },
+  // ];
+
+  const nationOptionData = nationList.map((nation, index) => {
+    return { key: index + 1, value: nation };
+  });
   const cityOptionData = [
     { key: 1, value: "서울" },
     // { key: 2, value: "부산" },
