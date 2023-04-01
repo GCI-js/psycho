@@ -18,3 +18,10 @@ export interface Question {
     value: number;
   }[];
 }
+
+
+export interface Question {
+  question: string,
+  factor: "EI" | "NS" | "FT" | "JP",
+  value: -5 | 5
+}

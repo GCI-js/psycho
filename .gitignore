@@ -8,3 +8,5 @@ log/
 *.lock
 package-lock.json
 nohup*
+
+.DS_STORE
