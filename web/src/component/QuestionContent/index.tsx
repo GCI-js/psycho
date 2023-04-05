@@ -3,6 +3,7 @@ import QuestionButton from "../QuestionButton";
 import { Question } from "../../@types/Question";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
+import shepherd from "../../service/shepherd";
 
 interface Props extends Properties {
   qdata: Question;
@@ -14,6 +15,10 @@ const QuestionContent = (properties: Props) => {
   const id = [`_${idiotproof.trace(QuestionContent)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
   // 더미 버튼. 개발 필요
+
+  const skipButtion = () => {
+    shepherd.whip("test", "QuestionEnd");
+  };
   return (
     <div id={id} className={cl}>
       <div className="QuestionContentPage">
@@ -25,7 +30,9 @@ const QuestionContent = (properties: Props) => {
         </div>
         <div className="QuestionContentRemained">
           <div className="QuestionContentColumn">{properties.qdata.quote}</div>
-          <div className="QuestionContentColumn">skip</div>
+          <div className="QuestionContentColumn" onClick={skipButtion}>
+            skip
+          </div>
         </div>
         <div className="QuestionContentQuestionTitle LargeTitle">
           {properties.qdata.title}

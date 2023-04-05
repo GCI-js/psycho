@@ -15,38 +15,18 @@
       letter-spacing: 0.374px;
       padding-bottom: 19px;
     }
-    > .QuestionContentRemained {
-      display: flex;
-      justify-content: space-between;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 22px;
-      letter-spacing: -0.408px;
-      color: #bdbdbd;
-      > .QuestionContentColumn {
-        /* display: table-cell; */
-        display: flex;
-        /* flex-direction: column; */
-      }
+
+    > .QuestionContentPageImg {
+      padding-top: 30px;
+      text-align: center;
     }
 
     > .QuestionContentQuestionTitle {
-      margin: 26px 0px;
+      margin: 70px 0px 26px 0px;
       font-weight: 700;
       font-size: 34px;
       line-height: 41px;
       letter-spacing: 0.374px;
-    }
-
-    > .QuestionContentQuestionBody {
-      width: 275px;
-      height: 110px;
-      padding-bottom: 25px;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 22px;
-      letter-spacing: -0.408px;
-      color: #434343;
     }
   }
 }

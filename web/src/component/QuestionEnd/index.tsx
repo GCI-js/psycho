@@ -17,10 +17,7 @@ const QuestionEnd = (properties: Properties) => {
     image: imgCryingFace3d,
   });
 
-  const agreeButtion = () => {
-    shepherd.whip("test", "QuestionPast");
-  };
-  const disagreeButtion = () => {
+  const againButtion = () => {
     shepherd.whip("test", "QuestionPast");
   };
   // setQuestionData(data);
@@ -31,28 +28,18 @@ const QuestionEnd = (properties: Properties) => {
   return (
     <div id={id} className={cl}>
       <div className="QuestionContentPage">
-        <div className="QuestionContentPageTitle LargeTitle">
-          {questionData.title}
-        </div>
-        <div className="">
-          <img src={questionData.image} alt="rocket3d" />
-        </div>
-        <div className="QuestionContentRemained">
-          <div className="QuestionContentColumn">{questionData.quote}</div>
-          <div className="QuestionContentColumn">skip</div>
+        <div className="QuestionContentPageTitle LargeTitle">오늘의 질문</div>
+        <div className="QuestionContentPageImg">
+          <img
+            src={imgCryingFace3d}
+            width="250px"
+            height="250px"
+            alt="rocket3d"
+          />
         </div>
         <div className="QuestionContentQuestionTitle LargeTitle">
-          {questionData.title}
+          모든 질문에<br></br>답하셨어요!
         </div>
-        <div className="QuestionContentQuestionBody" style={{}}>
-          {questionData.contents.main}
-        </div>
-        <QuestionButton
-          text1={questionData.contents.options[0].name}
-          onClick1={agreeButtion}
-          text2={questionData.contents.options[1].name}
-          onClick2={disagreeButtion}
-        />
       </div>
     </div>
   );
