@@ -19,6 +19,9 @@ import RegisterPage2 from "./component/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage";
 import EditProfilePage1 from "./component/EditProfilePage1/index";
 import EditProfilePage2 from "./component/EditProfilePage2/index";
+import QuestionEnd from "./component/QuestionEnd";
+import QuestionPast from "./component/QuestionPast";
+import QuestionSpecialPage from "./component/QuestionSpecialPage";
 
 export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
@@ -46,6 +49,9 @@ export default function App(properties: Properties) {
           setNavVisible={setNavVisible}
         />
         <RegisterPage2 data-pose="RegisterPage2" />
+        <QuestionEnd data-pose="QuestionEnd" />
+        <QuestionPast data-pose="QuestionPast" />
+        <QuestionSpecialPage data-pose="QuestionSpecialPage" />
         <TermsInUsePage
           data-pose="TermsInUsePage"
           setNavVisible={setNavVisible}

@@ -15,10 +15,10 @@ import QuestionSpecialPage from "../QuestionSpecialPage";
 const QuestionPage = () => {
   return (
     <div>
-      <QuestionSpecialPage />
+      {/* <QuestionSpecialPage /> */}
       <QuestionToday />
-      <QuestionEnd />
-      <QuestionPast />
+      {/* <QuestionEnd />
+      <QuestionPast /> */}
       {/* <QuestionPopupPast /> */}
     </div>
   );
