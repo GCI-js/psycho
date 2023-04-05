@@ -1,4 +1,4 @@
-export const question = [
+export const questionList = [
   { question: "주기적으로 새로운 친구를 만든다.", factor: "EI", value: -5 },
   {
     question:
