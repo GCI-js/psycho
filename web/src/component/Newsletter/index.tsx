@@ -1,12 +1,10 @@
-import * as React from "react";
 import icon from "../../img/newsletterSelectButton.png";
 import { Newsletter } from "../../@types/Newsletter";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
-import Setting from "../Setting";
 
 const Newsletter = (props: Newsletter, properties: Properties) => {
-  const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
+  const id = [`_${idiotproof.trace(Newsletter)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
   return (
