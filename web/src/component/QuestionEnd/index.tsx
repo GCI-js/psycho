@@ -2,7 +2,7 @@ import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionContent from "../QuestionContent";
 import imgCryingFace3d from "./images/crying_face_3d.svg";
 import styles from "./index.module.scss";
-import MockQuestion from "../../../../common/mock_data/mock_questions.json";
+import MockQuestion from "../../../../unused/common/mock_data/mock_questions.json";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import QuestionButton from "../QuestionButton";

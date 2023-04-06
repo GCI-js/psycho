@@ -2,7 +2,7 @@ import React, { Component, PureComponent, useState, useEffect } from "react";
 import { Question } from "../../@types/Question";
 import QuestionContent from "../QuestionContent";
 import imgSushi3d from "./images/sushi_3d.svg";
-import MockQuestion from "../../../../common/mock_data/mock_questions.json";
+import MockQuestion from "../../../../unused/common/mock_data/mock_questions.json";
 import shepherd from "../../service/shepherd";
 
 /**
