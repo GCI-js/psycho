@@ -19,9 +19,8 @@ export interface Question {
   }[];
 }
 
-
-export interface Question {
-  question: string,
-  factor: "EI" | "NS" | "FT" | "JP",
-  value: -5 | 5
+export interface QuestionList {
+  question: string;
+  factor: "EI" | "NS" | "FT" | "JP";
+  value: -5 | 5;
 }
