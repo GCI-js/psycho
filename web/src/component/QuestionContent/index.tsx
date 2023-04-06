@@ -4,6 +4,7 @@ import { Question } from "../../@types/Question";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
 import shepherd from "../../service/shepherd";
+import img from "../../resource/emoji/cup_with_straw_3d.png";
 
 interface Props extends Properties {
   qdata: Question;
@@ -23,27 +24,29 @@ const QuestionContent = (properties: Props) => {
     <div id={id} className={cl}>
       <div className="QuestionContentPage">
         <div className="QuestionContentPageTitle LargeTitle">
-          {properties.qdata.title}
+          {"오늘의 질문"}
         </div>
         <div className="">
-          <img src={properties.qdata.image} alt="rocket3d" />
+          <img src={img} alt="rocket3d" />
         </div>
         <div className="QuestionContentRemained">
-          <div className="QuestionContentColumn">{properties.qdata.quote}</div>
+          <div className="QuestionContentColumn">
+            {"오늘의 질문이 N개 남았어요"}
+          </div>
           <div className="QuestionContentColumn" onClick={skipButtion}>
             skip
           </div>
         </div>
         <div className="QuestionContentQuestionTitle LargeTitle">
-          {properties.qdata.title}
+          {"N번째 질문(1/5)"}
         </div>
         <div className="QuestionContentQuestionBody" style={{}}>
-          {properties.qdata.contents.main}
+          {properties.qdata.context}
         </div>
         <QuestionButton
-          text1={properties.qdata.contents.options[0].name}
+          text1={"그렇다"}
           onClick1={properties.agree}
-          text2={properties.qdata.contents.options[1].name}
+          text2={"아니다"}
           onClick2={properties.disagree}
         />
       </div>
