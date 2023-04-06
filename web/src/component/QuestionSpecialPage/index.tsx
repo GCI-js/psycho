@@ -5,7 +5,7 @@ import umbrella3d from "../../img/umbrella_3d.svg";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
 
-import MockQuestion from "../../../../unused/common/mock_data/mock_questions.json";
+import { questionList } from "../../resource/question";
 import shepherd from "../../service/shepherd";
 
 /**
@@ -19,7 +19,7 @@ const QuestionSpecialPage = (properties: Properties) => {
   ].join();
   const cl = [styles.index, properties.className].join(" ");
   const [questionData, setQuestionData] = useState({
-    ...MockQuestion[2],
+    ...questionList[2],
     image: umbrella3d,
   });
 

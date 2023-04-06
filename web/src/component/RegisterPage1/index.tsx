@@ -27,7 +27,7 @@ interface Props extends Properties {
 const RegisterPage1 = (properties: Props) => {
   const id = [`_${idiotproof.trace(RegisterPage1)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
-  let userData: any = JSON.parse(localStorage.getItem("userData"));
+  let userData: any = localStorage.getItem("userData");
   if (userData == null || userData.nickname == undefined) {
     userData = getInitUserData();
   }
@@ -85,9 +85,6 @@ const RegisterPage1 = (properties: Props) => {
         ? "O"
         : "";
     await saveUserData(userData);
-    console.log(
-      "TTTTTT" + JSON.parse(localStorage.getItem("userData")).nickname
-    );
     shepherd.whip("test", "RegisterPage2");
   };
   return (
