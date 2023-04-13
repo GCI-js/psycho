@@ -10,6 +10,8 @@ import selectGender from "../../img/selectGender.png";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import ArrowLeft from "../../img/Arrow_left.png";
+import { districtList } from "../../resource/districtList";
+import { nationList } from "../../resource/nationList";
 
 interface Props extends Properties {
   setNavVisible: Function;
@@ -21,23 +23,17 @@ const EditProfilePage2 = (properties: Props) => {
 
   const dummyUserName = "아크릴오므라이스";
   properties.setNavVisible(true);
-  const nationOptionData = [
-    { key: 1, value: "대한민국" },
-    { key: 2, value: "미국" },
-    { key: 3, value: "일본" },
-  ];
   const cityOptionData = [
     { key: 1, value: "서울" },
-    { key: 2, value: "부산" },
-    { key: 3, value: "대구" },
-    { key: 3, value: "대전" },
+    // { key: 2, value: "부산" },
+    // { key: 3, value: "대구" },
+    // { key: 3, value: "대전" },
   ];
-  const districtOptionData = [
-    { key: 1, value: "마포" },
-    { key: 2, value: "강남" },
-    { key: 3, value: "서대문" },
-    { key: 3, value: "서초" },
-  ];
+
+  const districtOptionData = districtList.map((district, index) => {
+    return { key: index + 1, value: district };
+  });
+
   const genderOptionData = [
     { key: 1, value: "남자" },
     { key: 2, value: "여자" },
@@ -46,46 +42,32 @@ const EditProfilePage2 = (properties: Props) => {
     { key: 5, value: "양성애자" },
     { key: 6, value: "트렌스젠더" },
   ];
-  const birthYearOptionData = [
-    { key: 1, value: "1992" },
-    { key: 2, value: "1993" },
-    { key: 3, value: "1994" },
-    { key: 4, value: "1995" },
-    { key: 5, value: "1996" },
-    { key: 6, value: "1997" },
-    { key: 7, value: "1998" },
-    { key: 8, value: "1999" },
-  ];
-  const birthMonthOptionData = [
-    { key: 1, value: "1" },
-    { key: 2, value: "2" },
-    { key: 3, value: "3" },
-    { key: 4, value: "4" },
-    { key: 5, value: "5" },
-    { key: 6, value: "6" },
-    { key: 7, value: "7" },
-    { key: 8, value: "8" },
-    { key: 9, value: "9" },
-    { key: 10, value: "10" },
-    { key: 11, value: "11" },
-    { key: 12, value: "12" },
-  ];
-  const birthDayOptionData = [
-    { key: 1, value: "1" },
-    { key: 2, value: "2" },
-    { key: 3, value: "3" },
-    { key: 4, value: "4" },
-    { key: 5, value: "5" },
-    { key: 6, value: "6" },
-    { key: 7, value: "7" },
-    { key: 8, value: "8" },
-    { key: 9, value: "9" },
-    { key: 10, value: "10" },
-    { key: 11, value: "11" },
-    { key: 12, value: "12" },
-    { key: 31, value: "31" },
-  ];
 
+  const now = new Date();
+  const birthYearOptionData = [];
+  const birthMonthOptionData = [];
+  const birthDayOptionData = [];
+
+  for (let year = now.getFullYear(); year >= 1950; year--) {
+    birthYearOptionData.push({
+      key: now.getFullYear() + 1 - year,
+      value: year.toString(),
+    });
+  }
+
+  for (let month = 1; month <= 12; month++) {
+    birthMonthOptionData.push({
+      key: month,
+      value: month.toString().padStart(2, "0"),
+    });
+  }
+
+  for (let day = 1; day <= 31; day++) {
+    birthDayOptionData.push({
+      key: day,
+      value: day.toString().padStart(2, "0"),
+    });
+  }
   const [nationDropdownVisibility, setNationDropdownVisibility] =
     useState(false);
   const [cityDropdownVisibility, setCityDropdownVisibility] = useState(false);
@@ -139,6 +121,9 @@ const EditProfilePage2 = (properties: Props) => {
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
+  const nationOptionData = nationList.map((nation, index) => {
+    return { key: index + 1, value: nation };
+  });
   const [isAllSelected, setIsAllSelected] = useState(true);
   const checkIfAllSelected = () => {
     console.log(selectedNation);
