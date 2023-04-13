@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import shepherd from "../../service/shepherd";
-
 import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";
-
 import { terms } from "../../resource/termsInUsePageText";
-
-import MainButton from "../MainButton/MainButton";
 import ArrowLeft from "../../img/Arrow_left.png";
 
 interface Props extends Properties {

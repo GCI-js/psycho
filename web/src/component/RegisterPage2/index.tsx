@@ -189,7 +189,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
 
     localStorage.setItem("userData", JSON.stringify(userData));
 
-    shepherd.whip("test", "TermsInUsePage");
+    shepherd.whip("test", "RegisterPage3");
   };
 
   return (
