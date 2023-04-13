@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainButton from "../MainButton/MainButton";
 import styles from "./index.module.scss";
 import Dropdown from "../DropDown";
@@ -10,6 +10,8 @@ import selectGender from "../../img/selectGender.png";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import ArrowLeft from "../../img/Arrow_left.png";
+import { districtList } from "../../resource/districtList";
+import { nationList } from "../../resource/nationList";
 
 interface Props extends Properties {
   setNavVisible: Function;
@@ -21,23 +23,17 @@ const EditProfilePage2 = (properties: Props) => {
 
   const dummyUserName = "아크릴오므라이스";
   properties.setNavVisible(true);
-  const nationOptionData = [
-    { key: 1, value: "대한민국" },
-    { key: 2, value: "미국" },
-    { key: 3, value: "일본" },
-  ];
   const cityOptionData = [
     { key: 1, value: "서울" },
-    { key: 2, value: "부산" },
-    { key: 3, value: "대구" },
-    { key: 3, value: "대전" },
+    // { key: 2, value: "부산" },
+    // { key: 3, value: "대구" },
+    // { key: 3, value: "대전" },
   ];
-  const districtOptionData = [
-    { key: 1, value: "마포" },
-    { key: 2, value: "강남" },
-    { key: 3, value: "서대문" },
-    { key: 3, value: "서초" },
-  ];
+
+  const districtOptionData = districtList.map((district, index) => {
+    return { key: index + 1, value: district };
+  });
+
   const genderOptionData = [
     { key: 1, value: "남자" },
     { key: 2, value: "여자" },
@@ -46,46 +42,32 @@ const EditProfilePage2 = (properties: Props) => {
     { key: 5, value: "양성애자" },
     { key: 6, value: "트렌스젠더" },
   ];
-  const birthYearOptionData = [
-    { key: 1, value: "1992" },
-    { key: 2, value: "1993" },
-    { key: 3, value: "1994" },
-    { key: 4, value: "1995" },
-    { key: 5, value: "1996" },
-    { key: 6, value: "1997" },
-    { key: 7, value: "1998" },
-    { key: 8, value: "1999" },
-  ];
-  const birthMonthOptionData = [
-    { key: 1, value: "1" },
-    { key: 2, value: "2" },
-    { key: 3, value: "3" },
-    { key: 4, value: "4" },
-    { key: 5, value: "5" },
-    { key: 6, value: "6" },
-    { key: 7, value: "7" },
-    { key: 8, value: "8" },
-    { key: 9, value: "9" },
-    { key: 10, value: "10" },
-    { key: 11, value: "11" },
-    { key: 12, value: "12" },
-  ];
-  const birthDayOptionData = [
-    { key: 1, value: "1" },
-    { key: 2, value: "2" },
-    { key: 3, value: "3" },
-    { key: 4, value: "4" },
-    { key: 5, value: "5" },
-    { key: 6, value: "6" },
-    { key: 7, value: "7" },
-    { key: 8, value: "8" },
-    { key: 9, value: "9" },
-    { key: 10, value: "10" },
-    { key: 11, value: "11" },
-    { key: 12, value: "12" },
-    { key: 31, value: "31" },
-  ];
 
+  const now = new Date();
+  const birthYearOptionData = [];
+  const birthMonthOptionData = [];
+  const birthDayOptionData = [];
+
+  for (let year = now.getFullYear(); year >= 1950; year--) {
+    birthYearOptionData.push({
+      key: now.getFullYear() + 1 - year,
+      value: year.toString(),
+    });
+  }
+
+  for (let month = 1; month <= 12; month++) {
+    birthMonthOptionData.push({
+      key: month,
+      value: month.toString().padStart(2, "0"),
+    });
+  }
+
+  for (let day = 1; day <= 31; day++) {
+    birthDayOptionData.push({
+      key: day,
+      value: day.toString().padStart(2, "0"),
+    });
+  }
   const [nationDropdownVisibility, setNationDropdownVisibility] =
     useState(false);
   const [cityDropdownVisibility, setCityDropdownVisibility] = useState(false);
@@ -107,6 +89,16 @@ const EditProfilePage2 = (properties: Props) => {
   const [selectedBirthYear, setSelectedBirthYear] = useState("");
   const [selectedBirthMonth, setSelectedBirthMonth] = useState("");
   const [selectedBirthDay, setSelectedBirthDay] = useState("");
+  const [userData, setUserData] = useState<any>("");
+  const selectedValues = [
+    selectedNation,
+    selectedCity,
+    selectedDistrict,
+    selectedGender,
+    selectedBirthYear,
+    selectedBirthMonth,
+    selectedBirthDay,
+  ];
 
   const handleChangeNation = (event: any) => {
     setSelectedNation(event.target.value);
@@ -129,32 +121,82 @@ const EditProfilePage2 = (properties: Props) => {
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
+  const nationOptionData = nationList.map((nation, index) => {
+    return { key: index + 1, value: nation };
+  });
   const [isAllSelected, setIsAllSelected] = useState(true);
-  const gotoNextStep = () => {
-    shepherd.whip("test", "TermsInUsePage");
+  const checkIfAllSelected = () => {
+    console.log(selectedNation);
+    console.log(selectedCity, selectedDistrict, selectedGender);
+    console.log(selectedBirthYear, selectedBirthMonth, selectedBirthDay);
+    if (
+      selectedNation !== "" &&
+      selectedCity !== "" &&
+      selectedDistrict !== "" &&
+      selectedGender !== "" &&
+      selectedBirthYear !== "" &&
+      selectedBirthMonth !== "" &&
+      selectedBirthDay !== ""
+    )
+      setIsAllSelected(true);
+    else setIsAllSelected(false);
   };
   const handleBackButton = () => {
     shepherd.whip("test", "EditProfilePage1");
   };
+  const saveUserData = async (userData: any) => {
+    localStorage.setItem("userData", JSON.stringify(userData));
+  };
+
+  const gotoNextStep = async () => {
+    userData.country = selectedNation;
+    userData.district = selectedDistrict;
+    userData.city = selectedCity;
+    userData.gender = selectedGender;
+    userData.birth = selectedBirthYear + selectedBirthMonth + selectedBirthDay;
+    await saveUserData(userData);
+    shepherd.whip("test", "NewsletterPage");
+  };
+  useEffect(() => {
+    let tmp: any = localStorage.getItem("userData");
+    if (tmp != null) tmp = JSON.parse(tmp);
+
+    setUserData(tmp);
+    if (tmp.country != "") setSelectedNation(tmp.country);
+    if (tmp.district != "") setSelectedDistrict(tmp.district);
+    if (tmp.city != "") setSelectedCity(tmp.city);
+    if (tmp.gender != "") setSelectedGender(tmp.gender);
+    if (tmp.birth != "") {
+      let str = tmp.birth.toString();
+      setSelectedBirthYear(str.slice(0, 4));
+      setSelectedBirthMonth(str.slice(4, 6));
+      setSelectedBirthDay(str.slice(6, 8));
+    }
+    console.log(tmp);
+    checkIfAllSelected();
+  }, []);
+  useEffect(() => {
+    checkIfAllSelected();
+  }, selectedValues);
+
   return (
     <div id={id} className={cl}>
       {/* <div className="username">{`@${dummyUserName}`}</div> */}
       <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
 
-      <div className="large-title">{`회원가입`}</div>
-      <div className="medium-title-box">
-        <div className="medium-title">{`거의 다 됐어요!`}</div>
-        <div className="medium-title">{`조금만 더 힘내세요!`}</div>
-      </div>
-      <div className="small-title">{`프로필의 내용은 바로 공개되지 않아요!\n`}</div>
-
+      <div className="large-title">{userData.nickname}</div>
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
       <div className="row">
         <div className={"selectBox dropdownButton fullBox"}>
           <span className="icon">
             <img src={selectNation} alt="" />
           </span>
-          <select className="select">
+          <select
+            id="countrySelect"
+            className="select"
+            onChange={handleChangeNation}
+            value={selectedNation}
+          >
             <option disabled selected>
               국가
             </option>
@@ -173,7 +215,12 @@ const EditProfilePage2 = (properties: Props) => {
           <span className="icon">
             <img src={selectCity} alt="" />
           </span>
-          <select className="select">
+          <select
+            id="citySelect"
+            className="select"
+            onChange={handleChangeCity}
+            value={selectedCity}
+          >
             <option disabled selected>
               시
             </option>
@@ -189,7 +236,12 @@ const EditProfilePage2 = (properties: Props) => {
           <span className="icon">
             <img src={selectDistrict} alt="" />
           </span>
-          <select className="select">
+          <select
+            id="districtSelect"
+            className="select"
+            onChange={handleChangeDistrict}
+            value={selectedDistrict}
+          >
             <option disabled selected>
               구
             </option>
@@ -208,7 +260,12 @@ const EditProfilePage2 = (properties: Props) => {
           <span className="icon">
             <img src={selectGender} alt="" />
           </span>
-          <select className="select">
+          <select
+            id="genderSelect"
+            className="select"
+            onChange={handleChangeGender}
+            value={selectedGender}
+          >
             <option disabled selected>
               성별
             </option>
@@ -224,7 +281,12 @@ const EditProfilePage2 = (properties: Props) => {
       <div className="choiceText">{`생년월일을 선택해주세요\n`}</div>
       <div className="row">
         <div className="selectBox dropdownButton yearBox">
-          <select className="select">
+          <select
+            id="yearSelect"
+            className="select"
+            onChange={handleChangeBirthYear}
+            value={selectedBirthYear}
+          >
             <option disabled selected>
               년
             </option>
@@ -237,7 +299,12 @@ const EditProfilePage2 = (properties: Props) => {
           </span>
         </div>
         <div className="selectBox dropdownButton monthBox">
-          <select className="select">
+          <select
+            id="monthSelect"
+            className="select"
+            onChange={handleChangeBirthMonth}
+            value={selectedBirthMonth}
+          >
             <option disabled selected>
               월
             </option>
@@ -251,7 +318,12 @@ const EditProfilePage2 = (properties: Props) => {
         </div>
 
         <div className={"selectBox dropdownButton dayBox"}>
-          <select className="select">
+          <select
+            id="daySelect"
+            className="select"
+            onChange={handleChangeBirthDay}
+            value={selectedBirthDay}
+          >
             <option disabled selected>
               일
             </option>

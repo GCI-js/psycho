@@ -53,6 +53,10 @@ const EditProfilePage1 = (properties: Props) => {
     shepherd.whip("test", "WelcomePage");
   };
   const saveUserData = async (userData: any) => {
+    localStorage.setItem("userData", JSON.stringify(userData));
+  };
+
+  const gotoNextStep = async () => {
     userData.nickname = nickname;
     userData.mbtis.unshift(MBTIStateToValue(MBTIStates));
     userData.bloodType =
@@ -65,11 +69,10 @@ const EditProfilePage1 = (properties: Props) => {
         : bloodTypeStates[3].state == true
         ? "O"
         : "";
-    shepherd.whip("test", "RegisterPage2");
-    localStorage.setItem("userData", JSON.stringify(userData));
+    await saveUserData(userData);
+    shepherd.whip("test", "EditProfilePage2");
   };
   useEffect(() => {
-    saveUserData(userData);
     let tmp: any = localStorage.getItem("userData");
     if (tmp != null) tmp = JSON.parse(tmp);
     if (tmp == null || tmp.nickname == undefined) tmp = getInitUserData();
@@ -83,7 +86,7 @@ const EditProfilePage1 = (properties: Props) => {
       { bloodType: "O", state: tmp.bloodType == "O" ? true : false },
     ]);
     console.log(userData);
-  }, [userData]);
+  }, []);
   const genNickname = () => {
     setNickname(getRandNickname());
   };
@@ -129,7 +132,7 @@ const EditProfilePage1 = (properties: Props) => {
       </div>
       <button
         className="next-step-button-on"
-        onClick={() => shepherd.whip("test", "EditProfilePage2")}
+        onClick={nickname == "" ? () => {} : gotoNextStep}
       >
         계속
       </button>

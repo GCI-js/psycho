@@ -24,9 +24,6 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
     shepherd.whip("test", "RegisterPage1");
   };
 
-  let userData: any = JSON.parse(localStorage.getItem("userData"));
-  if (userData == null) handleBackButton();
-
   // const nationOptionData = [
   // { key: 1, value: "대한민국" },
   // { key: 2, value: "미국" },
@@ -92,7 +89,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const [selectedBirthYear, setSelectedBirthYear] = useState("");
   const [selectedBirthMonth, setSelectedBirthMonth] = useState("");
   const [selectedBirthDay, setSelectedBirthDay] = useState("");
-
+  const [userData, setUserData] = useState<any>("");
   const selectedValues = [
     selectedNation,
     selectedCity,
@@ -104,6 +101,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   ];
 
   const checkIfAllSelected = () => {
+    
     if (
       selectedNation !== "" &&
       selectedCity !== "" &&
@@ -142,6 +140,9 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   }
 
   useEffect(() => {
+    let userData: any = JSON.parse(localStorage.getItem("userData"));
+    setUserData(userData);
+    if (userData == null) handleBackButton();
     if (userData.country != "") setSelectedNation(userData.country);
     if (userData.district != "") setSelectedDistrict(userData.district);
     if (userData.city != "") setSelectedCity(userData.city);
