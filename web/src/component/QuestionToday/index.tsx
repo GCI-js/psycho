@@ -55,7 +55,7 @@ const QuestionToday = (properties: Properties) => {
         ...questionList[(_order + _count * 5) % _limit],
         image: imgRocket3d,
       });
-      if (_order == 5) {
+      if (_order === 5) {
         shepherd.whip("test", "QuestionEnd");
       }
     }

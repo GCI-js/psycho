@@ -21,6 +21,14 @@ export default function Navigation(properties: Properties) {
     setCurPos(dest);
     shepherd.whip("test", dest);
   };
+  const handleQuestionPage = () => {
+    let _initorder = parseInt(localStorage.getItem("questionOrder"));
+    if (_initorder === 5) {
+      handleNavClick("QuestionEnd");
+    } else {
+      handleNavClick("QuestionPage");
+    }
+  };
   return (
     <div id={id} className={cl}>
       <div className="icon-wrapper">
@@ -34,7 +42,7 @@ export default function Navigation(properties: Properties) {
         <img
           className={curPos == "QuestionPage" ? "fill-icon" : "icon"}
           src={curPos == "QuestionPage" ? questionFillIcon : questionIcon}
-          onClick={() => handleNavClick("QuestionPage")}
+          onClick={() => handleQuestionPage()}
         />
       </div>
       <div className="icon-wrapper">
