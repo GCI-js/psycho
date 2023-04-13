@@ -19,7 +19,7 @@ const WelcomePage = (properties: Props) => {
   return (
     <div id={id} className={cl}>
       <div className="top_container">
-        <div className="large_title">{largeTitle}</div>
+        <div className="large-title">{largeTitle}</div>
         <img className="welcome_icon" src={welcomeImage} />
       </div>
       <div className="bottom_container">

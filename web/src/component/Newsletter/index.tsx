@@ -10,7 +10,6 @@ const Newsletter = (props: Newsletter, properties: Properties) => {
   return (
     <div id={id} className={cl}>
       <div className="newletter-card-item">
-        <div className="newletter-card-header">MBTI 뉴스레터</div>
         <div className="newletter-card-img">
           <a href={props.link}>
             <img src={props.thumbnail} width="97%" height="184px"></img>
