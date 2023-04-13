@@ -1,0 +1,96 @@
+.index:global {
+  height: 100%;
+  padding-left: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  > .back-button {
+    width: 24px;
+    height: 24px;
+    flex: none;
+    order: 0;
+    margin-top: 56px;
+  }
+  > .large-title {
+    display: flex;
+    flex: none;
+    order: 1;
+    margin-top: 32px;
+  }
+  > .term-box {
+    width: 300px;
+    height: 413px;
+    display: flex;
+    flex-direction: column;
+    flex: none;
+    order: 2;
+    margin-top: 24px;
+    background-color: rgba(233, 233, 233, 0.5);
+    border-radius: 20px;
+    padding: 20px;
+    > .terms_wrapper {
+      overflow-y: scroll;
+      > .terms {
+        white-space: pre-wrap;
+        font-family: "Inter";
+        overflow-y: hidden;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+
+        color: rgba(4, 2, 2, 0.35);
+      }
+    }
+  }
+  > .agree_box {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex: none;
+    order: 3;
+    margin-top: 17px;
+    > .checkbox_wrapper {
+      display: flex;
+      flex-direction: row;
+      margin-left: 10px;
+      align-items: center;
+      > .check_box {
+        box-sizing: border-box;
+        width: 11px;
+        height: 11px;
+        border: 1px solid #000000;
+      }
+      > .checked {
+        background: #000000;
+      }
+      > .unchecked {
+        background: #ffffff;
+      }
+      > .text {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 15px;
+        color: #000000;
+
+        margin-left: 5px;
+      }
+    }
+  }
+  > .next-step-button-on {
+    display: flex;
+    flex: none;
+    order: 4;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+  > .next-step-button-off {
+    display: flex;
+    flex: none;
+    order: 3;
+    margin-top: 100px;
+    margin-bottom: 30px;
+  }
+}

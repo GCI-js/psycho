@@ -13,7 +13,7 @@ import styles from "./App.module.scss";
 import { NewsletterPage } from "./component/NewsletterPage";
 import QuestionPage from "./component/QuestionPage";
 
-import Setting from "./component/Setting";
+import SettingPage from "./component/SettingPage";
 import RegisterPage1 from "./component/RegisterPage1";
 import RegisterPage2 from "./component/RegisterPage2";
 import { TermsInUsePage } from "./component/TermsInUsePage";
@@ -22,6 +22,7 @@ import EditProfilePage2 from "./component/EditProfilePage2/index";
 import QuestionEnd from "./component/QuestionEnd";
 import QuestionPast from "./component/QuestionPast";
 import QuestionSpecialPage from "./component/QuestionSpecialPage";
+import { RegisterPage3 } from "./component/RegisterPage3";
 
 export default function App(properties: Properties) {
   const id = [`_${idiotproof.trace(App)}`, properties.id].join();
@@ -31,11 +32,11 @@ export default function App(properties: Properties) {
   return (
     <div id={id} className={cl}>
       <Lamb data-lamb="test" className="display" pageClassName="page">
-        <NewsletterPage data-pose="NewsletterPage" />
         <WelcomePage data-pose="WelcomePage" setNavVisible={setNavVisible} />
+        <NewsletterPage data-pose="NewsletterPage" />
         <QuestionPage data-pose="QuestionPage" />
         <ProfileStats data-pose="ProfilePage" />
-        <Setting data-pose="Setting" />
+        <SettingPage data-pose="SettingPage" />
         <EditProfilePage1
           data-pose="EditProfilePage1"
           setNavVisible={setNavVisible}
@@ -49,13 +50,14 @@ export default function App(properties: Properties) {
           setNavVisible={setNavVisible}
         />
         <RegisterPage2 data-pose="RegisterPage2" />
+        <RegisterPage3
+          data-pose="RegisterPage3"
+          setNavVisible={setNavVisible}
+        />
         <QuestionEnd data-pose="QuestionEnd" />
         <QuestionPast data-pose="QuestionPast" />
         <QuestionSpecialPage data-pose="QuestionSpecialPage" />
-        <TermsInUsePage
-          data-pose="TermsInUsePage"
-          setNavVisible={setNavVisible}
-        />
+        <TermsInUsePage data-pose="TermsInUsePage" />
       </Lamb>
       {navVisible && <Navigation />}
     </div>

@@ -4,12 +4,11 @@ import Newsletter from "../Newsletter/";
 
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
-import Setting from "../Setting";
 import styles from "./index.module.scss";
 import { newsletter } from "../../resource/newsletter";
 
 export const NewsletterPage = (properties: Properties) => {
-  const id = [`_${idiotproof.trace(Setting)}`, properties.id].join();
+  const id = [`_${idiotproof.trace(NewsletterPage)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
   if (!localStorage.getItem("isOldUser")) {

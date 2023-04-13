@@ -2,7 +2,7 @@ import React, { Component, PureComponent, useState, useEffect } from "react";
 import QuestionContent from "../QuestionContent";
 import imgRocket3d from "./images/rocket_3d.svg";
 import "./QuestionToday.css";
-import MockQuestion from "../../../../common/mock_data/mock_questions.json";
+import { questionList } from "../../resource/question";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";
@@ -14,7 +14,7 @@ import QuestionButton from "../QuestionButton";
  */
 const QuestionToday = (properties: Properties) => {
   const [questionData, setQuestionData] = useState({
-    ...MockQuestion[0],
+    ...questionList[0],
     image: imgRocket3d,
   });
   const [questionOrder, setquestionOrder] = useState(0);
@@ -23,7 +23,7 @@ const QuestionToday = (properties: Properties) => {
 
   const curr = new Date().toLocaleDateString();
   console.log("current....", curr);
-  let _limit = MockQuestion.length;
+  let _limit = questionList.length;
 
   useEffect(() => {
     Datainit();
@@ -43,7 +43,7 @@ const QuestionToday = (properties: Properties) => {
       let _count = parseInt(localStorage.getItem("visitCount")) + 1;
       localStorage.setItem("visitCount", _count.toString());
       setQuestionData({
-        ...MockQuestion[(_count * 5) % _limit],
+        ...questionList[(_count * 5) % _limit],
         image: imgRocket3d,
       });
       console.log("count....." + _count);
@@ -52,7 +52,7 @@ const QuestionToday = (properties: Properties) => {
       let _order = parseInt(localStorage.getItem("questionOrder"));
       let _count = parseInt(localStorage.getItem("visitCount"));
       setQuestionData({
-        ...MockQuestion[(_order + _count * 5) % _limit],
+        ...questionList[(_order + _count * 5) % _limit],
         image: imgRocket3d,
       });
       if (_order == 5) {
@@ -69,7 +69,7 @@ const QuestionToday = (properties: Properties) => {
     let _order = parseInt(localStorage.getItem("questionOrder"));
     let _count = parseInt(localStorage.getItem("visitCount"));
     setQuestionData({
-      ...MockQuestion[(_order + _count * 5) % _limit],
+      ...questionList[(_order + _count * 5) % _limit],
       image: imgRocket3d,
     });
     if (_order == 5) {
@@ -106,10 +106,10 @@ const QuestionToday = (properties: Properties) => {
           </div>
         </div>
         <div className="QuestionContentQuestionTitle LargeTitle">
-          {questionData.title}
+          {"N번째 질문"}
         </div>
         <div className="QuestionContentQuestionBody">
-          {questionData.contents.main}
+          {questionData.context}
         </div>
         <QuestionButton
           text1="그렇다"

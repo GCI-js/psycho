@@ -1,6 +1,6 @@
 export const getInitUserData = () => {
   let user = {
-    nickname: "@애미야 물좀다오",
+    nickname: "",
     mbtis: [
       {
         date: new Date().getTime(),
@@ -15,7 +15,7 @@ export const getInitUserData = () => {
     city: "",
     district: "",
     gender: "",
-    birth: 0,
+    birth: "",
   };
   return user;
 };

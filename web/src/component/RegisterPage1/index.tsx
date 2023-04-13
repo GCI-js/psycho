@@ -27,13 +27,7 @@ interface Props extends Properties {
 const RegisterPage1 = (properties: Props) => {
   const id = [`_${idiotproof.trace(RegisterPage1)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
-  let userData: any = localStorage.getItem("userData");
-  if (userData == null || userData.nickname == undefined) {
-    console.log("HERE");
-    console.log(userData);
-    userData = getInitUserData();
-    console.log(userData);
-  }
+  const [userData, setUserData] = useState<any>("");
   const [nickname, setNickname] = useState("");
   const [MBTIStates, setMBTIStates] = useState<MBTIStates[]>([
     { MBTI: "E", state: false },
@@ -56,13 +50,18 @@ const RegisterPage1 = (properties: Props) => {
   properties.setNavVisible(false);
 
   useEffect(() => {
-    setNickname(userData.nickname);
-    setMBTIStates(MBTIValueToState(userData.mbtis[0]));
+    console.log("tmp");
+    let tmp: any = localStorage.getItem("userData");
+    if (tmp != null) tmp = JSON.parse(tmp);
+    if (tmp == null || tmp.nickname == undefined) tmp = getInitUserData();
+    setUserData(tmp);
+    setNickname(tmp.nickname);
+    setMBTIStates(MBTIValueToState(tmp.mbtis[0]));
     setBloodTypeStates([
-      { bloodType: "A", state: userData.bloodType == "A" ? true : false },
-      { bloodType: "B", state: userData.bloodType == "B" ? true : false },
-      { bloodType: "AB", state: userData.bloodType == "AB" ? true : false },
-      { bloodType: "O", state: userData.bloodType == "O" ? true : false },
+      { bloodType: "A", state: tmp.bloodType == "A" ? true : false },
+      { bloodType: "B", state: tmp.bloodType == "B" ? true : false },
+      { bloodType: "AB", state: tmp.bloodType == "AB" ? true : false },
+      { bloodType: "O", state: tmp.bloodType == "O" ? true : false },
     ]);
   }, []);
   const handleBackButton = () => {
@@ -71,7 +70,10 @@ const RegisterPage1 = (properties: Props) => {
   const genNickname = () => {
     setNickname(getRandNickname());
   };
-  const gotoNextStep = () => {
+  const saveUserData = async (userData: any) => {
+    localStorage.setItem("userData", JSON.stringify(userData));
+  };
+  const gotoNextStep = async () => {
     userData.nickname = nickname;
     userData.mbtis.unshift(MBTIStateToValue(MBTIStates));
     userData.bloodType =
@@ -84,7 +86,7 @@ const RegisterPage1 = (properties: Props) => {
         : bloodTypeStates[3].state == true
         ? "O"
         : "";
-    localStorage.setItem("userData", userData);
+    await saveUserData(userData);
     shepherd.whip("test", "RegisterPage2");
   };
   return (
