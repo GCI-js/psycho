@@ -6,7 +6,7 @@ import styles from "./index.module.scss";
 import { MBTISelectBox } from "../MBTISelectBox";
 import { BloodTypeSelectBox } from "../BloodTypeSelectBox";
 import { getInitUserData } from "../../service/getInitUserData";
-import { MBTIValueToState } from "../../service/convertMBTI";
+import { MBTIValueToState, MBTIStateToValue } from "../../service/convertMBTI";
 import ArrowLeft from "../../img/Arrow_left.png";
 import NicknameFlag from "../../img/nicknameFlag.png";
 import { getRandNickname } from "../../service/getRandNickname";
@@ -28,12 +28,10 @@ interface Props extends Properties {
 const EditProfilePage1 = (properties: Props) => {
   const id = [`_${idiotproof.trace(EditProfilePage1)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
-  let userData: any = localStorage.getItem("userData");
   properties.setNavVisible(true);
   const [nickname, setNickname] = useState("");
-  if (userData == null || userData.nickname == undefined) {
-    userData = getInitUserData();
-  }
+  const [userData, setUserData] = useState<any>("");
+
   const [MBTIStates, setMBTIStates] = useState<MBTIStates[]>([
     { MBTI: "E", state: false },
     { MBTI: "N", state: false },
@@ -54,25 +52,45 @@ const EditProfilePage1 = (properties: Props) => {
   const handleBackButton = () => {
     shepherd.whip("test", "WelcomePage");
   };
+  const saveUserData = async (userData: any) => {
+    userData.nickname = nickname;
+    userData.mbtis.unshift(MBTIStateToValue(MBTIStates));
+    userData.bloodType =
+      bloodTypeStates[0].state == true
+        ? "A"
+        : bloodTypeStates[1].state == true
+        ? "B"
+        : bloodTypeStates[2].state == true
+        ? "AB"
+        : bloodTypeStates[3].state == true
+        ? "O"
+        : "";
+    shepherd.whip("test", "RegisterPage2");
+    localStorage.setItem("userData", JSON.stringify(userData));
+  };
   useEffect(() => {
-    userData = getInitUserData();
-    setNickname(userData.nickname);
-    setMBTIStates(MBTIValueToState(userData.mbtis[0]));
+    saveUserData(userData);
+    let tmp: any = localStorage.getItem("userData");
+    if (tmp != null) tmp = JSON.parse(tmp);
+    if (tmp == null || tmp.nickname == undefined) tmp = getInitUserData();
+    setUserData(tmp);
+    setNickname(tmp.nickname);
+    setMBTIStates(MBTIValueToState(tmp.mbtis[0]));
     setBloodTypeStates([
-      { bloodType: "A", state: userData.bloodType == "A" ? true : false },
-      { bloodType: "B", state: userData.bloodType == "B" ? true : false },
-      { bloodType: "AB", state: userData.bloodType == "AB" ? true : false },
-      { bloodType: "O", state: userData.bloodType == "O" ? true : false },
+      { bloodType: "A", state: tmp.bloodType == "A" ? true : false },
+      { bloodType: "B", state: tmp.bloodType == "B" ? true : false },
+      { bloodType: "AB", state: tmp.bloodType == "AB" ? true : false },
+      { bloodType: "O", state: tmp.bloodType == "O" ? true : false },
     ]);
     console.log(userData);
-  }, []);
+  }, [userData]);
   const genNickname = () => {
     setNickname(getRandNickname());
   };
   return (
     <div id={id} className={cl}>
       <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
-      <div className="large-title">@{nickname}</div>
+      <div className="large-title">{nickname}</div>
       <div className="nickname-area">
         <div className="small-grey-title">
           <div className="border">닉네임</div>
@@ -82,7 +100,7 @@ const EditProfilePage1 = (properties: Props) => {
           <input
             className="nickname-input"
             type="text"
-            placeholder={`@${nickname}`}
+            placeholder={`${nickname}`}
             // value={`${nickname}`}
           />
           <button className="nickname-gen-button" onClick={genNickname}>
