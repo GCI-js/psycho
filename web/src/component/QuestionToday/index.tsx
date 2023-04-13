@@ -7,6 +7,7 @@ import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";
 import QuestionButton from "../QuestionButton";
+import { getInitUserData } from "../../service/getInitUserData";
 
 /**
  * 오늘의 질문
@@ -49,39 +50,68 @@ const QuestionToday = (properties: Properties) => {
       console.log("count....." + _count);
     } else if (localStorage.getItem("lastDate") === curr) {
       // 같은 날 여러번 접속시
-      let _order = parseInt(localStorage.getItem("questionOrder"));
+      setquestionOrder(parseInt(localStorage.getItem("questionOrder")));
+      // let _order = parseInt(localStorage.getItem("questionOrder"));
       let _count = parseInt(localStorage.getItem("visitCount"));
       setQuestionData({
-        ...questionList[(_order + _count * 5) % _limit],
+        ...questionList[(questionOrder + _count * 5) % _limit],
         image: imgRocket3d,
       });
-      if (_order === 5) {
+      if (questionOrder === 5) {
         shepherd.whip("test", "QuestionEnd");
       }
     }
   };
 
   const buttionClicked = () => {
-    localStorage.setItem(
-      "questionOrder",
-      (parseInt(localStorage.getItem("questionOrder")) + 1).toString()
-    );
-    let _order = parseInt(localStorage.getItem("questionOrder"));
+    let _tmpOrder = parseInt(localStorage.getItem("questionOrder")) + 1;
+    localStorage.setItem("questionOrder", _tmpOrder.toString());
+    setquestionOrder(_tmpOrder);
+    // let _order = parseInt(localStorage.getItem("questionOrder"));
     let _count = parseInt(localStorage.getItem("visitCount"));
     setQuestionData({
-      ...questionList[(_order + _count * 5) % _limit],
+      ...questionList[(_tmpOrder + _count * 5) % _limit],
       image: imgRocket3d,
     });
-    if (_order == 5) {
+    if (_tmpOrder == 5) {
       shepherd.whip("test", "QuestionEnd");
     }
   };
+  const agreeClicked = () => {
+    let tmp: any = localStorage.getItem("userData");
+    if (tmp != null) tmp = JSON.parse(tmp);
+    let lasttmp: any = tmp.mbtis[0];
+    if (questionOrder === 0 && lasttmp.date != curr) {
+      lasttmp.date = curr;
+    } else {
+      tmp.mbtis.shift();
+    }
+    lasttmp[questionData.factor] += questionData.value;
+    tmp.mbtis.unshift(lasttmp);
+    localStorage.setItem("userData", JSON.stringify(tmp));
+  };
+
+  const disagreeClicked = () => {
+    let tmp: any = localStorage.getItem("userData");
+    if (tmp != null) tmp = JSON.parse(tmp);
+    let lasttmp: any = tmp.mbtis[0];
+    if (questionOrder === 0 && lasttmp.date != curr) {
+      lasttmp.date = curr;
+    } else {
+      tmp.mbtis.shift();
+    }
+    lasttmp[questionData.factor] -= questionData.value;
+    tmp.mbtis.unshift(lasttmp);
+    localStorage.setItem("userData", JSON.stringify(tmp));
+  };
 
   const agreeButtion = () => {
+    agreeClicked();
     buttionClicked();
     //MBTI 유형별 value 계산하기
   };
   const disagreeButtion = () => {
+    disagreeClicked();
     buttionClicked();
     //MBTI 유형별 value 계산하기
   };
@@ -98,15 +128,14 @@ const QuestionToday = (properties: Properties) => {
         </div>
         <div className="QuestionContentRemained">
           <div className="QuestionContentColumn">
-            이번주 질문이 {5 - parseInt(localStorage.getItem("questionOrder"))}
-            개 남았어요
+            이번주 질문이 {5 - questionOrder}개 남았어요
           </div>
           <div className="QuestionContentColumn" onClick={skipButtion}>
             skip
           </div>
         </div>
         <div className="QuestionContentQuestionTitle LargeTitle">
-          {"N번째 질문"}
+          {questionOrder + 1 + "번째 질문(" + (questionOrder + 1) + "/5)"}
         </div>
         <div className="QuestionContentQuestionBody">
           {questionData.context}

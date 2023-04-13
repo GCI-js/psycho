@@ -12,7 +12,7 @@ export type HashtagType =
   | "free";
 
 export interface Mbti {
-  date: number;
+  date: string;
   EI: number;
   NS: number;
   FT: number;
