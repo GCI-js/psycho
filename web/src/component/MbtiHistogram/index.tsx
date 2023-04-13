@@ -4,6 +4,7 @@ import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
 import SettingPage from "../SettingPage";
 import { Mbti } from "../../@types/common";
+import TrendLineChart from "../TrendLineChart";
 /*
 [2022.01.12 jongseok lee] 
 MBTI Histogram은 MBTI 변화 추이를 EChart로 그리는 component입니다. 영훈 화가님이 그려온 그림으로 대체하면 됩니다. 
@@ -13,86 +14,19 @@ export const MBTIHistogram: React.FC = (properties: Properties) => {
   const id = [`_${idiotproof.trace(MBTIHistogram)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
-  // if (!localStorage.getItem("Mbti")) {
-
-  // }
-  // const [mbtiData, setmbtiData] = useState({
-  //     source: [
-  //       ["type", "Jan", "Feb", "Mar", "Apr", "May"],
-  //       ["E/I", 80, 40, 90, 60, 50],
-  //       ["S/N", 70, 30, 90, 70, 70],
-  //       ["T/F", 60, 90, 70, 50, 20],
-  //       ["P/J", 50, 80, 60, 95, 85],
-  //     ],
-  //   })
-  localStorage.setItem("EI", "10,20,30,40,50"); //Dummy setItem
-  localStorage.setItem("SN", "70,30,90,70,70"); //Dummy setItem
-  localStorage.setItem("TF", "60, 90, 70, 50, 20"); //Dummy setItem
-  localStorage.setItem("PJ", "50, 80, 60, 95, 90"); //Dummy setItem
-  let getLocal = (mbtiCategory: string) => {
-    return localStorage
-      .getItem(mbtiCategory)
-      .split(",")
-      .map(function (item) {
-        return parseInt(item, 10);
-      });
-  };
-  const EI = getLocal("EI");
-  const SN = getLocal("SN");
-  const TF = getLocal("TF");
-  const PJ = getLocal("PJ");
-  const [options, setOptions] = useState({
-    color: ["#8deb40", "#006699", "#4cabce", "#e5323e"],
-    dataset: {
-      source: [
-        ["type", "", " ", "  ", "   ", "    "],
-        ["E/I", ...EI],
-        ["S/N", ...SN],
-        ["T/F", ...TF],
-        ["P/J", ...PJ],
-      ],
-    },
-    legend: { bottom: "5%" },
-    xAxis: {
-      type: "category",
-      axisTick: {
-        show: false,
-      },
-    },
-    grid: {
-      show: false,
-    },
-    yAxis: { show: false },
-    series: [
-      {
-        type: "line",
-        seriesLayoutBy: "row",
-      },
-      {
-        type: "line",
-        seriesLayoutBy: "row",
-      },
-      {
-        type: "line",
-        seriesLayoutBy: "row",
-      },
-      {
-        type: "line",
-        seriesLayoutBy: "row",
-      },
-    ],
-  });
-
   return (
     <div id={id} className={cl}>
       <div className="histogramContainer">
         <div className="histogram-title">MBTI 변화 추이</div>
         <div className="histogram-weekly">weekly</div>
-        <ECharts
+        {/* <ECharts
           option={options}
           theme="myTheme"
           opts={{ renderer: "svg", width: "auto", height: "auto" }}
-        />
+        /> */}
+        <div className="chart-wrap">
+          <TrendLineChart></TrendLineChart>
+        </div>
       </div>
     </div>
   );
