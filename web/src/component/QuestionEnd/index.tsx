@@ -40,6 +40,10 @@ const QuestionEnd = (properties: Properties) => {
         <div className="QuestionContentQuestionTitle LargeTitle">
           모든 질문에<br></br>답하셨어요!
         </div>
+
+        <div className="QuestionContentTomorrow">
+          새로운 질문은 내일 다시 찾아올거에요!
+        </div>
       </div>
     </div>
   );

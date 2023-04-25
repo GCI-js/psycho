@@ -41,7 +41,11 @@ export default function Navigation(properties: Properties) {
       <div className="icon-wrapper">
         <img
           className={curPos == "QuestionPage" ? "fill-icon" : "icon"}
-          src={curPos == "QuestionPage" ? questionFillIcon : questionIcon}
+          src={
+            curPos == "QuestionPage" || curPos == "QuestionEnd"
+              ? questionFillIcon
+              : questionIcon
+          }
           onClick={() => handleQuestionPage()}
         />
       </div>

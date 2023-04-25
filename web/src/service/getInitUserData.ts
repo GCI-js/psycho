@@ -3,7 +3,7 @@ export const getInitUserData = () => {
     nickname: "",
     mbtis: [
       {
-        date: new Date().getTime(),
+        date: new Date().toLocaleDateString(),
         EI: 50,
         NS: 50,
         FT: 50,
