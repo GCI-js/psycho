@@ -101,7 +101,6 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   ];
 
   const checkIfAllSelected = () => {
-    
     if (
       selectedNation !== "" &&
       selectedCity !== "" &&
@@ -235,19 +234,29 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           <span className="icon">
             <img src={selectCity} alt="" />
           </span>
-          <select
-            id="citySelect"
-            className="select"
-            onChange={handleChangeCity}
-            value={selectedCity}
-          >
-            <option disabled selected value="">
-              시
-            </option>
-            {cityOptionData.map((city) => {
-              return <option value={city.value}>{city.value}</option>;
-            })}
-          </select>
+          {selectedNation === "한국" ? (
+            <select
+              id="citySelect"
+              className="select"
+              onChange={handleChangeCity}
+              value={selectedCity}
+            >
+              <option disabled selected>
+                시
+              </option>
+              {cityOptionData.map((city) => {
+                return <option>{city.value}</option>;
+              })}
+            </select>
+          ) : (
+            <input
+              id="cityInput"
+              className="select"
+              onChange={handleChangeCity}
+              value={selectedCity}
+              placeholder="시"
+            />
+          )}
           <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
@@ -256,19 +265,29 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
           <span className="icon">
             <img src={selectDistrict} alt="" />
           </span>
-          <select
-            id="districtSelect"
-            className="select"
-            onChange={handleChangeDistrict}
-            value={selectedDistrict}
-          >
-            <option disabled selected value="">
-              구
-            </option>
-            {districtOptionData.map((district) => {
-              return <option value={district.value}>{district.value}</option>;
-            })}
-          </select>
+          {selectedNation === "한국" ? (
+            <select
+              id="districtSelect"
+              className="select"
+              onChange={handleChangeDistrict}
+              value={selectedDistrict}
+            >
+              <option disabled selected>
+                구
+              </option>
+              {districtOptionData.map((district) => {
+                return <option>{district.value}</option>;
+              })}
+            </select>
+          ) : (
+            <input
+              id="districtInput"
+              className="select"
+              onChange={handleChangeDistrict}
+              value={selectedDistrict}
+              placeholder="구"
+            />
+          )}
           <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>

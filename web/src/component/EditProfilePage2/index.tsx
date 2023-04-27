@@ -25,9 +25,9 @@ const EditProfilePage2 = (properties: Props) => {
   properties.setNavVisible(true);
   const cityOptionData = [
     { key: 1, value: "서울" },
-    // { key: 2, value: "부산" },
-    // { key: 3, value: "대구" },
-    // { key: 3, value: "대전" },
+    { key: 2, value: "부산" },
+    { key: 3, value: "대구" },
+    { key: 3, value: "대전" },
   ];
 
   const districtOptionData = districtList.map((district, index) => {
@@ -215,19 +215,29 @@ const EditProfilePage2 = (properties: Props) => {
           <span className="icon">
             <img src={selectCity} alt="" />
           </span>
-          <select
-            id="citySelect"
-            className="select"
-            onChange={handleChangeCity}
-            value={selectedCity}
-          >
-            <option disabled selected>
-              시
-            </option>
-            {cityOptionData.map((city) => {
-              return <option>{city.value}</option>;
-            })}
-          </select>
+          {selectedNation === "한국" ? (
+            <select
+              id="citySelect"
+              className="select"
+              onChange={handleChangeCity}
+              value={selectedCity}
+            >
+              <option disabled selected>
+                시
+              </option>
+              {cityOptionData.map((city) => {
+                return <option>{city.value}</option>;
+              })}
+            </select>
+          ) : (
+            <input
+              id="cityInput"
+              className="select"
+              onChange={handleChangeCity}
+              value={selectedCity}
+              placeholder="시"
+            />
+          )}
           <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
@@ -236,19 +246,29 @@ const EditProfilePage2 = (properties: Props) => {
           <span className="icon">
             <img src={selectDistrict} alt="" />
           </span>
-          <select
-            id="districtSelect"
-            className="select"
-            onChange={handleChangeDistrict}
-            value={selectedDistrict}
-          >
-            <option disabled selected>
-              구
-            </option>
-            {districtOptionData.map((district) => {
-              return <option>{district.value}</option>;
-            })}
-          </select>
+          {selectedNation === "한국" ? (
+            <select
+              id="districtSelect"
+              className="select"
+              onChange={handleChangeDistrict}
+              value={selectedDistrict}
+            >
+              <option disabled selected>
+                구
+              </option>
+              {districtOptionData.map((district) => {
+                return <option>{district.value}</option>;
+              })}
+            </select>
+          ) : (
+            <input
+              id="districtInput"
+              className="select"
+              onChange={handleChangeDistrict}
+              value={selectedDistrict}
+              placeholder="구"
+            />
+          )}
           <span className="iconArrow">
             <img src={downwardArrow} alt="" />
           </span>
