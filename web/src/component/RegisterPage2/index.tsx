@@ -8,7 +8,7 @@ import selectGender from "../../img/selectGender.png";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import ArrowLeft from "../../img/Arrow_left.png";
-import { districtList } from "../../resource/districtList";
+import { district } from "../../resource/district";
 import { nationList } from "../../resource/nationList";
 
 const RegisterPage2 = (properties: Properties) => {
@@ -24,34 +24,20 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
     shepherd.whip("test", "RegisterPage1");
   };
 
-  // const nationOptionData = [
-  // { key: 1, value: "대한민국" },
-  // { key: 2, value: "미국" },
-  // { key: 3, value: "일본" },
-  // ];
-
   const nationOptionData = nationList.map((nation, index) => {
     return { key: index + 1, value: nation };
   });
 
-  const cityOptionData = [
-    { key: 1, value: "서울" },
-    // { key: 2, value: "부산" },
-    // { key: 3, value: "대구" },
-    // { key: 3, value: "대전" },
-  ];
+  const cityOptionData = Object.keys(district).map((key, index) => ({
+    key: index + 1,
+    value: key,
+  }));
 
-  const districtOptionData = districtList.map((district, index) => {
-    return { key: index + 1, value: district };
-  });
+  console.log(cityOptionData);
 
   const genderOptionData = [
     { key: 1, value: "남자" },
     { key: 2, value: "여자" },
-    { key: 3, value: "레즈비언" },
-    { key: 4, value: "게이" },
-    { key: 5, value: "양성애자" },
-    { key: 6, value: "트렌스젠더" },
   ];
 
   const now = new Date();
@@ -90,6 +76,7 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
   const [selectedBirthMonth, setSelectedBirthMonth] = useState("");
   const [selectedBirthDay, setSelectedBirthDay] = useState("");
   const [userData, setUserData] = useState<any>("");
+  const [districtOptions, setDistrictOptions] = useState([]);
   const selectedValues = [
     selectedNation,
     selectedCity,
@@ -157,9 +144,13 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
 
   const handleChangeNation = (event: any) => {
     setSelectedNation(event.target.value);
+    setSelectedCity("서울특별시");
+    setDistrictOptions(district["서울특별시"]);
   };
+
   const handleChangeCity = (event: any) => {
     setSelectedCity(event.target.value);
+    setDistrictOptions(district[event.target.value]);
   };
   const handleChangeDistrict = (event: any) => {
     setSelectedDistrict(event.target.value);
@@ -257,9 +248,11 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               placeholder="시"
             />
           )}
-          <span className="iconArrow">
-            <img src={downwardArrow} alt="" />
-          </span>
+          {selectedNation == "한국" && (
+            <span className="iconArrow">
+              <img src={downwardArrow} alt="" />
+            </span>
+          )}
         </div>
         <div className="selectBox dropdownButton halfBox">
           <span className="icon">
@@ -275,8 +268,8 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               <option disabled selected>
                 구
               </option>
-              {districtOptionData.map((district) => {
-                return <option>{district.value}</option>;
+              {districtOptions.map((district) => {
+                return <option>{district}</option>;
               })}
             </select>
           ) : (
@@ -288,9 +281,11 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
               placeholder="구"
             />
           )}
-          <span className="iconArrow">
-            <img src={downwardArrow} alt="" />
-          </span>
+          {selectedNation == "한국" && (
+            <span className="iconArrow">
+              <img src={downwardArrow} alt="" />
+            </span>
+          )}
         </div>
       </div>
       <div className="choiceText">{`성별을 선택해주세요\n`}</div>

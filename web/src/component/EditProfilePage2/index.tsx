@@ -10,7 +10,7 @@ import selectGender from "../../img/selectGender.png";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import ArrowLeft from "../../img/Arrow_left.png";
-import { districtList } from "../../resource/districtList";
+import { district } from "../../resource/district";
 import { nationList } from "../../resource/nationList";
 
 interface Props extends Properties {
@@ -30,11 +30,7 @@ const EditProfilePage2 = (properties: Props) => {
     { key: 3, value: "대전" },
   ];
 
-  const districtOptionData = districtList.map((district, index) => {
-    return { key: index + 1, value: district };
-  });
-
-  const genderOptionData = [
+  const genderOptionData = [ 
     { key: 1, value: "남자" },
     { key: 2, value: "여자" },
     { key: 3, value: "레즈비언" },
@@ -256,8 +252,8 @@ const EditProfilePage2 = (properties: Props) => {
               <option disabled selected>
                 구
               </option>
-              {districtOptionData.map((district) => {
-                return <option>{district.value}</option>;
+              {district[selectedCity].map((district) => {
+                return <option>{district}</option>;
               })}
             </select>
           ) : (
