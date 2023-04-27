@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import MBTIHistogram from "../MbtiHistogram/";
-import HashtagList from "../HashtagList/HashtagList";
 import settingIcon from "../../img/setting.png";
 import "./Profile.css";
 const Profile = () => {
@@ -26,7 +25,6 @@ const Profile = () => {
       </div>
       <div>
         <MBTIHistogram />
-        <HashtagList />
       </div>
     </div>
   );

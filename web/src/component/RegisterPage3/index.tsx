@@ -47,9 +47,7 @@ export const RegisterPage3 = (properties: Props) => {
             className={`check_box ${isAgreed ? "checked" : "unchecked"}`}
             onClick={() => checkHandler()}
           ></div>
-          <div className="text">
-            본인은 19세 이상이며 이용약관에 동의합니다.
-          </div>
+          <div className="text">본인은 이용약관에 동의합니다.</div>
         </div>
       </div>
       <button
