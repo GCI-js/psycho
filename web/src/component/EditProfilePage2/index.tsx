@@ -23,20 +23,19 @@ const EditProfilePage2 = (properties: Props) => {
 
   const dummyUserName = "아크릴오므라이스";
   properties.setNavVisible(true);
-  const cityOptionData = [
-    { key: 1, value: "서울" },
-    { key: 2, value: "부산" },
-    { key: 3, value: "대구" },
-    { key: 3, value: "대전" },
-  ];
 
-  const genderOptionData = [ 
+  const nationOptionData = nationList.map((nation, index) => {
+    return { key: index + 1, value: nation };
+  });
+
+  const cityOptionData = Object.keys(district).map((key, index) => ({
+    key: index + 1,
+    value: key,
+  }));
+
+  const genderOptionData = [
     { key: 1, value: "남자" },
     { key: 2, value: "여자" },
-    { key: 3, value: "레즈비언" },
-    { key: 4, value: "게이" },
-    { key: 5, value: "양성애자" },
-    { key: 6, value: "트렌스젠더" },
   ];
 
   const now = new Date();
@@ -86,6 +85,7 @@ const EditProfilePage2 = (properties: Props) => {
   const [selectedBirthMonth, setSelectedBirthMonth] = useState("");
   const [selectedBirthDay, setSelectedBirthDay] = useState("");
   const [userData, setUserData] = useState<any>("");
+  const [districtOptions, setDistrictOptions] = useState([]);
   const selectedValues = [
     selectedNation,
     selectedCity,
@@ -98,9 +98,12 @@ const EditProfilePage2 = (properties: Props) => {
 
   const handleChangeNation = (event: any) => {
     setSelectedNation(event.target.value);
+    setSelectedCity("서울특별시");
+    setDistrictOptions(district["서울특별시"]);
   };
   const handleChangeCity = (event: any) => {
     setSelectedCity(event.target.value);
+    setDistrictOptions(district[event.target.value]);
   };
   const handleChangeDistrict = (event: any) => {
     setSelectedDistrict(event.target.value);
@@ -117,9 +120,6 @@ const EditProfilePage2 = (properties: Props) => {
   const handleChangeBirthDay = (event: any) => {
     setSelectedBirthDay(event.target.value);
   };
-  const nationOptionData = nationList.map((nation, index) => {
-    return { key: index + 1, value: nation };
-  });
   const [isAllSelected, setIsAllSelected] = useState(true);
   const checkIfAllSelected = () => {
     console.log(selectedNation);
@@ -193,11 +193,11 @@ const EditProfilePage2 = (properties: Props) => {
             onChange={handleChangeNation}
             value={selectedNation}
           >
-            <option disabled selected>
+            <option disabled selected value="">
               국가
             </option>
             {nationOptionData.map((nation) => {
-              return <option>{nation.value}</option>;
+              return <option value={nation.value}>{nation.value}</option>;
             })}
           </select>
           <span className="iconArrow">
@@ -234,9 +234,11 @@ const EditProfilePage2 = (properties: Props) => {
               placeholder="시"
             />
           )}
-          <span className="iconArrow">
-            <img src={downwardArrow} alt="" />
-          </span>
+          {selectedNation == "한국" && (
+            <span className="iconArrow">
+              <img src={downwardArrow} alt="" />
+            </span>
+          )}
         </div>
         <div className="selectBox dropdownButton halfBox">
           <span className="icon">
@@ -252,7 +254,7 @@ const EditProfilePage2 = (properties: Props) => {
               <option disabled selected>
                 구
               </option>
-              {district[selectedCity].map((district) => {
+              {districtOptions.map((district) => {
                 return <option>{district}</option>;
               })}
             </select>

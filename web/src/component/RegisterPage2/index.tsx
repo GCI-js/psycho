@@ -33,8 +33,6 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
     value: key,
   }));
 
-  console.log(cityOptionData);
-
   const genderOptionData = [
     { key: 1, value: "남자" },
     { key: 2, value: "여자" },
