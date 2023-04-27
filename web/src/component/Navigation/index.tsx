@@ -20,6 +20,9 @@ export default function Navigation(properties: Properties) {
   const handleNavClick = (dest: string) => {
     setCurPos(dest);
     shepherd.whip("test", dest);
+    if (dest == "ProfilePage") {
+      shepherd.chase(dest);
+    }
   };
   const handleQuestionPage = () => {
     let _initorder = parseInt(localStorage.getItem("questionOrder"));

@@ -4,7 +4,7 @@ import { useState } from "react";
 import shepherd from "./service/shepherd";
 import idiotproof from "./service/idiotproof";
 import "./css/common.module.scss";
-import ProfileStats from "./component/ProfilePage/App";
+import ProfilePage from "./component/ProfilePage";
 import WelcomePage from "./component/WelcomePage";
 import Lamb from "./component/Lamb";
 import Navigation from "./component/Navigation";
@@ -35,7 +35,7 @@ export default function App(properties: Properties) {
         <WelcomePage data-pose="WelcomePage" setNavVisible={setNavVisible} />
         <NewsletterPage data-pose="NewsletterPage" />
         <QuestionPage data-pose="QuestionPage" />
-        <ProfileStats data-pose="ProfilePage" />
+        <ProfilePage data-pose="ProfilePage" />
         <SettingPage data-pose="SettingPage" />
         <EditProfilePage1
           data-pose="EditProfilePage1"

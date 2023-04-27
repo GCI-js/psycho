@@ -1,0 +1,33 @@
+.index:global {
+  > .container {
+    padding: 22px;
+
+    > .pcontainer {
+      > .username {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 34px;
+        font-weight: 700;
+      }
+      > .settingButton {
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+
+  > .profileContainer {
+    /* display: flex; */
+    /* flex-direction: column; */
+    border-radius: 10px;
+    margin: 10px;
+    /* width: 500px;
+      height: 2000px; */
+    padding: 5px;
+    /* overflow: hidden;
+      word-wrap: break-word; */
+    font-size: 12px;
+    background-color: #eaeaea;
+  }
+}
