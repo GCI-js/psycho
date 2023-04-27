@@ -21,6 +21,7 @@ const EditProfilePage2 = (properties: Props) => {
   const id = [`_${idiotproof.trace(EditProfilePage2)}`, properties.id].join();
   const cl = [styles.index, properties.className].join(" ");
 
+  shepherd.adopt("EditProfilePage2", id);
   const dummyUserName = "아크릴오므라이스";
   properties.setNavVisible(true);
 
@@ -84,6 +85,7 @@ const EditProfilePage2 = (properties: Props) => {
   const [selectedBirthYear, setSelectedBirthYear] = useState("");
   const [selectedBirthMonth, setSelectedBirthMonth] = useState("");
   const [selectedBirthDay, setSelectedBirthDay] = useState("");
+  const [userNickname, setUserNickname] = useState("");
   const [userData, setUserData] = useState<any>("");
   const [districtOptions, setDistrictOptions] = useState([]);
   const selectedValues = [
@@ -145,24 +147,35 @@ const EditProfilePage2 = (properties: Props) => {
   };
 
   const gotoNextStep = async () => {
-    userData.country = selectedNation;
-    userData.district = selectedDistrict;
-    userData.city = selectedCity;
-    userData.gender = selectedGender;
-    userData.birth = selectedBirthYear + selectedBirthMonth + selectedBirthDay;
-    await saveUserData(userData);
-    shepherd.whip("test", "NewsletterPage");
+    let tmp: any = localStorage.getItem("userData");
+    if (tmp != null) {
+      tmp = JSON.parse(tmp);
+    }
+    tmp.country = selectedNation;
+    tmp.district = selectedDistrict;
+    tmp.city = selectedCity;
+    tmp.gender = selectedGender;
+    tmp.birth = selectedBirthYear + selectedBirthMonth + selectedBirthDay;
+    await saveUserData(tmp);
+    shepherd.whip("test", "ProfilePage");
   };
   useEffect(() => {
+    console.log("called2");
     let tmp: any = localStorage.getItem("userData");
     if (tmp != null) tmp = JSON.parse(tmp);
-
-    setUserData(tmp);
-    if (tmp.country != "") setSelectedNation(tmp.country);
-    if (tmp.district != "") setSelectedDistrict(tmp.district);
-    if (tmp.city != "") setSelectedCity(tmp.city);
-    if (tmp.gender != "") setSelectedGender(tmp.gender);
-    if (tmp.birth != "") {
+    console.log(tmp);
+    if (tmp.nickname != userNickname) setUserNickname(tmp.nickname);
+    if (tmp.country != "" && tmp.country != selectedNation)
+      setSelectedNation(tmp.country);
+    if (tmp.district != "" && tmp.district != selectedDistrict)
+      setSelectedDistrict(tmp.district);
+    if (tmp.city != "" && tmp.city != selectedCity) setSelectedCity(tmp.city);
+    if (tmp.gender != "" && tmp.gender != selectedGender)
+      setSelectedGender(tmp.gender);
+    if (
+      tmp.birth != "" &&
+      tmp.birth != selectedBirthYear + selectedBirthMonth + selectedBirthDay
+    ) {
       let str = tmp.birth.toString();
       setSelectedBirthYear(str.slice(0, 4));
       setSelectedBirthMonth(str.slice(4, 6));
@@ -170,17 +183,25 @@ const EditProfilePage2 = (properties: Props) => {
     }
     console.log(tmp);
     checkIfAllSelected();
-  }, []);
+  });
   useEffect(() => {
     checkIfAllSelected();
-  }, selectedValues);
+  }, [
+    selectedNation,
+    selectedCity,
+    selectedDistrict,
+    selectedGender,
+    selectedBirthYear,
+    selectedBirthMonth,
+    selectedBirthDay,
+  ]);
 
   return (
     <div id={id} className={cl}>
       {/* <div className="username">{`@${dummyUserName}`}</div> */}
       <img className="back-button" src={ArrowLeft} onClick={handleBackButton} />
 
-      <div className="large-title">{userData.nickname}</div>
+      <div className="large-title">{userNickname}</div>
       <div className="choiceText">{`태어난 나라를 골라주세요\n`}</div>
       <div className="row">
         <div className={"selectBox dropdownButton fullBox"}>

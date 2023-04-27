@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import shepherd from "../../service/shepherd";
 import idiotproof from "../../service/idiotproof";
 import styles from "./index.module.scss";
@@ -29,6 +29,14 @@ export const RegisterPage3 = (properties: Props) => {
     properties.setNavVisible(true);
     shepherd.whip("test", "NewsletterPage");
   };
+
+  useEffect(() => {
+    let isOldUser = localStorage.getItem("isOldUser");
+    if (isOldUser == "true") {
+      properties.setNavVisible(true);
+      shepherd.whip("test", "NewsletterPage");
+    }
+  }, []);
 
   return (
     <div id={id} className={cl}>

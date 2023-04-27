@@ -49,7 +49,10 @@ export default function App(properties: Properties) {
           data-pose="RegisterPage1"
           setNavVisible={setNavVisible}
         />
-        <RegisterPage2 data-pose="RegisterPage2" />
+        <RegisterPage2
+          data-pose="RegisterPage2"
+          setNavVisible={setNavVisible}
+        />
         <RegisterPage3
           data-pose="RegisterPage3"
           setNavVisible={setNavVisible}

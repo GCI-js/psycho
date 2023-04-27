@@ -3,6 +3,7 @@ import welcomeImage from "../../img/WelcomeImg.png";
 import shepherd from "../../service/shepherd";
 import styles from "./index.module.scss";
 import idiotproof from "../../service/idiotproof";
+import { useEffect } from "react";
 
 interface Props extends Properties {
   setNavVisible: Function;
@@ -16,6 +17,13 @@ const WelcomePage = (properties: Props) => {
   const context = `Psycho는 당시의 MBTI
   변동을 추적해드려요 !`;
 
+  useEffect(() => {
+    let isOldUser = localStorage.getItem("isOldUser");
+    if (isOldUser == "true") {
+      properties.setNavVisible(true);
+      shepherd.whip("test", "NewsletterPage");
+    }
+  }, []);
   return (
     <div id={id} className={cl}>
       <div className="top_container">
