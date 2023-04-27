@@ -27,17 +27,17 @@ export const MBTISelectBox = (properties: Props) => {
     });
     if (MBTI === "E" && newMBTIState[0].state && newMBTIState[4].state) {
       newMBTIState[4].state = false; // I
-    } else if (MBTI === "S" && newMBTIState[1].state && newMBTIState[5].state) {
+    } else if (MBTI === "N" && newMBTIState[1].state && newMBTIState[5].state) {
       newMBTIState[5].state = false; // N
-    } else if (MBTI === "T" && newMBTIState[2].state && newMBTIState[6].state) {
+    } else if (MBTI === "F" && newMBTIState[2].state && newMBTIState[6].state) {
       newMBTIState[6].state = false; // F
     } else if (MBTI === "J" && newMBTIState[3].state && newMBTIState[7].state) {
       newMBTIState[7].state = false; // P
     } else if (MBTI === "I" && newMBTIState[4].state && newMBTIState[0].state) {
       newMBTIState[0].state = false; // E
-    } else if (MBTI === "N" && newMBTIState[5].state && newMBTIState[1].state) {
+    } else if (MBTI === "S" && newMBTIState[5].state && newMBTIState[1].state) {
       newMBTIState[1].state = false; // S
-    } else if (MBTI === "F" && newMBTIState[6].state && newMBTIState[2].state) {
+    } else if (MBTI === "T" && newMBTIState[6].state && newMBTIState[2].state) {
       newMBTIState[2].state = false; // T
     } else if (MBTI === "P" && newMBTIState[7].state && newMBTIState[3].state) {
       newMBTIState[3].state = false; // J

@@ -13,6 +13,9 @@
 }
 
 .username {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 700;
   font-size: 34px;
   font-weight: 700;
 }
