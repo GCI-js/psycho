@@ -157,6 +157,7 @@ const EditProfilePage2 = (properties: Props) => {
     tmp.gender = selectedGender;
     tmp.birth = selectedBirthYear + selectedBirthMonth + selectedBirthDay;
     await saveUserData(tmp);
+    shepherd.chase("ProfilePage");
     shepherd.whip("test", "ProfilePage");
   };
   useEffect(() => {
