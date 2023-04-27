@@ -11,7 +11,11 @@ import ArrowLeft from "../../img/Arrow_left.png";
 import { district } from "../../resource/district";
 import { nationList } from "../../resource/nationList";
 
-const RegisterPage2 = (properties: Properties) => {
+interface Props extends Properties {
+  setNavVisible: Function;
+}
+
+const RegisterPage2 = (properties: Props) => {
   /*
 [2022.01.12 jongseok lee] 
 username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야하는지 정확히 정해지면 따로 다른 파일로 빼는게 더 나을거 같습니다. 
@@ -98,6 +102,14 @@ username 백엔드 로직 쓰면되고 OptionData는 어떤 옵션 들어가야�
       setIsAllSelected(true);
     else setIsAllSelected(false);
   };
+
+  useEffect(() => {
+    let isOldUser = localStorage.getItem("isOldUser");
+    if (isOldUser == "true") {
+      properties.setNavVisible(true);
+      shepherd.whip("test", "NewsletterPage");
+    }
+  }, []);
 
   // check for all value is updated
   useEffect(() => {

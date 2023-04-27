@@ -50,6 +50,14 @@ const RegisterPage1 = (properties: Props) => {
   properties.setNavVisible(false);
 
   useEffect(() => {
+    let isOldUser = localStorage.getItem("isOldUser");
+    if (isOldUser == "true") {
+      properties.setNavVisible(true);
+      shepherd.whip("test", "NewsletterPage");
+    }
+  }, []);
+
+  useEffect(() => {
     console.log("tmp");
     let tmp: any = localStorage.getItem("userData");
     if (tmp != null) tmp = JSON.parse(tmp);

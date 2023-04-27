@@ -50,7 +50,7 @@ const EditProfilePage1 = (properties: Props) => {
   ]);
 
   const handleBackButton = () => {
-    shepherd.whip("test", "WelcomePage");
+    shepherd.whip("test", "ProfilePage");
   };
   const saveUserData = async (userData: any) => {
     localStorage.setItem("userData", JSON.stringify(userData));
@@ -70,6 +70,8 @@ const EditProfilePage1 = (properties: Props) => {
         ? "O"
         : "";
     await saveUserData(userData);
+    console.log("saved1");
+    shepherd.chase("EditProfilePage2");
     shepherd.whip("test", "EditProfilePage2");
   };
   useEffect(() => {
