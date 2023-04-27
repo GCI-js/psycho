@@ -15,10 +15,11 @@ import {
   Surface,
   Symbols,
 } from "recharts";
+import { getInitUserData } from "../../service/getInitUserData";
 import "./index.module.scss";
 
-const userData = JSON.parse(localStorage.getItem("userData"));
-const userMbti = userData.mbtis.splice(0, 6).splice(0).reverse();
+// const userData = JSON.parse(localStorage.getItem("userData"));
+// const userMbti = userData.mbtis.splice(0, 6).splice(0).reverse();
 
 /**
  * 라인 차트를 그리는 함수
@@ -52,6 +53,16 @@ const TrendLineChart = () => {
   console.log(lineStroke);
   console.log(currentSelectedLine);
   const COLORS = ["#9F7DE1CC", "#AD00FFFF", "#AD00FFFF", "#000000FF"];
+  const [userData, setUserData] = useState<any>("");
+  const [userMbti, setUserMbti] = useState<any>("");
+  useEffect(() => {
+    let tmp: any = localStorage.getItem("userData");
+    if (tmp != null) tmp = JSON.parse(tmp);
+    if (tmp == null || tmp.nickname == undefined) tmp = getInitUserData();
+    setUserData(tmp);
+    setUserMbti(tmp.mbtis.splice(0, 6).splice(0).reverse());
+    
+  }, []);
 
   /**
    * legend 를 커스텀할 수 있는 함수
