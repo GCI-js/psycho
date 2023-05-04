@@ -7,7 +7,7 @@ import android.webkit.*
 class MainActivity : AppCompatActivity() {
 
     private lateinit var webView: WebView
-    private val url = "https://google.com" // 원하는 웹 페이지 URL
+    private val url = "https://polite-kringle-5bd3f6.netlify.app/" // 원하는 웹 페이지 URL
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         webSettings.useWideViewPort = true // 화면 사이즈 맞추기 허용 여부
         webSettings.builtInZoomControls = true // 확대 축소 허용 여부
         webSettings.displayZoomControls = false // 돋보기 없애기
+        webSettings.domStorageEnabled = true
         webSettings.cacheMode = WebSettings.LOAD_NO_CACHE // 캐시 사용여부
+        webView.setOnTouchListener { _, _ ->
+            false
+        }
 
         webView.webChromeClient = WebChromeClient()
         webView.webViewClient = object : WebViewClient() {
